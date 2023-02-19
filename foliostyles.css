@@ -141,16 +141,6 @@ nav ul li a:hover::after{
 .about-col-1 img{
     width: 100%;
     border-radius: 15px;
-    filter: hue-rotate(360deg);
-    animation: rainbow 5s linear infinite;
-}
-@keyframes rainbow {
-    from{
-        filter: hue-rotate(0deg);
-    }
-    to {
-        filter: hue-rotate(360deg);
-    }
 }
 
 .about-col-2{
