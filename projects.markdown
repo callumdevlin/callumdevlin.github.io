@@ -8,6 +8,6 @@ permalink: /projects/
 
 - [Rocket League Python Bot]
 
-- [Custom Car Tachometer]
+- Custom Car Tachometer
 
 - [Sim Racing Handbrake]
