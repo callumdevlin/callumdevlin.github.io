@@ -1,5 +1,5 @@
 ---
 layout: default
-title: AProjects
+title: Projects
 permalink: /projects/
 ---
