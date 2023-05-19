@@ -28,9 +28,17 @@ url: "https://callumdevlin.github.io" # the base hostname & protocol for your si
 twitter_username:
 github_username:  callumdevlin
 
-accent_image: /Images/blackh.jpg
-accent_colour: rgb(79,177,186)
+menu:
+  - title:  About
+    url:   /about/
+  - title:  Contact
+    url:   /contact/
 
+accent_image: /Images/blackh.jpg
+accent_colour: rgb(255,0,0)
+theme_colour: rgb(0,0,0)
+
+copyright:             © 2023. All rights reserved.
 # Build settings
 #theme: jekyll-theme-hydejack
 remote_theme: hydecorp/hydejack@v9
