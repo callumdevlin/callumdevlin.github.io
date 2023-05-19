@@ -1,7 +1,7 @@
 ---
-layout: page
-title: About
+layout: default
+title: About Me
 permalink: /about/
 ---
 
-Hello i am callum
+- Hello I am Callum, I'm a 2nd Year Product Design Engineering Student at Strathclyde University.

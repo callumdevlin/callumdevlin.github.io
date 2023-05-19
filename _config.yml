@@ -33,6 +33,8 @@ url: "https://callumdevlin.github.io" # the base hostname & protocol for your si
 menu:
   - title:  About
     url:   /about/
+  - title:  Projects
+    url:   /projects/
   - title:  Contact
     url:   /contact/
 
