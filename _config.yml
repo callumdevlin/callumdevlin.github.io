@@ -36,9 +36,9 @@ menu:
   - title:  Projects
     url:   /projects/
 
-accent_image: /Images/bgarduino.jpg
-accent_colour: rgb(0,0,0)
-theme_colour: rgb(0,0,0)
+accent_image: /Images/blackh.jpg
+accent_colour: rgb(0,0,200)
+theme_colour: rgb(0,0,200)
 
 copyright:             © 2023. All rights reserved.
 # Build settings
