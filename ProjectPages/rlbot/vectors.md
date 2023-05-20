@@ -50,4 +50,10 @@ This Returns the distance between this vector and another vector using pythagora
 
 ## Angles
 
-When dealing with 3D space it is important to make sure the car is angled correctly when hitting the ball or finding out where things are. To find this out we use a vector function that can find the angle between 2 desired vectors
+When dealing with 3D space it is important to make sure the car is angled correctly when hitting the ball or finding out where things are. To find this out we use a vector function that can find the angle between 2 desired vectors and returns a value between 0 and pi:
+
+~~~python
+def ang_to(self, ideal: 'Vec3') -> float:
+        cos_ang = self.dot(ideal) / (self.length() * ideal.length())      
+        return math.acos(cos_ang)
+~~~
