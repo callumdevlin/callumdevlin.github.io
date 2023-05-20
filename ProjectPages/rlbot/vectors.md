@@ -1,4 +1,52 @@
 ---
 layout: default
-title: 3d Vector System
+title: 3D Vector System
 ---
+
+- In order to help our bot read in the X, Y and Z coordinates from the game tick packet there is a Vector class, this can have functions added
+to it in order to add, subtract, multiple etc different vectors together.
+These vector functions are stored as a singular variable, we made this as list so each X,Y,Z value could still be accessed individually.
+
+~~~python
+class Vec3:
+    __slots__ = [
+        'x',
+        'y',
+        'z'
+    ]
+    def __init__(self, x: Union[float, 'Vec3', 'Vector3']=0, y: float=0, z: float=0):
+        if hasattr(x, 'x'):
+            self.x = float(x.x)
+            self.y = float(x.y) if hasattr(x, 'y') else 0
+            self.z = float(x.z) if hasattr(x, 'z') else 0
+        else:
+            self.x = float(x)
+            self.y = float(y)
+            self.z = float(z)
+~~~
+
+This is the basic code for the vector class
+{:.figcaption}
+
+- Within this class there are function such as:
+
+~~~python
+    def __add__(self, other: 'Vec3') -> 'Vec3':
+        return Vec3(self.x + other.x, self.y + other.y, self.z + other.z)
+~~~
+
+- Which allows us to call 
+~~~python Vec3._add_(Vec1, Vec2) 
+~~~ 
+in order to add these 2 together.
+
+
+- One of the most useful vectors we used is the distance vector:
+~~~python
+def length(self):
+        return math.sqrt(self.x**2 + self.y**2 + self.z**2)
+
+def dist(self, other: 'Vec3') -> float:
+        return (self - other).length()
+~~~
+This Returns the distance between this vector and another vector using pythagoras that's calculated in the 'Vec3.length()' function as it's passed through.
