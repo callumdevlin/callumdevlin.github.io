@@ -1,5 +1,5 @@
 ---
-layout: Post
+layout: Page
 title: Rocket League Bot
 ---
 
