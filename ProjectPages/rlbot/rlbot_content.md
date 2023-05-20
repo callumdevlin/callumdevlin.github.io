@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: Post
 title: Rocket League Bot
 ---
 
