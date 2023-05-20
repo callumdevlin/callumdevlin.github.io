@@ -18,4 +18,4 @@ Check out this project on Github here
 
 -   RLBot uses an API in Rocket League specifically made for us. This API is activated when the game is launched with the '-rlbot' flag, which simultaneously disables all online play. The RLBotCore dll communicates with the game through this API and this is where most of the magic happens. Communication with bots are done through sockets (shared memory in the past) which allow us to support a wide range of languages.
 
-
+## Behaviour System
