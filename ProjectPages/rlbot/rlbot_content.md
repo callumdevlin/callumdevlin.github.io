@@ -3,7 +3,7 @@ layout: default
 title: Rocket League Bot
 ---
 
-1. [Project Overview]({% link ProjectPages/rlbot/overview.md %})
+1. [Project Overview]({% link ProjectPages/rlbot/rlbotoverview.md %})
 
 2. [3D Vector System]({% link ProjectPages/rlbot/vectors.md %})
 
