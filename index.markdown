@@ -4,4 +4,5 @@
 
 layout: home
 ---
-Welcome to my online portfolio. This website is mainly just a collection of my projects and stuff I've built
+This website is mainly just a collection of notes and stuff I've designed.
+
