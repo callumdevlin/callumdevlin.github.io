@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: Post
 title: Shopping Trolley Go-Kart
 ---
 
