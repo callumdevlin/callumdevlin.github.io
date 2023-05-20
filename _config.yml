@@ -36,8 +36,9 @@ menu:
   - title:  Projects
     url:   /projects/
 
-accent_image: /Images/pcbbghd.jpg
-accent_colour: rgb(0,0,0)
+accent_image: /Images/pcbbg.jpeg
+accent_colour: rgb(100,100,100)
+theme_colour: rgb(100,100,100)
 
 copyright:             © 2023. All rights reserved.
 # Build settings
