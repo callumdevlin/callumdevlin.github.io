@@ -28,25 +28,22 @@ class Vec3:
 This is the basic code for the vector class
 {:.figcaption}
 
-- Within this class there are function such as:
+- Within this class there are function such as the add function, this allows us to pass in 2 vectors and find the sum:
 
 ~~~python
     def __add__(self, other: 'Vec3') -> 'Vec3':
         return Vec3(self.x + other.x, self.y + other.y, self.z + other.z)
 ~~~
 
-- Which allows us to call 
-~~~python Vec3._add_(Vec1, Vec2) 
-~~~ 
-in order to add these 2 together.
 
+One of the most useful vectors we used is the distance vector:
 
-- One of the most useful vectors we used is the distance vector:
 ~~~python
-def length(self):
-        return math.sqrt(self.x**2 + self.y**2 + self.z**2)
+    def length(self):
+            return math.sqrt(self.x**2 + self.y**2 + self.z**2)
 
-def dist(self, other: 'Vec3') -> float:
-        return (self - other).length()
+    def dist(self, other: 'Vec3') -> float:
+            return (self - other).length()
 ~~~
+
 This Returns the distance between this vector and another vector using pythagoras that's calculated in the 'Vec3.length()' function as it's passed through.
