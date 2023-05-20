@@ -4,7 +4,7 @@ title: Project Overview
 
 ---
 
-![RLBOT](/Images/rlbot.jpg"RLBOT")
+![RLBOT](/Images/rlbot.JPG)
 
 
 Check out this project on Github here
