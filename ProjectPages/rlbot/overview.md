@@ -1,9 +1,10 @@
 ---
 layout: default
 title: Project Overview
+image_rlbot: /Images/rlbot.JPG.jpg
 ---
 
-![Full-width image](/Images/rlbot.jpg)
+![]({{page.image | relative_url}})
 
 
 Check out this project on Github here
