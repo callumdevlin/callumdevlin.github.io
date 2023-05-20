@@ -3,7 +3,7 @@ layout: default
 title: Project Overview
 ---
 
-![Full-width image](/Images/rlbot.jpg){:.lead width="800" height="100" loading="lazy"}
+![Full-width image](/Images/rlbot.jpg)
 
 
 Check out this project on Github here
