@@ -3,8 +3,6 @@ layout: default
 title: Shopping Trolley Go-Kart
 ---
 
-- Overview
+- [Project Overview]({% link ProjectPages/gokart/gokartoverview.md %})
 
-- ECU
-
-- Steering
+- [ECU]({% link ProjectPages/gokart/ecu.md %})

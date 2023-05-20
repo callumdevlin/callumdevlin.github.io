@@ -3,7 +3,7 @@ layout: default
 title: 3D Vector System
 ---
 
-- In order to help our bot read in the X, Y and Z coordinates from the game tick packet there is a Vector class, this can have functions added
+In order to help our bot read in the X, Y and Z coordinates from the game tick packet there is a Vector class, this can have functions added
 to it in order to add, subtract, multiple etc different vectors together.
 These vector functions are stored as a singular variable, we made this as list so each X,Y,Z value could still be accessed individually.
 
@@ -28,14 +28,14 @@ class Vec3:
 This is the basic code for the vector class
 {:.figcaption}
 
-- Within this class there are function such as the add function, this allows us to pass in 2 vectors and find the sum:
+Within this class there are function such as the add function, this allows us to pass in 2 vectors and find the sum:
 
 ~~~python
     def __add__(self, other: 'Vec3') -> 'Vec3':
         return Vec3(self.x + other.x, self.y + other.y, self.z + other.z)
 ~~~
 
-
+## Distance
 One of the most useful vectors we used is the distance vector:
 
 ~~~python
@@ -47,3 +47,7 @@ One of the most useful vectors we used is the distance vector:
 ~~~
 
 This Returns the distance between this vector and another vector using pythagoras that's calculated in the 'Vec3.length()' function as it's passed through.
+
+## Angles
+
+When dealing with 3D space it is important to make sure the car is angled correctly when hitting the ball or finding out where things are. To find this out we use a vector function that can find the angle between 2 desired vectors
