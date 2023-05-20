@@ -11,7 +11,7 @@ Check out this project on Github here
 {:.figcaption}
 
 
-- The basis of the project was to make a Bot that would play Rocket League itself, this was coded in Python using the [RL Bot GUI API](https://rlbot.org). It is hard coded (Not AI based) and has its own implemented [behavioural system]({% link ProjectPages/rlbot/behaviour.md %}) to help make smart decisions.
+- The basis of the project was to make a Bot that would play Rocket League itself, this was coded in Python using the [RL Bot GUI API](https://rlbot.org). It is hard coded (Not AI based) and has its own implemented behavioural system to help make smart decisions.
 
 ## RL BOT GUI
 - This is a community driven API that is built for multiple languages, RLBot enables custom bots in Rocket League and helps pull game data from a game into readable values. 
