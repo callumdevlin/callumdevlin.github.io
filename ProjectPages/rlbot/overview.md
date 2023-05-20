@@ -4,7 +4,7 @@ title: Project Overview
 
 ---
 
-![RLBOT](/Images/rlbot.JPG)
+![RLBOT](/Images/rlbot.JPG){:.lead width="800" height="100" loading="lazy"}
 
 
 Check out this project on Github here
