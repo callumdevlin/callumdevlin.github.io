@@ -37,8 +37,7 @@ menu:
     url:   /projects/
 
 accent_image: /Images/pcbbg.jpeg
-accent_colour: rgb(100,100,100)
-theme_colour: rgb(100,100,100)
+accent_color:      rgb(127,0,255)
 
 copyright:             © 2023. All rights reserved.
 # Build settings

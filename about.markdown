@@ -8,4 +8,4 @@ permalink: /about/
 
 - Python Developer - Check out my programming projects [here](https://github.com/callumdevlin)
 
-- CAD Solidworks Designer (CSWA Certified)
+- CAD Solidworks Designer
