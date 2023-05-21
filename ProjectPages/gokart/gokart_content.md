@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Shopping Trolley Go-Kart
+title: 2 Stroke Go-Kart
 ---
 
 - [Project Overview]({% link ProjectPages/gokart/gokartoverview.md %})
 
-- [ECU]({% link ProjectPages/gokart/ecu.md %})
+- [ECU Design]({% link ProjectPages/gokart/ecu.md %})
