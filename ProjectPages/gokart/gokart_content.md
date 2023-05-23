@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 2 Stroke Go-Kart
+title: 4 Stroke Go-Kart
 ---
 
 - [Project Overview]({% link ProjectPages/gokart/gokartoverview.md %})

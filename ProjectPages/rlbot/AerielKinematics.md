@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Aeriel Kinematics
+title: Aerial Kinematics
 ---
 
-In order for our bot to be able to calculate ball position and how to hit an aeriel there is many factors to consider: ball height, ball speed, car speed, distance, angle, boost etc. The idea seems simple but can be rather fidgety when implementing.
+In order for our bot to be able to calculate ball position and how to hit an aerial there is many factors to consider: ball height, ball speed, car speed, distance, angle, boost etc. The idea seems simple but can be rather fidgety when implementing.
 
 The general kinematics of air control can be defined as the following:
 
