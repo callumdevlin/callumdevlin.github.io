@@ -41,3 +41,4 @@ We can also draw 3D lines and shapes on the screen to help show where the car is
     self.renderer.draw_line_3d(car_location, enemy_goal, self.renderer.orange())
     self.renderer.draw_line_3d(car_location, my_goal, self.renderer.blue())
 ~~~
+I'm also currently trying to implement a way for the program to be able to draw graphs in Matplotlib to be able to see it's stats compared to other variables.

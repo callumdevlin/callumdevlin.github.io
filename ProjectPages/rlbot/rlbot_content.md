@@ -13,6 +13,6 @@ title: Rocket League Bot
 
 5. [Aligning shots on Target]({% link ProjectPages/rlbot/AligningShots.md %})
 
-6. [Making a save]({% link ProjectPages/rlbot/SavingShots.md %})
+6. [Path Optimisation Analysis]({% link ProjectPages/rlbot/movingpath.md %})
 
 
