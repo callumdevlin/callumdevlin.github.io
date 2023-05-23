@@ -44,3 +44,7 @@ an additional acceleration of $$991.667 \frac{uu}{s^2}$$ will be present.
 #### Gravitational Acceleration
 At all times the force of gravity is present, it will have an influcence on the car both in the air and on the ground.
 In Rocket League the gravity can be calculated as $$g \times f$$ where $$g$$ is the acceleration of gravity ($$650 \frac{uu}{s^2}$$) and $$f$$ is the unit vector along the direction the car is facing.
+
+
+Credit to Sam Mish for the assisted research
+{:.note}
