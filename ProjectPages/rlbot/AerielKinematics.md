@@ -52,9 +52,10 @@ Now to actually implement this into our code, we can use it to find the followin
 - To tell if our target($$P$$) can be reached in the amount of time, check if $$B_0$$ is less than the cars boost acceleration ($$991.667 \frac{uu}{s^2}$$). If $$B_0 > T$$ then the car wont reach it's target in time.
 
 You can use this equation to find the magnitude and direction of acceleration required to make contact:
+
 $$
 \begin{aligned}
-\bar A = \frac{2}{(T-\Delta t)^2}(P-x_0-v_0\Delta t -\frac{1}{2}g \Delta t^2 z)
+  \bar A = \frac{2}{(T-\Delta t)^2}(P-x_0-v_0\Delta t -\frac{1}{2}g \Delta t^2 z)
 \end{aligned}
 $$
 

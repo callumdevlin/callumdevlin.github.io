@@ -116,3 +116,28 @@ void rev_detect()
 This essentially takes whatever the max rev limit of the engine which is estimated around 10,000 RPM. By taking 10,000 and diving by the amount of character spaces on the LCD (16), you can find out each parameter for how many bars to display at that RPM. Then simply just draw the correct amount by iterating and writing the byte variable to the LCD.
 
 ## Engine Temperature
+
+To detect the engine temprature I used a K-Type Thermocouple because i needed something to withstand high tempratures, i simply wired this into a module board and straight into the pins on the Arduino.
+
+I used to following code to translate it into an float value i could display on the LCD:
+
+~~~c++
+
+#include <Adafruit_MAX31855.h>
+
+#define CLK_PIN   9
+#define CS_PIN    7
+#define DO_PIN    8
+
+Adafruit_MAX31855 thermocouple(CLK_PIN, CS_PIN, DO_PIN);
+
+void loop() {
+  float temperature = thermocouple.readCelsius(); // Read the temperature in Celsius
+  
+  Serial.print("Temperature: ");
+  Serial.print(temperature);
+  Serial.println(" °C");
+
+  delay(1000);  // Adjust the delay as needed
+}
+~~~
