@@ -9,7 +9,7 @@ title: Rocket League Bot
 
 3. [Ground Kinematics]({% link ProjectPages/rlbot/GroundKinematics.md %})
 
-4. [Aeriel Kinematics]({% link ProjectPages/rlbot/AerielKinematics.md %})
+4. [Aerial Kinematics]({% link ProjectPages/rlbot/AerielKinematics.md %})
 
 5. [Aligning shots on Target]({% link ProjectPages/rlbot/AligningShots.md %})
 

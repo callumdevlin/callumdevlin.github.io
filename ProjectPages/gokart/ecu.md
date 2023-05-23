@@ -10,6 +10,7 @@ I used C++ and the Arduino IDE to write and upload the programs
 
 ## Board Layout
 
+![Board Schematic](/Images/fullboard.JPG){:.lead width="800" height="100" loading="lazy"}
 
 ## Speedometer
 The speedometer is used for calculating the speed of the kart, I wanted this to be as accurate as possible while having limited space to work with. The best and simplest solution for this is by attaching a magnet to the rear wheel and a hall effect sensor to the back axel, the hall effect will allow us to detect every time the magnet does a full rotation.
@@ -63,5 +64,55 @@ So i built a circuit to reduce the noise and magnitude of induced voltage and wi
 
 ![timing light](/Images/timinglightschematic.jpg){:.lead width="800" height="100" loading="lazy"}
 
+The display this on the LCD i made the top row on show a solid block across for how fast the engine was turning.
+
+~~~c++
+#include <LiquidCrystal.h>
+
+int sensorRev = 8;
+volatile unsigned int rev_count = 0;
+
+byte fullBlock[8] = {
+  B11111,
+  B11111,
+  B11111,
+  B11111,
+  B11111,
+  B11111,
+  B11111,
+  B11111 //this code tells the LCD exactly what 'pixels' to display when fullBlock is called
+};
+
+void setup() {
+  attachInterrupt(digitalPinToInterrupt(9), rev_detect, RISING);
+  
+  lcd.begin(16, 2);
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.createChar(0, fullBlock); //this creates the character variable byte for fullBlock
+}
+
+void loop() {
+  rev_bar();
+}
+
+void rev_bar(){
+  int revs = digitalRead(sensorRev);
+  int bars = round(revs / 625);
+  if (bars > 16) bars = 16;
+  
+  lcd.print("                ");
+  lcd.setCursor(0, 0);
+  for (int i = 0; i < bars; i++) {
+    lcd.write((byte)0);
+  }
+}
+void rev_detect()
+{
+  rev_count++;
+}
+~~~
+
+This essentially takes whatever the max rev limit of the engine which is estimated around 10,000 RPM. By taking 10,000 and diving by the amount of character spaces on the LCD (16), you can find out each parameter for how many bars to display at that RPM. Then simply just draw the correct amount by iterating and writing the byte variable to the LCD.
 
 ## Engine Temperature
