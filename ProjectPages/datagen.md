@@ -1,5 +1,5 @@
 ---
 layout: default
-title: Aerial Kinematics
+title: Synthetic Data Generation
 ---
 WIP...
