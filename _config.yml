@@ -39,7 +39,7 @@ menu:
 accent_image: /Images/pcbbg.jpeg
 accent_color:      rgb(127,0,255)
 
-copyright:             © 2023. All rights reserved.
+copyright:             © 2024. All rights reserved.
 # Build settings
 #theme: jekyll-theme-hydejack
 remote_theme: hydecorp/hydejack@v9
@@ -103,12 +103,12 @@ hydejack:
   no_break_layout:     true
 
   # Set to `true` to disable the dynamic Table of Contents on large screens.
-  no_toc:              false
+  no_toc:              true
 
   # When set to `true`, will not extend the content in the "third column" on large screens.
   # Instead, all content will remains within the center column.
   # Note that this will not affect the Table of Contents, use `no_toc` instead.
-  no_third_column:     false
+  no_third_column:     true
 
   # Set to `true` if you don't like oversized headlines on large screens.
   no_large_headings:   true
