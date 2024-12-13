@@ -5,10 +5,12 @@
 layout: home
 ---
 Welcome to My Corner of the Web
+
 This site is a collection of my experiments, notes, and little creations. It's part portfolio, part playground. A space to share the things I’ve designed, built, and thought about.
 
 Feel free to browse around! Whether you're here to check out a project, find some information, or just be nosy.
 
 Thanks,
+
 Callum
 
