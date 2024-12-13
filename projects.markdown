@@ -8,7 +8,7 @@ permalink: /projects/
 
 * [RFID Tool Storage 4th Year Uni Project]({% link ProjectPages/rfidtoolstorage.md %})
 
-* [Mazda RX8 13B-MSP Docs]({% link ProjectPages/13bmsp.md %})
+* [Mazda RX8 13B-MSP Docs]({% link ProjectPages/13BMSP/13BMSPOverview.md %})
 
 * [4 Stroke Go-Kart]({% link ProjectPages/gokart/gokart_content.md %})
 
