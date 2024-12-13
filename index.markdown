@@ -9,5 +9,6 @@ This site is a collection of my experiments, notes, and little creations. It's p
 
 Feel free to browse around! Whether you're here to check out a project, find some information, or just be nosy.
 
-- Callum
+Thanks,
+Callum
 
