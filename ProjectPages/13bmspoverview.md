@@ -1,0 +1,18 @@
+---
+layout: default
+title: Mazda 13B-MSP
+---
+## Introduction
+
+#### What is the 13B-MSP Engine?
+
+- Overview of the Renesis rotary engine design and its role in the RX-8.
+- Why it's unique (e.g., no pistons, high-revving performance).
+- Briefly introduce your experience working with it.
+
+#### Why I Created This Page
+
+- Share  purpose (to document your rebuild, help others, and share knowledge).
+
+## Understanding the 13B-MSP Engine
+
