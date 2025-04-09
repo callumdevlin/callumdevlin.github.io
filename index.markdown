@@ -4,11 +4,11 @@
 
 layout: home
 ---
-Welcome to My Corner of the Web
+Welcome,
 
-This site is a collection of my experiments, notes, and little creations. It's part portfolio, part playground. A space to share the things I’ve designed, built, and thought about.
+This is a space for my design work, side projects, and notes. Part portfolio, part work-in-progress.
 
-Feel free to browse around! Whether you're here to check out a project, find some information, or just be nosy.
+Feel free to take a look around.
 
 Thanks,
 
