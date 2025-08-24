@@ -10,7 +10,7 @@ permalink: /projects/
 
 * [Mazda RX8 13B-MSP Docs]({% link ProjectPages/13BMSP/13BMSPOverview.md %})
 
-* [Modular Breathing Apparatus Stowage - Emergency One]({% link ProjectPages/E1/E1_content.md %})
+* [MP1 - Modular Breathing Apparatus Stowage]({% link ProjectPages/E1/E1_content.md %})
 
 
 
