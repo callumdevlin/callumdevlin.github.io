@@ -3,8 +3,6 @@ layout: default
 title: Mazda 13B-MSP
 ---
 Links:
-- [Engine Rebuilding]({% link ProjectPages/13BMSP/enginerebuilding.md %})
-- [Fault Finding]({% link ProjectPages/13BMSP/faultfinding.md %})
 - [Torque Specifications]({% link ProjectPages/13BMSP/torquespecs.md %})
 
 ## Introduction
