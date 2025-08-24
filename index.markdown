@@ -6,11 +6,9 @@ layout: home
 ---
 Welcome,
 
-This is a space for my design work, side projects, and notes. Part portfolio, part work-in-progress.
-
-Feel free to take a look around.
+Here's my product design and engineering work, plus a few side projects.
+Updated when there’s something worth adding.
 
 Thanks,
-
 Callum
 
