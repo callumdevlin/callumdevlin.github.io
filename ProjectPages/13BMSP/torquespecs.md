@@ -13,7 +13,7 @@ All torques are shown as the factory range in newton metres.
 | Flywheel / counterweight locknut | 392–490 | 54 | Red Loctite; lock flywheel/counterweight with SST while tightening. | 
 | Oil pump sprocket / shaft locknut | 31.4–46.1 |  | Use new lock washer, then bend tabs after torque. | 
 | Front cover to housing bolts | 18.6–25.5 |  | Tighten in sequence after checking pulley boss height. | 
-| Pulley lock bolt (eccentric shaft front) | 300–340 |  | New O-ring + sealant on pulley seating face. | 
+| Pulley lock bolt (eccentric shaft front) | 300–340 | 19 | New O-ring + sealant on pulley seating face. | 
 | Oil pan upper block bolts | 18.6–25.5 |  | Apply sealant bead 2.5–6.5 mm around perimeter and specified bolt holes. |
 | Oil pan bolts | 8.8–11.8 |  | Clean old sealant; apply continuous bead to mating surface. |
 | Oil pan drain plug | 29.4–39.2 |  | Use new sealing washer. |
@@ -23,10 +23,10 @@ All torques are shown as the factory range in newton metres.
 
 | Fastener |Torque Value (Nm)| Size (mm) | Notes | 
 |:------------|:----------:|:-----------:|:-----------|
-| Spark plugs | 13–18 |  | Standard 14 mm plug; do not over-tighten. |
-| Intake manifold bolts | 19–26 |  | Tighten in criss-cross pattern. |
-| Engine mount rubbers (LH/RH – through-bolt & nut) | 45–63 |  | Tighten with engine settled in mounts. |
-| Engine mount brackets to block (LH/RH) | 37–52 |  | – |
+| Spark plugs | 13–18 | 14 | Do not over-tighten. |
+| Intake manifold bolts | 19–26 | 10/13 | Tighten in criss-cross pattern. |
+| Engine mount rubbers (LH/RH – captive-bolt & nut) | 45–63 |  | Tighten with engine settled in mounts. |
+| Engine mount brackets to block (LH/RH) | 37–52 | 17 | – |
 | Water pump body bolts | 19–26 |  | – |
 | Water pump pulley bolts | 8–11 |  | – |
 | Oil cooler bolts (core to bracket) | 8–11 |  | – |
@@ -38,6 +38,18 @@ All torques are shown as the factory range in newton metres.
 
 ---
 
+### Drivetrain
+
+| Fastener |Torque Value (Nm)| Size (mm) | Notes | 
+|:------------|:----------:|:-----------:|:-----------|
+| Transmission installation bolts (gearbox to engine) | 37-52 | 14 | MT & AT. Two bolt lengths (55 mm & 90 mm). |
+| PPF to differential – bolts/nuts #1 & #2 | 126–154 |  | Rear diff side. Tighten in specified sequence to seat PPF fully into diff mount. |
+| PPF to differential – bolt/nut #3 | 74.5–93.2 |  | Rear diff side centre fastener. Tighten after #1 & #2, per manual sequence. |
+| PPF to transmission – front nuts | 126–154 |  | Transmission side PPF studs. Tighten in specified order after setting dimension A (PPF height) to 55–57 mm, then re-check final dimension A = 48.4–56.4 mm. |
+| Propeller shaft nuts | 45-59 |  | Applies to the four flange nuts (incl. at diff). Align marks on shaft and flange on reassembly |
+
+---
+
 ### Brakes & Wheels
 
 | Fastener |Torque Value (Nm)| Size (mm) | Notes | 
@@ -46,7 +58,7 @@ All torques are shown as the factory range in newton metres.
 | Front caliper to mounting bracket bolts | 78–102 |  | Main caliper carrier bolts. |
 | Rear brake caliper body-to-slider bolts | 22–31 |  | Guide (slider) pins. |
 | Rear caliper bracket to knuckle bolts | 49–69 |  | – |
-| Wheel nuts | 88–118 |  | Tighten in star pattern on level ground. |
+| Wheel nuts | 88–118 | 17 | Tighten in star pattern on level ground. |
 
 ---
 
