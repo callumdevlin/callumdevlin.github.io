@@ -6,8 +6,8 @@ layout: home
 ---
 Welcome,
 
-Here's my product design and engineering work, plus a few side projects.
-Updated when there’s something worth adding.
+Here’s my product design and engineering work, plus a few side projects.
+It’s also a space for my own notes, experiments and in-progress ideas.
 
 Thanks,
 Callum
