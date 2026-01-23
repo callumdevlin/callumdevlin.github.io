@@ -36,8 +36,8 @@ Operational constraints that drove the design:
 - Users operate in **full PPE** → reduced dexterity + limited visibility  
 - BA must remain **accessible for rapid egress** and **valve checks** while docked  
 
-![Greenzone](/Images/GreenZone2.JPG){:width="250" height="100" loading="lazy"}  
-![Greenzone](/Images/GreenZone1.JPG){:width="250" height="100" loading="lazy"} 
+![Greenzone](/Images/GreenZone2.JPG){:width="400" height="100" loading="lazy"}
+![Greenzone](/Images/GreenZone1.JPG){:width="400" height="100" loading="lazy"} 
 
 ---
 
@@ -86,7 +86,7 @@ Why sliding panels matter: instead of redesigning the whole cradle per BA format
 Design intent: clamp loads are **reacted into the back plate** and seat frame, rather than into plastics/trim.
 ![MP1-Diagram](/Images/Instruction-1.JPG){:width="200" height="100" loading="lazy"} 
 ![MP1-Diagram](/Images/Instruction-3.JPG){:width="200" height="100" loading="lazy"} 
-![MP1-Diagram](/Images/Instruction-2.JPG){:width="200" height="100" loading="lazy"} 
+![MP1-Diagram](/Images/Instruction-2.JPG){:width="300" height="100" loading="lazy"} 
 
 ---
 
