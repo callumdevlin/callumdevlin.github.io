@@ -84,9 +84,9 @@ Why sliding panels matter: instead of redesigning the whole cradle per BA format
   (so it always “presents” ready-to-stow)  
 
 Design intent: clamp loads are **reacted into the back plate** and seat frame, rather than into plastics/trim.
-![MP1-Diagram](/Images/Instruction-1.JPG){:width="200" height="100" loading="lazy"} 
-![MP1-Diagram](/Images/Instruction-3.JPG){:width="200" height="100" loading="lazy"} 
-![MP1-Diagram](/Images/Instruction-2.JPG){:width="300" height="100" loading="lazy"} 
+![MP1-Diagram](/Images/Instruction-1.JPG){:width="250" height="100" loading="lazy"} 
+![MP1-Diagram](/Images/Instruction-3.JPG){:width="250" height="100" loading="lazy"} 
+![MP1-Diagram](/Images/Instruction-2.JPG){:width="350" height="100" loading="lazy"} 
 
 ---
 
@@ -99,8 +99,8 @@ Design intent: clamp loads are **reacted into the back plate** and seat frame, r
 
 Manual override access is retained (client requirement) so the mechanism is still serviceable if cable actuation is compromised.
 
-![MP1-Diagram](/Images/Instruction-4.JPG){:width="300" height="100" loading="lazy"} 
-![MP1-Diagram](/Images/Instruction-5.JPG){:width="300" height="100" loading="lazy"} 
+![MP1-Diagram](/Images/Instruction-4.JPG){:width="400" height="100" loading="lazy"} 
+![MP1-Diagram](/Images/Instruction-5.JPG){:width="400" height="100" loading="lazy"} 
 
 ---
 
