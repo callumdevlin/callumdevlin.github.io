@@ -4,7 +4,7 @@ title: MP1 — Modular Breathing Apparatus Stowage
 ---
 
 ![BA Stowage](/Images/BA_Stowage_20.png){:.lead width="800" height="100" loading="lazy"}  
-[View the MP1 Advertisement Pack](/ProjectPages/E1/MP1%20Advertisement%20Pack.pdf)
+[View the MP1 Advertisement Pack](/ProjectPages/E1/MP1%20Advertisement%20Pack.pdf)  
 [View the MP1 Operations Manual ](/ProjectPages/E1/MP1%20Operations%20Manual.pdf)
 
 # MP1 — Modular Breathing Apparatus (BA) Stowage
@@ -36,8 +36,9 @@ Operational constraints that drove the design:
 - Users operate in **full PPE** → reduced dexterity + limited visibility  
 - BA must remain **accessible for rapid egress** and **valve checks** while docked  
 
-![Greenzone](/Images/GreenZone2.JPG){:.lead width="400" height="100" loading="lazy"}  
-![Greenzone](/Images/GreenZone1.JPG){:.lead width="400" height="100" loading="lazy"} 
+![Greenzone](/Images/GreenZone2.JPG){:.lead width="200" height="100" loading="lazy"}  
+![Greenzone](/Images/GreenZone1.JPG){:.lead width="200" height="100" loading="lazy"} 
+
 ---
 
 ## User Interaction: What the Firefighter Actually Does
@@ -82,9 +83,9 @@ Why sliding panels matter: instead of redesigning the whole cradle per BA format
   (so it always “presents” ready-to-stow)  
 
 Design intent: clamp loads are **reacted into the back plate** and seat frame, rather than into plastics/trim.
-![MP1-Diagram](/Images/Instruction-1.JPG){:.lead width="300" height="100" loading="lazy"} 
-![MP1-Diagram](/Images/Instruction-2.JPG){:.lead width="300" height="100" loading="lazy"} 
-![MP1-Diagram](/Images/Instruction-3.JPG){:.lead width="300" height="100" loading="lazy"} 
+![MP1-Diagram](/Images/Instruction-1.JPG){:.lead width="100" height="100" loading="lazy"} 
+![MP1-Diagram](/Images/Instruction-2.JPG){:.lead width="100" height="100" loading="lazy"} 
+![MP1-Diagram](/Images/Instruction-3.JPG){:.lead width="100" height="100" loading="lazy"} 
 
 ---
 
@@ -97,8 +98,9 @@ Design intent: clamp loads are **reacted into the back plate** and seat frame, r
 
 Manual override access is retained (client requirement) so the mechanism is still serviceable if cable actuation is compromised.
 
-![MP1-Diagram](/Images/Instruction-4.JPG){:.lead width="300" height="100" loading="lazy"} 
-![MP1-Diagram](/Images/Instruction-5.JPG){:.lead width="300" height="100" loading="lazy"} 
+![MP1-Diagram](/Images/Instruction-4.JPG){:.lead width="100" height="100" loading="lazy"} 
+![MP1-Diagram](/Images/Instruction-5.JPG){:.lead width="100" height="100" loading="lazy"} 
+
 ---
 
 ### 4) Vertical Restraints: Spigot + Top Stopper
@@ -111,7 +113,7 @@ MP1 therefore uses two vertical controls:
 
 ---
 
-## Materials & Finish (Chosen for E1 Manufacture)
+## Materials & Finish
 
 - **Structure:** **3 mm mild steel sheet** (E1 standard stock)  
   → strong, cost-effective, and aligned to E1’s in-house **laser + brake press** capability  
@@ -136,6 +138,7 @@ Equivalent test load ≈ **1962 N** (used as the basis for load cases).
 
 ![Backplate FEA](/Images/BA-FEA-1.JPG){:.lead width="400" height="100" loading="lazy"} 
 ![Backplate FEA](/Images/BA-FEA-2.JPG){:.lead width="400" height="100" loading="lazy"} 
+
 ---
 
 ### Main Body Assembly (Slide-to-Back-Plate Interface)
