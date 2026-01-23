@@ -4,8 +4,8 @@ title: MP1 — Modular Breathing Apparatus Stowage
 ---
 
 ![BA Stowage](/Images/BA_Stowage_20.png){:.lead width="800" height="100" loading="lazy"}  
-[View the MP1 Advertisement Pack](/ProjectPages/E1/MP1%20Advertisement%20Pack.pdf)  
-[View the MP1 Operations Manual ](/ProjectPages/E1/MP1%20Operations%20Manual.pdf)
+- [View the MP1 Advertisement Pack](/ProjectPages/E1/MP1%20Advertisement%20Pack.pdf)  
+- [View the MP1 Operations Manual ](/ProjectPages/E1/MP1%20Operations%20Manual.pdf)
 
 # MP1 — Modular Breathing Apparatus (BA) Stowage
 
@@ -36,8 +36,8 @@ Operational constraints that drove the design:
 - Users operate in **full PPE** → reduced dexterity + limited visibility  
 - BA must remain **accessible for rapid egress** and **valve checks** while docked  
 
-![Greenzone](/Images/GreenZone2.JPG){:.lead width="200" height="100" loading="lazy"}  
-![Greenzone](/Images/GreenZone1.JPG){:.lead width="200" height="100" loading="lazy"} 
+![Greenzone](/Images/GreenZone2.JPG){:.lead width="200" height="50" loading="lazy"}  
+![Greenzone](/Images/GreenZone1.JPG){:.lead width="200" height="50" loading="lazy"} 
 
 ---
 
