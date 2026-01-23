@@ -3,8 +3,7 @@ layout: default
 title: 3D Vector System
 ---
 
-In order to help our bot read in the X, Y and Z coordinates from the game tick packet there is a Vector class, this can have functions added
-to it in order to add, subtract, multiple etc different vectors together.
+In order to help our bot read in the X, Y and Z coordinates from the game tick packet there is a Vector class, this can have functions added to it in order to add, subtract, multiple etc different vectors together.
 These vector functions are stored as a singular variable, we made this as list so each X,Y,Z value could still be accessed individually.
 
 ~~~python
