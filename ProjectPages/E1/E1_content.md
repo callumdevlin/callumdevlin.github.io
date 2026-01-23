@@ -36,8 +36,8 @@ Operational constraints that drove the design:
 - Users operate in **full PPE** → reduced dexterity + limited visibility  
 - BA must remain **accessible for rapid egress** and **valve checks** while docked  
 
-![Greenzone](/Images/GreenZone2.JPG){:width="200" height="100" loading="lazy"}  
-![Greenzone](/Images/GreenZone1.JPG){:width="200" height="100" loading="lazy"} 
+![Greenzone](/Images/GreenZone2.JPG){:width="300" height="100" loading="lazy"}  
+![Greenzone](/Images/GreenZone1.JPG){:width="300" height="100" loading="lazy"} 
 
 ---
 
@@ -70,9 +70,9 @@ Key UX choices:
 
 Why sliding panels matter: instead of redesigning the whole cradle per BA format, the **same backbone** adapts via a controlled adjustment feature (and can be pinned via pilot holes to prevent drift).
 
-![MP1-Render](/Images/BA_Stowage_3.png){:width="200" height="100" loading="lazy"} 
-![MP1-Render](/Images/BA_Stowage_6.png){:width="200" height="100" loading="lazy"} 
-![MP1-Render](/Images/BA_Stowage_8.png){:width="200" height="100" loading="lazy"} 
+![MP1-Render](/Images/BA_Stowage_3.png){:width="300" height="100" loading="lazy"} 
+![MP1-Render](/Images/BA_Stowage_6.png){:width="300" height="100" loading="lazy"} 
+![MP1-Render](/Images/BA_Stowage_8.png){:width="300" height="100" loading="lazy"} 
 
 ---
 
@@ -84,9 +84,9 @@ Why sliding panels matter: instead of redesigning the whole cradle per BA format
   (so it always “presents” ready-to-stow)  
 
 Design intent: clamp loads are **reacted into the back plate** and seat frame, rather than into plastics/trim.
-![MP1-Diagram](/Images/Instruction-1.JPG){:width="100" height="100" loading="lazy"} 
-![MP1-Diagram](/Images/Instruction-2.JPG){:width="100" height="100" loading="lazy"} 
-![MP1-Diagram](/Images/Instruction-3.JPG){:width="100" height="100" loading="lazy"} 
+![MP1-Diagram](/Images/Instruction-1.JPG){:width="300" height="100" loading="lazy"} 
+![MP1-Diagram](/Images/Instruction-2.JPG){:width="300" height="100" loading="lazy"} 
+![MP1-Diagram](/Images/Instruction-3.JPG){:width="300" height="100" loading="lazy"} 
 
 ---
 
@@ -99,8 +99,8 @@ Design intent: clamp loads are **reacted into the back plate** and seat frame, r
 
 Manual override access is retained (client requirement) so the mechanism is still serviceable if cable actuation is compromised.
 
-![MP1-Diagram](/Images/Instruction-4.JPG){:.lead width="100" height="100" loading="lazy"} 
-![MP1-Diagram](/Images/Instruction-5.JPG){:.lead width="100" height="100" loading="lazy"} 
+![MP1-Diagram](/Images/Instruction-4.JPG){:width="300" height="100" loading="lazy"} 
+![MP1-Diagram](/Images/Instruction-5.JPG){:width="300" height="100" loading="lazy"} 
 
 ---
 
