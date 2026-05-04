@@ -1,9 +1,7 @@
 ---
 layout: default
-title: "Mazda RX-8 S1 Renesis Oil Metering Pump Guide"
+title: "Mazda RX-8 S1 Oil Metering Pump Guide"
 ---
-
-# Mazda RX-8 Series 1 Renesis Oil Metering Pump Guide
 
 The Mazda RX-8 Series 1 Renesis engine uses an **Oil Metering Pump**, usually shortened to **OMP**, to inject small, controlled amounts of oil into the rotary engine for internal seal and housing lubrication.
 
