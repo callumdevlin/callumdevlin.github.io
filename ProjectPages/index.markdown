@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Projects
-permalink: /projects/
+permalink: /ProjectPages/
 ---
 
 * [Rocket League Python Bot]({% link ProjectPages/rlbot/rlbot_content.md %})
