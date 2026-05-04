@@ -4,7 +4,7 @@ title: Projects
 permalink: /ProjectPages/
 ---
 
-* [Rocket League Python Bot]({% link ProjectPages/rlbot/rlbot_content.md %})
+* [Rocket League Python Bot]({% link ProjectPages/rlbot/index.md %})
 
 * [ToolSync - Digital Tracking Toolbox]({% link ProjectPages/rfidtoolstorage/rfidtoolstorageoverview.md %})
 

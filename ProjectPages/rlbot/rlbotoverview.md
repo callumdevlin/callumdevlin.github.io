@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Project Overview
-
+permalink: /ProjectPages/rlbot/
 ---
 
 ![RLBOT](/Images/rlbot&#32;hero.JPG){:.lead width="800" height="100" loading="lazy"}
