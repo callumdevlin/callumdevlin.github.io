@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Aerial Kinematics
+permalink: /ProjectPages/rlbot/AerielKinematics/
 ---
 
 In order for our bot to be able to calculate ball position and how to hit an aerial there is many factors to consider: ball height, ball speed, car speed, distance, angle, boost etc. The idea seems simple but can be rather fidgety when implementing.

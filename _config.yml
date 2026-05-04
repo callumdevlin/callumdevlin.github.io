@@ -34,7 +34,7 @@ menu:
   - title:  About
     url:   /about/
   - title:  Projects
-    url:   /projects/
+    url:   /ProjectPages/
 
 accent_image: /Images/pcbbg.jpeg
 accent_color:      rgb(127,0,255)

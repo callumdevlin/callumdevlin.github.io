@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 3D Vector System
+permalink: /ProjectPages/rlbot/vectors/
 ---
 
 In order to help our bot read in the X, Y and Z coordinates from the game tick packet there is a Vector class, this can have functions added to it in order to add, subtract, multiple etc different vectors together.
