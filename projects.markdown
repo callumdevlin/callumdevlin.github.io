@@ -10,7 +10,7 @@ permalink: /projects/
 
 * [Mazda RX8 13B-MSP Docs]({% link ProjectPages/13BMSP/13BMSPOverview.md %})
 
-* [Rotary Engine Optimised OMP]({% link ProjectPages/MEngProject/MEngProject_content.md %})
+* [EnduraOMP - Improving Rotary Engine Reliability]({% link ProjectPages/MEngProject/MEngProject_content.md %})
 
 * [MP1 - Modular Breathing Apparatus Stowage]({% link ProjectPages/E1/E1_content.md %})
 
