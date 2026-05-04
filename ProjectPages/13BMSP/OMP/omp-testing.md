@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "Mazda RX-8 Series 1 Renesis Oil Metering Pump Guide"
 description: "A practical technical guide to the Series 1 Mazda RX-8 Renesis oil metering pump system, covering how it works, diagnostics, servicing, installation, oil nozzles, premix and clean oil feed systems."
 permalink: /ProjectPages/13BMSP/OMPGuide/omp-guide.md

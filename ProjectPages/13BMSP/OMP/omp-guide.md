@@ -1,12 +1,10 @@
 ---
-layout: page
+layout: default
 title: "Mazda RX-8 S1 Renesis Oil Metering Pump Guide"
 description: "A practical technical guide to the Series 1 Mazda RX-8 Renesis oil metering pump system, covering how it works, diagnostics, servicing, installation, oil nozzles, premix and clean oil feed systems."
 permalink: /ProjectPages/13BMSP/OMPGuide/omp-guide.md
 categories: [automotive, rotary-engines]
 tags: [mazda-rx8, series-1-rx8, renesis, oil-metering-pump, omp, rotary-engine, maintenance]
-sitemap: true
-published: false
 ---
 
 # Mazda RX-8 Series 1 Renesis Oil Metering Pump Guide
@@ -24,7 +22,7 @@ Unlike a conventional piston engine, the Renesis rotary engine has apex seals, s
 ---
 ## Guide sections
 
-### 1. [How the RX-8 Renesis OMP works](/ProjectPages/13BMSP/OMPGuide/omp-how-it-works.md)
+### 1. [How the RX-8 Renesis OMP works](/ProjectPages/13BMSP/OMP/omp-how-it-works.md)
 
 This section explains the purpose of the OMP, why the rotary engine needs oil injection, and how the Series 1 stepper-motor OMP system delivers oil to the engine.
 
@@ -42,7 +40,7 @@ Topics covered:
 
 ---
 
-### 2. [OMP diagnostics and testing](/ProjectPages/13BMSP/OMPGuide/omp-testing.md)
+### 2. [OMP diagnostics and testing](/ProjectPages/13BMSP/OMP/omp-testing.md)
 
 This section covers practical checks for diagnosing OMP problems. It includes visual inspection, voltage testing, resistance testing, position switch checks, oil nozzle testing, leakage checks and clogging checks.
 
@@ -62,7 +60,7 @@ Topics covered:
 
 ---
 
-### 3. [OMP removal, installation and servicing](/ProjectPages/13BMSP/omp-installation-servicing/)
+### 3. OMP removal, installation and servicing
 
 This section covers how to approach removing, inspecting and reinstalling the Series 1 OMP safely. It also discusses what can realistically be serviced and what should normally be replaced.
 
@@ -84,7 +82,7 @@ Topics covered:
 
 ---
 
-### 4. [Oil nozzles, premix and clean oil feed systems](/automotive/rx8-series-1-renesis-omp/oil-nozzles-premix-clean-oil-feed/)
+### 4. Oil nozzles, premix and clean oil feed systems
 
 This section focuses on the parts around the OMP: oil nozzles, oil lines, premixing two-stroke oil, and clean oil feed / SOHN-style modifications.
 
