@@ -39,7 +39,7 @@ menu:
 accent_image: /Images/pcbbg.jpeg
 accent_color:      rgb(127,0,255)
 
-copyright:             © 2024. All rights reserved.
+copyright:             © Callum Devlin 2026. All Rights Reserved.
 # Build settings
 #theme: jekyll-theme-hydejack
 remote_theme: hydecorp/hydejack@v9

@@ -1,11 +1,12 @@
 ---
 layout: default
 title: Mazda RX8 13B-MSP
+permalink: /ProjectPages/RX8/
 ---
 Links:
-- [RX8 Torque Specifications]({% link ProjectPages/13BMSP/torquespecs.md %})
-- [13B-MSP Engine Running Data]({% link ProjectPages/13BMSP/enginedata.md %})
-- [RX8 OMP Overview]({% link ProjectPages/13BMSP/OMP/omp-guide.md %})
+- [RX8 Torque Specifications]({% link ProjectPages/RX8/torquespecs.md %})
+- [13B-MSP Engine Running Data]({% link ProjectPages/RX8/enginedata.md %})
+- [RX8 OMP Overview]({% link ProjectPages/RX8/OMP/index.md %})
 
 ## Introduction
 I created this page to document my experiences with the 13B-MSP engine, share the knowledge I’ve gained, and help others who may be working on their own projects.

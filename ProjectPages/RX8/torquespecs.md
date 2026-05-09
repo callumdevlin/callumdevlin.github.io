@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Mazda RX8 Torque Specification
+permalink: /ProjectPages/RX8/torquespecs/
 ---
 Documentation for fastener torque ratings for Mazda RX-8 S1 (6-port 231ps)
 All torques are shown as the factory range in newton metres.

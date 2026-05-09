@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Mazda RX-8 OMP Diagnostics & Testing"
+permalink: /ProjectPages/RX8/OMP/testing/
 ---
 
 This section covers practical checks for diagnosing OMP problems. It includes visual inspection, voltage testing, resistance testing, position switch checks, oil nozzle testing, leakage checks and clogging checks.

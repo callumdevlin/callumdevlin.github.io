@@ -8,7 +8,7 @@ permalink: /ProjectPages/
 
 * [ToolSync - Digital Tracking Toolbox]({% link ProjectPages/rfidtoolstorage/rfidtoolstorageoverview.md %})
 
-* [Mazda RX8 13B-MSP Docs]({% link ProjectPages/13BMSP/13BMSPOverview.md %})
+* [Mazda RX8 13B-MSP Docs]({% link ProjectPages/RX8/Overview.md %})
 
 * [EnduraOMP - Improving Rotary Engine Reliability]({% link ProjectPages/MEngProject/MEngProject_content.md %})
 

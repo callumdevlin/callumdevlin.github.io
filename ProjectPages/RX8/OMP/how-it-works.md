@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "How the RX-8 Renesis OMP works"
+permalink: /ProjectPages/RX8/OMP/how-it-works/
 ---
 
 The RX-8 Renesis was designed around side exhaust ports rather than the peripheral exhaust port layout used on some earlier Mazda rotary engines. This changed how Mazda approached oil injection.
