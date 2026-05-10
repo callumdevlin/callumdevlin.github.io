@@ -1,6 +1,7 @@
 ---
 layout: default
 title: MP1 — Modular Breathing Apparatus Stowage
+permalink: ProjectPages/E1/E1_content/
 ---
 
 ![BA Stowage](/Images/BA_Stowage_20.png){:.lead width="800" height="100" loading="lazy"}  
