@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Ground Kinematics
-permalink: /ProjectPages/rlbot/GroundKinematics/
+permalink: /ProjectPages/rlbot/ground-kinematics/
 ---
 
 When the car is driving on the ground the user can control their car by accessing the values for throttle, boost and steering. 
