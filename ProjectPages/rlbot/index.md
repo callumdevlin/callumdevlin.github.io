@@ -10,7 +10,7 @@ permalink: /ProjectPages/rlbot/
 
 3. [Ground Kinematics]({% link ProjectPages/rlbot/GroundKinematics.md %})
 
-4. [Aerial Kinematics]({% link ProjectPages/rlbot/AerielKinematics.md %})
+4. [Aerial Kinematics]({% link ProjectPages/rlbot/aeriel-kinematics.md %})
 
 5. [Aligning shots on Target]({% link ProjectPages/rlbot/AligningShots.md %})
 
