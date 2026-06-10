@@ -1,11 +1,12 @@
 ---
-layout: default
-title: 3D Vector System
+title: RL Bot — 3D Vector System
 permalink: /ProjectPages/rlbot/vectors/
+description: >
+  The Vec3 class underpinning the bot — distances, angles and dot products
+  in Rocket League's game space.
 ---
 
-In order to help our bot read in the X, Y and Z coordinates from the game tick packet there is a Vector class, this can have functions added to it in order to add, subtract, multiple etc different vectors together.
-These vector functions are stored as a singular variable, we made this as list so each X,Y,Z value could still be accessed individually.
+Everything the bot does starts with positions and velocities read from the game tick packet as X, Y, Z coordinates. To work with them cleanly there is a `Vec3` class, which wraps the three components and provides the vector operations — addition, subtraction, scaling, dot products and so on — that the rest of the bot's maths is built from. Each component remains individually accessible, which is handy when, say, only the height (Z) matters.
 
 ~~~python
 class Vec3:
@@ -25,35 +26,44 @@ class Vec3:
             self.z = float(z)
 ~~~
 
-This is the basic code for the vector class
+The basic structure of the vector class. The constructor also accepts an existing vector, so the game's own `Vector3` objects convert directly.
 {:.figcaption}
 
-Within this class there are function such as the add function, this allows us to pass in 2 vectors and find the sum:
+Operations are added as methods. Addition, for example, lets two vectors be summed with the normal `+` operator:
 
 ~~~python
-    def __add__(self, other: 'Vec3') -> 'Vec3':
-        return Vec3(self.x + other.x, self.y + other.y, self.z + other.z)
+def __add__(self, other: 'Vec3') -> 'Vec3':
+    return Vec3(self.x + other.x, self.y + other.y, self.z + other.z)
 ~~~
 
 ## Distance
-One of the most useful vectors we used is the distance vector:
+
+The most-used operation in the whole bot is distance — to the ball, to the goal, to a boost pad:
 
 ~~~python
-    def length(self):
-            return math.sqrt(self.x**2 + self.y**2 + self.z**2)
+def length(self):
+    return math.sqrt(self.x**2 + self.y**2 + self.z**2)
 
-    def dist(self, other: 'Vec3') -> float:
-            return (self - other).length()
+def dist(self, other: 'Vec3') -> float:
+    return (self - other).length()
 ~~~
 
-This Returns the distance between this vector and another vector using pythagoras that's calculated in the 'Vec3.length()' function as it's passed through.
+`dist` subtracts one vector from the other and takes the length of the result — Pythagoras in three dimensions. The magnitude of a velocity vector via `length()` is also how the bot knows its own speed.
 
 ## Angles
 
-When dealing with 3D space it is important to make sure the car is angled correctly when hitting the ball or finding out where things are. To find this out we use a vector function that can find the angle between 2 desired vectors and returns a value between 0 and pi:
+In 3D space the bot constantly needs to know whether it's *facing* something — the ball, a target point, the goal. The angle between two vectors comes from the dot product identity:
+
+$$
+\cos\theta = \frac{\mathbf{a} \cdot \mathbf{b}}{\lVert\mathbf{a}\rVert \, \lVert\mathbf{b}\rVert}
+$$
 
 ~~~python
 def ang_to(self, ideal: 'Vec3') -> float:
-        cos_ang = self.dot(ideal) / (self.length() * ideal.length())      
-        return math.acos(cos_ang)
+    cos_ang = self.dot(ideal) / (self.length() * ideal.length())
+    return math.acos(cos_ang)
 ~~~
+
+This returns a value between 0 and π: zero means perfectly aligned, π means facing exactly the wrong way. Calling it with the car's facing direction and the direction to a target gives the steering error — small angle, drive on; large angle, turn harder or slow down. That single function does a lot of heavy lifting in [shot alignment](/ProjectPages/rlbot/aligning-shots/).
+
+*Next: [ground kinematics](/ProjectPages/rlbot/ground-kinematics/) — what the car can actually do with throttle, brake and boost.*

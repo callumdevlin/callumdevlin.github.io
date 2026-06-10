@@ -1,51 +1,51 @@
 ---
-layout: default
-title: Ground Kinematics
+title: RL Bot — Ground Kinematics
 permalink: /ProjectPages/rlbot/ground-kinematics/
+description: >
+  How the Rocket League car accelerates, brakes, coasts and boosts on the
+  ground — the values that govern each, and why they matter for a bot.
 ---
 
-When the car is driving on the ground the user can control their car by accessing the values for throttle, boost and steering. 
-It is import for the bot to be able to calculate the correct amount of each in order to reach a specified target, thus enlies the questions: 
+When the car is on the ground, the bot controls it through throttle, boost and steering. For the bot to reach a target point reliably — and arrive at the right time, at the right speed — it has to be able to answer questions like:
 
-- How fast do i need to go to reach a point at a certain time?
-- How much do i need to turn in order to reach that point?
-- How much boost will i need to use?
-- How fast should i be when i reach my target point?
+- How fast do I need to go to reach a point at a certain time?
+- How much do I need to turn to reach that point?
+- How much boost will that cost?
+- How fast should I be travelling when I arrive?
 
-Here I will explain roughly how the car behaves and how I calculated it's position.
+Answering those requires knowing how the car actually behaves, so here is roughly how it accelerates and how its motion can be predicted.
 
-I will be using the units $$\frac{uu}{s}$$ which are Unreal Units per second which is the game engines vector magnitudes.
+Units throughout are $$\frac{uu}{s}$$ — Unreal Units per second, the game engine's native vector magnitudes.
 {:.note}
 
 ## Acceleration
-The cars acceleration is entierly dependant on its current velocity, composed of the throttle and boost inputs.
-It is important to note that the cars acceleration is not constant and does decrease as velocity increases.
-When the car is at velocity = 0  (at rest) the acceleration is at its greatest and will decrease uniformly to zero when velocity = $$1410 \frac{uu}{s}$$
 
-![Graph](/Images/v_agraph.JPG){:.lead width="800" height="100" loading="lazy"}
+The car's acceleration from throttle is entirely dependent on its current velocity — it is **not constant**, and decreases as velocity increases. At rest the acceleration is at its greatest, then it falls roughly uniformly to zero at $$1410 \frac{uu}{s}$$:
 
-| Velocity     |0.0         | 1400.0      | 1410.0  | 2300.0  |
-|:------------:|:----------:|:-----------:|:-------:|--------:|
-| Acceleration |1600.0      | 160.0       | 0.0     | 0.0     |
+![Velocity vs acceleration graph](/Images/v_agraph.JPG){:.lead loading="lazy"}
 
-The max speed using only the throttle is $$2300 \frac{uu}{s}$$
+| Velocity | 0.0 | 1400.0 | 1410.0 | 2300.0 |
+|:--------:|:---:|:------:|:------:|-------:|
+| Acceleration | 1600.0 | 160.0 | 0.0 | 0.0 |
+
+The maximum speed using throttle alone is $$1410 \frac{uu}{s}$$ — reaching the game's true cap of $$2300 \frac{uu}{s}$$ requires boost (or flips).
 {:.note}
 
-#### Braking
-In the event that the car's forward velocity exhibits an opposite sign compared to the input throttle, 
-the car will sustain a constant acceleration of $$3500 \frac{uu}{s^2}$$ in the opposing force of motion (against the car) thus slowing the car down.
+### Braking
 
-#### Coasting
-When the car is coasting ie, no throttle or boost input there is constant acceleration of $$525 \frac{uu}{s^2}$$ being applied against the car and again slowing it down to a stop.
+If the car's forward velocity has the opposite sign to the input throttle, the car applies a constant deceleration of $$3500 \frac{uu}{s^2}$$ against the direction of motion. Braking is therefore much stronger than accelerating, which matters when deciding how late the bot can leave it before slowing for a turn.
 
-#### Boosting
-When the boost input is used the cars throttle value is set to a max($$3500 \frac{uu}{s}$$) and because the car is boosting
-an additional acceleration of $$991.667 \frac{uu}{s^2}$$ will be present.
+### Coasting
 
-#### Gravitational Acceleration
-At all times the force of gravity is present, it will have an influcence on the car both in the air and on the ground.
-In Rocket League the gravity can be calculated as $$g \times f$$ where $$g$$ is the acceleration of gravity ($$650 \frac{uu}{s^2}$$) and $$f$$ is the unit vector along the direction the car is facing.
+With no throttle or boost input, a constant deceleration of $$525 \frac{uu}{s^2}$$ acts against the car, slowing it gradually to a stop. Coasting is gentle enough that "lift off early" is rarely a substitute for braking properly.
 
+### Boosting
 
-Credit to Sam Mish for the assisted research
+While boosting, the throttle is treated as maxed and an additional acceleration of $$991.667 \frac{uu}{s^2}$$ is applied. Boost is also the only way to push past the throttle-limited $$1410 \frac{uu}{s}$$ up to the hard cap of $$2300 \frac{uu}{s}$$, where acceleration is clamped to zero regardless of input.
+
+### Gravity
+
+Gravity is always present, with magnitude $$g = 650 \frac{uu}{s^2}$$ acting straight down (−z). On flat ground it's cancelled by the normal force, but the moment the car is on a wall, on a ramp, or airborne, the component of gravity along the car's direction of travel — $$g \,(\hat{f} \cdot \hat{z})$$, where $$\hat{f}$$ is the unit vector the car is facing — starts adding to or fighting the car's acceleration. This term is what makes wall driving and [aerials](/ProjectPages/rlbot/aerial-kinematics/) interesting.
+
+Credit to Sam Mish, whose RLBot physics research assisted these notes.
 {:.note}

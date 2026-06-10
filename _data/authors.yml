@@ -1,0 +1,9 @@
+# Author shown in the sidebar and on the About page.
+author1:
+  name:                Callum Devlin
+  email:               caldev3109@gmail.com
+  about:               Product Design Engineer from Glasgow, working across mechanical design, electronics and embedded software.
+  social:
+    github:            https://github.com/callumdevlin
+    linkedin:          https://www.linkedin.com/in/callumdev
+    email:             mailto:caldev3109@gmail.com

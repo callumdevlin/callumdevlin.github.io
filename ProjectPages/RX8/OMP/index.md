@@ -1,96 +1,42 @@
 ---
-layout: default
-title: "Mazda RX-8 S1 Oil Metering Pump Guide"
+title: Mazda RX-8 S1 Oil Metering Pump Guide
 permalink: /ProjectPages/RX8/OMP/
+description: >
+  A full breakdown of the Series 1 RX-8 oil metering pump — how it works,
+  how to diagnose it (including fault codes), how to service it, and the
+  surrounding topics of nozzles, premix and clean oil feed.
 ---
 
-The Mazda RX-8 Series 1 Renesis engine uses an **Oil Metering Pump**, usually shortened to **OMP**, to inject small, controlled amounts of oil into the rotary engine for internal seal and housing lubrication.
+The Mazda RX-8 Series 1 Renesis engine uses an **Oil Metering Pump**, usually shortened to **OMP** (you'll also see it called the MOP — metering oil pump — in Mazda documentation), to inject small, controlled amounts of oil into the rotary engine for internal seal and housing lubrication.
 
-This guide focuses only on the **Series 1 RX-8 OMP system**, fitted to the earlier RX-8 generation. It does not cover the later Series 2/R3 system, which uses a different oil metering arrangement.
+This guide covers only the **Series 1 RX-8 OMP system**. It does not cover the later Series 2/R3 system, which uses a different oil metering arrangement.
 
 The Series 1 system uses a single electronically controlled metering oil pump. The PCM controls the pump through a stepping motor strategy, using engine operating conditions to decide how much oil should be delivered.
 
-Unlike a conventional piston engine, the Renesis rotary engine has apex seals, side seals and corner seals moving against the rotor housings and side housings. These contact surfaces need a controlled oil film to reduce wear and help maintain sealing. Because of this, some engine oil consumption is normal on a standard RX-8.
+Unlike a conventional piston engine, the Renesis has apex seals, side seals and corner seals moving against the rotor housings and side housings. These contact surfaces need a controlled oil film to reduce wear and help maintain sealing — which is why some engine oil consumption is normal on a standard RX-8, and why a healthy OMP matters so much to engine life.
 
-> **Important note:** This guide is not a replacement for the Mazda workshop manual. Exact torque values, connector diagrams, part numbers and procedures should be confirmed against the correct service information for the exact model year.
+> **Important:** this guide is not a replacement for the Mazda workshop manual. Confirm exact torque values, connector diagrams, part numbers and procedures against the correct service information for your exact model year.
+{:.note}
 
----
-## Guide sections
+## Guide Sections
 
-### 1. [How the RX-8 Renesis OMP works](/ProjectPages/13BMSP/OMP/omp-how-it-works.md)
+### 1. [How the OMP Works](/ProjectPages/RX8/OMP/how-it-works/)
 
-This section explains the purpose of the OMP, why the rotary engine needs oil injection, and how the Series 1 stepper-motor OMP system delivers oil to the engine.
+The purpose of the OMP, why the rotary engine needs oil injection, and how the Series 1 stepper-motor system delivers oil — from the mechanical drive and plunger stroke control through to the PCM's initial-set, monitoring and fail-safe functions, plus what's physically inside the pump.
 
-Topics covered:
+### 2. [Diagnostics & Testing](/ProjectPages/RX8/OMP/testing/)
 
-- What the OMP does
-- Why the Renesis consumes oil
-- Why rotary engines need injected oil
-- Series 1 OMP system layout
-- Oil flow from sump oil to rotor housing
-- PCM stepper-motor control
-- OMP position switch and learning function
-- Main components and their roles
-- Common system failure modes
+Practical checks for diagnosing OMP problems: warning signs, the fault codes (P1684–P1688) and what they actually mean, electrical inspections of the stepper motor and position switch, nozzle and check-valve testing, and line clogging checks — including the common case where the position switch, not the pump, is the real culprit.
 
----
+### 3. [Removal, Installation & Servicing](/ProjectPages/RX8/OMP/servicing/)
 
-### 2. [OMP diagnostics and testing](/ProjectPages/13BMSP/OMP/omp-testing.md)
+How to approach removing, inspecting and reinstalling the Series 1 OMP safely: tools, seals and washers to have on hand, labelling and access, the realistic rebuild-vs-replace decision, and the critical priming and first-start checks afterwards.
 
-This section covers practical checks for diagnosing OMP problems. It includes visual inspection, voltage testing, resistance testing, position switch checks, oil nozzle testing, leakage checks and clogging checks.
+### 4. [Oil Nozzles, Premix & Clean Oil Feed](/ProjectPages/RX8/OMP/nozzles-premix/)
 
-Topics covered:
+The parts around the pump: how the oil nozzles and their check valves work, testing them, what premixing two-stroke oil does (and doesn't) achieve, and how clean oil feed conversions like the Sohn adapter change the system — with the trade-offs of each.
 
-- Pre-diagnostic checks
-- Oil level and oil condition
-- Warning signs and symptoms
-- OBD-II fault code checks
-- OMP voltage inspection
-- OMP resistance inspection
-- Position switch resistance inspection
-- Oil nozzle vacuum testing
-- Oil leakage inspection
-- Oil pipe and connector bolt clogging checks
-- Test result templates
+## Related Pages
 
----
-
-### 3. OMP removal, installation and servicing
-
-This section covers how to approach removing, inspecting and reinstalling the Series 1 OMP safely. It also discusses what can realistically be serviced and what should normally be replaced.
-
-Topics covered:
-
-- Required tools
-- Required seals and washers
-- Safety precautions
-- Access preparation
-- Labelling oil lines
-- OMP removal
-- OMP inspection after removal
-- Oil line inspection
-- Rebuild vs replacement decision
-- Installation
-- Priming
-- First start and leak checks
-- Post-service checks
-
----
-
-### 4. Oil nozzles, premix and clean oil feed systems
-
-This section focuses on the parts around the OMP: oil nozzles, oil lines, premixing two-stroke oil, and clean oil feed / SOHN-style modifications.
-
-Topics covered:
-
-- Series 1 oil nozzle function
-- Oil nozzle removal and testing
-- Blocked nozzle symptoms
-- Oil line restrictions
-- Premix theory
-- Why premix does not repair a failed OMP
-- Clean oil feed systems
-- Risks and trade-offs
-- Maintenance checks after modification
-
----
+- [13B-MSP Engine Running Data](/ProjectPages/RX8/enginedata/) — my logged dataset including a reconstructed stock OMP metering map from idle to 9,500 RPM.
+- [EnduraOMP](/ProjectPages/EnduraOMP/) — my MEng project: a closed-loop electronic replacement for this system.

@@ -1,16 +1,18 @@
 ---
-layout: default
 title: MP1 — Modular Breathing Apparatus Stowage
-permalink: ProjectPages/E1/E1_content/
+permalink: /ProjectPages/E1/
+description: >
+  A universal, crash-rated stowage system for firefighter breathing apparatus,
+  developed alongside Emergency One — one architecture that adapts to single
+  and twin-pack BA sets without bespoke brackets.
 ---
 
-![BA Stowage](/Images/BA_Stowage_20.png){:.lead width="800" height="100" loading="lazy"}  
-- [View the MP1 Advertisement Pack](/ProjectPages/E1/MP1%20Advertisement%20Pack.pdf)  
-- [View the MP1 Operations Manual ](/ProjectPages/E1/MP1%20Operations%20Manual.pdf)
+![BA Stowage](/Images/BA_Stowage_20.png){:.lead width="800" height="100" loading="lazy"}
 
-# MP1 — Modular Breathing Apparatus (BA) Stowage
+- [View the MP1 Advertisement Pack](/ProjectPages/E1/MP1%20Advertisement%20Pack.pdf)
+- [View the MP1 Operations Manual](/ProjectPages/E1/MP1%20Operations%20Manual.pdf)
 
-A universal, **modular** stowage system for SCBA/BA kits developed alongside **Emergency One (E1)**.  
+A universal, **modular** stowage system for SCBA/BA kits developed alongside **Emergency One (E1)**.
 MP1 replaces bespoke, one-off fixtures with a configurable assembly that securely holds **single cylinders and twin-pack systems** while meeting cab ergonomics and crash-load requirements.
 
 ---

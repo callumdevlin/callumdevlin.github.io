@@ -1,13 +1,26 @@
 ---
-layout: default
-title: Mazda RX8 13B-MSP
+title: Mazda RX-8 13B-MSP Notes
 permalink: /ProjectPages/RX8/
+description: >
+  Public reference documentation for the Series 1 Mazda RX-8 and its 13B-MSP
+  Renesis rotary engine — torque specifications, logged engine data, and a
+  full oil metering pump guide.
 ---
-Links:
-- [RX8 Torque Specifications]({% link ProjectPages/RX8/torquespecs.md %})
-- [13B-MSP Engine Running Data]({% link ProjectPages/RX8/enginedata.md %})
-- [RX8 OMP Overview]({% link ProjectPages/RX8/OMP/index.md %})
 
-## Introduction
-I created this page to document my experiences with the 13B-MSP engine, share the knowledge I’ve gained, and help others who may be working on their own projects.
-What sets the Renesis apart over previous variants is its improved efficiency and emissions compared to earlier rotary engines. It achieves this by relocating the exhaust ports to the side housings, reducing overlap between intake and exhaust cycles. This results in a more refined engine that still delivers the exhilarating experience rotary fans love.
+This section documents my experience working on the Series 1 Mazda RX-8 and its 13B-MSP Renesis engine. It exists to share what I've learned and measured, and to help anyone working on their own car or rotary project.
+
+What sets the Renesis apart from earlier Mazda rotaries is its side exhaust ports. Moving the exhaust ports from the rotor housings to the side housings reduces intake/exhaust overlap, improving efficiency and emissions while keeping the character that rotary owners love. It also changes how the engine is lubricated — which is why the oil metering pump gets its own full guide here.
+
+> **A note on accuracy:** these pages are carefully researched reference notes, not a substitute for the Mazda workshop manual. Always confirm torque values, procedures and specifications against the correct service information for your exact model year before working on your car.
+{:.note}
+
+## Reference Pages
+
+[**Torque Specifications**](/ProjectPages/RX8/torquespecs/)
+Factory torque ranges for the Series 1 (6-port, 231 PS) — engine, drivetrain, brakes, suspension and steering fasteners, with assembly notes.
+
+[**13B-MSP Engine Running Data**](/ProjectPages/RX8/enginedata/)
+Real logged data from a running 13B-MSP: oil pressure and temperature across the rev range, and a reconstructed map of the stock oil metering pump's delivery from idle to 9,500 RPM.
+
+[**Oil Metering Pump (OMP) Guide**](/ProjectPages/RX8/OMP/)
+A full breakdown of the Series 1 OMP system — how it works, how to diagnose it (including fault codes), how to remove and service it, and the surrounding topics of nozzles, premix and clean oil feed systems.
