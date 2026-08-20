@@ -6,7 +6,7 @@ description: >
   toolchain flow works, and reference snippets.
 ---
 
-This section collects my working notes on FPGA development. Like the [RX-8](/ProjectPages/RX8/) and [RL Bot](/ProjectPages/rlbot/) sections, these are written as public reference notes rather than a project showcase — project write-ups will be added here as they're completed.
+This section collects my working notes on FPGA development. These are written as reference notes rather than a project showcase — project write-ups will be added here as they're completed.
 
 ## FPGA vs Microcontroller — When and Why
 
