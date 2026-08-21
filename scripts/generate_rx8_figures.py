@@ -204,22 +204,6 @@ def compression_waveform() -> str:
     return frame("Rotary compression waveform", "Synthetic pressure-time waveform at 250 rpm showing repeating A B C groups, a weak B event and adjacent and same-group timing.", body)
 
 
-def manual_fan() -> str:
-    body = box(55, 150, 150, 80, "Ignition feed", "added 1 A fuse")
-    body += box(260, 150, 150, 80, "Dash switch", "drives added coil")
-    body += box(465, 135, 180, 110, "Added relay", "coil 85/86 · NO 30/87")
-    body += box(740, 120, 200, 140, "Factory fan relay 1", "A: switched B+ · E: low control")
-    body += line(205, 190, 260, 190, "arrow", True) + line(410, 190, 465, 190, "arrow", True)
-    body += f'<path d="M555 245 L555 350 L720 350 L720 220 L740 220" class="arrow" marker-end="url(#arrow)"/>'
-    body += box(470, 360, 170, 70, "Chassis ground", "clean earth")
-    body += line(555, 350, 555, 360, "arrow", True)
-    body += box(735, 335, 205, 90, "PCM output 5X", "original ground request")
-    body += line(835, 335, 835, 260, "arrow", True)
-    body += text(690, 318, "30 earth · 87 to terminal E", "small", "middle")
-    body += text(500, 500, "Never apply 12 V to terminal E or PCM 5X. Relays 2/3 and PCM 5AD remain untouched.", "box-title", "middle")
-    return frame("Manual low-speed fan request", "Added relay wiring that grounds the factory fan relay number 1 terminal E control node while retaining PCM control.", body)
-
-
 def fuel_module() -> str:
     body = f'<path d="M260 95 L740 95 L700 500 L300 500 Z" fill="#f4f6f7" stroke="{INK}" stroke-width="3"/>'
     body += text(500, 125, "factory reservoir cup", "box-title", "middle")
@@ -266,7 +250,6 @@ def write_outputs() -> None:
         "chassis-jacking-points.svg": jacking_points(),
         "ppf-datum.svg": ppf_datum(),
         "compression-waveform.svg": compression_waveform(),
-        "manual-fan-request.svg": manual_fan(),
         "fuel-pump-module.svg": fuel_module(),
         "sohn-oil-path.svg": sohn_path(),
     }

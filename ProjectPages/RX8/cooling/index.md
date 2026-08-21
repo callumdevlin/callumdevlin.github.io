@@ -10,7 +10,7 @@ description: >
 - [Draining](#draining-the-system)
 - [Refilling and bleeding](#refilling-and-bleeding)
 - [Fan logic and checks](#fan-logic-and-checks)
-- [Manual low-speed request](#manual-low-speed-fan-request)
+- [Manual fan control](#manual-fan-control)
 
 ## Quick reference
 
@@ -95,31 +95,17 @@ Intermittent heater output points to air at the heater matrix/firewall hoses. A 
 
 At 12 V, Mazda's motor-current references are 8.9–11.9 A for fan No. 1 and 4–7 A for fan No. 2. If neither fan runs, check the main fan fuses, relay No. 1, both motor connectors and grounds. If low is missing but high works, concentrate on relay No. 1 and the series/low-speed path. If only one fan runs, test that motor and its branch before blaming the PCM.
 
-## Manual low-speed fan request
+## Manual fan control
 
-This modification manually energises the factory low-speed fan-relay state while retaining automatic PCM control.
+The Series 1 fan relays can also be manually requested while retaining normal PCM control. A separate wiring note covers:
 
-### Parts
+- Manual low-speed operation
+- Manual high-speed operation
+- Two-switch and AUTO/LOW/HIGH arrangements
+- PCM `5X` and `5AD` control
+- Potential `P0480`/`P0481` monitoring consequences
 
-- Maintained dashboard switch and small automotive relay
-- Approximately 1 A inline fuse for the added relay coil feed
-- Automotive wire, terminals, heat-shrink and loom protection
-
-### Wiring
-
-Fan relay No. 1 is in the engine-compartment main fuse/relay box. Its coil receives switched supply at terminal **A** and the PCM grounds the other side at terminal **E** through PCM output `5X`. Relays 2 and 3 are the high-speed pair controlled from output `5AD` and are not part of this modification.
-
-Use an added relay as an isolated dry contact. On a conventional numbered relay, feed coil terminal 86 from the ignition-switched 1 A fuse and dashboard switch, and earth terminal 85. Earth contact terminal 30 and connect normally-open terminal 87 to relay No. 1 terminal E/control node. **Never apply 12 V to terminal E or either PCM output.** The as-installed UK wire colour must be traced at the car rather than guessed.
-
-![Manual low-speed fan request wiring using an isolated relay contact](/assets/rx8/generated/manual-fan-request.svg)
-
-### Installation and test
-
-1. Disconnect the battery, identify relay No. 1 from the fuse-box legend and verify terminals A/E against the Series 1 schematic.
-2. Splice the added dry-contact lead into the terminal-E control wire without cutting the PCM's original connection.
-3. Mount the added fuse near its ignition-feed take-off, route the loom away from heat and sharp edges, and use a clean body earth.
-4. Reconnect the battery. With ignition on, switch the manual request on: both fans should run at low speed. Switch it off and confirm they stop when no automatic request exists.
-5. Warm the car and verify the PCM still commands low and high automatically. Scan for `P0480` and investigate any stored monitoring fault rather than masking it.
+[Manual cooling fan switch wiring](/ProjectPages/RX8/cooling/manual-fan-switch/)
 
 ## References
 
