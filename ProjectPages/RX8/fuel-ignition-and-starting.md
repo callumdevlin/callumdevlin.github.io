@@ -17,8 +17,8 @@ Confirm the fitted leading marking from a removed plug or receipt before treatin
 Viewed from the left side of the engine, the **upper ports are trailing** and the **lower ports are leading**. The front rotor is nearest the radiator and the rear rotor nearest the bulkhead:
 
 ```text
-bulkhead     T/R     T/F     radiator
-             L/R     L/F
+front     T/F     T/R     rear
+          L/F     L/R
 ```
 
 Label the four leads before removal and keep leading/trailing plugs separate. Wet fuel/oil suggests flooding or weak ignition; dry black carbon suggests fouling/rich short-running; blistering, glazed insulation or eroded electrodes suggests excess heat. Compare all four under the same recent operating conditions—one freshly flooded plug does not prove a mechanical fault.

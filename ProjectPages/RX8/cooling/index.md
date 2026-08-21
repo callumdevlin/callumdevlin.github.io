@@ -32,7 +32,7 @@ The pump sends coolant through the engine housings. With the thermostat closed, 
 
 Hose families are useful ordering cross-references, not guarantees across production breaks. The blank dimensions are intentionally left for measurement from the RHD car.
 
-<div style="overflow-x:auto">
+<div style="overflow-x: auto;" markdown="1">
 
 | ID | From | To | Function | OEM reference | ID A | ID B | Length | Notes |
 | --- | --- | --- | --- | --- | ---: | ---: | ---: | --- |

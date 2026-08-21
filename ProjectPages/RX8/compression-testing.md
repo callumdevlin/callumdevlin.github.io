@@ -46,7 +46,7 @@ At 250 rpm, adjacent groups are 0.240 s apart and the next occurrence of the sam
 
 ## Result sheet
 
-<div style="overflow-x:auto">
+<div style="overflow-x: auto;" markdown="1">
 
 | Rotor | Raw rpm | A raw | B raw | C raw | A @ 250 | B @ 250 | C @ 250 | Spread | Notes |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |

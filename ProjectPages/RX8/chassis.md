@@ -32,7 +32,7 @@ The calculated diameter is not the loaded rolling radius used by a tyre under lo
 
 ## Brakes
 
-<div style="overflow-x:auto">
+<div style="overflow-x: auto;" markdown="1">
 
 | Item | Front, high-power | Rear |
 | --- | ---: | ---: |
@@ -67,7 +67,7 @@ Target zero thrust angle by making rear individual toe equal about the vehicle c
 
 ### Standard-suspension camber and caster
 
-<div style="overflow-x:auto">
+<div style="overflow-x: auto;" markdown="1">
 
 | Front fender height | Front camber | Rear fender height | Front caster | Rear camber |
 | ---: | ---: | ---: | ---: | ---: |
@@ -83,7 +83,7 @@ Camber/caster tolerance is ±1° around the height-dependent nominal value.
 
 ### Sport-suspension camber and caster
 
-<div style="overflow-x:auto">
+<div style="overflow-x: auto;" markdown="1">
 
 | Front fender height | Front camber | Rear fender height | Front caster | Rear camber |
 | ---: | ---: | ---: | ---: | ---: |

@@ -2,10 +2,10 @@
 title: Mazda RX-8 Workshop Notebook
 permalink: /ProjectPages/RX8/
 description: >
-  Practical workshop notes for a UK Series 1 high-power Mazda RX-8.
+  Workshop notes for a Series 1 231PS Mazda RX-8.
 ---
 
-This is my working notebook for a 2005 UK Series 1 RX-8: 231 PS six-port 13B-MSP, Y16M-D six-speed manual, 225/45R18 tyres and a rebuilt engine. It collects the specifications, locations and sequences I want beside the car rather than a history of every fitted part.
+This is my working notebook for a '03-'08 UK Series 1 RX-8: 231 PS six-port 13B-MSP.
 
 The notes are specific to that configuration unless stated otherwise. They complement the Mazda workshop manual; confirm production-break-sensitive parts against the car before ordering.
 

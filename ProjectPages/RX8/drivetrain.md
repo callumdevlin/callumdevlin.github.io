@@ -18,7 +18,7 @@ description: >
 | Reverse | 3.564 |
 | Final drive | 4.444 |
 
-The Y16M-D is a fully synchronised six-speed; first, second and third use triple-cone synchronisers.
+The Y16M-D (Aisin AZ6) is a fully synchronised six-speed; first, second and third use triple-cone synchronisers.
 
 ## Oil service
 
@@ -42,7 +42,7 @@ These figures use a nominal 225/45R18 diameter of 659.7 mm, not loaded rolling r
 | 5th | 17.39 | 27.98 |
 | 6th | 20.62 | 33.19 |
 
-<div style="overflow-x:auto">
+<div style="overflow-x: auto;" markdown="1">
 
 | Gear | 30 mph | 40 mph | 50 mph | 60 mph | 70 mph |
 | --- | ---: | ---: | ---: | ---: | ---: |

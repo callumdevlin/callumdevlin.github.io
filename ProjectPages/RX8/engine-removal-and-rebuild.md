@@ -122,7 +122,7 @@ Measure flatness and wear before deciding to lap. Use a known-flat reference pla
 
 Print this table and write measured values in the final column. A maximum is a rejection limit, not a machining target.
 
-<div style="overflow-x:auto">
+<div style="overflow-x: auto;" markdown="1">
 
 | Measurement | Mazda standard / nominal | Service limit | My measurement |
 | --- | ---: | ---: | ---: |

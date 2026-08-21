@@ -23,7 +23,7 @@ Values here are for the 2005 UK high-power car unless noted. Service-fill quanti
 
 | System | Specification | Quantity |
 | --- | --- | ---: |
-| Engine oil, drain and refill | 5W-30 is the Mazda European reference | 3.3 L |
+| Engine oil, drain and refill | 5W-30 is the Mazda European reference ( I use 10W-40 Semi-Synthetic) | 3.3 L |
 | Engine oil, with filter | As above; confirm on dipstick | 3.5 L |
 | Engine oil, overhauled engine | Initial fill after overhaul | 4.7 L |
 | Engine oil, total dry twin-cooler system | Not a routine service fill | 6.7 L |
@@ -32,7 +32,7 @@ Values here are for the 2005 UK high-power car unless noted. Service-fill quanti
 | Differential | SAE 90, 80W-90 or 75W-90, API GL-5 | 1.2–1.4 L |
 | Brake hydraulic system | DOT 3, SAE J1703 / FMVSS 116 | Fill to reservoir mark |
 | Clutch hydraulic system | DOT 3 or DOT 4 for the UK specification | Fill to reservoir mark |
-| Fuel tank | Premium unleaded petrol | Approximately 61 L |
+| Fuel tank | Premium unleaded petrol (>=98 Octane) | Approximately 61 L |
 
 ## Common service values
 
