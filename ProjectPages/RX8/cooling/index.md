@@ -26,8 +26,6 @@ description: >
 
 The pump sends coolant through the engine housings. With the thermostat closed, flow recirculates through the bypass while the heater and throttle-body branches remain in circuit. As the thermostat opens, the main flow runs through the upper joining pipe to the radiator and returns through the lower hose to the pump/thermostat inlet. Small bleed lines continuously return air and coolant to the pressurised expansion/degas tank.
 
-![Functional coolant diagram showing cold bypass, warm radiator path, heater, throttle and degas branches](/assets/rx8/generated/coolant-system-layout.svg)
-
 ## Coolant-hose register
 
 Hose families are useful ordering cross-references, not guarantees across production breaks. The blank dimensions are intentionally left for measurement from the RHD car.
