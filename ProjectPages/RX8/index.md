@@ -1,26 +1,35 @@
 ---
-title: Mazda RX-8 13B-MSP Notes
+title: Mazda RX-8 Workshop Notebook
 permalink: /ProjectPages/RX8/
 description: >
-  Public reference documentation for the Series 1 Mazda RX-8 and its 13B-MSP
-  Renesis rotary engine — torque specifications, logged engine data, and a
-  full oil metering pump guide.
+  Practical workshop notes for a UK Series 1 high-power Mazda RX-8.
 ---
 
-This section documents my experience working on the Series 1 Mazda RX-8 and its 13B-MSP Renesis engine. It exists to share what I've learned and measured, and to help anyone working on their own car or rotary project.
+This is my working notebook for a 2005 UK Series 1 RX-8: 231 PS six-port 13B-MSP, Y16M-D six-speed manual, 225/45R18 tyres and a rebuilt engine. It collects the specifications, locations and sequences I want beside the car rather than a history of every fitted part.
 
-What sets the Renesis apart from earlier Mazda rotaries is its side exhaust ports. Moving the exhaust ports from the rotor housings to the side housings reduces intake/exhaust overlap, improving efficiency and emissions while keeping the character that rotary owners love. It also changes how the engine is lubricated — which is why the oil metering pump gets its own full guide here.
+The notes are specific to that configuration unless stated otherwise. They complement the Mazda workshop manual; confirm production-break-sensitive parts against the car before ordering.
 
-> **A note on accuracy:** these pages are carefully researched reference notes, not a substitute for the Mazda workshop manual. Always confirm torque values, procedures and specifications against the correct service information for your exact model year before working on your car.
-{:.note}
+## Workshop reference
 
-## Reference Pages
+| Task | Page |
+| --- | --- |
+| Find capacities and common service values | [Quick reference](/ProjectPages/RX8/quick-reference/) |
+| Look up a fastener torque | [Torque specifications](/ProjectPages/RX8/torquespecs/) |
+| Review measured oil pressure, temperature or OMP delivery | [13B-MSP engine-running data](/ProjectPages/RX8/enginedata/) |
+| Remove, strip, inspect or rebuild the engine | [Engine removal and rebuild notes](/ProjectPages/RX8/engine-removal-and-rebuild/) |
+| Test rotary compression | [Rotary compression testing](/ProjectPages/RX8/compression-testing/) |
+| Route hoses, drain coolant or diagnose the fans | [Cooling system](/ProjectPages/RX8/cooling/) |
+| Check plugs, coils, injectors, pump or starter | [Fuel, ignition and starting](/ProjectPages/RX8/fuel-ignition-and-starting/) |
+| Service the gearbox, PPF or differential | [Drivetrain](/ProjectPages/RX8/drivetrain/) |
+| Jack the car or check wheels, brakes and alignment | [Chassis](/ProjectPages/RX8/chassis/) |
+| Understand or service the factory metering system | [Series 1 OMP guide](/ProjectPages/RX8/OMP/) |
+| Use a separate OMP oil reservoir | [Custom Sohn adapter](/ProjectPages/RX8/sohn-adapter/) |
 
-[**Torque Specifications**](/ProjectPages/RX8/torquespecs/)
-Factory torque ranges for the Series 1 (6-port, 231 PS) — engine, drivetrain, brakes, suspension and steering fasteners, with assembly notes.
+## Useful tools
 
-[**13B-MSP Engine Running Data**](/ProjectPages/RX8/enginedata/)
-Real logged data from a running 13B-MSP: oil pressure and temperature across the rev range, and a reconstructed map of the stock oil metering pump's delivery from idle to 9,500 RPM.
-
-[**Oil Metering Pump (OMP) Guide**](/ProjectPages/RX8/OMP/)
-A full breakdown of the Series 1 OMP system — how it works, how to diagnose it (including fault codes), how to remove and service it, and the surrounding topics of nozzles, premix and clean oil feed systems.
+- [Engine-removal checklist](/ProjectPages/RX8/engine-removal-and-rebuild/#top-lift-removal)
+- [Coolant-hose dimension table](/ProjectPages/RX8/cooling/#coolant-hose-register)
+- [Printable rebuild measurement table](/ProjectPages/RX8/engine-removal-and-rebuild/#factory-clearances)
+- [Compression result table](/ProjectPages/RX8/compression-testing/#result-sheet)
+- [Gear-speed and shift-drop graphs](/ProjectPages/RX8/drivetrain/#calculated-road-speeds)
+- [EnduraOMP](/ProjectPages/EnduraOMP/) — my closed-loop rotary lubrication project

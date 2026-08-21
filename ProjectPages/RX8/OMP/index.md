@@ -39,4 +39,5 @@ The parts around the pump: how the oil nozzles and their check valves work, test
 ## Related Pages
 
 - [13B-MSP Engine Running Data](/ProjectPages/RX8/enginedata/) — my logged dataset including a reconstructed stock OMP metering map from idle to 9,500 RPM.
+- [Custom Sohn adapter](/ProjectPages/RX8/sohn-adapter/) — my separate oil-supply adapter retaining the factory OMP and its control strategy.
 - [EnduraOMP](/ProjectPages/EnduraOMP/) — my MEng project: a closed-loop electronic replacement for this system.

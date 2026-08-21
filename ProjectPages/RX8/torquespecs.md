@@ -8,7 +8,7 @@ description: >
 
 A working reference of fastener torque ranges for the Series 1 Mazda RX-8 (6-port, 231 PS). All values are factory ranges in newton metres (Nm) unless marked otherwise. The **Size** column is the wrench/socket size in mm where I've recorded it.
 
-> **Before you trust this page:** this started life as my own garage notes. Values marked *Estimated* are not confirmed factory figures. Torque specs can differ by model year and market — always verify critical fasteners (anything structural, rotating, or safety-related) against the workshop manual for your exact car before final assembly. Unless noted otherwise, values assume clean, dry threads; oiled or thread-locked fasteners behave differently for the same reading.
+> **Before you trust this page:** this started life as my own garage notes. Torque specs can differ by model year and market—always verify critical fasteners against the workshop manual for the exact car before final assembly. Unless noted otherwise, values assume clean, dry threads; oiled or thread-locked fasteners behave differently for the same reading.
 {:.note}
 
 **General practice:** torque suspension fasteners with bushings at normal ride height (not at full droop) so the bushings aren't preloaded; tighten multi-bolt patterns in stages and in sequence; replace single-use items (lock washers, crush washers, sealing washers) rather than reusing them.
@@ -51,8 +51,10 @@ A working reference of fastener torque ranges for the Series 1 Mazda RX-8 (6-por
 | Transmission installation bolts (gearbox to engine) | 37–52 | 14 | MT & AT. Two bolt lengths (55 mm & 90 mm). |
 | PPF to differential – bolts/nuts #1 & #2 | 126–154 |  | Rear diff side. Tighten in specified sequence to seat PPF fully into diff mount. |
 | PPF to differential – bolt/nut #3 | 74.5–93.2 |  | Rear diff side centre fastener. Tighten after #1 & #2, per manual sequence. |
-| PPF to transmission – front nuts | 126–154 |  | Transmission side PPF studs. Tighten in specified order after setting dimension A (PPF height) to 55–57 mm, then re-check final dimension A = 48.4–56.4 mm. |
+| PPF to transmission – front nuts | 126–154 |  | Set dimension A to 48.4–56.4 mm at the Mazda datums, tighten in sequence, then re-check. |
 | Propeller shaft nuts | 45–59 |  | Applies to the four flange nuts (incl. at diff). Align marks on shaft and flange on reassembly. |
+| Y16M-D filler and drain plugs | 27–48 |  | Fit new washers; fill near the brim with the car level. |
+| Differential filler and drain plugs | 39.2–53.9 |  | Fit new washers; fill near the brim with the car level. |
 
 ## Brakes & Wheels
 
@@ -63,6 +65,7 @@ A working reference of fastener torque ranges for the Series 1 Mazda RX-8 (6-por
 | Rear brake caliper body-to-slider bolts | 22–31 |  | Guide (slider) pins. |
 | Rear caliper bracket to knuckle bolts | 49–69 |  | – |
 | Wheel nuts | 88–118 | 17 | Tighten in star pattern on level ground. |
+| Brake bleed screw | 6.9–9.8 |  | Do not over-tighten. |
 
 ## Suspension – Dampers
 
@@ -73,23 +76,6 @@ A working reference of fastener torque ranges for the Series 1 Mazda RX-8 (6-por
 | Front shock absorber lower bolt & nut | 78–103 |  | – |
 | Rear shock absorber lower bolt | 88–119 |  | – |
 | Rear shock bracket bolts & nuts (to body) | 37–52 |  | – |
-
-## Suspension – Arms & Links
-
-> Several values in this table are **estimated**, not confirmed factory figures — treat them as starting points and verify before final assembly. All arm/bushing fasteners: final torque at normal ride height.
-{:.note}
-
-| Fastener | Torque (Nm) | Size (mm) | Notes |
-|:------------|:----------:|:-----------:|:-----------|
-| Front/rear upper control arm bolts (to subframe/body) | 61 |  | *Estimated.* Final torque at normal ride height. |
-| Front/rear lower control arm bolts (to subframe/body) | 68 |  | *Estimated.* Final torque at normal ride height. |
-| Ball joint nut (front lower arm to knuckle) | 58 |  | – |
-| Tie-rod end nut (outer) | 30 |  | – |
-| Strut / shock mounting bolt (to knuckle/arm) | 56 |  | Generic strut mounting spec. |
-| Sway bar link nut | 39 |  | – |
-| Stabiliser bar mounting bolts (bush brackets) | 54 |  | – |
-| Coil spring mounting bolts | 41 |  | *Estimated.* |
-| Rear suspension shackle / bushing bolts | 41 |  | *Estimated.* |
 
 ## Steering
 
@@ -104,4 +90,4 @@ A working reference of fastener torque ranges for the Series 1 Mazda RX-8 (6-por
 
 ---
 
-*Spotted an error or have a confirmed factory value for one of the estimated entries? [Get in touch](mailto:caldev3109@gmail.com) — corrections welcome.*
+*Spotted an error? [Get in touch](mailto:caldev3109@gmail.com) with the model year and manual section—corrections are welcome.*

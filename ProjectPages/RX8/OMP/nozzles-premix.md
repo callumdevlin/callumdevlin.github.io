@@ -41,13 +41,15 @@ The pipes and connector bolts between pump and nozzle have small internal drilli
 - It is **not targeted**. The OMP nozzles inject oil deliberately toward the side housings; premix distributes with the charge. The two are complementary, not interchangeable.
 - It does **not repair a failed OMP**. A failed pump also means the engine's commanded, condition-dependent metering is gone — and the PCM's fail-safe behaviour (limp mode) exists for a reason. Running indefinitely on premix alone, with the metering system dead, is a risk decision, not a fix.
 
-Owners who premix typically run modest ratios as a supplement to a working OMP (commonly somewhere in the 1:150–1:250 region — opinions vary widely and depend on use; track cars run richer). If you premix, use a quality ashless two-stroke oil, measure properly, and add it at fill-up so it mixes.
+Community-reported premix ratios vary widely and are not treated here as manufacturer guidance. This car uses Renewable Lubricants Bio-Rotary Racing Premix; the [Sohn-adapter and premix page](/ProjectPages/RX8/sohn-adapter/#bio-rotary-oil-and-premix) converts the product's published application range. If you premix, measure the actual fuel added and record the dose rather than relying on a nominal tank quantity.
 
 ## Clean Oil Feed Conversions (Sohn-Style Adapters)
 
 The stock system meters **engine sump oil** — whatever crankcase oil you run is what gets burned. Crankcase oils carry metallic detergent and anti-wear additive packages that leave **sulphated ash** when burned: carbon deposits, fouled plugs, and grief for seals and the catalyst over time.
 
 A clean oil feed conversion (the Sohn adapter being the best-known) re-plumbs the OMP's **inlet** to draw from a small dedicated reservoir of two-stroke oil instead of the sump. The stock pump, control and nozzles all keep working exactly as designed — only the oil being metered changes.
+
+The fitted system uses a [custom-designed Sohn adapter](/ProjectPages/RX8/sohn-adapter/), documented separately from general clean-oil-feed principles and from EnduraOMP.
 
 **Benefits:**
 - The engine burns clean, ashless oil formulated for total-loss lubrication, dramatically reducing deposit formation.

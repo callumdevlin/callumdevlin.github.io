@@ -21,8 +21,8 @@ A smart toolbox that knows what's in it. RFID check-in/out, BLE tags that flash 
 
 ## Notes & Documentation
 
-[**Mazda RX-8 13B-MSP Notes**](/ProjectPages/RX8/)
-Public reference documentation for the Series 1 RX-8 Renesis: torque specifications, real logged engine data, and a full guide to the oil metering pump system.
+[**Mazda RX-8 Workshop Notebook**](/ProjectPages/RX8/)
+Practical Series 1 RX-8 specifications, workshop procedures, diagrams, rebuild notes, measured engine data and OMP documentation.
 
 [**Rocket League Bot**](/ProjectPages/rlbot/)
 Notes from building a hard-coded Rocket League bot in Python — game-space vectors, ground and aerial kinematics, and shot alignment maths.
