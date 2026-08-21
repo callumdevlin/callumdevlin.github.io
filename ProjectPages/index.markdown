@@ -26,6 +26,3 @@ Public reference documentation for the Series 1 RX-8 Renesis: torque specificati
 
 [**Rocket League Bot**](/ProjectPages/rlbot/)
 Notes from building a hard-coded Rocket League bot in Python — game-space vectors, ground and aerial kinematics, and shot alignment maths.
-
-[**FPGA Notes**](/ProjectPages/FPGA/)
-Working notes on FPGA development.
