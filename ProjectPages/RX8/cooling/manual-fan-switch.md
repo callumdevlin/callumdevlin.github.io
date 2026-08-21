@@ -73,7 +73,7 @@ Check the pin diagram printed on the actual relay; numbering is not a substitute
 
 **Do not apply 12 V to the Mazda relay control node or PCM `5X` circuit. Do not cut the factory PCM connection.**
 
-> **Diagram required:** Manual LOW-speed override. Show cooling-fan relay No. 1, its factory PCM `5X` connection, the added isolated relay contact to ground, dashboard switch, ignition-switched fused supply and added relay coil.
+> **Diagram still to add:** Manual LOW-speed override. Show cooling-fan relay No. 1, its factory PCM `5X` connection, the added isolated relay contact to ground, dashboard switch, ignition-switched fused supply and added relay coil.
 >
 > Placeholder path: `/assets/rx8/diagrams/manual-fan-low-speed.svg`
 
@@ -107,7 +107,7 @@ relay B: 5AD / relay No. 2 and No. 3 control node → NO contact → ground
 
 A suitable dual-pole normally-open relay can provide the two isolated grounding functions, but two ordinary automotive relays are generally easier to identify, source and test.
 
-> **Diagram required:** Manual HIGH-speed override. Show separate isolated ground contacts for the `5X` and `5AD` control circuits. Both contacts are operated by the same HIGH switch. The two PCM control circuits must remain electrically isolated.
+> **Diagram still to add:** Manual HIGH-speed override. Show separate isolated ground contacts for the `5X` and `5AD` control circuits. Both contacts are operated by the same HIGH switch. The two PCM control circuits must remain electrically isolated.
 >
 > Placeholder path: `/assets/rx8/diagrams/manual-fan-high-speed.svg`
 
@@ -132,51 +132,6 @@ The LOW circuit grounds `5X` only. The HIGH circuit already includes the low-spe
 
 A three-position selector is a tidy alternative to two switches. It must not have a position that disables automatic control: the original PCM connections remain intact in AUTO, LOW and HIGH.
 
-## Parts
-
-### LOW only
-
-- Maintained ON/OFF dashboard switch
-- Small 12 V automotive relay and socket
-- Approximately 1 A fuse and holder
-- Automotive wire and crimp terminals
-- Heat-shrink and loom protection
-
-### LOW and HIGH
-
-- Two dashboard switches, or one AUTO/LOW/HIGH selector
-- Small automotive relay for LOW control
-- Two small automotive relays, or a suitable dual-pole relay, for the HIGH request
-- Relay sockets and a fused ignition-switched control supply
-- Automotive wire, terminals, heat-shrink and loom protection
-
-The added wiring carries relay-control current, not fan-motor current; unnecessarily heavy fan cable is not required at the switches.
-
-## Installation
-
-1. Disconnect the battery.
-2. Locate cooling-fan relays No. 1, No. 2 and No. 3 in the engine-compartment main fuse/relay box.
-3. Identify relay No. 1 terminal E and its `5X` circuit from the Mazda schematic.
-4. Identify the common `5AD` control circuit connected to terminal E of relays No. 2 and No. 3.
-5. Verify both circuits electrically before splicing. Do not identify them from wire colour alone.
-6. Leave every factory PCM connection in place.
-7. Add the LOW parallel ground contact to `5X`.
-8. If fitting HIGH control, add independent parallel ground contacts to `5X` and `5AD`.
-9. Run the switch wiring from an ignition-switched supply through the approximately 1 A control fuse.
-10. Mount the added relays securely near the fuse box or another dry, protected location.
-11. Protect the loom from heat, water, sharp edges and fan movement.
-12. Reconnect the battery and test each state before closing the relay box or trim.
-
-Verify the control wire at the relay socket against the vehicle wiring diagram before splicing.
-
-## Testing
-
-1. With both manual switches off, confirm the fans remain off when there is no automatic request.
-2. Turn LOW on: both fans must run at low speed. Turn it off again and confirm the manual request disappears.
-3. Turn HIGH on: both fans must visibly and audibly increase to high speed. Turn it off and confirm the manual request disappears.
-4. Confirm the factory low-temperature, high-temperature and A/C requests still work. The ECT-fault high-speed path must remain available because neither PCM circuit has been cut.
-5. Operate each manual state long enough to check the added relays, sockets, fuse holder and wiring for abnormal heating.
-6. Scan for pending and stored DTCs after testing.
 
 ## P0480 and P0481
 
