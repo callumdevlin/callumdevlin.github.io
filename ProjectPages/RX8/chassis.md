@@ -13,7 +13,7 @@ description: >
 
 **Axle stands:** the four reinforced sill support areas immediately inboard of the pinch welds, marked by the sill location notches. A slotted rubber pad protects the folded seam. Raise centrally, then lower onto the matching left/right pair.
 
-![Top-down underside diagram showing the two central jack points and four sill support points](/assets/rx8/generated/chassis-jacking-points.svg)
+![Top-down underside diagram showing the two central jack points and four sill support points](/Images/RX8-JackPoints.jpg)
 
 Never work beneath the car while it is supported only by a jack. Do not load the sump, gearbox casing, PPF, propshaft, differential rear cover, floorpan or thin sheet-metal braces.
 
