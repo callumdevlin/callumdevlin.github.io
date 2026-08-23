@@ -2,7 +2,7 @@
 title: RX-8 Jacking Points, Wheels, Brakes and Alignment
 permalink: /ProjectPages/RX8/chassis/
 description: >
-  Jack and stand locations, wheel data, brake limits and alignment settings for a Series 1 high-power RX-8.
+  Jack and stand locations, wheel data, brake limits and alignment settings for RX-8.
 ---
 
 ## Jacking and support points
