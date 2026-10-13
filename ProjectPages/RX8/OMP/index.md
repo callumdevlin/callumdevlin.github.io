@@ -36,6 +36,10 @@ How to approach removing, inspecting and reinstalling the Series 1 OMP safely: t
 
 The parts around the pump: how the oil nozzles and their check valves work, testing them, what premixing two-stroke oil does (and doesn't) achieve, and how clean oil feed conversions like the Sohn adapter change the system — with the trade-offs of each.
 
+### 5. [RX-8 OMP Lab](/ProjectPages/RX8/OMP/lab/)
+
+An interactive companion to the guide: see how engine speed, load and coolant temperature change the commanded step, and replay the start-up checks, the switch-feedback faults and a jammed mechanism.
+
 ## Related Pages
 
 - [13B-MSP Engine Running Data](/ProjectPages/RX8/enginedata/) — my logged dataset including a reconstructed stock OMP metering map from idle to 9,500 RPM.

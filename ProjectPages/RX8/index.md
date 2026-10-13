@@ -23,6 +23,7 @@ The notes are specific to that configuration unless stated otherwise. They compl
 | Service the gearbox, PPF or differential | [Drivetrain](/ProjectPages/RX8/drivetrain/) |
 | Jack the car or check wheels, brakes and alignment | [Chassis](/ProjectPages/RX8/chassis/) |
 | Understand or service the factory metering system | [Series 1 OMP guide](/ProjectPages/RX8/OMP/) |
+| See how the factory metering system is driven, controlled and checked | [RX-8 OMP Lab](/ProjectPages/RX8/OMP/lab/) |
 | Use a separate OMP oil reservoir | [Custom Sohn adapter](/ProjectPages/RX8/sohn-adapter/) |
 
 ## Useful tools

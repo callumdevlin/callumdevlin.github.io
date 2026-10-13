@@ -24,5 +24,8 @@ A smart toolbox that knows what's in it. RFID check-in/out, BLE tags that flash 
 [**Mazda RX-8 Workshop Notebook**](/ProjectPages/RX8/)
 Practical Series 1 RX-8 specifications, workshop procedures, diagrams, rebuild notes, measured engine data and OMP documentation.
 
+[**RX-8 OMP Lab — Interactive Oil Metering Pump Demo**](/ProjectPages/RX8/OMP/lab/)
+A small in-browser teaching tool for the stock Series 1 oil metering pump: how engine speed, load and coolant temperature set the commanded step, and how start-up checks, switch faults and a jammed mechanism play out.
+
 [**Rocket League Bot**](/ProjectPages/rlbot/)
 Notes from building a hard-coded Rocket League bot in Python — game-space vectors, ground and aerial kinematics, and shot alignment maths.
