@@ -2,71 +2,117 @@
 title: RX-8 Oil Nozzles, Premix & Clean Oil Feed
 permalink: /ProjectPages/RX8/OMP/nozzles-premix/
 description: >
-  The system around the Series 1 RX-8 OMP — oil nozzle function and testing,
-  what premix does and doesn't do, and clean oil feed conversions like the
-  Sohn adapter, with the trade-offs of each.
+  The system around the Series 1 RX-8 OMP: how the oil nozzles and their air
+  hose work, Mazda's test for them, what premix does and doesn't do, and clean
+  oil feed conversions such as the Sohn adapter.
 ---
 
-The OMP doesn't work alone — metered oil only protects the engine if the nozzles, lines and the oil itself are right. This page covers the delivery end of the system, then the two big aftermarket topics: premixing two-stroke oil into the fuel, and clean oil feed conversions.
+Metered oil only protects the engine if the pipes, nozzles and the oil itself are right. This page covers the delivery end of the system, then the two big aftermarket topics: **premix** and **clean oil feed**. Mazda's figures are marked as Mazda's; everything else is owner or specialist experience.
 
-## Oil Nozzles
+> **Quick answers**
+> - Each rotor has **two nozzles**, each with a one-way check valve and an air connection. A failed or blocked nozzle sets **no code**.
+> - Mazda's nozzle test is a **vacuum hold test**: at least 66.5 kPa applied, and a drop of 2.66 kPa or more in a minute means replace it.
+> - Mazda **doesn't recommend or forbid premix**. Premix supplements the OMP; it doesn't repair it.
+> - A clean oil feed trades better oil chemistry for a **tank you must watch yourself**: nothing warns you when it runs empty.
+{:.note}
 
-The Series 1 Renesis uses **two oil nozzles per rotor**, and because the Renesis breathes through side exhaust ports, Mazda angled these nozzles to inject oil directly toward the side housings — improving lubrication of the side housing and side seal area, which works harder on this engine than on peripheral-exhaust rotaries.
+## Oil nozzles
 
-Each nozzle assembly includes a **one-way check valve** on the air-hose side, preventing reverse flow. The metered oil is injected, does its job at the seal interfaces, and is then burned as part of combustion — which is why oil level checks are part of normal RX-8 ownership.
+The Series 1 Renesis has **two oil nozzles per rotor**. Mazda says they are tilted towards the side housing so oil is injected directly onto it, which improves lubrication of the side housing and side seals, important because the Renesis breathes through side exhaust ports.
 
-### Testing & Symptoms
+### The air hose and check valve
 
-With a nozzle removed:
+Each nozzle has a **one-way check valve** and a small **air hose**. Per [Mazda's construction page](https://www.foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE011101008T07.html), the nozzle receives **barometric pressure** through the air hose so that engine vacuum can't be applied to the oil inlet, and the check valve stops oil flowing back towards the air hose when the engine is under positive pressure.
 
-- It should **hold vacuum** applied from the air bleed side. A check valve that won't hold vacuum can allow reverse flow or air-lock the line.
-- Oil should pass freely in the delivery direction.
+That air feed matters. Engine Builder magazine (2011) reported a Mazda bulletin about a **2009-style air intake hose supplied by mistake for some 2004 to 2008 cars** (from 8 January 2008). It blocks the barometric feed to the nozzle, so engine vacuum acts on the nozzle instead and more oil is drawn in than the pump meters, which raises oil consumption. The correct hose for those cars was given as **N3H1-13-221E**. I only have the magazine's summary of the bulletin, so check the part and its current number with a dealer before relying on it. If a car uses far more oil than expected, check which air intake hose is fitted.
 
-Symptoms of a blocked nozzle are quiet but cumulative: that injection point simply stops being lubricated. There's no warning light for it — the pump and PCM are perfectly happy pushing oil at a dead end. On a high-mileage engine being serviced, vacuum-testing the nozzles while access is open is cheap insurance. Don't clear blockages by drilling; the orifice size is the metering. Solvent soak and compressed air only.
+### Testing a nozzle
 
-### Line Restrictions
+Mazda's test, with the nozzle removed:
 
-The pipes and connector bolts between pump and nozzle have small internal drillings that varnish up on engines with long service neglect. Checks for this are covered in [diagnostics & testing](/ProjectPages/RX8/OMP/testing/).
+1. Apply a vacuum of **66.5 kPa (0.68 kgf/cm², 9.65 psi) or more** to **port A** with a vacuum pump.
+2. It must hold. **If it drops 2.66 kPa (0.027 kgf/cm², 0.39 psi) or more in one minute, replace the nozzle.**
 
-## Premix — What It Does and Doesn't Do
+Also check the oil pipes, nozzles and the pump's connector bolts for clogging, and look for leaks at the pump-to-cover mating surface and the pipe connections with the engine idling. Nothing here sets a code: **the PCM has no flow sensing**, so the pump and PCM carry on happily pushing oil at a dead end.
 
-"Premix" means adding two-stroke oil directly to the fuel tank, so a small amount of lubricant arrives at the seals with the fuel charge.
+Owners who vacuum-tested their nozzles report that **several failed**, sometimes all four, so the test is worth doing whenever you have access. ([Example thread](https://www.rx8club.com/series-i-tech-garage-22/leaking-oil-injectors-234791/).)
 
-**What it does well:**
-- Adds lubrication via the intake charge, reaching surfaces wetted by the fuel/air mixture — particularly the apex seal path.
-- Acts as a **safety net**: if the OMP under-delivers or fails, premix keeps some lubricant arriving.
-- Uses purpose-made two-stroke oil, which is formulated to burn cleanly (low ash), unlike crankcase oil.
+> **Don't drill nozzles or bolts to clear them.** The orifice size is part of the metering. Mazda's remedy for a nozzle that fails the vacuum test is to replace it. If you clean any part, test it under vacuum again afterwards: owners warn that compressed air can force a check valve open, and some advise against solvents.
+{:.note}
 
-**What it doesn't do:**
-- It is **not targeted**. The OMP nozzles inject oil deliberately toward the side housings; premix distributes with the charge. The two are complementary, not interchangeable.
-- It does **not repair a failed OMP**. A failed pump also means the engine's commanded, condition-dependent metering is gone — and the PCM's fail-safe behaviour (limp mode) exists for a reason. Running indefinitely on premix alone, with the metering system dead, is a risk decision, not a fix.
+### Removing a nozzle
 
-Community-reported premix ratios vary widely and are not treated here as manufacturer guidance. This car uses Renewable Lubricants Bio-Rotary Racing Premix; the [Sohn-adapter and premix page](/ProjectPages/RX8/sohn-adapter/#bio-rotary-oil-and-premix) converts the product's published application range. If you premix, measure the actual fuel added and record the dose rather than relying on a nominal tank quantity.
+Mazda's procedure: engine cold; remove the engine cover, battery cover, negative battery cable, battery, battery box and tray, and the **upper and lower extension manifold**. Then remove, in order: **air hose, oil nozzle, washer, oil pipe (housing side), washer.** Install in reverse, start the engine, check for leaks and check the oil level. Mazda gives no torque values on that page. ([Mazda: oil nozzle removal/installation](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE011114100W02.html).)
 
-## Clean Oil Feed Conversions (Sohn-Style Adapters)
+### Pipes
 
-The stock system meters **engine sump oil** — whatever crankcase oil you run is what gets burned. Crankcase oils carry metallic detergent and anti-wear additive packages that leave **sulphated ash** when burned: carbon deposits, fouled plugs, and grief for seals and the catalyst over time.
+The pipes and their connector bolts have small internal drillings that can varnish up. Old pipes also go **brittle and shrink with heat**; owners report the factory pipes lasting around 100,000 miles. Check them whenever access is open. Diagnostic checks are on the [diagnostics page](/ProjectPages/RX8/OMP/testing/).
 
-A clean oil feed conversion (the Sohn adapter being the best-known) re-plumbs the OMP's **inlet** to draw from a small dedicated reservoir of two-stroke oil instead of the sump. The stock pump, control and nozzles all keep working exactly as designed — only the oil being metered changes.
+## Premix
 
-The fitted system uses a [custom-designed Sohn adapter](/ProjectPages/RX8/sohn-adapter/), documented separately from general clean-oil-feed principles and from EnduraOMP.
+"Premix" means adding two-stroke oil to the fuel, so a little lubricant arrives with the fuel charge.
 
-**Benefits:**
-- The engine burns clean, ashless oil formulated for total-loss lubrication, dramatically reducing deposit formation.
-- Sump oil stays uncontaminated by its job description — it just lubricates bearings, so its condition and your choice of grade no longer have to compromise between "good crankcase oil" and "good burning oil".
+**What Mazda says:** the 2004 RX-8 owner's manual (US edition) states that the engine "consumes a small amount of engine oil due to its structural design", that oil consumption "depends on engine speed and engine load" and is higher under extreme driving, and that **Mazda recommends checking the oil level at every second fuel filling**. It gives no figure for normal consumption. It also says never to add fuel-system additives, but it doesn't mention two-stroke oil, so it doesn't explicitly cover premix. I found **no Mazda document that recommends or forbids premix**, and no source for the common claim that premix voids the warranty.
 
-**Trade-offs and obligations:**
-- **You become the low-oil warning system.** The stock system can never run the metering circuit dry — the sump feeds it. With an external reservoir, an empty tank means no injection oil at all, and there is no factory warning for it. Checking and filling the reservoir becomes a hard maintenance discipline.
-- More fittings and hose means more potential leak/air-ingestion points — inspect them as part of routine maintenance.
-- Install quality matters: the feed must be reliable and air-free, and the reservoir mounted and routed so it can't chafe or starve under cornering.
+An owner quoted a 2004 Mazda Customer Assistance reply ([thread](https://www.rx8club.com/rx-8-discussion-3/sucks-mazda-says-1-qt-oil-consumed-600-miles-43191/)) calling **1 quart per 600 miles** the warranty's normal consumption; owners read that as a limit, not a typical figure. Typical owner reports are far lower, roughly 1 quart per 1,500 to 3,000 miles, with hard use much higher. Those are anecdotes, not specifications.
 
-This trade-off — better oil chemistry in exchange for the user carrying responsibility for the reservoir — is exactly the problem space my MEng project explored: [EnduraOMP](/ProjectPages/EnduraOMP/) combines the dedicated clean-oil reservoir concept with electronic metering, level sensing and a driver-visible gauge, so the system watches the tank rather than relying on the owner's memory.
+**What owners and specialists report** (community figures, **not manufacturer guidance**):
 
-## Maintenance After Modification
+| Source | Quantity |
+| :--- | :--- |
+| Main RX8Club [premix thread](https://www.rx8club.com/series-i-tech-garage-22/gas-oil-premix-thread-99636/) | About 1:160 to 1:800. One member suggests 1:600 to 1:800 if the OMP is still working, because a fixed ratio is more oil than most driving needs |
+| UK RX-8 Owners Club [guide](https://www.rx8ownersclub.co.uk/forum/viewtopic.php?t=50814) | Start with 125 ml per full tank (about 1:490 in a 61 L tank), up to 300 ml per tank for hard driving or track days (about 1:200) |
+| RX8 Help [premix page](http://www.rx8help.com/premix.html) | About 1 oz per 2 US gallons (about 1:256), some use 1 oz per 3 or 4 gallons. Calculate from the fuel added, not the tank size |
 
-Whichever route you take, modifications to the lubrication system raise the inspection bar rather than lowering it:
+Where these sources name an oil standard, they favour a two-stroke oil to **JASO FC or FD** over TC-W3 oils, which they call a weaker lubricant. Racing Beat reported adding oil to the fuel during RX-8 race development and seeing a small power gain, with the cost and a greater tendency to foul plugs as the downsides. (That is a race note from a reprint, not road advice.)
 
-- Verify oil consumption (or reservoir consumption) regularly — consumption is proof of delivery.
-- Vacuum-test nozzles and inspect unions at service intervals.
-- Keep premix discipline consistent if you rely on it; an unrecorded "did I dose this tank?" is how engines get hurt.
-- After any line work, prime and leak-check exactly as you would after [pump servicing](/ProjectPages/RX8/OMP/servicing/).
+This car uses Renewable Lubricants Bio-Rotary Racing Premix; the [Sohn-adapter and premix page](/ProjectPages/RX8/sohn-adapter/#bio-rotary-oil-and-premix) converts the product's published application range. If you premix, measure the fuel actually added and record the dose instead of relying on a nominal tank quantity.
+
+| In favour | Against |
+| :--- | :--- |
+| Adds lubrication through the intake charge, reaching the apex seal path | Oil in the fuel fouls spark plugs more easily |
+| A margin if the OMP under-delivers | Some owners stop premixing before emissions tests; the effect on the catalyst is anecdotal |
+| Purpose-made two-stroke oil is formulated to burn cleanly | A fixed ratio is too much oil for most driving, and it can't reach the engine on a closed-throttle lift-off, when fuel is cut |
+
+**What the evidence doesn't cover:** there is no measured data on catalyst or oxygen-sensor effects, only owner anecdotes. 
+
+**What premix doesn't do:**
+
+- It isn't **targeted**. The OMP nozzles inject oil deliberately towards the side housings; premix arrives with the charge. They complement each other and aren't interchangeable.
+- It **doesn't repair a failed OMP** or clear a code. The PCM's fail-safe stays active, and the controlled, condition-dependent metering is still gone. Running on premix alone with a dead metering system is a risk decision, not a fix.
+- **Deleting or unplugging the OMP** with the stock PCM gives fail-safe, so owners don't recommend it on a road car. Race builds that remove it use an aftermarket ECU and treat premix as the oil supply, which is a different situation.
+
+## Clean oil feed (Sohn-style adapters)
+
+The stock system meters **engine sump oil**, so whatever crankcase oil you run is what gets burned. Crankcase oils carry metallic detergent and anti-wear additives that leave **sulphated ash** when burned.
+
+A clean oil feed conversion (the Sohn adapter being the best known) sits between the engine and the OMP, closes the sump-oil feed and gives the pump a hose connection to a **separate reservoir of two-stroke oil**. The stock pump, control and nozzles keep working as designed; only the oil being metered changes. It is **for Series 1 cars only**. The fitted system here uses my [custom Sohn adapter](/ProjectPages/RX8/sohn-adapter/).
+
+**Benefits**
+
+- The engine burns oil formulated for total-loss use, which reduces ash deposits.
+- The sump oil is only a bearing lubricant, so its grade no longer has to be a compromise.
+- Owners disagree about how much difference it makes, and there is no controlled data.
+
+**Trade-offs and obligations**
+
+- **You are the low-oil warning system.** The stock system can't run the metering circuit dry, because the sump feeds it. With a separate tank, an empty tank means **no injection oil at all** and **no warning**: the PCM still sees a pump that moves normally and sets no code.
+- **Priming and air.** The line must be primed, and air can take a while to clear. Many owners premix the first tank.
+- **Hose and fittings.** Soft tubing has hardened and cracked in service. Use oil-resistant, heat-resistant hose with retained fittings, route it so it can't chafe or trap air, and vent the tank properly (a filtered breather).
+- **Sump level can rise** over time, because some two-stroke oil gets past the rings.
+- More fittings means more places to leak or let air in; inspect them as part of routine maintenance.
+
+This trade-off, better oil chemistry in exchange for you carrying responsibility for the tank, is what my MEng project explored: [EnduraOMP](/ProjectPages/EnduraOMP/) combines a dedicated clean-oil reservoir with electronic metering, level sensing and a driver-visible gauge, so the system watches the tank instead of relying on the owner's memory.
+
+## Maintenance after any change
+
+- Check oil consumption (or reservoir consumption) regularly. It is the only whole-system proof of delivery.
+- Vacuum-test the nozzles and inspect unions at service intervals.
+- Keep premix discipline consistent if you rely on it.
+- After any line work, prime and leak-check as you would after [pump servicing](/ProjectPages/RX8/OMP/servicing/).
+
+## Sources
+
+- Mazda workshop manual: [OMP construction](https://www.foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE011101008T07.html), [OMP inspection](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE011114100W03.html), [oil nozzle removal/installation](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE011114100W02.html).
+- [Engine Builder magazine: air intake hose bulletin](https://www.enginebuildermag.com/2011/06/high-oil-consumption-due-to-wrong-air-intake-hose-on-some-mazda-rx-8-engines/) (second-hand summary).
+- RX8Club threads on [premix](https://www.rx8club.com/series-i-tech-garage-22/gas-oil-premix-thread-99636/), [Sohn adapters](https://www.rx8club.com/series-i-tech-garage-22/richard-sohn-omp-mop-adapter-102271/) and [removing the OMP](https://www.rx8club.com/series-i-tech-garage-22/oil-metering-pump-elimination-223879/).

@@ -2,91 +2,146 @@
 title: RX-8 OMP Diagnostics & Testing
 permalink: /ProjectPages/RX8/OMP/testing/
 description: >
-  Practical diagnostics for the Series 1 RX-8 oil metering pump — symptoms,
-  fault codes P1684–P1688, electrical inspections, nozzle testing and
-  line clogging checks.
+  Diagnosing the Series 1 RX-8 oil metering pump: symptoms, what codes
+  P1686, P1687 and P1688 actually mean, Mazda's diagnostic order, the
+  electrical and nozzle tests with Mazda's figures, and a result sheet.
 ---
 
-This page covers practical checks for diagnosing Series 1 OMP problems, from first warning signs through to component-level electrical tests. It assumes you've read [how the OMP works](/ProjectPages/RX8/OMP/how-it-works/) — the diagnostics make far more sense once you understand the initial-set and monitoring functions the PCM runs at every start.
+Work from the cheap checks to the expensive ones. Mazda's own diagnostic flow does exactly that: connectors, power and wiring first, then the switch, and the **pump itself only after those pass**. This page follows that order and gives Mazda's figures for each test.
 
-> **Why this matters:** the OMP is the engine's lifeline. An engine run with a genuinely failed OMP and no premix can destroy its seals quickly. Take OMP-related warning lights seriously, and if in doubt, add premix to the fuel as a safety net while you diagnose. Verify all electrical specifications and connector pinouts against the workshop manual for your model year.
+> **Quick answer.** An OMP fault code usually points to a **connector, a wiring fault or the position switch**, not a worn-out pump. Read the codes and freeze-frame data first, then work through the [diagnostic order](#diagnostic-order) below before buying anything.
 {:.note}
 
-## Warning Signs & Symptoms
+> **Why this matters:** the OMP is the engine's lifeline. An engine run with a genuinely failed OMP and no premix can destroy its seals quickly. Take OMP-related warning lights seriously, and if in doubt, add premix to the fuel while you diagnose. Check every figure against the workshop manual for your car.
+{:.note}
 
-- **Check engine light with an OMP fault code** — see the table below. The most common real-world presentation.
-- **Limp mode** — when the PCM detects a stepping motor or position switch failure it activates fail-safe: the metering control is fixed at a minimum stroke (step 7), and the PCM restricts fuel injection and suppresses engine speed to protect the seals. If your RX-8 suddenly won't rev past roughly 3,000 RPM with an OMP code stored, this is what's happening.
-- **Oil consumption suddenly stops.** A standard RX-8 *should* use oil. If you stop topping up and the level isn't moving over a normal interval, treat it as a red flag, not a bonus.
-- **Oil weeping around the pump body or pipe unions** on the front cover.
+## Symptoms
 
-## Fault Codes
+| What you see | What it can mean |
+| :--- | :--- |
+| Check-engine light with P1686, P1687 or P1688 | The PCM's switch check failed. See the table below. |
+| Engine feels restricted, won't rev freely | Fail-safe may be active (stepper fixed at step 7, injection and ignition fixed). Owners typically report being held to about 3,000 to 3,500 rpm. |
+| Code only when hot, or after the car has sat | Often a corroded or stiff pump or connector (owners found coolant or water above the pump), or a marginal switch. |
+| Oil level stops falling | Treat it as a warning, not a bonus: delivery may have stopped. The PCM has no flow sensing, so **no code does not mean oil is flowing**. |
+| Oil weeping at the pump or pipe unions | Seal or washer problem. Check the pump-to-cover mating surface and the pipe connections. |
+| Blue smoke | Oil is being burned: Mazda's smoke flow checks OMP control first, then compression, oil condition and pressure, then pipe and nozzle air or clogging. |
 
-The Series 1 OMP-related DTCs:
+## Fault codes
 
-| DTC | Relates to | What it means in practice |
-|:----|:-----------|:--------------------------|
-| P1684 | Metering oil pump position sensor circuit | The PCM can't reconcile the position switch signal with where it believes the stepper is — wiring, connector, switch or (rarely) pump fault. |
-| P1685 | Stepping motor circuit | Fault detected in one of the stepper motor's coil circuits or its driver path. The four codes correspond to the motor's separate windings/circuits. |
-| P1686 | Stepping motor circuit | As above. |
-| P1687 | Stepping motor circuit | As above. |
-| P1688 | Stepping motor circuit | As above. |
+Mazda's 2003 RX-8 manual has three OMP codes. All three are continuous monitors: the MIL comes on if the fault is seen in the first drive cycle, a pending code is set, freeze-frame data is recorded and the code is stored.
 
-Any of P1685–P1688 (and usually P1684/P1686 in practice) will put the car into the fail-safe behaviour described above. Exact code definitions can vary slightly between sources — confirm against the DTC table in the workshop manual for your model year.
+| Code | Mazda's title | What the PCM saw |
+| :--- | :--- | :--- |
+| **P1686** | Metering oil pump control circuit, **low flow side** problem | The stepper was driven **beyond** the standard step, but the switch input stayed **off**. |
+| **P1687** | Metering oil pump control circuit, **high flow side** problem | The stepper was driven **less than** the standard step, but the switch input was **on**. |
+| **P1688** | Metering oil pump control circuit, **initial check** problem | The switch input was **on** during the stepper's initial check. |
 
-**The "confused switch" case.** Genuine mechanical pump failure is rare. Far more often the PCM has lost its position reference — for example after codes were cleared mid-fault, a battery disconnect at the wrong moment, or a sticking position switch — and the monitoring function then fails its check even though the pump itself is healthy. Before condemning a pump, work through the electrical checks below; many "failed" OMPs are recovered by re-establishing a valid zero reference and a working switch signal.
+All three list the same possible causes: the pump or its switch, a connector or terminal, an open or short to ground in the pump supply or coil wiring, an open or short in the switch wiring, or the PCM.
 
-## Pre-Diagnostic Checks
+> **A common misreading.** Some online code lists describe P1684 as a "position sensor circuit" fault and P1685 to P1688 as the stepper's four separate windings. That isn't what Mazda's 2003 RX-8 DTC table says. It lists only P1686, P1687 and P1688 for the metering oil pump, defined by switch state against stepper position, and each one's checks cover **all four coil lines together**. A single code doesn't point at a single winding. (Mazda's switch-inspection page mentions P1685 once in a caution, but no P1685 page or table entry exists. On Series 2 cars, owners report that P1684 and P1685 are pump oil-pressure codes, a different system.)
+{:.note}
 
-Work cheap-to-expensive:
+## What goes wrong in practice
 
-1. **Oil level and condition.** Low or badly degraded oil affects the whole system. Top up and note consumption rate.
-2. **Read codes before clearing anything.** Note freeze-frame data if your reader supports it. Clearing codes does not fix the fault and can complicate the PCM's position learning.
-3. **Visual inspection.** With the intake tract removed for access, inspect the OMP connector for backed-out pins, corrosion and chafed wiring along the loom — the wiring is a more common culprit than the pump.
-4. **Listen for the initial-set.** At each engine start the PCM reverses the stepper 60 steps to find its zero reference. A healthy system performs this routine every start.
+Mazda's flow lists every possible cause. Owner reports (RX8Club and similar, mostly from 2005 to 2022) suggest this order of likelihood. They are community experience, not Mazda data.
 
-## Electrical Inspections
+| Cause | What owners found |
+| :--- | :--- |
+| **Water or coolant at the pump or its connector** | A weeping hose or pipe above the pump drips onto it. Corroded, stiff internals and hot-start-only codes that cleared once cleaned and dried. See the [intermittent P1688 thread](https://www.rx8club.com/rx-8-discussion-3/oil-metering-intermittent-problem-266331/). |
+| **Position switch set wrongly after removal or refit** | Turning the switch body only about 30 degrees the wrong way gave an immediate code and fail-safe. Backing it off and clearing the code fixed it. See [MOP adjustments](https://www.rx8club.com/series-i-major-horsepower-upgrades-93/mop-adjustments-120276/) and the [servicing page](/ProjectPages/RX8/OMP/servicing/#position-switch-setting). |
+| **Worn or intermittent switch** | A resistive track that wears or goes intermittent when hot. One switch measured 1,132 Ω against the 400 Ω limit and a used pump stopped the code, although the owner also suspected a harness short and had seen the same code with his old pump plugged in ([thread](https://www.rx8club.com/new-member-forum-197/p1688-limp-mode-please-help-272863/)). Owners report the switch isn't sold separately. |
+| **Stuck mechanism** | A stiff stepper freed with lubricant, after which the code cleared. |
+| **Harness and connector** | A bare wire in the loom, salt or water in the 3-pin connector, no loom over it. |
+| **The pump itself** | Replaced successfully in several cases, including units whose coils and switch read in spec. Used pumps sometimes fail again, or arrive mis-set. |
+| **The PCM** | Last in Mazda's flow, and I found no confirmed case in the owner reports I read. |
 
-Disconnect the OMP connector for resistance checks; all checks against the workshop manual's specified values and pinout for your model year.
+One trained technician reported that shorting **two** stepper coil wires produced all three codes at once ([thread](https://www.rx8club.com/series-i-tech-garage-22/mop-dtc-p1686-dtc-p1687-dtc-p1688-limp-mode-58119/)). That fits Mazda's logic: the codes describe the switch check, not which winding failed.
 
-**Stepper motor coil resistance.** The stepping motor uses four coils (No.1–No.4). Measure resistance across each winding pair at the connector. You're looking for four consistent, in-spec readings — an open circuit (infinite) or short (near zero) on any winding confirms a motor/wiring fault and explains a P1685–P1688 code. Also measure from each terminal to the pump body: there should be no continuity to ground.
+## Diagnostic order
 
-**Position switch.** The switch detects the fully-open region — it turns on when the stepper is at step 52 or more, and the PCM uses it after the initial-set to verify the motor genuinely moves (rotating 60 steps and expecting the switch to trip above step 52). Check switch continuity at the connector: with the pump at rest (step 0) the switch should be open; if you can drive the pump (or with it removed, rotate the mechanism to the fully-open position), it should close. A switch that's stuck open mimics a dead stepper to the PCM.
+This is Mazda's flow for P1686, P1687 and P1688, condensed. Do the steps in order and stop when you find the fault.
 
-**Supply and signal voltage.** With the connector reconnected and ignition ON (engine off), back-probe the connector and verify supply per the manual's PCM terminal voltage tables. Note the PCM cuts current to the stepper coils when ignition is ON but the engine is stopped, so don't condemn the circuit just because the coils are unpowered at key-on.
+1. **Record the freeze-frame data** and check for related service information.
+2. **Inspect the pump connector** for damaged, pulled-out or corroded pins.
+3. **Check the pump supply.** Ignition on, engine off: voltage at pump terminals **C and D** (harness side) to body ground should be **battery voltage (B+)**.
+4. **Check for shorts to ground.** Ignition off: there should be **no continuity** from pump terminals **A, E, B and F** (harness side) to body ground.
+5. **Inspect the pump.** Replace it if faulty.
+6. **Inspect the PCM connector.**
+7. **Check for opens in the coil wiring.** Ignition off: continuity between pump terminals **A, E, B, F** and PCM terminals **2V, 2W, 2Y, 2AB**.
+8. **Inspect the switch connector.**
+9. **Check the switch wiring.** For P1686, check continuity from switch terminal **A to PCM 2N** and switch terminal **C to PCM 1U** (an open is the fault). For P1687 and P1688, check that switch terminal **A is not shorted to ground**.
+10. **Inspect the switch.** If it is faulty, Mazda's remedy is to replace the pump (the switch is part of it).
+11. **Reconnect everything, clear the code, start the engine and see if it returns.** Only if it does, replace the PCM. A real fault tends to come straight back, within seconds to a minute of starting. A code that returns only occasionally usually means a marginal connector, switch or water ingress, so go back to steps 2 to 10.
+12. **Do the after-repair procedure** and check for other codes.
 
-**Live data.** With Forscan or a WDS-equivalent, monitor the `MOP POS` PID while running. It should sit low at idle and climb progressively with RPM — my logged stock map ([full data here](/ProjectPages/RX8/enginedata/)) ran from about step 3 at 1,000 RPM to step 47 at 9,500 RPM. A commanded value that never moves, or jumps erratically, points at the control side rather than the hydraulics.
+[Mazda: P1686](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE010201600W01.html), [P1687](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE010201600W02.html), [P1688](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE010201600W03.html).
 
-## Oil Nozzle & Check Valve Testing
+## Pump connections
 
-Each rotor has two oil nozzles with one-way check valves preventing reverse flow on the air-hose side. With a nozzle removed:
+| Connector | Terminal | Goes to |
+| :--- | :--- | :--- |
+| 6-pin (stepper) | C and D | Supply from the main relay (B+ with ignition on) |
+| 6-pin | E | PCM 2W (coil No.1) |
+| 6-pin | F | PCM 2AB (coil No.2) |
+| 6-pin | A | PCM 2V (coil No.3) |
+| 6-pin | B | PCM 2Y (coil No.4) |
+| 3-pin (switch) | A | PCM 2N (switch signal) |
+| 3-pin | C | PCM 1U (switch ground) |
 
-- It should **hold vacuum** applied from the air bleed side (a hand vacuum pump is ideal). A nozzle that won't hold vacuum has a failed check valve and can let oil be drawn the wrong way or air-lock the line.
-- Oil should pass freely in the delivery direction. A blocked nozzle starves that injection point even with a perfect pump.
+## Electrical checks and Mazda's figures
 
-Full removal and inspection details are on the [nozzles page](/ProjectPages/RX8/OMP/nozzles-premix/).
+All figures are at 20 °C. Disconnect the connector before measuring resistance.
 
-## Leakage & Clogging Checks
+| Check | How | Specification |
+| :--- | :--- | :--- |
+| Supply voltage | 6-pin connector, terminals C and D, ignition on | Battery voltage |
+| Stepper winding resistance | 6-pin connector: D-B, D-F, C-A and C-E | **30.6 to 35.6 Ω** each. Out of range: replace the pump. |
+| Position switch resistance | Idle the engine, stop it, disconnect the 3-pin connector, measure A-C | **400 Ω or less**. Out of range: replace the pump. At rest the switch should conduct, not read open. |
 
-- **Banjo unions:** check each connector bolt at the pump outlets and nozzle ends for weeping. The sealing washers are single-use — leaks here are usually reused washers, not cracked fittings.
-- **Pipe clogging:** with the lines disconnected at both ends, gently blow through each pipe — they should flow freely. The connector bolts themselves have small internal drillings that can varnish up on neglected engines; clean with solvent and soft wire, never by drilling.
-- **Supply side:** confirm oil is actually reaching the pump inlet from the engine's oil system (or from the external reservoir on converted cars).
+Mazda's diagnostic flow checks the **harness side** for shorts to ground (step 4 above). With the pump out, you can also check each winding terminal against the pump body, which should show no continuity; that check isn't in Mazda's inspection page.
 
-## Recording Your Results
+### Switch check at the PCM
 
-It's worth logging results as you go — it turns a frustrating intermittent fault into a pattern:
+Mazda has a voltage check of the switch circuit at PCM terminal **2N**, using the PCM's learning function:
 
-| Check | Spec / expected | Measured | Pass? |
-|:------|:----------------|:---------|:------|
-| DTCs present | none | | |
-| Stepper coil 1–4 resistance | per manual, four consistent readings | | |
-| Coil-to-body continuity | none | | |
-| Position switch @ rest | open | | |
-| Position switch @ full open | closed | | |
-| Initial-set audible at start | yes | | |
-| `MOP POS` rises with RPM | progressive | | |
-| Nozzles hold vacuum | yes | | |
-| Pipes flow freely | yes | | |
+1. Disconnect the negative battery terminal to clear the OMP control learning value, then reconnect.
+2. Measure at PCM terminal 2N: **ignition ON: 0 V; just after engine start: B+; idling after start: 0 V**.
+3. If the readings are wrong but the wiring is good, replace the pump.
 
-If everything above passes but codes persist, the remaining suspects are the loom between connector and PCM, and the PCM itself — in that order of likelihood.
+Mazda says this inspection can't be done correctly if the stepper is faulty, so check that P1685, P1686, P1687 and P1688 are not stored first. It also gives wiring checks from switch terminal A to PCM 2N and C to PCM 1U (no open) and from A to ground and to the power supply (no short).
+
+### Live data
+
+With a scan tool that shows the PIDs (Mazda's procedure uses WDS), watch **MOP_POS** (the PCM's step count) and **MOP_SW** (the switch). Mazda's operation check moves the motor with MOP_POS and expects MOP_SW to change at **53 steps or over**. If it changes, Mazda then sends you to the oil pipe (leaks or cracks between pump and nozzle), the nozzle (clogging) and the hose between the intake manifold and the nozzle (clogging, leaks, poor connection). If it doesn't change, check the motor and switch and replace the pump if faulty.
+
+Your own scan tool may only let you read MOP_POS, not drive it. That's still useful: it should sit low at idle and climb with engine speed. My logged stock map ([full data here](/ProjectPages/RX8/enginedata/)) ran from about step 3 at 1,000 rpm to step 47 at 9,500 rpm.
+
+## Oil nozzle checks
+
+Each rotor has two nozzles. Mazda's test:
+
+1. Remove the nozzle.
+2. Apply a vacuum of **66.5 kPa (0.68 kgf/cm², 9.65 psi) or more** to **port A** with a vacuum pump.
+3. It must hold. **If it drops 2.66 kPa (0.027 kgf/cm², 0.39 psi) or more in one minute, replace the nozzle.**
+
+Mazda's other two inspections are done on the running engine and on the parts: look for **oil leaks** at the pump-to-front-cover mating surface and where the oil pipe connects (engine at idle), and check the **oil pipes, nozzles and the pump's connector bolts** for clogging. Don't clear a blockage by drilling: the orifice size is part of the metering. More on the nozzles is on the [nozzles page](/ProjectPages/RX8/OMP/nozzles-premix/).
+
+## Record your results
+
+| Check | Expected | Measured | Pass? |
+| :--- | :--- | :--- | :--- |
+| Codes and freeze frame | none stored | | |
+| Pump supply, terminals C and D (ignition on) | B+ | | |
+| Windings D-B, D-F, C-A, C-E | 30.6 to 35.6 Ω each | | |
+| Windings to ground (A, E, B, F) | no continuity | | |
+| Switch A-C (engine idled then stopped) | 400 Ω or less | | |
+| Switch wiring A to 2N, C to 1U | continuity | | |
+| 2N after clearing learn value | 0 V / B+ / 0 V | | |
+| MOP_POS climbs with rpm | progressive | | |
+| Nozzles hold vacuum | drop under 2.66 kPa per minute | | |
+| Pipes, connector bolts | not clogged | | |
+| Leaks at pump and unions | none | | |
+
+If everything passes but a code returns after clearing, Mazda's last step is the PCM.
 
 *Next: [removal, installation and servicing](/ProjectPages/RX8/OMP/servicing/).*

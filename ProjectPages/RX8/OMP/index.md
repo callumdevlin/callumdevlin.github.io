@@ -2,46 +2,41 @@
 title: Mazda RX-8 S1 Oil Metering Pump Guide
 permalink: /ProjectPages/RX8/OMP/
 description: >
-  A full breakdown of the Series 1 RX-8 oil metering pump — how it works,
-  how to diagnose it (including fault codes), how to service it, and the
-  surrounding topics of nozzles, premix and clean oil feed.
+  A practical guide to the Series 1 RX-8 oil metering pump: how it works, how
+  to diagnose it, how to remove and refit it, and the nozzles, premix and
+  clean-oil feed around it.
 ---
 
-The Mazda RX-8 Series 1 Renesis engine uses an **Oil Metering Pump**, usually shortened to **OMP** (you'll also see it called the MOP — metering oil pump — in Mazda documentation), to inject small, controlled amounts of oil into the rotary engine for internal seal and housing lubrication.
+The Series 1 RX-8 meters small, controlled amounts of oil into the rotary engine to lubricate the seals and housings. The part that does it is the **oil metering pump**, usually shortened to **OMP**. Mazda's manual calls it the metering oil pump.
 
-This guide covers only the **Series 1 RX-8 OMP system**. It does not cover the later Series 2/R3 system, which uses a different oil metering arrangement.
+This guide covers the **Series 1 system only**: not the Series 2/R3 system, which owners and specialists report has three nozzles per rotor and a different pump with its own codes, and not an electric replacement.
 
-The Series 1 system uses a single electronically controlled metering oil pump. The PCM controls the pump through a stepping motor strategy, using engine operating conditions to decide how much oil should be delivered.
-
-Unlike a conventional piston engine, the Renesis has apex seals, side seals and corner seals moving against the rotor housings and side housings. These contact surfaces need a controlled oil film to reduce wear and help maintain sealing — which is why some engine oil consumption is normal on a standard RX-8, and why a healthy OMP matters so much to engine life.
-
-> **Important:** this guide is not a replacement for the Mazda workshop manual. Confirm exact torque values, connector diagrams, part numbers and procedures against the correct service information for your exact model year.
+> **Not a replacement for the workshop manual.** Where Mazda gives a figure, I quote it and link the page. Confirm torque values, connector diagrams and part numbers for your exact model year before you rely on anything here.
 {:.note}
 
-## Guide Sections
+## Start here
 
-### 1. [How the OMP Works](/ProjectPages/RX8/OMP/how-it-works/)
+| I want to... | Go to |
+| :--- | :--- |
+| Understand how the pump and its control work | [How the OMP works](/ProjectPages/RX8/OMP/how-it-works/) |
+| Diagnose a fault code or a suspect pump | [Diagnostics & testing](/ProjectPages/RX8/OMP/testing/) |
+| Remove, refit or replace the pump | [Removal, installation & servicing](/ProjectPages/RX8/OMP/servicing/) |
+| Check the nozzles, or think about premix or a clean-oil feed | [Nozzles, premix & clean oil feed](/ProjectPages/RX8/OMP/nozzles-premix/) |
+| Play with engine speed, the start-up checks and faults | [RX-8 OMP Lab](/ProjectPages/RX8/OMP/lab/) |
 
-The purpose of the OMP, why the rotary engine needs oil injection, and how the Series 1 stepper-motor system delivers oil — from the mechanical drive and plunger stroke control through to the PCM's initial-set, monitoring and fail-safe functions, plus what's physically inside the pump.
+## The system at a glance
 
-### 2. [Diagnostics & Testing](/ProjectPages/RX8/OMP/testing/)
+| | |
+| :--- | :--- |
+| **Pump** | Engine-driven pumping, with a stepper motor that sets the stroke |
+| **Oil nozzles** | Two per rotor, tilted towards the side housing |
+| **Control** | The PCM commands the stepper in steps. It re-establishes zero at every engine start by reversing 60 steps |
+| **Feedback** | One on/off position switch. There is no continuous position sensor |
+| **If it faults** | Fail-safe: the stepper is fixed at step 7 and the engine is restricted |
+| **Fault codes** | P1686, P1687 and P1688 |
 
-Practical checks for diagnosing OMP problems: warning signs, the fault codes (P1684–P1688) and what they actually mean, electrical inspections of the stepper motor and position switch, nozzle and check-valve testing, and line clogging checks — including the common case where the position switch, not the pump, is the real culprit.
+## Related pages
 
-### 3. [Removal, Installation & Servicing](/ProjectPages/RX8/OMP/servicing/)
-
-How to approach removing, inspecting and reinstalling the Series 1 OMP safely: tools, seals and washers to have on hand, labelling and access, the realistic rebuild-vs-replace decision, and the critical priming and first-start checks afterwards.
-
-### 4. [Oil Nozzles, Premix & Clean Oil Feed](/ProjectPages/RX8/OMP/nozzles-premix/)
-
-The parts around the pump: how the oil nozzles and their check valves work, testing them, what premixing two-stroke oil does (and doesn't) achieve, and how clean oil feed conversions like the Sohn adapter change the system — with the trade-offs of each.
-
-### 5. [RX-8 OMP Lab](/ProjectPages/RX8/OMP/lab/)
-
-An interactive companion to the guide: see how engine speed, load and coolant temperature change the commanded step, and replay the start-up checks, the switch-feedback faults and a jammed mechanism.
-
-## Related Pages
-
-- [13B-MSP Engine Running Data](/ProjectPages/RX8/enginedata/) — my logged dataset including a reconstructed stock OMP metering map from idle to 9,500 RPM.
-- [Custom Sohn adapter](/ProjectPages/RX8/sohn-adapter/) — my separate oil-supply adapter retaining the factory OMP and its control strategy.
-- [EnduraOMP](/ProjectPages/EnduraOMP/) — my MEng project: a closed-loop electronic replacement for this system.
+- [13B-MSP engine running data](/ProjectPages/RX8/enginedata/): my logged dataset, including a reconstructed stock OMP metering map from idle to 9,500 rpm.
+- [Custom Sohn adapter](/ProjectPages/RX8/sohn-adapter/): my separate oil-supply adapter, which keeps the factory OMP and its control.
+- [EnduraOMP](/ProjectPages/EnduraOMP/): my MEng project, a closed-loop electronic replacement for this system.

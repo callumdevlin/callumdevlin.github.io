@@ -2,116 +2,128 @@
 title: How the RX-8 Renesis OMP Works
 permalink: /ProjectPages/RX8/OMP/how-it-works/
 description: >
-  How the Series 1 RX-8 oil metering pump delivers oil — the mechanical drive,
-  stepper-motor stroke control, the PCM's initial-set and monitoring functions,
-  and what's physically inside the pump.
+  How the Series 1 RX-8 oil metering pump delivers oil: the engine-driven
+  pumping, stepper-motor stroke control, what the PCM does at start-up, while
+  running and at shut-down, the position switch, and the fail-safe.
 ---
 
-The RX-8 Renesis was designed around side exhaust ports rather than the peripheral exhaust layout used on earlier Mazda rotaries, and this changed how Mazda approached oil injection.
+The Series 1 RX-8 meters oil into the engine with a pump that is **driven by the engine** and **adjusted by a stepper motor**. The PCM decides how much oil each stroke should deliver; the engine decides how often the pump strokes. This page explains the parts, the logic and the fail-safe, using Mazda's own wording wherever it exists.
 
-Mazda states that the Renesis uses two oil nozzles per rotor to improve lubrication in the side housing and side seal area. These nozzles are tilted so that oil is injected directly towards the side housings.
+> **In 30 seconds**
+> - Engine rotation drives the pumping, so delivery rises and falls with engine speed.
+> - The stepper motor sets the **stroke** (how much oil per pumping event). The PCM commands it in steps.
+> - The PCM can't read the stepper's position directly. It re-establishes zero at every engine start, and the only feedback is a **single position switch** that gives one yes/no signal.
+> - If the PCM decides the stepper or switch has failed, it falls back to a fixed step (**step 7**) and restricts the engine.
+{:.note}
 
-The stock system meters **engine oil**: oil is drawn from the engine's oil system, metered by the OMP, sent through the pipes and injected into the engine. After injection this oil is not recovered — it is burned as part of combustion, which is why regular oil level checking is part of normal RX-8 ownership.
+Want to see it working rather than read about it? The [RX-8 OMP Lab](/ProjectPages/RX8/OMP/lab/) lets you move engine speed and replay the start-up checks.
 
-## Main Components of the OMP System
+## What's in the pump
 
-The Series 1 OMP system breaks down into the following parts. [Mazda's sectional view](https://www.manualslib.com/manual/804935/Mazda-Rx-8-2004.html?page=58) of the Series 1 pump identifies the positioning switch, control pin, plunger, driving worm, oil inlet, oil outlet, stepping motor, differential plunger and sub-plunger.
+[Mazda's sectional view](https://www.foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE011101008T07.html) labels these parts:
 
-| Component | Function |
+| Part | What it does |
 | :--- | :--- |
-| Metering oil pump body | Houses the internal metering and pumping mechanism |
-| Stepping motor | Moves the control mechanism according to PCM commands |
-| Control pin | Changes the effective plunger stroke |
-| Plunger and differential plunger | Mechanical pumping elements |
-| Driving worm | Drives the oil discharging mechanism |
-| Driven gear | Transfers drive from the eccentric shaft to the pump mechanism |
-| Positioning switch | Allows the PCM to monitor OMP position |
-| Oil inlet | Supplies oil into the pump |
-| Oil outlets | Send metered oil towards the oil nozzles |
-| Connector bolts / banjo fittings | Join oil pipes to the OMP outlets |
-| Oil pipes | Carry oil from the pump to the nozzles |
-| Oil nozzles | Inject oil towards the side housing area |
-| One-way check valve | Prevents unwanted reverse flow in the nozzle/air hose side |
-| PCM | Calculates and controls the required OMP position |
+| Stepping motor | Turns the control pin when the PCM energises coils No.1 to No.4 |
+| Control pin | Sets the effective plunger stroke |
+| Plunger, differential plunger and sub-plunger | The pumping elements |
+| Driving worm | Moves the plungers. It is driven by the eccentric shaft through a driven gear |
+| Positioning switch | On/off feedback to the PCM about the stepper's position |
+| Oil inlet and oil outlets | Oil in from the engine; metered oil out through pipes to the nozzles |
 
-## How the Pump Is Driven Mechanically
+Outside the pump, the system also has the **oil pipes** (with their banjo/connector bolts), the **oil nozzles** and a small **air hose** with a one-way check valve. The [nozzles page](/ProjectPages/RX8/OMP/nozzles-premix/) covers those.
 
-Although the OMP is electronically controlled, the pumping action itself is mechanical.
+## How oil is delivered
 
-Mazda describes the oil discharging mechanism as consisting of the plunger and differential plunger, driven by the driving worm — which is itself driven by the eccentric shaft through a driven gear. So the pump has two things happening at once:
+Two things happen at once:
 
-1. **Mechanical rotation from the engine.** The eccentric shaft drives the pump mechanism, so as engine speed increases, the pumping events increase. This gives a base relationship between engine speed and oil delivery.
-2. **Electronic stroke control from the PCM.** The PCM commands the stepping motor, the stepping motor changes the control pin position, and the control pin changes the plunger stroke. More stroke means more oil per pumping event; less stroke means less.
+1. **The engine drives the pumping.** The eccentric shaft turns the driven gear, which turns the driving worm, which moves the plunger and differential plunger. More engine speed means more pumping events.
+2. **The PCM sets the stroke.** The PCM sends pulses to the stepper motor; the motor rotates the control pin; the control pin changes the plunger stroke. A bigger stroke delivers more oil per event.
 
-This combination is why the pump can deliver different amounts of oil at different operating conditions.
+> Stepper position → control pin → plunger stroke → oil per pumping event
 
-## How the PCM Controls Oil Delivery
+The stepper does not pump oil itself. If the engine isn't turning, nothing is pumped whatever the step is.
 
-The PCM calculates the required oil delivery and converts it into a stepping motor step number. Mazda's control description states that the PCM calculates the optimum amount of oil delivery as a step number by determining engine operating conditions from its input signals, then sends an operation signal to the stepping motor inside the pump.
+The metered oil goes through the outlet pipes to **two nozzles per rotor**, tilted towards the side housing. Mazda says this was done to improve lubrication of the side housing and side seals, which matters because the Renesis breathes through side exhaust ports. [Mazda's construction page](https://www.foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE011101008T07.html) says the pulse signal is set by engine rotation, coolant temperature and the amount of intake air.
 
-The relevant inputs in the OMP control block diagram are:
+## What the PCM does, and when
 
-| Input | Why it matters |
+The control logic, from [Mazda's control page](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE014000140T38.html):
+
+| When | What happens |
 | :--- | :--- |
-| ECT sensor | Engine coolant temperature affects oiling requirements and warm-up behaviour |
-| IAT sensor | Intake air temperature helps define operating condition |
-| BARO sensor | Barometric pressure affects load/air calculation |
-| Eccentric shaft position sensor | Provides engine speed/position information |
-| Metering oil pump switch | Used for OMP position monitoring |
-| Ignition switch | Used for start, stop and initialisation logic |
+| **Ignition ON, engine stopped** | Current to the stepper coils is cut to save battery. |
+| **Engine start** (about 500 rpm) | **Initial set:** the PCM reverses the stepper **60 steps** and detects the **0-step position**. That becomes the reference for regular drive. This happens at every start. |
+| **After initial set, when the conditions are met** | **Monitor (position check):** the PCM rotates the stepper **60 steps clockwise from step 0** and counts steps until the position switch turns on. It expects this **above step 52**. If it doesn't, the PCM decides there is a stepping-motor malfunction and activates fail-safe. |
+| **Running** | **Regular drive:** the PCM works out a target step from engine speed, charging efficiency and coolant temperature, then steps the motor towards it. A step number below the target is increased (more stroke, more oil); one above it is reduced. |
+| **Ignition OFF** | The PCM sets the target to step 0 and ends control once the actual step reaches 0. |
 
-The PCM changes the plunger stroke by controlling the stepping motor's rotation amount — the step number. The stepping motor uses coils No.1 to No.4 according to the commanded step, and the current step number can be checked using the WDS data monitor PID `MOP POS` (also accessible via Forscan — see my [logged engine data](/ProjectPages/RX8/enginedata/) for real values across the rev range).
+Mazda lists two conditions for the monitor: **"ignition switch at ON for the 12th time"** and **"when the battery terminals are connected"**. It doesn't say which one, or both, is required, so don't treat the monitor as something that runs at every start. The initial set does run at every start.
 
-## Stepper Motor and Plunger Stroke Control
+The block diagram on the [same page set](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE014000140T37.html) shows the PCM's inputs as the ECT sensor, IAT sensor, BARO sensor, eccentric shaft position sensor, the metering oil pump switch and the ignition switch.
 
-A stepper motor moves in small increments, which means the PCM can command a specific *position* rather than only switching the pump on or off. As a simplified rule:
+### How the stepper is driven
 
-- Low step number = smaller plunger stroke = less oil
-- High step number = larger plunger stroke = more oil
+The motor has four coils. For each step the PCM energises two of them, and the pattern repeats every four steps. Because the PCM only sends pulses, its idea of the position is a **count**, not a measurement.
 
-Note this is **not** the same as the electric motor pumping the oil directly. The stepper motor sets the stroke; the engine-driven internal mechanism still provides the repeating pumping action. The chain of control is:
+| Step | Coils energised | PCM terminals |
+| :--- | :--- | :--- |
+| 0 (and 4, 8, ...) | No.1 and No.4 | 2W and 2Y |
+| 1 (and 5, 9, ...) | No.1 and No.2 | 2W and 2AB |
+| 2 (and 6, 10, ...) | No.2 and No.3 | 2AB and 2V |
+| 3 (and 7, 11, ...) | No.3 and No.4 | 2V and 2Y |
 
-> Stepper motor position → control pin position → allowed plunger stroke → oil volume per pump event
+(Coil No.1 is on PCM terminal 2W, No.2 on 2AB, No.3 on 2V and No.4 on 2Y.) You can read the PCM's current step with the **MOP_POS** PID.
 
-Mazda's regular drive function describes this directly: if the actual step number is less than the target, the PCM increases the step number, increasing plunger stroke and oil delivery; if it is larger than target, the PCM lowers it, reducing delivery.
+## The position switch
 
-## Initial-Set Function
+The switch is **not** a position sensor. It gives the PCM one yes/no signal that changes near the top of the stepper's travel, so the PCM can prove the motor really moved. It can't say where the motor is anywhere else, and it can't say how much oil is being delivered. The PCM has no flow sensing at all, so a blocked pipe or nozzle sets no code.
 
-At engine start, the PCM needs a known OMP reference position. Mazda's initial-set function reverses the stepping motor 60 steps at engine start and detects the 0-step position, which then becomes the reference for regular drive operation.
+Mazda describes the switch in several places that look contradictory until you read them together:
 
-This matters because a stepper motor counts movement from a known reference — if the PCM doesn't know where the OMP is, it can't confidently command the correct amount of oil. The sequence is:
+| Mazda document | What it says |
+| :--- | :--- |
+| Workshop manual, control operation | The position switch **"is on above step 52"**. |
+| 2004 RX-8 Service Highlights | The switch **turns on when the stepping motor is at step 52 or more**. |
+| Workshop manual, operation check (scan tool) | Move the motor with MOP_POS, and **MOP_SW should change from on to off at 53 steps or over**. |
+| Workshop manual, inspection and PCM terminals | With the engine stopped, resistance across the switch (terminals A-C) should be **400 Ω or less**. PCM terminal 2N sits at **1.0 V or less** except at the maximum position, where it reads battery voltage. |
 
-> Engine start → PCM reverses stepper 60 steps → 0-step reference detected → regular drive control begins
+Mazda's wording varies by one step (above 52, 52 or more, 53 or over), so treat the change as happening **between steps 52 and 53**.
 
-The OMP is therefore not a passive fitting; it is actively re-referenced every time the engine starts.
+Read together, those figures fit a switch whose contact **conducts at low steps and opens at about step 52 or 53**. The PCM's input then goes high (battery voltage) above that point, which is the "on" in the control page, while the scan-tool MOP_SW shows the opposite sense. Mazda doesn't spell this out. It is my reading of its figures, and it means that **at rest the switch should read a low resistance, not an open circuit**. Owners who have measured switches report tens to about a hundred ohms in the conducting region, and much more (over 1,000 Ω) on a failed one.
 
-## OMP Position Switch & Monitor Function
+This is why a faulty switch, or its wiring, makes a healthy pump look dead, and why [Mazda's diagnostic order](/ProjectPages/RX8/OMP/testing/) checks connectors, wiring and the switch before replacing the pump.
 
-Mazda describes the positioning switch as detecting the fully-open region of the stepping motor: it turns on when the motor is at **step 52 or more**.
+## Fail-safe
 
-The monitor function runs after the initial-set: the PCM rotates the stepping motor 60 steps clockwise from the 0-step position and counts steps until the switch turns on, expecting it above step 52. If the on-position is not detected above step 52, the PCM determines a stepping motor malfunction and activates fail-safe.
+When the monitor finds the stepper or switch faulty, the PCM goes into fail-safe. Mazda describes two parts of it:
 
-So the switch is not a continuous position sensor like a throttle position sensor — it's a reference/confirmation device that proves the pump has actually moved to the expected region. This distinction matters enormously for diagnosis: a faulty *switch* makes a healthy *pump* look dead. See [diagnostics & testing](/ProjectPages/RX8/OMP/testing/).
+- **Metering:** the control pin is held at **minimum stroke**, so the oil supply is proportional to engine rotation only. The control page gives this as the stepper **fixed at step 7**.
+- **Engine restriction:** if the engine needs more oil than that minimum, the PCM restricts fuel injection and holds back engine speed to protect the seals. The control page says the PCM fixes the fuel-injection pulse width (4.50 ms plus ineffective injection time with the throttle open more than 13%, otherwise 2.65 ms plus ineffective time) and fixes the ignition timing at 4.88 degrees CA on the leading side.
 
-Two further details from Mazda's description: after the ignition is switched off, the PCM commands the target step to 0 and ends metering control once it's reached — so the pump is actively returned to a known state rather than left wherever it stopped. And with ignition ON but the engine stopped, current to the stepper coils is cut to save battery.
+Normal driving is possible if the engine's oil need is within the minimum discharge. **Mazda doesn't publish an rpm limit.** Owners of cars in fail-safe typically report being held to around **3,000 to 3,500 rpm** (RX8Club reports from 2005 to 2025), so treat that as experience, not specification. See [diagnostics](/ProjectPages/RX8/OMP/testing/#symptoms).
 
-## Internal Metering Mechanism
+## PCM updates that changed the oil quantity
 
-Community teardowns add useful detail to Mazda's description. One RX8Club teardown describes the stepper motor driving a geared cam regulated by the position sensor; moving the cam lets the cam followers travel further, changing how the brass pump sleeves move relative to the pump pistons. Oil enters when sleeve holes align with pressurised engine oil passages, and is pumped to the exit holes as the sleeve rotates into alignment.
+Mazda North America released PCM calibration updates that **increased the metering oil quantity**, especially at engine start: Emission Recall Campaign 4206F (2004 to 2006 cars, 2006) and Technical Service Bulletin 01-014/08 (2004 to 2008 cars, March 2008). The bulletin says a revised PCM calibration "increases metering oil lubrication amount during engine start" and ties lack of oil at start-up to carbon on the rotor housing surface. I haven't found a UK or European equivalent, so if you're buying a car or chasing carbon problems, ask Mazda UK which calibration it has. The campaign letter is only available second-hand; the bulletin text is on a [manual mirror](https://workshop-manuals.com/mazda/rx8/2rtr-1.3l/powertrain_management/emission_control_systems/catalytic_converter/component_information/technical_service_bulletins/customer_interest/0101408/mar/08/engine_controls_lack_of_engine_power/).
 
-That discussion initially described the Series 1 OMP as having four pumping sections — two smaller, two larger — with the small pump contributing sooner and the larger adding delivery as commanded output increases. A later contributor refined the dimensional interpretation: the pump has **two compound pistons**, one small and one large, each with two pumping faces — one at the small-diameter end and one formed by the shoulder between the small and large diameters. The measured diameters given were:
+## Inside the pump (community teardown)
 
-| Pump element | Small diameter | Large diameter |
+This section is from owners' teardowns, not Mazda. One RX8Club teardown describes the stepper driving a geared cam; moving the cam changes how far the cam followers travel, which changes how the brass sleeves move relative to the pistons. Oil enters when sleeve holes line up with pressurised engine-oil passages and is pushed to the exit holes as the sleeve turns.
+
+A later contributor described **two compound pistons**, one small and one large, each with two pumping faces. The diameters quoted were:
+
+| Piston | Small diameter | Large diameter |
 | :--- | ---: | ---: |
-| Small compound piston | 1.82 mm | 2.58 mm |
-| Large compound piston | 3.84 mm | 5.43 mm |
+| Small | 1.82 mm | 2.58 mm |
+| Large | 3.84 mm | 5.43 mm |
 
-The large-to-small diameter ratio is approximately 1.41 for both pistons — which matters because it lets the shoulder area pump a similar volume to the smaller face area.
+The same thread gives a maximum stroke of about 1.5 mm, and estimates (read from a graph, not measured) that the larger piston starts to contribute at around step 21. Treat these as useful community figures, not Mazda data.
 
-## Fail-Safe Behaviour
+## Sources
 
-Mazda describes the fail-safe function as operating when a failure is detected in the stepping motor or positioning switch. When fail-safe operates, the PCM holds the control pin at the **minimum stroke position**, so oil supply becomes proportional to engine rotation alone and the minimum oil amount for each engine speed is supplied.
+- Mazda workshop manual, [OMP construction](https://www.foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE011101008T07.html), [control operation](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE014000140T38.html), [control block diagram](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE014000140T37.html), [PIDs](https://www.foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE010200102T05.html) and [operation inspection](https://www.foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE010300103W31.html).
+- Mazda 2004 RX-8 [Service Highlights](https://www.manualslib.com/manual/804935/Mazda-Rx-8-2004.html?page=173) (switch wording).
+- RX8Club: [OMP output and modification thread](https://www.rx8club.com/series-i-tech-garage-22/omp-oil-metering-pump-output-modification-268559/) (teardown geometry).
 
-If the engine would require more oil than that minimum discharge, the PCM restricts fuel injection and suppresses engine speed increase, preventing seizure of the internal seals. The control-system fail-safe description adds that the PCM controls fuel injection time, ignition timing and the stepper target to protect the engine, with metering oil pump control fixed at **step 7** in fail-safe — the "limp mode" RX-8 owners know, typically capping the engine around 3,000 RPM.
-
-*Next: [diagnostics & testing](/ProjectPages/RX8/OMP/testing/), including the fault codes that trigger this fail-safe.*
+*Next: [diagnostics and testing](/ProjectPages/RX8/OMP/testing/).*
