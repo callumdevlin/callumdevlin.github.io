@@ -1,0 +1,395 @@
+// Site components, loaded after the theme's stylesheet (documented hook: _sass/my-style.scss).
+//
+// Naming: everything added here is namespaced (.nb-*, .cards, .fig*, .lab-embed, .tag,
+// .site-search) so it cannot leak into the theme or the embedded labs (which are separate
+// documents in iframes and are not affected by this file).
+//
+// Colours come from the theme's CSS variables where possible. The accent is #7F00FF
+// (6.3:1 on white, so it passes AA for text and for underlines). The two extra values below
+// are accessible variants: a darker purple for small text and hover, and a pale tint for
+// backgrounds. The grey/black neutrals follow the group palette (Cosmic Black #181B26,
+// Grey 3 #2D343D, Grey 2 #EBEBED) without changing the personal purple identity.
+
+$nb-accent:        #7f00ff;
+$nb-accent-strong: #5a00b3;   // 9.9:1 on white
+$nb-accent-tint:   rgba(127, 0, 255, 0.07);
+$nb-ink:           #2d343d;
+$nb-rule:          #d9dadf;
+$nb-wash:          #ebebed;
+
+// The theme clips <hy-push-state> with overflow:hidden, which makes it the scroll container
+// for position:sticky and stops the contents rail from sticking. `overflow: clip` clips the
+// same way without creating a scroll container (browsers without it keep the old behaviour,
+// which only costs them the sticky rail).
+hy-push-state {
+  overflow: hidden;
+  overflow: clip;
+}
+// (This has to live here, not in my-inline.scss: the theme repeats `overflow: hidden` for
+// <hy-push-state> in its linked stylesheet, which loads after the inline one.)
+
+// ---------------------------------------------------------------- base touches
+
+.content a:not(.btn):not(.no-hover) {
+  border-bottom-color: $nb-accent;
+}
+.content a:not(.btn):not(.no-hover):hover {
+  color: $nb-accent-strong;
+  border-bottom-color: $nb-accent-strong;
+}
+
+:focus-visible {
+  outline: 3px solid $nb-accent;
+  outline-offset: 2px;
+}
+
+// The fixed top bar is 5rem tall, so anchors need a little more than that to clear it.
+.content h2, .content h3, .content h4 { scroll-margin-top: 6rem; }
+
+// The theme's breadcrumb grey (#777) is 4.48:1 on white at its small size, just under AA. #666 is 5.7:1.
+#breadcrumbs > ul > li a { color: var(--gray-text); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// ---------------------------------------------------------------- page header
+
+.nb-lede {
+  max-width: 46rem;
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  line-height: 1.55;
+  color: var(--gray-text);
+}
+
+.nb-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  font-size: 0.8125rem;
+  color: var(--gray-text);
+
+  li { margin: 0; }
+  .nb-meta-type { font-weight: 700; color: $nb-ink; }
+  .nb-meta-status { font-weight: 700; color: $nb-accent-strong; }
+  .nb-meta-label { text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.6875rem; margin-right: 0.25rem; }
+}
+
+// ---------------------------------------------------------------- prose
+
+// Keep paragraphs and lists to a comfortable line length; tables, figures, code and
+// embedded tools may use the full column.
+.nb-main > p,
+.nb-main > ul:not(.cards),
+.nb-main > ol,
+.nb-main > dl,
+.nb-main > blockquote {
+  max-width: 50rem;
+}
+
+.nb-main h2 { margin-top: 2.5rem; padding-top: 0.5rem; }
+.nb-main h3 { margin-top: 2rem; }
+
+// ---------------------------------------------------------------- contents navigation
+
+.nb-toc-inline {
+  margin: 0 0 1.5rem;
+  border: 1px solid $nb-rule;
+  background: var(--gray-bg);
+  font-size: 0.875rem;
+
+  summary {
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    font-weight: 700;
+    color: $nb-ink;
+  }
+  ul { margin: 0; padding: 0 1rem 0.75rem 2.25rem; }
+  li { margin: 0.15rem 0; }
+  .toc-l3 { margin-left: 1rem; font-size: 0.95em; }
+}
+
+.nb-toc {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  border-left: 2px solid $nb-rule;
+  padding-left: 1rem;
+
+  .nb-toc-title {
+    margin: 0 0 0.5rem;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gray-text);
+  }
+  ul { margin: 0; padding: 0; list-style: none; }
+  li { margin: 0.35rem 0; }
+  .toc-l3 { padding-left: 0.85rem; }
+  a { border-bottom: 0 !important; text-decoration: none; color: var(--gray-text); }
+  a:hover { color: $nb-accent-strong; text-decoration: underline; }
+  a.is-current { color: $nb-accent-strong; font-weight: 700; }
+}
+
+// ---------------------------------------------------------------- previous / next, related
+
+.nb-pager {
+  margin: 3rem 0 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid $nb-rule;
+
+  .nb-pager-section { margin: 0 0 0.75rem; font-size: 0.8125rem; color: var(--gray-text); }
+  ul { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 0; padding: 0; list-style: none; }
+  li { flex: 1 1 14rem; margin: 0; }
+  .nb-next { text-align: right; }
+  a {
+    display: block;
+    padding: 0.75rem 1rem;
+    border: 1px solid $nb-rule !important;
+    color: $nb-ink;
+  }
+  a:hover { border-color: $nb-accent !important; background: $nb-accent-tint; }
+  .nb-pager-dir {
+    display: block;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gray-text);
+  }
+}
+
+.nb-related {
+  margin: 2rem 0 1rem;
+  .nb-related-title { margin: 0 0 0.5rem; font-size: 1rem; }
+  ul { margin: 0; padding-left: 1.25rem; }
+  .nb-related-desc { color: var(--gray-text); font-size: 0.9em; }
+}
+
+// ---------------------------------------------------------------- tables
+
+// The theme already makes tables scroll sideways (display:block + overflow). These rules make
+// them easier to read and scan for lookup use.
+.content table:not(.rouge-table) {
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+
+  th, td { vertical-align: top; }
+  thead th {
+    text-align: left;
+    font-weight: 700;
+    color: $nb-ink;
+    background: $nb-wash;
+    border-bottom: 2px solid $nb-rule;
+  }
+  th[align="right"], td[align="right"],
+  th[style*="right"], td[style*="right"] { text-align: right; }
+  code { font-size: 0.85em; white-space: nowrap; }
+  td:first-child, th:first-child { font-weight: 600; }
+}
+
+// Display equations: the theme lets them scroll sideways, but MathJax's hidden screen-reader copy makes the
+// box taller than its visible content, so a stray vertical scrollbar appears. Keep sideways scrolling only.
+mjx-container[display="true"] { overflow-y: hidden; }
+
+// Added by site.js to tables that overflow, so keyboard users can scroll them.
+.content table[tabindex]:focus-visible { outline-offset: -3px; }
+
+// Write-in cell for a value that has not been measured yet. Blank on screen, a line to write on in print.
+.fill {
+  display: inline-block;
+  min-width: 5rem;
+  height: 1.1em;
+  border-bottom: 1px solid #98a1a4;
+  vertical-align: bottom;
+}
+
+// ---------------------------------------------------------------- figures and galleries
+
+// Usage (see _includes/figure.html):
+//   {% include figure.html src="/Images/x.png" alt="..." caption="..." %}
+// Technical images keep their own aspect ratio (never cropped); `contain` just centres them
+// on a neutral ground.
+figure.fig {
+  margin: 1.5rem 0 2rem;
+  text-align: left;
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background: var(--gray-bg);
+  }
+  .fig-link { display: block; border-bottom: 0 !important; }
+  figcaption {
+    margin: 0.6rem 0 0;
+    font-size: 0.8125rem;
+    line-height: 1.45;
+    color: var(--gray-text);
+    text-align: left;
+  }
+  figcaption .fig-full { white-space: nowrap; }
+  &.fig-narrow { max-width: 30rem; }
+  &.fig-medium { max-width: 40rem; }
+}
+
+.fig-grid {
+  display: grid;
+  gap: 1.25rem 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  align-items: start;
+  margin: 1.5rem 0 2rem;
+
+  figure.fig { margin: 0; }
+}
+
+// ---------------------------------------------------------------- cards (home, project index)
+
+.cards {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+  margin: 1.25rem 0 2.5rem;
+  padding: 0;
+  list-style: none;
+
+  > li { margin: 0; }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid $nb-rule;
+  background: var(--body-bg);
+
+  &:hover, &:focus-within { border-color: $nb-accent; }
+
+  .card-media {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--gray-bg);
+    img { display: block; width: 100%; height: 100%; margin: 0; object-fit: cover; }
+  }
+  &.card-contain .card-media img { object-fit: contain; padding: 0.5rem; }
+
+  .card-body { display: flex; flex-direction: column; gap: 0.35rem; padding: 0.9rem 1rem 1rem; }
+  .card-kicker { margin: 0; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: $nb-accent-strong; }
+  .card-title { margin: 0; font-size: 1.05rem; line-height: 1.3; }
+  .card-title a { border-bottom: 0 !important; color: $nb-ink; }
+  // whole card is one link target, but the title stays the accessible name
+  .card-title a::after { content: ""; position: absolute; inset: 0; }
+  .card-text { margin: 0; font-size: 0.875rem; line-height: 1.5; color: var(--gray-text); }
+}
+
+// ---------------------------------------------------------------- status tags (inline, always with a text label)
+
+.tag {
+  display: inline-block;
+  padding: 0 0.4em;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  font-size: 0.7em;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  vertical-align: 0.1em;
+}
+.tag-spec     { color: #1b6b3a; }   // published specification
+.tag-measured { color: #1b4f8a; }   // the author's own measurement
+.tag-derived  { color: $nb-accent-strong; }   // calculated from stated inputs
+.tag-estimate { color: #8a5300; }   // estimate: see its note
+.tag-open     { color: #8a1f1f; }   // unverified / needs measuring
+
+// ---------------------------------------------------------------- embedded labs
+
+.lab-embed {
+  margin: 1rem 0 2rem;
+
+  iframe {
+    display: block;
+    width: 100%;
+    height: var(--lab-h, 2600px);
+    border: 1px solid $nb-rule;
+    background: #fff;
+  }
+  @media (max-width: 700px) {
+    iframe { height: var(--lab-h-small, 3700px); }
+  }
+}
+
+// ---------------------------------------------------------------- search
+
+.site-search {
+  .site-search-form { display: flex; gap: 0.5rem; margin: 0 0 1rem; max-width: 40rem; }
+  input[type="search"] {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 0.55rem 0.75rem;
+    font: inherit;
+    border: 1px solid $nb-ink;
+    border-radius: 0;
+    background: var(--body-bg);
+    color: var(--body-color);
+  }
+  button {
+    padding: 0.55rem 1rem;
+    font: inherit;
+    font-weight: 700;
+    border: 1px solid $nb-ink;
+    border-radius: 0;
+    background: $nb-ink;
+    color: #fff;
+    cursor: pointer;
+  }
+  .site-search-status { margin: 0 0 1rem; font-size: 0.875rem; color: var(--gray-text); }
+  .site-search-results { margin: 0; padding: 0; list-style: none; max-width: 50rem; }
+  .site-search-results li { margin: 0 0 1.5rem; }
+  .site-search-title { margin: 0; font-size: 1.05rem; font-weight: 700; }
+  .site-search-where { margin: 0.1rem 0 0.25rem; font-size: 0.75rem; color: var(--gray-text); text-transform: uppercase; letter-spacing: 0.04em; }
+  .site-search-snippet { margin: 0; font-size: 0.9rem; line-height: 1.55; }
+  .site-search-sections { margin: 0.25rem 0 0; font-size: 0.8125rem; }
+  mark { background: $nb-accent-tint; color: inherit; border-bottom: 2px solid $nb-accent; padding: 0 0.1em; }
+}
+
+// ---------------------------------------------------------------- landing page
+
+.landing-intro {
+  max-width: 44rem;
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+.landing-section-title { margin-top: 2.5rem; }
+
+// ---------------------------------------------------------------- print (lookup pages should print cleanly)
+
+@media print {
+  .nb-rail, .nb-toc-inline, .nb-pager, .nb-related, .site-search-form, .lab-embed { display: none !important; }
+  .nb-grid.has-toc { display: block; }
+
+  // restore real table layout so header rows repeat across pages
+  .content table:not(.rouge-table) {
+    display: table;
+    width: 100% !important;
+    font-size: 0.8rem;
+    thead { display: table-header-group; }
+    tr { break-inside: avoid; }
+    code { white-space: normal; }
+  }
+  figure.fig, .card { break-inside: avoid; }
+  .nb-main > p, .nb-main > ul:not(.cards), .nb-main > ol, .nb-main > blockquote { max-width: none; }
+  a[href^="http"]:not(.no-print-url)::after { content: " (" attr(href) ")"; font-size: 0.8em; word-break: break-all; }
+}

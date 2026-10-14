@@ -1,0 +1,19 @@
+{%- comment -%}
+  Embeds one of the interactive labs under /tools/ in an iframe that sizes itself to the
+  lab's own content height. The lab (opened with ?embed=1) answers a "request-height" message
+  with its height; assets/js/site.js does the listening. Same-origin only.
+
+    { % include lab-embed.html path="/tools/rx8-omp/" source="rx8-omp-lab"
+       title="RX-8 OMP Lab: interactive oil metering pump teaching tool" height=2600 small=3700 % }
+
+  path    where the built lab lives (trailing slash)
+  source  the lab's message `source` string
+  title   accessible title of the iframe
+  height  starting/fallback height on wide screens (px); small = on screens under 700 px
+{%- endcomment -%}
+{%- assign lab_url = include.path | relative_url -%}
+<p>It runs in your browser: nothing is uploaded or stored. <a class="no-push-state" href="{{ lab_url }}" target="_blank" rel="noopener">Open it full page (new tab)</a>.</p>
+<div class="lab-embed" style="--lab-h: {{ include.height | default: 2600 }}px; --lab-h-small: {{ include.small | default: 3700 }}px;">
+<iframe src="{{ lab_url }}?embed=1" title="{{ include.title | escape }}" loading="lazy" data-lab-source="{{ include.source }}"></iframe>
+</div>
+<noscript><p>The lab needs JavaScript. You can still <a href="{{ lab_url }}">open it directly</a>.</p></noscript>

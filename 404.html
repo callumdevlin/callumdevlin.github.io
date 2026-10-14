@@ -1,25 +1,19 @@
 ---
+layout: notebook
+title: Page not found
 permalink: /404.html
-layout: default
+description: That address doesn't match anything on this site.
+toc: false
+search: false
+hide_breadcrumbs: true
 ---
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+<p>It may have moved, or the link may be mistyped. Some places to try:</p>
 
-<div class="container">
-  <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+<ul>
+  <li><a href="{{ '/' | relative_url }}">Home</a></li>
+  <li><a href="{{ '/search/' | relative_url }}">Search the site</a></li>
+  <li><a href="{{ '/ProjectPages/' | relative_url }}">Projects, notebooks and labs</a></li>
+  <li><a href="{{ '/ProjectPages/RX8/' | relative_url }}">RX-8 workshop notebook</a></li>
+  <li><a href="{{ '/ProjectPages/rlbot/' | relative_url }}">Rocket League bot notes</a></li>
+</ul>

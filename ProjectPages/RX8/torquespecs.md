@@ -1,93 +1,114 @@
 ---
 title: Mazda RX-8 Torque Specifications
+crumb: Torque specifications
 permalink: /ProjectPages/RX8/torquespecs/
+type: reference
+section: rx8
+nav_order: 3
+status: growing
+applies: Series 1 RX-8 (2003-2008), 13B-MSP six-port, Mazda engine "Type A" (all UK cars). Figures follow Mazda's 2003 European workshop manual.
+reviewed: 2026-10-14
 description: >
-  Fastener torque reference for the Series 1 Mazda RX-8 (6-port, 231 PS) —
-  engine, drivetrain, brakes, suspension and steering, with assembly notes.
+  Fastener torque ranges for the Series 1 RX-8, with the thread condition,
+  sequence and replacement parts Mazda attaches to each one.
 ---
 
-A working reference of fastener torque ranges for the Series 1 Mazda RX-8 (6-port, 231 PS). All values are factory ranges in newton metres (Nm) unless marked otherwise. The **Size** column is the wrench/socket size in mm where I've recorded it.
+These are Mazda's ranges in newton metres, with the decimals as printed. A torque is only half a specification: Mazda also says what goes on the threads, how many passes to take and what must be replaced, so I've kept that beside each value. Where the value is one of several for the same part, the row says which one.
 
-> **Before you trust this page:** this started life as my own garage notes. Torque specs can differ by model year and market—always verify critical fasteners against the workshop manual for the exact car before final assembly. Unless noted otherwise, values assume clean, dry threads; oiled or thread-locked fasteners behave differently for the same reading.
+Where a row says "from the figure", Mazda prints the value only in a diagram callout and I read it from there. Check it against the manual's figure before you rely on it.
 {:.note}
 
-**General practice:** torque suspension fasteners with bushings at normal ride height (not at full droop) so the bushings aren't preloaded; tighten multi-bolt patterns in stages and in sequence; replace single-use items (lock washers, crush washers, sealing washers) rather than reusing them.
+I've left out the socket sizes this page used to carry. Mazda doesn't give them, I couldn't verify my own notes, and one (wheel nuts) looked wrong.
 
-## Core Engine Fasteners
+**General practice** (Mazda's, from its suspension procedures): fit bushed suspension fasteners loosely with the car raised, lower it to the ground, then tighten fully so the bushes aren't preloaded. Tighten multi-bolt patterns in the stated order and in stages. Replace single-use items.
 
-| Fastener | Torque (Nm) | Size (mm) | Notes |
-|:------------|:----------:|:-----------:|:-----------|
-| Tension bolts (through-bolts) | 31.4–39.2 |  | Tighten in 2–3 passes in the specified sequence. |
-| Flywheel / counterweight locknut | 392–490 | 54 | Red Loctite; lock flywheel/counterweight with SST while tightening. |
-| Oil pump sprocket / shaft locknut | 31.4–46.1 |  | Use new lock washer, then bend tabs after torque. |
-| Front cover to housing bolts | 18.6–25.5 |  | Tighten in sequence after checking pulley boss height. |
-| Pulley lock bolt (eccentric shaft front) | 300–340 | 19 | New O-ring + sealant on pulley seating face. |
-| Oil pan upper block bolts | 18.6–25.5 |  | Apply sealant bead 2.5–6.5 mm around perimeter and specified bolt holes. |
-| Oil pan bolts | 8.8–11.8 |  | Clean old sealant; apply continuous bead to mating surface. |
-| Oil pan drain plug | 29.4–39.2 |  | Use new sealing washer. |
-| Rear stationary gear stopper screw | 3.2–4.7 |  | Apply thread-locker; this retains the main bearing stop. |
+## Engine, core fasteners
 
-## Engine Ancillaries
+Mazda's engine manual separates engine "Type A" from "Type B". Type B is a 2009 model-year US-VIN engine, and everything else, including a 2005 UK car, is Type A. Some Type B figures (a separate upper oil pan, for example) exist online, so check which type a number belongs to.
 
-| Fastener | Torque (Nm) | Size (mm) | Notes |
-|:------------|:----------:|:-----------:|:-----------|
-| Spark plugs | 13–18 | 14 | Do not over-tighten. |
-| Intake manifold bolts | 19–26 | 10/13 | Tighten in criss-cross pattern. |
-| Engine mount rubbers (LH/RH – captive-bolt & nut) | 45–63 |  | Tighten with engine settled in mounts. |
-| Engine mount brackets to block (LH/RH) | 37–52 | 17 | – |
-| Water pump body bolts | 19–26 |  | – |
-| Water pump pulley bolts | 8–11 |  | – |
-| Oil cooler bolts (core to bracket) | 8–11 |  | – |
-| Oil cooler bracket bolts (bracket to chassis) | 8–11 |  | – |
-| Oil cooler hose banjo bolts | 54–69 |  | Use new copper washers each side of banjo. |
-| Alternator mounting bolt "A" (pivot) | 38–51 |  | – |
-| Alternator locknut "B" (tensioner) | 20–30 |  | Set belt tension, then torque. |
-| Starter motor bolts (M/T) | 38–51 |  | Manual transmission starter mounting. |
+| Fastener | Torque (N·m) | Conditions and replacement parts |
+|:---|:---:|:---|
+| Tension bolts (through-bolts) | 31.4-39.2 | Engine oil on the threads and a new seal washer on each, rubber projection towards the housing. Two or three passes, in the figure sequence. |
+| Flywheel / counterweight locknut | 392-490 | Lock the flywheel with the SST. Mazda's European manual calls for silicone sealant on the threads (its US-style manual says the seating face). I previously listed red Loctite; that is not in Mazda's text. |
+| Eccentric-shaft pulley lockbolt | 254-294 | Engine oil on the threads, new O-ring, silicone sealant on the seating face. Lock the shaft with the SST. |
+| Oil-pump sprocket locknut | 31.4-46.1 | New lock washer and locknut, then bend the washer over. Lock the shaft with the SST. |
+| Front cover bolts | 18.6-25.5 | Check the pulley boss height first (10.34-11.14 mm). Figure sequence. |
+| Pressure regulator (Type A) | 68.6-78.4 | |
+| Rear stationary-gear stopper screw | 3.2-4.7 | From Mazda's October 2008 engine manual. A thread-locking compound is in my notes but I haven't confirmed it. |
+| Oil pan bolts (Type A, single pan) | 8.8-11.8 | One unbroken bead of sealant, 2.5-6.5 mm, fit the pan within five minutes of applying it. Clean old sealant off reused bolts. |
+| Oil pan drain plug (Type A) | 29.4-39.2 | New sealing washer. |
+
+The "oil pan upper block bolts, 18.6-25.5" that this page used to list apply only to Type B engines. A 2005 UK car has a single pan.
+
+## Engine ancillaries
+
+| Fastener | Torque (N·m) | Conditions and replacement parts |
+|:---|:---:|:---|
+| Spark plugs | 12.8-17.7 | |
+| Intake manifold bolts | 18.6-25.5 | Tighten in the figure order, then re-tighten bolt No. 1 last. |
+| Engine mount rubbers (both sides) | 45.1-62.8 | From the figure. Tighten with the engine settled in its mounts. |
+| Engine mount bracket fasteners | 37.2-51.9 and 43.1-60.8 | From the figure: one bolt per bracket takes the first range, the other bracket bolts and nuts the second. |
+| Water pump body bolts | 18.6-25.5 | From the figure. |
+| Water pump pulley bolts | 7.8-10.8 | |
+| Oil cooler bolts, core to bracket and bracket to body | 7.9-10.7 | From the figure. |
+| Oil cooler hose union bolts | 53.9-68.6 | From the figure, which shows new washers. |
+| Alternator mounting bolt "A" | 38-51 | Set belt deflection (4.5-5.0 mm at 98 N) with adjusting bolt "C" first. |
+| Alternator locknut "B" | 20-30 | Tighten after the belt tension is set. |
+| Starter motor bolts (manual gearbox), two | 38-51 | Terminal B nut: 9.8-11.7. |
 
 ## Drivetrain
 
-| Fastener | Torque (Nm) | Size (mm) | Notes |
-|:------------|:----------:|:-----------:|:-----------|
-| Transmission installation bolts (gearbox to engine) | 37–52 | 14 | MT & AT. Two bolt lengths (55 mm & 90 mm). |
-| PPF to differential – bolts/nuts #1 & #2 | 126–154 |  | Rear diff side. Tighten in specified sequence to seat PPF fully into diff mount. |
-| PPF to differential – bolt/nut #3 | 74.5–93.2 |  | Rear diff side centre fastener. Tighten after #1 & #2, per manual sequence. |
-| PPF to transmission – front nuts | 126–154 |  | Set dimension A to 48.4–56.4 mm at the Mazda datums, tighten in sequence, then re-check. |
-| Propeller shaft nuts | 45–59 |  | Applies to the four flange nuts (incl. at diff). Align marks on shaft and flange on reassembly. |
-| Y16M-D filler and drain plugs | 27–48 |  | Fit new washers; fill near the brim with the car level. |
-| Differential filler and drain plugs | 39.2–53.9 |  | Fit new washers; fill near the brim with the car level. |
+| Fastener | Torque (N·m) | Conditions and replacement parts |
+|:---|:---:|:---|
+| Gearbox to engine bolts | 37-52 | Two lengths, 55 mm and 90 mm. Keep each in its own hole. |
+| PPF to differential, bolts/nuts No. 1 and 2 | 126.0-154.0 | Rear (differential) side. Tighten No. 1 only until the PPF is seated, then finish after setting dimension A. |
+| PPF to differential, bolt/nut No. 3 | 74.5-93.2 | After No. 1 and 2, in Mazda's numbered order. |
+| PPF to gearbox, front nuts | 126.0-154.0 | After setting dimension A to 48.4-56.4 mm. |
+| Propeller shaft to differential companion flange | 45-59 | Align the marks you made on shaft and flange. |
+| Y16M-D filler and drain plugs | 27-48 | New washers. |
+| Differential filler and drain plugs | 39.2-53.9 | New washers. |
 
-## Brakes & Wheels
+## Brakes and wheels
 
-| Fastener | Torque (Nm) | Size (mm) | Notes |
-|:------------|:----------:|:-----------:|:-----------|
-| Front brake caliper body-to-slider bolts | 22–31 |  | Guide (slider) pins. |
-| Front caliper to mounting bracket bolts | 78–102 |  | Main caliper carrier bolts. |
-| Rear brake caliper body-to-slider bolts | 22–31 |  | Guide (slider) pins. |
-| Rear caliper bracket to knuckle bolts | 49–69 |  | – |
-| Wheel nuts | 88–118 | 17 | Tighten in star pattern on level ground. |
-| Brake bleed screw | 6.9–9.8 |  | Do not over-tighten. |
+| Fastener | Torque (N·m) | Conditions and replacement parts |
+|:---|:---:|:---|
+| Front caliper slider (guide) bolts | 21.6-31.4 | From the figure. |
+| Front caliper carrier to knuckle | 78.4-101.9 | From the figure. |
+| Rear caliper slider (guide) bolts | 21.6-31.4 | From the figure. |
+| Rear caliper bracket to knuckle | 49.0-68.6 | From the figure. |
+| Wheel nuts | 88-118 | Criss-cross pattern. |
+| Brake bleed screw | 6.9-9.8 | |
 
-## Suspension – Dampers
+## Suspension: dampers and alignment
 
-| Fastener | Torque (Nm) | Size (mm) | Notes |
-|:------------|:----------:|:-----------:|:-----------|
-| Front shock absorber upper nut | 31–46 |  | Tighten with vehicle at normal ride height if possible. |
-| Rear shock absorber upper nut | 31–46 |  | Tighten with vehicle at normal ride height if possible. |
-| Front shock absorber lower bolt & nut | 78–103 |  | – |
-| Rear shock absorber lower bolt | 88–119 |  | – |
-| Rear shock bracket bolts & nuts (to body) | 37–52 |  | – |
+| Fastener | Torque (N·m) | Conditions and replacement parts |
+|:---|:---:|:---|
+| Front damper piston-rod nut | 31.4-46.1 | New nut. From the figure. |
+| Rear damper piston-rod nut | 31.4-46.1 | New nut. From the figure. |
+| Front damper lower bolt and nut | 78.2-103.4 | From the figure. |
+| Rear damper lower bolt | 88.0-119.0 | From the figure. |
+| Rear damper bracket fasteners | 37.2-51.9, 46.1-62.8 and 23.5-31.7 | From the figure: the nuts and one bolt, one nut, and the lower bolt respectively. |
+| Front camber/caster cam nuts and rear camber cam nuts | 117.7-137.3 | Final-tighten at normal ride height. |
+| Rear toe cam nuts | 70-95 | |
 
 ## Steering
 
-| Fastener | Torque (Nm) | Size (mm) | Notes |
-|:------------|:----------:|:-----------:|:-----------|
-| Steering gear / rack mounting bolts | 88 |  | – |
-| Tie-rod inner nut (rack end) | 69–98 |  | – |
-| Tie-rod locknut (outer) | 37–49 |  | Lock after setting toe. |
-| Steering shaft nuts | 16–23 |  | – |
-| Intermediate steering shaft bolt | 18–27 |  | – |
-| Steering wheel locknut | 39–49 |  | Align wheel straight-ahead before tightening. |
+| Fastener | Torque (N·m) | Conditions and replacement parts |
+|:---|:---:|:---|
+| Steering rack mounting bolts | 74.4-104.8 | From the figure, in the figure order. This page used to say 88. |
+| Tie-rod end locknut (toe adjustment) | 37.0-49.0 | Lock after setting toe. Mazda's rack-removal figure shows the tie-rod end stud nut at the same 37.0-49.0 (castle nut and split pin). |
+| Tie-rod end locknut (rack overhaul figure) | 68.6-98.0 | Mazda's own pages disagree here: the alignment page gives 37.0-49.0 for the toe locknut and the rack overhaul figure gives 68.6-98.0. I use the alignment page for an on-car adjustment. |
+| Steering shaft nuts A and B | 15.7-22.5 | Tighten A, then B. |
+| Intermediate steering shaft bolt | 17.6-26.5 | |
+| Steering wheel locknut | 39.2-49.0 | New locknut. Set the wheel straight ahead first. |
 
----
+## Sources
 
-*Spotted an error? [Get in touch](mailto:caldev3109@gmail.com) with the model year and manual section—corrections are welcome.*
+All from Mazda's 2003 RX-8 workshop manual (European edition), read through a third-party mirror on 2026-10-14.
+
+- Engine assembly: [housing assembly I](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/engine/A03/html/BHE011002000E08.html), [II](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/engine/A03/html/BHE011002000E09.html) and [III](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/engine/A03/html/BHE011002000E10.html), plus the revised [13B-MSP engine workshop manual](https://www.foxed.ca/rx7manual/manuals/renesis%20rotary%20engine%20workshop%20manual.pdf) (October 2008) for Type A/B, the regulator and the stopper screw.
+- [Spark plug removal/installation](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE011801009W04.html), [engine removal/installation](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE011002000W04.html) (mounts), [intake-air system](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE011301005W08.html).
+- [Transmission removal/installation](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE051101025W07.html) (gearbox bolts and PPF), [propeller shaft](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE031525002W05.html), [Y16M-D oil replacement](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE051127001W04.html), [differential oil replacement](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE031427000W02.html).
+- [Wheels and suspension procedures](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE021001013W01.html), [front alignment](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE021101015W01.html), [brake air bleeding](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE041101021W01.html), [steering rack](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE061332960W01.html) and [steering shaft](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE061332010W02.html).
+
+Found a mistake? [Email me](mailto:caldev3109@gmail.com) the page, the model year and the manual section.

@@ -1,0 +1,27 @@
+{%- comment -%}
+  Lists the h2/h3 headings in rendered HTML, using the ids kramdown already put on them.
+  No JavaScript, no plugin.
+
+  Usage:  { % capture items % }{ % include nb/toc-items.html html=content % }{ % endcapture % }
+  Default output:   <li class="toc-l2"><a href="#id">Heading</a></li>
+  With format="json" (used by search.json):   ["id","Heading"],
+{%- endcomment -%}
+{%- assign nb_chunks = include.html | split: '<h' -%}
+{%- for nb_chunk in nb_chunks offset: 1 -%}
+  {%- assign nb_lvl = nb_chunk | slice: 0 -%}
+  {%- if nb_lvl == '2' or nb_lvl == '3' -%}
+    {%- assign nb_open = nb_chunk | split: '>' | first -%}
+    {%- if nb_open contains 'id="' -%}
+      {%- assign nb_id = nb_open | split: 'id="' | last | split: '"' | first -%}
+      {%- assign nb_inner = nb_chunk | split: '</h' | first -%}
+      {%- assign nb_text = nb_inner | remove_first: nb_open | remove_first: '>' | strip_html | strip -%}
+      {%- if nb_text != '' -%}
+        {%- if include.format == 'json' -%}
+          [{{ nb_id | jsonify }},{{ nb_text | replace: '&amp;', '&' | replace: '&lt;', '<' | replace: '&gt;', '>' | replace: '&quot;', '"' | jsonify }}],
+        {%- else -%}
+          <li class="toc-l{{ nb_lvl }}"><a href="#{{ nb_id }}">{{ nb_text }}</a></li>
+        {%- endif -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}

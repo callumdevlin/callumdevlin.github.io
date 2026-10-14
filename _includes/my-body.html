@@ -1,0 +1,5 @@
+{%- comment -%}
+  Site override of Hydejack's empty `my-body.html` hook. Loaded once per full page load, outside
+  <main>, so it survives Hydejack's in-site (push-state) navigation. See assets/js/site.js.
+{%- endcomment -%}
+<script src="{{ '/assets/js/site.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}" defer></script>

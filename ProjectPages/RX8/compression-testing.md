@@ -1,8 +1,19 @@
 ---
 title: RX-8 Rotary Compression Testing
+crumb: Compression testing
 permalink: /ProjectPages/RX8/compression-testing/
+type: procedure
+section: rx8
+nav_order: 11
+status: wip
+applies: Series 1 RX-8 (2003-2008), two-rotor 13B-MSP. The Devlin Rotary tester described near the end is my own prototype and is still being validated.
+reviewed: 2026-10-14
 description: >
-  Mazda limits, test procedure, waveform timing and a compact result sheet for the two-rotor 13B-MSP.
+  Mazda limits, test procedure, waveform timing and a compact result sheet for the
+  two-rotor 13B-MSP.
+related:
+  - /ProjectPages/RX8/engine-removal-and-rebuild/
+  - /ProjectPages/RX8/fuel-ignition-and-starting/
 ---
 
 ## Quick limits
@@ -16,12 +27,14 @@ description: >
 
 Do not compare an uncorrected low-speed reading directly with the 250 rpm limits. A useful report retains all three events, actual cranking speed, raw values, corrected values and test conditions.
 
+Mazda's decision rule: if compression is at the minimum or lower, or the differences between chambers or between rotors are at the maximum or higher, the engine needs an overhaul.
+
 ## Test procedure
 
-1. Fully charge and load-test the battery. Warm the engine, shut it down and wait approximately ten minutes for exhaust temperature to fall.
+1. Confirm the battery is fully charged (Mazda's wording; a load test is good practice). Warm the engine, shut it down and wait approximately ten minutes for exhaust temperature to fall.
 2. Remove one leading **or** trailing plug from each rotor. A Mazda rotary tester may be fitted to either plug hole; keep the unused holes sealed and the removed leads labelled.
 3. Disconnect the eccentric-shaft position-sensor connector. Mazda uses this step to inhibit both injection and ignition.
-4. Fit the rotary compression transducer to the selected front-rotor plug hole. Do not use a conventional one-way-valve piston-engine gauge: it retains only the highest event.
+4. Fit the rotary compression transducer to the selected front-rotor plug hole. Mazda specifies a plug-hole adaptor and tester as special service tools. My own reasoning, not Mazda's, is that a conventional one-way-valve piston-engine gauge is the wrong instrument because it retains only the highest event.
 5. Hold the accelerator fully open and crank for 5–10 seconds, long enough to obtain stable repeating events.
 6. Record front A/B/C peak pressure and the actual rpm. Repeat once if timing or amplitude is unstable.
 7. Move the transducer to the rear rotor, keeping battery state and test temperature as consistent as possible, and repeat.
@@ -31,9 +44,9 @@ Do not compare an uncorrected low-speed reading directly with the 250 rpm limits
 
 ## Waveform explanation
 
-![Synthetic rotary compression waveform with repeating A/B/C events and one weak group](/assets/rx8/generated/compression-waveform.svg)
+{% include figure.html src="/assets/rx8/generated/compression-waveform.svg" alt="Graph of pressure against time at 250 rpm showing repeating A, B and C compression peaks, with one weak B peak and the 680 kPa minimum marked" caption="A synthetic waveform for explaining the timing. It is not a measurement from my car." %}
 
-The graph is synthetic—not a measurement from this car. A, B and C are the three repeating waveform groups. They must not be assigned to physical rotor faces unless an external phase reference identifies crank/rotor position.
+The graph is synthetic, not a measurement from this car. A, B and C are the three repeating waveform groups. They must not be assigned to physical rotor faces unless an external phase reference identifies crank/rotor position.
 
 For a time interval in seconds:
 
@@ -50,8 +63,8 @@ At 250 rpm, adjacent groups are 0.240 s apart and the next occurrence of the sam
 
 | Rotor | Raw rpm | A raw | B raw | C raw | A @ 250 | B @ 250 | C @ 250 | Spread | Notes |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |
-| Front | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |
-| Rear | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ | ____ |
+| Front | <span class="fill"></span> | <span class="fill"></span> | <span class="fill"></span> | <span class="fill"></span> | <span class="fill"></span> | <span class="fill"></span> | <span class="fill"></span> | <span class="fill"></span> | <span class="fill"></span> |
+| Rear | <span class="fill"></span> | <span class="fill"></span> | <span class="fill"></span> | <span class="fill"></span> | <span class="fill"></span> | <span class="fill"></span> | <span class="fill"></span> | <span class="fill"></span> | <span class="fill"></span> |
 
 </div>
 

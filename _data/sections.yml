@@ -1,0 +1,16 @@
+# Ordered groups of pages. A page joins a group with front matter:
+#
+#   section: rlbot
+#   nav_order: 3
+#
+# and gets Previous / Next links at the bottom. Add a page to a group by giving it the
+# same `section` and a `nav_order`; nothing else needs editing.
+rx8:
+  title: RX-8 Notebook
+  url: /ProjectPages/RX8/
+omp:
+  title: Series 1 OMP guide
+  url: /ProjectPages/RX8/OMP/
+rlbot:
+  title: Rocket League bot notes
+  url: /ProjectPages/rlbot/

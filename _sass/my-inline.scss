@@ -1,0 +1,45 @@
+// Site additions that affect the first paint, so they are inlined in <head>
+// (Hydejack imports this file after its own inline rules; it is the documented
+// hook for this, see https://hydejack.com/docs/).
+// Everything else lives in my-style.scss.
+
+// The theme leaves 8-9rem above the title and 12rem below the content. The fixed top bar is
+// 5rem tall on every screen width and the breadcrumbs sit 1.5rem above the padding edge, so
+// 7rem is the least that clears both. The bottom padding is just dead space, so halve it.
+// Scoped to <main> so the fixed navbar's own .content wrapper is untouched.
+main.content {
+  padding-top: 7rem;
+  padding-bottom: 6rem;
+
+  @media screen and (min-width: $break-point-5) {
+    padding-top: 7rem;
+  }
+}
+
+// Notebook page skeleton: title block, optional contents rail.
+.nb-header { margin-bottom: 1.5rem; }
+.nb-grid { display: block; }
+
+// Contents navigation. The rail sits beside the text on wide screens; below that the
+// collapsible "On this page" block above the text is used instead. Both come from the
+// same headings (see _layouts/notebook.html), so nothing needs JavaScript.
+.nb-rail { display: none; }
+
+@media screen and (min-width: 92.5em) {
+  .nb-toc-inline { display: none; }
+
+  .nb-grid.has-toc {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 13rem;
+    column-gap: 2.5rem;
+    align-items: start;
+  }
+
+  .nb-grid.has-toc .nb-rail {
+    display: block;
+    position: sticky;
+    top: 1.5rem;
+    max-height: calc(100vh - 3rem);
+    overflow-y: auto;
+  }
+}

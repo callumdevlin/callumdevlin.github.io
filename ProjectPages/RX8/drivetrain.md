@@ -1,46 +1,57 @@
 ---
 title: RX-8 Y16M-D Gearbox, PPF and Super-LSD
+crumb: Drivetrain
 permalink: /ProjectPages/RX8/drivetrain/
+type: reference
+section: rx8
+nav_order: 8
+status: growing
+applies: Series 1 RX-8 (2003-2008) with the Y16M-D six-speed manual and the factory rear differential.
+reviewed: 2026-10-14
 description: >
-  Six-speed ratios, oil service, Power Plant Frame alignment and Super-LSD operation.
+  Six-speed ratios, calculated road speed, oil service, Power Plant Frame
+  alignment and the Super-LSD.
+related:
+  - /ProjectPages/RX8/acceleration-lab/
+  - /ProjectPages/RX8/torquespecs/
 ---
 
 ## Gearbox ratios
 
-| Gear | Ratio |
-| --- | ---: |
-| 1st | 3.760 |
-| 2nd | 2.269 |
-| 3rd | 1.645 |
-| 4th | 1.187 |
-| 5th | 1.000 |
-| 6th | 0.843 |
-| Reverse | 3.564 |
-| Final drive | 4.444 |
+| Gear | Ratio | Overall with 4.444 final drive | Road speed per 1,000 rpm (calculated) |
+| --- | ---: | ---: | ---: |
+| 1st | 3.760 | 16.71 | 7.4 km/h (4.6 mph) |
+| 2nd | 2.269 | 10.08 | 12.3 km/h (7.7 mph) |
+| 3rd | 1.645 | 7.31 | 17.0 km/h (10.6 mph) |
+| 4th | 1.187 | 5.28 | 23.6 km/h (14.6 mph) |
+| 5th | 1.000 | 4.44 | 28.0 km/h (17.4 mph) |
+| 6th | 0.843 | 3.75 | 33.2 km/h (20.6 mph) |
+| Reverse | 3.564 | 15.84 | n/a |
+| Final drive | 4.444 | | |
 
-The Y16M-D (Aisin AZ6) is a fully synchronised six-speed; first, second and third use triple-cone synchronisers.
+The ratios and final drive are Mazda's. The last column is my calculation: engine speed × tyre circumference ÷ overall ratio, using the nominal 225/45R18 diameter of 659.7 mm (2.0725 m circumference). It assumes no wheel slip and ignores the tyre's smaller loaded radius, so real road speed is a little lower. It also says nothing about what the car can reach: aerodynamic drag, not gearing, limits the top gears. The [Acceleration Lab](/ProjectPages/RX8/acceleration-lab/) uses the same inputs.
+
+Mazda describes the Y16M-D as having a triple-synchroniser mechanism on first, second and third gear.
 
 ## Oil service
 
 | Unit | Oil | Capacity | Drain/fill torque |
 | --- | --- | ---: | ---: |
-| Y16M-D gearbox | SAE 75W-90, API GL-4 or GL-5 | Approximately 1.75 L | 27–48 Nm, new washers |
-| Rear differential | API GL-5; SAE 90, 80W-90 or 75W-90 | Approximately 1.2–1.4 L | 39.2–53.9 Nm, new washers |
+| Y16M-D gearbox | SAE 75W-90, API GL-4 or GL-5 | Approximately 1.75 L | 27-48 N·m, new washers |
+| Rear differential | API GL-5, SAE 90 | 1.2-1.4 L | 39.2-53.9 N·m, new washers |
 
-Keep the car level. On each unit the filler plug is high in the side of the casing and the drain is at its lowest service point. **Remove the filler first** so a seized filler cannot leave an empty unit. Drain, clean the magnetic plug where fitted, install the drain with a new washer, then fill through the side opening until oil is near the lower brim. Let excess settle to a slow drip before fitting the filler with a new washer.
+Mazda lists SAE 90 only for the differential. 80W-90 and 75W-90 are commonly used equivalents, but they are not in Mazda's text, so treat them as my choice if you use them.
 
-## Gearing and acceleration
-
-Road speed per gear, shift points and full-throttle acceleration are in the [RX-8 Acceleration Lab](/ProjectPages/RX8/acceleration-lab/), an interactive tool that starts from the ratios and 225/45R18 tyres above.
+Keep the car level. The filler plug is high in the side of each casing and the drain is at its lowest point. In my practice I **remove the filler first**, so a seized filler cannot leave an empty unit. Drain, clean the magnetic plug where fitted, fit the drain with a new washer, then fill through the side opening until oil is near the lower brim of the port (Mazda's wording). I let the excess settle to a slow drip before fitting the filler with a new washer.
 
 ## Power Plant Frame
 
-The PPF rigidly relates gearbox and differential. Its height sets the driveline axis; an incorrect setting can preload mounts, alter propshaft alignment and create vibration or noise.
+The PPF rigidly relates the gearbox and differential. Its height sets the driveline axis; an incorrect setting can preload mounts, alter propshaft alignment and create vibration or noise.
 
 ### Removal
 
 1. Support the gearbox securely with a transmission jack.
-2. Remove the exhaust/tunnel components needed to expose the PPF and mark the propshaft flange before removal where applicable.
+2. Remove the exhaust and tunnel components needed to expose the PPF, and mark the propshaft flange before removal where applicable.
 3. Support the differential if its mounting is also being loosened.
 4. Loosen and remove the PPF fasteners in a controlled sequence, then lower the frame without allowing the gearbox or differential to rotate on their mounts.
 
@@ -48,28 +59,30 @@ The PPF rigidly relates gearbox and differential. Its height sets the driveline 
 
 1. Fit the PPF and temporarily tighten its nuts in Mazda's numbered order.
 2. Tighten rear nut No. 1 only until the PPF is fully seated into the differential.
-3. Refit the heat shield, exhaust-manifold stay, exhaust, silencer and front tunnel member—the datum member must be installed before adjustment.
-4. Raise the **front/transmission end** of the PPF with the transmission jack until dimension A is **48.4–56.4 mm**.
-5. Tighten rear differential fasteners Nos. 1 and 2 to **126–154 Nm**, then No. 3 to **74.5–93.2 Nm**, following the manual's numbered pattern.
-6. Tighten the front/transmission-side nuts to **126–154 Nm**.
-7. Remove the jack and remeasure dimension A; readjust if it is outside 48.4–56.4 mm.
+3. Refit the heat shield, exhaust-manifold stay, exhaust, silencer and front tunnel member. The datum member must be installed before adjustment.
+4. Raise the **front/transmission end** of the PPF with the transmission jack until dimension A is **48.4-56.4 mm**.
+5. Tighten the rear differential fasteners Nos. 1 and 2 to **126.0-154.0 N·m**, then No. 3 to **74.5-93.2 N·m**, following the manual's numbered pattern.
+6. Tighten the front/transmission-side nuts to **126.0-154.0 N·m**.
+7. Remove the jack and remeasure dimension A; readjust if it is outside 48.4-56.4 mm.
 
-![Side-view PPF diagram showing the exact dimension-A surfaces](/assets/rx8/generated/ppf-datum.svg)
+Dimension A is the vertical distance from the **lower surface of the PPF** to the **lower surface of the installed front tunnel member** at Mazda's illustrated front datum. It is not measured to the floorpan, exhaust shield or an arbitrary bolt head. Mazda's installation page has the figure; I'll add my own photograph of the datum when I have one.
 
-Dimension A is vertical distance from the **lower surface of the PPF** to the **lower surface of the installed front tunnel member** at Mazda's illustrated front datum. It is not measured to the floorpan, exhaust shield or an arbitrary bolt head.
+Mazda also describes a way to do this without a jack, using M12 × 1.25 bolts of 55 mm thread length or more tightened from beneath the front tunnel member. I've used the jack method above.
+{:.note}
 
 ## Super-LSD
 
-The factory Super-LSD is a torque-sensing geared differential, with a nominal torque-bias ratio of **2.0** and initial torque of **49 Nm**. It permits the normal left/right speed difference in a corner while biasing torque toward the tyre with more usable reaction. It is not a clutch-plate unit and needs neither clutch-pack servicing nor friction modifier.
+Mazda describes the rear differential as a "super limited-slip differential with a low torque-bias ratio", and gives no torque-bias figure or initial-torque value in the pages I read. I've removed the numeric values and the claim about how it is built that an earlier version of this page carried, because I couldn't trace them to a source.
 
-When one wheel has almost no reaction torque—ice or a wheel off the ground—a torque-biasing differential cannot multiply useful torque from zero. Gentle brake/traction-control intervention can provide reaction, but tyres and safe recovery take priority.
+What follows is general behaviour of a torque-biasing differential, not specific data for this unit. It permits the normal left/right speed difference in a corner while biasing torque towards the tyre with more usable reaction. When one wheel has almost no reaction torque, such as on ice or with a wheel off the ground, a torque-biasing differential cannot multiply useful torque from nothing. Gentle brake or traction-control intervention can provide reaction, but tyres and safe recovery come first.
 
-For noise, first check equal tyre size/pressure, differential level/leaks, mounts, driveshafts and propshaft joints. A load/coast whine suggests gear or bearing setup; a speed-related rumble can be a bearing or tyre; normal low-speed differentiation is not itself a fault. Do not dismantle the internal gear case as routine service.
+For noise, first check equal tyre size and pressure, differential level and leaks, mounts, driveshafts and propshaft joints. A load/coast whine suggests gear or bearing setup; a speed-related rumble can be a bearing or tyre; normal low-speed differentiation is not itself a fault. Do not dismantle the internal gear case as routine service.
 
 ## References
 
-- [Mazda Y16M-D specifications](https://www.foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE050001030T05.html)
-- [Mazda Y16M-D oil replacement](https://charm.li/Mazda/RX-8%2005%2F2003%20-%2003%2F2008%20%28d932-1a-22c_ver30%29/esicont/srvc/html/id051107247900.html)
-- [Mazda transmission/PPF installation](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE051101025W07.html)
-- [Mazda differential oil replacement](https://charm.li/Mazda/RX-8%2005%2F2003%20-%2003%2F2008%20%28d932-1a-22c_ver30%29/esicont/srvc/html/id031400800200.html)
+Mazda RX-8 2003 workshop manual (European edition), read 2026-10-14 through a third-party mirror:
 
+- [Y16M-D specifications](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE050001030T05.html) and [driveline/axle specifications](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE030001018T03.html)
+- [Y16M-D oil replacement](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE051127001W04.html) and [differential oil replacement](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE031427000W02.html)
+- [Transmission/PPF removal and installation](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE051101025W07.html)
+- [Rear differential outline](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE031427100T01.html)

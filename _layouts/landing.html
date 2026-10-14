@@ -1,0 +1,16 @@
+---
+layout: base
+---
+{%- comment -%}
+  Home page layout. Unlike Hydejack's `home` layout it does not append a list of pages;
+  the home page chooses what to feature in its own Markdown.
+{%- endcomment -%}
+<article class="page nb nb-landing" role="article">
+  <header class="nb-header">
+    <h1 class="page-title">{{ page.title }}</h1>
+    {%- if page.description %}<p class="nb-lede landing-intro">{{ page.description | strip_newlines | strip }}</p>{% endif %}
+  </header>
+  <div class="nb-main nb-main-wide">
+    {{ content }}
+  </div>
+</article>

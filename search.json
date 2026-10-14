@@ -1,0 +1,23 @@
+---
+layout: null
+sitemap: false
+---
+{%- comment -%}
+  Search index for /search/. One entry per authored page that has `search: true` (set by
+  default for everything under ProjectPages in _config.yml; set it on other pages by hand).
+  Unpublished drafts, the maintenance folder and the 404 page are never in site.pages with
+  that flag, so they are never indexed.
+
+  Fields: t title, u url, k type label, d description, h [[heading id, heading text], ...],
+  b plain text of the page.
+{%- endcomment -%}
+{%- assign idx_pages = site.pages | where: "search", true -%}
+[
+{%- for p in idx_pages -%}
+  {%- assign idx_html = p.content | markdownify -%}
+  {%- capture idx_heads -%}{% include nb/toc-items.html html=idx_html format="json" %}{%- endcapture -%}
+  {%- assign idx_type = site.data.page_types[p.type].label | default: "" -%}
+  {%- assign idx_body = idx_html | strip_html | normalize_whitespace | replace: '&amp;', '&' | replace: '&lt;', '<' | replace: '&gt;', '>' | replace: '&quot;', '"' | replace: '&#39;', "'" | replace: '&nbsp;', ' ' -%}
+  {"t":{{ p.title | jsonify }},"u":{{ p.url | relative_url | jsonify }},"k":{{ idx_type | jsonify }},"d":{{ p.description | strip_newlines | strip | jsonify }},"h":[{{ idx_heads }}["",""]],"b":{{ idx_body | jsonify }}}{% unless forloop.last %},{% endunless %}
+{%- endfor -%}
+]

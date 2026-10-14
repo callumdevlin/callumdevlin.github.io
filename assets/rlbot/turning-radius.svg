@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 380" width="680" height="380" role="img" aria-labelledby="t d" font-family="Arial, Helvetica, sans-serif">
+  <title id="t">Minimum turning radius against speed</title>
+  <desc id="d">Minimum turning radius grows from 145 uu at rest to 251 at 500, 426 at 1000, 725 at 1500, 909 at 1750 and 1136 at the 2300 uu/s cap.</desc>
+  <rect width="680" height="380" fill="#ffffff"/>
+  <line x1="70" y1="322.0" x2="656" y2="322.0" stroke="#d9dadf" stroke-width="1"/>
+  <text x="62" y="326.0" text-anchor="end" font-size="13" fill="#2d343d">0</text>
+  <line x1="70" y1="262.4" x2="656" y2="262.4" stroke="#d9dadf" stroke-width="1"/>
+  <text x="62" y="266.4" text-anchor="end" font-size="13" fill="#2d343d">250</text>
+  <line x1="70" y1="202.8" x2="656" y2="202.8" stroke="#d9dadf" stroke-width="1"/>
+  <text x="62" y="206.8" text-anchor="end" font-size="13" fill="#2d343d">500</text>
+  <line x1="70" y1="143.2" x2="656" y2="143.2" stroke="#d9dadf" stroke-width="1"/>
+  <text x="62" y="147.2" text-anchor="end" font-size="13" fill="#2d343d">750</text>
+  <line x1="70" y1="83.6" x2="656" y2="83.6" stroke="#d9dadf" stroke-width="1"/>
+  <text x="62" y="87.6" text-anchor="end" font-size="13" fill="#2d343d">1000</text>
+  <line x1="70.0" y1="24" x2="70.0" y2="322" stroke="#d9dadf" stroke-width="1"/>
+  <text x="70.0" y="342" text-anchor="middle" font-size="13" fill="#2d343d">0</text>
+  <line x1="192.1" y1="24" x2="192.1" y2="322" stroke="#d9dadf" stroke-width="1"/>
+  <text x="192.1" y="342" text-anchor="middle" font-size="13" fill="#2d343d">500</text>
+  <line x1="314.2" y1="24" x2="314.2" y2="322" stroke="#d9dadf" stroke-width="1"/>
+  <text x="314.2" y="342" text-anchor="middle" font-size="13" fill="#2d343d">1000</text>
+  <line x1="436.2" y1="24" x2="436.2" y2="322" stroke="#d9dadf" stroke-width="1"/>
+  <text x="436.2" y="342" text-anchor="middle" font-size="13" fill="#2d343d">1500</text>
+  <line x1="558.3" y1="24" x2="558.3" y2="322" stroke="#d9dadf" stroke-width="1"/>
+  <text x="558.3" y="342" text-anchor="middle" font-size="13" fill="#2d343d">2000</text>
+  <line x1="631.6" y1="24" x2="631.6" y2="322" stroke="#d9dadf" stroke-width="1"/>
+  <text x="631.6" y="342" text-anchor="middle" font-size="13" fill="#2d343d">2300</text>
+  <line x1="70" y1="322" x2="656" y2="322" stroke="#181b26" stroke-width="1.5"/>
+  <line x1="70" y1="24" x2="70" y2="322" stroke="#181b26" stroke-width="1.5"/>
+  <text x="363.0" y="368" text-anchor="middle" font-size="14" fill="#181b26">Forward speed (uu/s)</text>
+  <text transform="translate(18 173.0) rotate(-90)" text-anchor="middle" font-size="14" fill="#181b26">Minimum turning radius (uu)</text>
+  <polyline points="70.0,287.4 82.2,285.9 94.4,284.3 106.6,282.4 118.8,280.4 131.0,278.2 143.2,275.7 155.5,272.9 167.7,269.8 179.9,266.2 192.1,262.1 204.3,259.5 216.5,256.8 228.7,253.7 240.9,250.4 253.1,246.7 265.3,242.6 277.5,238.0 289.8,232.9 302.0,227.1 314.2,220.6 326.4,216.2 338.6,211.4 350.8,206.2 363.0,200.5 375.2,194.2 387.4,187.2 399.6,179.3 411.8,170.5 424.0,160.6 436.2,149.2 448.5,141.9 460.7,134.0 472.9,125.3 485.1,115.8 497.3,105.3 509.5,101.3 521.7,97.1 533.9,92.8 546.1,88.3 558.3,83.6 570.5,78.7 582.8,73.7 595.0,68.4 607.2,62.9 619.4,57.1 631.6,51.1" fill="none" stroke="#5a00b3" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="70.0" cy="287.4" r="4.5" fill="#ffffff" stroke="#5a00b3" stroke-width="2.5"/>
+  <text x="70.0" y="277.4" text-anchor="middle" font-size="12" fill="#181b26">145</text>
+  <circle cx="192.1" cy="262.1" r="4.5" fill="#ffffff" stroke="#5a00b3" stroke-width="2.5"/>
+  <text x="192.1" y="252.1" text-anchor="middle" font-size="12" fill="#181b26">251</text>
+  <circle cx="314.2" cy="220.6" r="4.5" fill="#ffffff" stroke="#5a00b3" stroke-width="2.5"/>
+  <text x="314.2" y="210.6" text-anchor="middle" font-size="12" fill="#181b26">426</text>
+  <circle cx="436.2" cy="149.2" r="4.5" fill="#ffffff" stroke="#5a00b3" stroke-width="2.5"/>
+  <text x="436.2" y="139.2" text-anchor="middle" font-size="12" fill="#181b26">725</text>
+  <circle cx="497.3" cy="105.3" r="4.5" fill="#ffffff" stroke="#5a00b3" stroke-width="2.5"/>
+  <text x="497.3" y="95.3" text-anchor="middle" font-size="12" fill="#181b26">909</text>
+  <circle cx="631.6" cy="51.1" r="4.5" fill="#ffffff" stroke="#5a00b3" stroke-width="2.5"/>
+  <text x="637.6" y="41.1" text-anchor="end" font-size="12" fill="#181b26">1136</text>
+  <text x="80" y="42" font-size="12" fill="#2d343d">1 uu = 1 cm, so 1136 uu is about 11 m</text>
+</svg>

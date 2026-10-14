@@ -1,28 +1,40 @@
 ---
-title: RL Bot — Project Overview
+title: Rocket League Bot, Project Overview
+crumb: Overview
 permalink: /ProjectPages/rlbot/overview/
-image: /Images/rlbot-hero.jpg
+type: explainer
+section: rlbot
+nav_order: 1
+status: growing
+image: /Images/optimised/rlbot-hero-1200.webp
+applies: RLBot v4 (the `rlbot` 1.x Python package). RLBot v5 has a different API.
+reviewed: 2026-10-14
 description: >
-  What the RLBot framework provides, how the bot is structured, and the
-  in-game debug rendering used during development.
+  What the RLBot framework provides, how the bot is structured, what it does today
+  and the in-game debug rendering used during development.
 ---
 
-![RL Bot in action](/Images/rlbot-hero.jpg){:.lead loading="lazy"}
+{% include figure.html src="/Images/rlbot-hero.jpg" alt="In-game screenshot of a blue and black Octane-style car with its boost flame lit, driving across a Rocket League arena floor" caption="An in-game screenshot of a car boosting. Rocket League is a game by Psyonix; this site is not affiliated with it." eager=true %}
 
-Check out this project on [GitHub](https://github.com/callumdevlin/RL-Bot).
-{:.figcaption}
+The goal of this project was a bot that plays Rocket League by itself, written in Python on top of the [RLBot framework](https://rlbot.org). Daniel McMurray and I wrote it together (the repository README credits both of us), and I'm using "we" for the bot and "I" for these notes. It is hard-coded, with no machine learning, and has a simple behavioural state system for choosing what to do. That constraint is deliberate: every behaviour has to be expressed as explicit maths, which is what these notes document.
 
-The goal of this project was to build a bot that plays Rocket League by itself, written in Python on top of the [RLBot framework](https://rlbot.org). The bot is hard-coded — there's no machine learning involved — with its own behavioural state system to make decisions about when to attack, defend, collect boost and so on. That constraint is deliberate: every behaviour has to be expressed as explicit maths, which is exactly what these notes document.
+## The RLBot framework
 
-## The RLBot Framework
+RLBot is a community-built framework that makes custom bots possible. Rocket League has a bot API built into the game, and launching the game with the `-rlbot` flag enables it. The framework's FAQ says that flag also disables all online play, so bots can't take part in online matches.
 
-RLBot is a community-built framework that makes custom bots possible. Psyonix added a dedicated bot API to Rocket League for the project: launching the game with the `-rlbot` flag enables it (and disables online play at the same time, so bots can never touch ranked matches). Through that API, the framework's core reads live game state — positions, velocities and rotations for the ball and every car — and exposes it to your bot as a structured "game tick packet" each frame, while carrying your control inputs (throttle, steer, boost, jump…) back into the game. Bots talk to the framework over sockets, which is what lets people write them in Python, C++, Rust and several other languages against the same interface.
+In the v4 framework the bot uses, the game talks to the RLBot core, which hands each bot process a snapshot of the game every tick: positions, velocities and rotations for the ball and every car, plus boost and match state. In the Python API that snapshot is a `GameTickPacket`. The core also carries the bot's controls (throttle, steer, boost, jump and so on) back into the game, and the framework's FAQ says the core and bots communicate over sockets.
 
-From the bot's point of view, the whole game reduces to a loop: receive the tick packet, decide what to do, return a controller state. Everything else on these pages — vectors, kinematics, path maths — lives inside that "decide" step.
+From the bot's point of view the whole game reduces to a loop: receive the packet, decide what to do, return a controller state. Everything else in these notes (vectors, kinematics, path maths) lives inside that "decide" step.
 
-## Debug Rendering
+## What the bot does today
 
-To see what the bot is "thinking" while it plays, RLBot provides draw functions for overlaying text and 3D geometry in the game itself. I use these constantly during development.
+The public snapshot follows the RLBot Python template. Each tick it reads the packet, computes a steering input towards a target point with a proportional controller, holds full throttle, boosts whenever it has boost, and triggers scripted flip sequences at kick-off and at set distances. A behaviour label (chase the ball, defend, get off the wall, track the ball a second ahead) picks the target. It uses the framework's built-in ball prediction for the look-ahead.
+
+It does not yet contain the approach-point, path-length, time-estimate or aerial maths described on the other pages. Those are design notes, shown as illustrative code, and I haven't published results from them. I also haven't tested the bot against a win rate or in any competition, and there are no such figures here.
+
+## Debug rendering
+
+To see what the bot is thinking while it plays, RLBot provides draw functions for overlaying text and 3D geometry in the game itself. I use these constantly while developing. The snippets below are from the bot, written for the v4 Python API; check the rendering documentation for your framework version, since v5 changes the calls.
 
 Text overlays for live variables:
 
@@ -36,7 +48,7 @@ self.renderer.draw_string_2d(50, 110, 1, 1, f'Behaviour: {self.behaviour}', self
 And 3D lines and shapes to show targets and orientation at a glance:
 
 ~~~python
-# Draw line to target location and a rectangle on the target
+# Draw a line to the target location and a rectangle on the target
 self.renderer.draw_line_3d(car_location, target_location, self.renderer.white())
 self.renderer.draw_rect_3d(target_location, 8, 8, True, self.renderer.cyan(), centered=True)
 
@@ -45,6 +57,4 @@ self.renderer.draw_line_3d(car_location, enemy_goal, self.renderer.orange())
 self.renderer.draw_line_3d(car_location, my_goal, self.renderer.blue())
 ~~~
 
-Watching the white target line swing around while the behaviour label changes is the fastest way to spot logic bugs — far faster than reading logs. I'm also working on exporting match data to Matplotlib so the bot's performance can be graphed against different variables between runs.
-
-*Next: the [3D vector system](/ProjectPages/rlbot/vectors/) everything else is built on.*
+Watching the white target line swing round while the behaviour label changes is the fastest way I know to spot logic bugs, far faster than reading logs. I'm also working on exporting match data to Matplotlib so the bot's behaviour can be graphed between runs. That isn't in the public repository yet.

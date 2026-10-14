@@ -1,6 +1,12 @@
 ---
 title: How the RX-8 Renesis OMP Works
+crumb: How the OMP works
 permalink: /ProjectPages/RX8/OMP/how-it-works/
+type: explainer
+section: omp
+nav_order: 1
+applies: Series 1 RX-8 (2003-2008). Mazda figures are from the 2003 manual; later PCM calibrations may differ.
+reviewed: 2026-10-14
 description: >
   How the Series 1 RX-8 oil metering pump delivers oil: the engine-driven
   pumping, stepper-motor stroke control, what the PCM does at start-up, while
@@ -55,7 +61,7 @@ The control logic, from [Mazda's control page](https://foxed.ca/rx7manual/2003ma
 | **Ignition ON, engine stopped** | Current to the stepper coils is cut to save battery. |
 | **Engine start** (about 500 rpm) | **Initial set:** the PCM reverses the stepper **60 steps** and detects the **0-step position**. That becomes the reference for regular drive. This happens at every start. |
 | **After initial set, when the conditions are met** | **Monitor (position check):** the PCM rotates the stepper **60 steps clockwise from step 0** and counts steps until the position switch turns on. It expects this **above step 52**. If it doesn't, the PCM decides there is a stepping-motor malfunction and activates fail-safe. |
-| **Running** | **Regular drive:** the PCM works out a target step from engine speed, charging efficiency and coolant temperature, then steps the motor towards it. A step number below the target is increased (more stroke, more oil); one above it is reduced. |
+| **Running** | **Regular drive:** the PCM works out a target step from engine rotation, coolant temperature and intake air amount (Mazda's wording), then steps the motor towards it. A step number below the target is increased (more stroke, more oil); one above it is reduced. |
 | **Ignition OFF** | The PCM sets the target to step 0 and ends control once the actual step reaches 0. |
 
 Mazda lists two conditions for the monitor: **"ignition switch at ON for the 12th time"** and **"when the battery terminals are connected"**. It doesn't say which one, or both, is required, so don't treat the monitor as something that runs at every start. The initial set does run at every start.
@@ -86,11 +92,11 @@ Mazda describes the switch in several places that look contradictory until you r
 | Workshop manual, control operation | The position switch **"is on above step 52"**. |
 | 2004 RX-8 Service Highlights | The switch **turns on when the stepping motor is at step 52 or more**. |
 | Workshop manual, operation check (scan tool) | Move the motor with MOP_POS, and **MOP_SW should change from on to off at 53 steps or over**. |
-| Workshop manual, inspection and PCM terminals | With the engine stopped, resistance across the switch (terminals A-C) should be **400 Ω or less**. PCM terminal 2N sits at **1.0 V or less** except at the maximum position, where it reads battery voltage. |
+| Workshop manual, inspection and PCM terminals | With the engine stopped, resistance across the switch (terminals A-C) should be **400 Ω or less**. At idle, PCM terminal 2N sits at **1.0 V or less** except when the pump is commanded to its maximum position, where it reads battery voltage. |
 
 Mazda's wording varies by one step (above 52, 52 or more, 53 or over), so treat the change as happening **between steps 52 and 53**.
 
-Read together, those figures fit a switch whose contact **conducts at low steps and opens at about step 52 or 53**. The PCM's input then goes high (battery voltage) above that point, which is the "on" in the control page, while the scan-tool MOP_SW shows the opposite sense. Mazda doesn't spell this out. It is my reading of its figures, and it means that **at rest the switch should read a low resistance, not an open circuit**. Owners who have measured switches report tens to about a hundred ohms in the conducting region, and much more (over 1,000 Ω) on a failed one.
+Read together, those figures fit a switch whose contact **conducts at low steps and opens at about step 52 or 53**. The PCM's input then goes high (battery voltage) above that point, which is the "on" in the control page, while the scan-tool MOP_SW shows the opposite sense. Mazda doesn't spell this out, though its PCM terminal table does list the MOP_SW PID as On while the initial set function is running, which fits. It is still my reading of its figures, and it means that **at rest the switch should read a low resistance, not an open circuit**. Owners who have measured switches report tens to about a hundred ohms in the conducting region, and much more (over 1,000 Ω) on a failed one.
 
 This is why a faulty switch, or its wiring, makes a healthy pump look dead, and why [Mazda's diagnostic order](/ProjectPages/RX8/OMP/testing/) checks connectors, wiring and the switch before replacing the pump.
 
@@ -99,13 +105,13 @@ This is why a faulty switch, or its wiring, makes a healthy pump look dead, and 
 When the monitor finds the stepper or switch faulty, the PCM goes into fail-safe. Mazda describes two parts of it:
 
 - **Metering:** the control pin is held at **minimum stroke**, so the oil supply is proportional to engine rotation only. The control page gives this as the stepper **fixed at step 7**.
-- **Engine restriction:** if the engine needs more oil than that minimum, the PCM restricts fuel injection and holds back engine speed to protect the seals. The control page says the PCM fixes the fuel-injection pulse width (4.50 ms plus ineffective injection time with the throttle open more than 13%, otherwise 2.65 ms plus ineffective time) and fixes the ignition timing at 4.88 degrees CA on the leading side.
+- **Engine restriction:** if the engine needs more oil than that minimum, the PCM restricts fuel injection and holds back engine speed to protect the seals. The control page says the PCM fixes the fuel-injection pulse width (at engine start the table says regular control, otherwise 4.50 ms plus ineffective injection time with the throttle open more than 13%, or 2.65 ms plus ineffective time) and fixes the ignition timing at 4.88 degrees CA. Mazda's table shows that one value for both the leading and trailing plugs.
 
-Normal driving is possible if the engine's oil need is within the minimum discharge. **Mazda doesn't publish an rpm limit.** Owners of cars in fail-safe typically report being held to around **3,000 to 3,500 rpm** (RX8Club reports from 2005 to 2025), so treat that as experience, not specification. See [diagnostics](/ProjectPages/RX8/OMP/testing/#symptoms).
+Normal driving is possible if the engine's oil need is within the minimum discharge. **Mazda doesn't publish an rpm limit.** One 2005 [RX8Club thread](https://www.rx8club.com/series-i-tech-garage-22/mop-dtc-p1686-dtc-p1687-dtc-p1688-limp-mode-58119/) reports cars held to about **3,000 to 3,300 rpm**, so treat that as experience, not specification. See [diagnostics](/ProjectPages/RX8/OMP/testing/#symptoms).
 
 ## PCM updates that changed the oil quantity
 
-Mazda North America released PCM calibration updates that **increased the metering oil quantity**, especially at engine start: Emission Recall Campaign 4206F (2004 to 2006 cars, 2006) and Technical Service Bulletin 01-014/08 (2004 to 2008 cars, March 2008). The bulletin says a revised PCM calibration "increases metering oil lubrication amount during engine start" and ties lack of oil at start-up to carbon on the rotor housing surface. I haven't found a UK or European equivalent, so if you're buying a car or chasing carbon problems, ask Mazda UK which calibration it has. The campaign letter is only available second-hand; the bulletin text is on a [manual mirror](https://workshop-manuals.com/mazda/rx8/2rtr-1.3l/powertrain_management/emission_control_systems/catalytic_converter/component_information/technical_service_bulletins/customer_interest/0101408/mar/08/engine_controls_lack_of_engine_power/).
+Mazda North America issued two PCM calibration updates that touched the oil metering. Emission Recall Campaign 4206F came in 2006. The letter text I could find describes an oil-injection metering system that "may be inaccurate", and I couldn't open the letter itself, so I can't confirm which cars it covered or exactly what changed. Technical Service Bulletin 01-014/08 (2004 to 2008 cars, issued 14 March 2008 and revised on the 17th) is about lack of power and low idle in hot weather. It blames poor sealing from carbon on the rotor housing, caused by lack of metering oil at start-up or insufficient ignition timing in high ambient temperature. The fix is a revised PCM calibration that increases the metering oil amount during engine start and recalibrates the hot-weather ignition timing. The bulletin text is on a [manual mirror](https://workshop-manuals.com/mazda/rx8/2rtr-1.3l/powertrain_management/emission_control_systems/catalytic_converter/component_information/technical_service_bulletins/customer_interest/0101408/mar/08/engine_controls_lack_of_engine_power/). I haven't found a UK or European equivalent, so if you're buying a car or chasing carbon problems, ask Mazda UK which calibration it has.
 
 ## Inside the pump (community teardown)
 
@@ -118,7 +124,7 @@ A later contributor described **two compound pistons**, one small and one large,
 | Small | 1.82 mm | 2.58 mm |
 | Large | 3.84 mm | 5.43 mm |
 
-The same thread gives a maximum stroke of about 1.5 mm, and estimates (read from a graph, not measured) that the larger piston starts to contribute at around step 21. Treat these as useful community figures, not Mazda data.
+The same thread gives a maximum stroke of about 1.5 mm and a minimum of about 0.5 mm. One contributor's best guess, from a calculated graph rather than a measurement, is that the larger piston starts to contribute at around step 21. Treat these as useful community figures, not Mazda data.
 
 ## Sources
 
@@ -126,4 +132,3 @@ The same thread gives a maximum stroke of about 1.5 mm, and estimates (read from
 - Mazda 2004 RX-8 [Service Highlights](https://www.manualslib.com/manual/804935/Mazda-Rx-8-2004.html?page=173) (switch wording).
 - RX8Club: [OMP output and modification thread](https://www.rx8club.com/series-i-tech-garage-22/omp-oil-metering-pump-output-modification-268559/) (teardown geometry).
 
-*Next: [diagnostics and testing](/ProjectPages/RX8/OMP/testing/).*

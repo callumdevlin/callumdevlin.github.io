@@ -2,6 +2,7 @@
 # Theme docs: https://hydejack.com/docs/
 
 title:                 Callum Devlin
+lang:                  en-GB
 email:                 caldev3109@gmail.com
 github:                callumdevlin
 linkedin:              callumdev
@@ -11,13 +12,15 @@ tagline:               Mechatronics Engineer
 
 # Longer description used for SEO / search previews
 description: >-
-  My engineering notes.
-  Mechatronics projects spanning automotive mechanical design, rotary engines,
-  PCB design and embedded systems, plus public reference notes on the
-  Mazda RX-8 13B-MSP.
+  Engineering projects and technical notes by Callum Devlin: rotary-engine
+  lubrication, automotive mechanical design, PCB and embedded systems, a
+  researched Mazda RX-8 workshop notebook and the maths behind a Rocket League bot.
 
 baseurl:               ""
 url:                   "https://callumdevlin.github.io"
+
+# Default social-preview image for pages that do not set their own `image:`
+image:                 /Images/enduraomp-engine-1.webp
 
 # Sidebar navigation
 menu:
@@ -25,8 +28,12 @@ menu:
     url:               /about/
   - title:             Projects
     url:               /ProjectPages/
-  - title:             RX-8 Notes
+  - title:             RX-8 Notebook
     url:               /ProjectPages/RX8/
+  - title:             Rocket League
+    url:               /ProjectPages/rlbot/
+  - title:             Search
+    url:               /search/
 
 accent_image:          /Images/pcbbg.jpeg
 accent_color:          rgb(127,0,255)
@@ -35,7 +42,8 @@ theme_color:           rgb(25,55,71)
 copyright:             © Callum Devlin 2026. All Rights Reserved.
 
 # Build settings
-remote_theme:          hydecorp/hydejack@v9
+# Pinned to the tag the live site renders today (the old `@v9` is a moving branch).
+remote_theme:          hydecorp/hydejack@v9.2.1
 
 google_fonts:          Roboto+Slab:700|Noto+Sans:400,400i,700,700i
 
@@ -48,13 +56,32 @@ kramdown:
   math_engine_opts:    {}
   footnote_backlink:   '&#x21a9;&#xfe0e;'
 
-# Every page uses the Hydejack `page` layout unless it says otherwise,
-# so new pages get a proper title header and description box for free.
+# Never published. (Jekyll skips underscore folders anyway; this makes it explicit
+# and also keeps local tooling files out of the output.)
+exclude:
+  - _maintenance/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - README.md
+  - AUTHORING.md
+  - CLAUDE.md
+  - AGENTS.md
+
+# Authored content uses the `notebook` layout (title block, status line, contents
+# navigation, next/previous). Pages elsewhere (home, about, 404, search) set their
+# own layout in front matter.
 defaults:
   - scope:
       path:            ""
     values:
       layout:          page
+  - scope:
+      path:            "ProjectPages"
+    values:
+      layout:          notebook
+      search:          true
 
 hydejack:
   post_addons:         [about, comments]
@@ -64,11 +91,11 @@ hydejack:
   no_push_state:       false
   no_drawer:           false
   no_navbar:           false
-  no_search:           false
+  no_search:           true     # the free theme has no search UI; see /search/
   no_inline_css:       false
   no_page_style:       true
   no_break_layout:     true
-  no_toc:              true
+  no_toc:              true     # the theme's floating contents box is replaced by the notebook layout's own
   no_third_column:     true
   no_large_headings:   true
   no_structured_data:  false
@@ -78,6 +105,6 @@ hydejack:
   advertise:           false
 
 plugins:
-  - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-remote-theme

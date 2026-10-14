@@ -1,0 +1,56 @@
+---
+layout: base
+---
+{%- comment -%}
+  Layout for authored content (case studies, notebooks, labs).
+
+  Front matter used (all optional except title):
+    title        page title
+    description  one-sentence lede shown under the title (also used for SEO)
+    type         label key from _data/page_types.yml
+    status       wip | growing
+    applies      one-line applicability statement
+    reviewed     date the technical content was last checked against sources
+    toc          false to hide the contents navigation (default: shown when the page has 3+ h2 headings)
+    section      group for Previous/Next links (see _data/sections.yml), with nav_order
+    related      list of site URLs
+    crumb        short label used in breadcrumbs and Previous/Next
+{%- endcomment -%}
+{%- capture nb_items -%}{%- include nb/toc-items.html html=content -%}{%- endcapture -%}
+{%- assign nb_h2_count = nb_items | split: 'toc-l2' | size | minus: 1 -%}
+{%- assign nb_show_toc = false -%}
+{%- if page.toc != false and nb_h2_count >= 3 -%}{%- assign nb_show_toc = true -%}{%- endif -%}
+
+<article class="page nb nb-type-{{ page.type | default: 'page' }}" role="article">
+  <header class="nb-header">
+    <h1 class="page-title">{{ page.title }}</h1>
+    {%- if page.description and page.hide_description != true %}
+    <p class="nb-lede">{{ page.description | strip_newlines | strip }}</p>
+    {%- endif %}
+    {% include nb/meta.html %}
+  </header>
+
+  {%- if nb_show_toc %}
+  <details class="nb-toc-inline">
+    <summary>On this page</summary>
+    <ul>{{ nb_items }}</ul>
+  </details>
+  {%- endif %}
+
+  <div class="nb-grid{% if nb_show_toc %} has-toc{% endif %}">
+    <div class="nb-main">
+      {{ content }}
+      {% include nb/pager.html %}
+    </div>
+    {%- if nb_show_toc %}
+    <aside class="nb-rail" aria-label="Page contents">
+      <nav class="nb-toc" aria-label="On this page">
+        <p class="nb-toc-title">On this page</p>
+        <ul>{{ nb_items }}</ul>
+      </nav>
+    </aside>
+    {%- endif %}
+  </div>
+</article>
+
+{% include components/dingbat.html %}

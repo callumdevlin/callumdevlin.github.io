@@ -1,0 +1,24 @@
+{%- comment -%}
+  Site override of Hydejack's breadcrumbs. The stock include prints the raw URL segments
+  ("rfidtoolstorage", "E1", "movingpath"); this one looks each parent URL up and prints
+  that page's `crumb` (or title), so the trail reads like the navigation does. Segments with
+  no page behind them (for example /tools/) are shown as plain text.
+{%- endcomment -%}
+{%- assign bc_url = include.url | remove: '/index.html' -%}
+{%- assign bc_segs = bc_url | split: '/' -%}
+{%- if bc_segs.size > 1 and page.hide_breadcrumbs != true -%}
+<nav id="breadcrumbs" class="screen-only" aria-label="Breadcrumb"><ul>
+  <li><a href="{{ '/' | relative_url }}">Home</a></li>
+  {%- assign bc_path = '' -%}
+  {%- for seg in bc_segs offset: 1 -%}
+    {%- assign bc_path = bc_path | append: '/' | append: seg -%}
+    {%- assign bc_href = bc_path | append: '/' -%}
+    {%- assign bc_page = site.pages | where: "url", bc_href | first -%}
+    {%- if forloop.last -%}
+      <li><span aria-hidden="true">/</span> <span aria-current="page">{{ bc_page.crumb | default: bc_page.title | default: seg | url_decode }}</span></li>
+    {%- elsif bc_page -%}
+      <li><span aria-hidden="true">/</span> <a href="{{ bc_href | relative_url }}">{{ bc_page.crumb | default: bc_page.title }}</a></li>
+    {%- endif -%}
+  {%- endfor -%}
+</ul></nav>
+{%- endif -%}

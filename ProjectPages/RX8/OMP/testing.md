@@ -1,6 +1,12 @@
 ---
 title: RX-8 OMP Diagnostics & Testing
+crumb: OMP diagnostics
 permalink: /ProjectPages/RX8/OMP/testing/
+type: procedure
+section: omp
+nav_order: 2
+applies: Series 1 RX-8 (2003-2008) factory OMP. Mazda's figures are from the 2003 manual.
+reviewed: 2026-10-14
 description: >
   Diagnosing the Series 1 RX-8 oil metering pump: symptoms, what codes
   P1686, P1687 and P1688 actually mean, Mazda's diagnostic order, the
@@ -36,9 +42,9 @@ Mazda's 2003 RX-8 manual has three OMP codes. All three are continuous monitors:
 | **P1687** | Metering oil pump control circuit, **high flow side** problem | The stepper was driven **less than** the standard step, but the switch input was **on**. |
 | **P1688** | Metering oil pump control circuit, **initial check** problem | The switch input was **on** during the stepper's initial check. |
 
-All three list the same possible causes: the pump or its switch, a connector or terminal, an open or short to ground in the pump supply or coil wiring, an open or short in the switch wiring, or the PCM.
+All three share the same possible causes: the pump or its switch, a connector or terminal, an open or short to ground in the pump supply or coil wiring, or the PCM. P1686 adds an open in the switch wiring, and P1687 and P1688 add a short to ground on the switch wiring.
 
-> **A common misreading.** Some online code lists describe P1684 as a "position sensor circuit" fault and P1685 to P1688 as the stepper's four separate windings. That isn't what Mazda's 2003 RX-8 DTC table says. It lists only P1686, P1687 and P1688 for the metering oil pump, defined by switch state against stepper position, and each one's checks cover **all four coil lines together**. A single code doesn't point at a single winding. (Mazda's switch-inspection page mentions P1685 once in a caution, but no P1685 page or table entry exists. On Series 2 cars, owners report that P1684 and P1685 are pump oil-pressure codes, a different system.)
+> **A common misreading.** Some online code lists describe P1684 as a "position sensor circuit" fault and P1685 to P1688 as stepping-motor circuit faults, which people then read as four separate windings. That isn't what Mazda's 2003 RX-8 DTC table says. It lists only P1686, P1687 and P1688 for the metering oil pump, defined by switch state against stepper position, and each one's checks cover **all four coil lines together**. A single code doesn't point at a single winding. (On the Mazda pages I read, the switch-inspection page mentions P1685 once in a caution, but no P1685 page or table entry exists. On Series 2 cars, owners report that P1684 and P1685 are pump oil-pressure codes, a different system.)
 {:.note}
 
 ## What goes wrong in practice
@@ -48,14 +54,14 @@ Mazda's flow lists every possible cause. Owner reports (RX8Club and similar, mos
 | Cause | What owners found |
 | :--- | :--- |
 | **Water or coolant at the pump or its connector** | A weeping hose or pipe above the pump drips onto it. Corroded, stiff internals and hot-start-only codes that cleared once cleaned and dried. See the [intermittent P1688 thread](https://www.rx8club.com/rx-8-discussion-3/oil-metering-intermittent-problem-266331/). |
-| **Position switch set wrongly after removal or refit** | Turning the switch body only about 30 degrees the wrong way gave an immediate code and fail-safe. Backing it off and clearing the code fixed it. See [MOP adjustments](https://www.rx8club.com/series-i-major-horsepower-upgrades-93/mop-adjustments-120276/) and the [servicing page](/ProjectPages/RX8/OMP/servicing/#position-switch-setting). |
-| **Worn or intermittent switch** | A resistive track that wears or goes intermittent when hot. One switch measured 1,132 Ω against the 400 Ω limit and a used pump stopped the code, although the owner also suspected a harness short and had seen the same code with his old pump plugged in ([thread](https://www.rx8club.com/new-member-forum-197/p1688-limp-mode-please-help-272863/)). Owners report the switch isn't sold separately. |
+| **Position switch moved on the pump** | One owner deliberately turned the switch to the end of its travel to get more oil flow (he estimated about 30 degrees; others in the thread estimated 10 to 19) and got an immediate code and limp mode. Backing it off by 5 to 10 degrees and resetting the ECU cleared it. See [MOP adjustments](https://www.rx8club.com/series-i-major-horsepower-upgrades-93/mop-adjustments-120276/) and the [servicing page](/ProjectPages/RX8/OMP/servicing/#position-switch-setting). |
+| **Worn or intermittent switch** | A resistive track that wears or goes intermittent when hot. One switch measured 1,132 Ω against the 400 Ω limit and a used pump stopped the code, although the owner also suspected a harness short and had seen the same code with his old pump plugged in. His last report was "fixed for 5 miles so far" ([thread](https://www.rx8club.com/new-member-forum-197/p1688-limp-mode-please-help-272863/)). I've seen it said that the switch isn't sold separately but couldn't trace a source. |
 | **Stuck mechanism** | A stiff stepper freed with lubricant, after which the code cleared. |
 | **Harness and connector** | A bare wire in the loom, salt or water in the 3-pin connector, no loom over it. |
 | **The pump itself** | Replaced successfully in several cases, including units whose coils and switch read in spec. Used pumps sometimes fail again, or arrive mis-set. |
 | **The PCM** | Last in Mazda's flow, and I found no confirmed case in the owner reports I read. |
 
-One trained technician reported that shorting **two** stepper coil wires produced all three codes at once ([thread](https://www.rx8club.com/series-i-tech-garage-22/mop-dtc-p1686-dtc-p1687-dtc-p1688-limp-mode-58119/)). That fits Mazda's logic: the codes describe the switch check, not which winding failed.
+One poster, who said he did it "for training", reported that shorting **two** stepper coil wires produced all three codes at once ([thread](https://www.rx8club.com/series-i-tech-garage-22/mop-dtc-p1686-dtc-p1687-dtc-p1688-limp-mode-58119/)). That fits Mazda's logic: the codes describe the switch check, not which winding failed.
 
 ## Diagnostic order
 
@@ -71,7 +77,7 @@ This is Mazda's flow for P1686, P1687 and P1688, condensed. Do the steps in orde
 8. **Inspect the switch connector.**
 9. **Check the switch wiring.** For P1686, check continuity from switch terminal **A to PCM 2N** and switch terminal **C to PCM 1U** (an open is the fault). For P1687 and P1688, check that switch terminal **A is not shorted to ground**.
 10. **Inspect the switch.** If it is faulty, Mazda's remedy is to replace the pump (the switch is part of it).
-11. **Reconnect everything, clear the code, start the engine and see if it returns.** Only if it does, replace the PCM. A real fault tends to come straight back, within seconds to a minute of starting. A code that returns only occasionally usually means a marginal connector, switch or water ingress, so go back to steps 2 to 10.
+11. **Reconnect everything, clear the code, start the engine and see if it returns.** Only if it does, replace the PCM. In owner reports a real fault tends to come straight back within seconds to a minute of starting (one reported about 15 seconds). That is experience, not Mazda. A code that returns only occasionally usually means a marginal connector, switch or water ingress, so go back to steps 2 to 10.
 12. **Do the after-repair procedure** and check for other codes.
 
 [Mazda: P1686](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE010201600W01.html), [P1687](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE010201600W02.html), [P1688](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE010201600W03.html).
@@ -144,4 +150,3 @@ Mazda's other two inspections are done on the running engine and on the parts: l
 
 If everything passes but a code returns after clearing, Mazda's last step is the PCM.
 
-*Next: [removal, installation and servicing](/ProjectPages/RX8/OMP/servicing/).*

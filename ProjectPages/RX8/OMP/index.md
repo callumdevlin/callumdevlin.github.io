@@ -1,6 +1,12 @@
 ---
 title: Mazda RX-8 S1 Oil Metering Pump Guide
+crumb: Series 1 OMP guide
 permalink: /ProjectPages/RX8/OMP/
+type: index
+section: omp
+nav_order: 0
+applies: Series 1 RX-8 (2003-2008) factory electronic oil metering pump. Not the Series 2 system.
+reviewed: 2026-10-14
 description: >
   A practical guide to the Series 1 RX-8 oil metering pump: how it works, how
   to diagnose it, how to remove and refit it, and the nozzles, premix and
@@ -11,7 +17,7 @@ The Series 1 RX-8 meters small, controlled amounts of oil into the rotary engine
 
 This guide covers the **Series 1 system only**: not the Series 2/R3 system, which owners and specialists report has three nozzles per rotor and a different pump with its own codes, and not an electric replacement.
 
-> **Not a replacement for the workshop manual.** Where Mazda gives a figure, I quote it and link the page. Confirm torque values, connector diagrams and part numbers for your exact model year before you rely on anything here.
+Where Mazda gives a figure, I quote it and link the page, and I mark what comes from owner reports instead. Confirm connector diagrams and part numbers for your exact model year before you rely on anything here.
 {:.note}
 
 ## Start here
