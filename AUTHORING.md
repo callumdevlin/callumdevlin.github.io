@@ -1,69 +1,56 @@
 # Adding to this site
 
-Jekyll with the Hydejack v9.2.1 theme (free edition), published by GitHub Pages straight from the branch. Pages are plain Markdown. This file is excluded from the published site.
+Jekyll with the Hydejack v9.2.1 theme (free edition), built by GitHub Pages straight from the branch. Pages are plain Markdown. This file is excluded from the published site.
 
-## Preview and check
+## Preview
 
-The machine needs Ruby 3.2 (RubyInstaller with DevKit) and the `github-pages` gem, which gives the same Jekyll 3.10 that GitHub runs. The scripts in `_maintenance/portfolio-overhaul/tools/` set this up outside the repository:
+GitHub builds with Jekyll 3.10 and the `github-pages` gem. To preview the same thing locally, install Ruby 3.2 and `gem install github-pages`, then run `jekyll serve` from the repository root (the remote theme needs network access; set `JEKYLL_ENV=production` for a production-style build). The `Gemfile` in the repository is older than this setup, so don't rely on `bundle exec` until it is refreshed.
 
-```powershell
-.\_maintenance\portfolio-overhaul\tools\build.ps1                                   # production-style build into %LOCALAPPDATA%\jb\_site
-python -m http.server 4000 --directory "$env:LOCALAPPDATA\jb\_site"                 # look at it at http://localhost:4000
-python _maintenance\portfolio-overhaul\tools\check_site.py "$env:LOCALAPPDATA\jb\_site"           # links, anchors, headings, leaks
-python _maintenance\portfolio-overhaul\tools\check_site.py "$env:LOCALAPPDATA\jb\_site" --external  # also request every external URL
-python _maintenance\portfolio-overhaul\tools\rlbot_maths_tests.py                   # Rocket League worked examples
-```
+## Where working files go
 
-`_maintenance/README.md` explains the other files there (inventory, ledger, owner-input list).
+Scratch notes, research, screenshots and one-off helper scripts live in `_maintenance/`. That folder is git-ignored (`.gitignore`) and excluded from the build (`_config.yml`), so nothing in it is committed or published. Don't force-add it. Anything the site needs to build, such as images, data files and the labs, belongs in the tracked folders.
 
 ## A new page
 
-Put a `.md` file under `ProjectPages/` (it gets the `notebook` layout and is added to search automatically) with front matter like:
+Put a `.md` file under `ProjectPages/`. It gets the `notebook` layout and is added to search automatically. Front matter, all optional except `title`:
 
 ```yaml
 ---
-title: Page title                 # also the H1
-crumb: Short label                # breadcrumbs and Previous/Next (optional)
+title: Page title                  # also the H1
+crumb: Short label                 # breadcrumbs and Previous/Next
 permalink: /ProjectPages/RX8/new-page/
-type: reference                   # case-study | reference | procedure | wiring | data | explainer | maths | lab | index
-section: rx8                      # joins a Previous/Next group from _data/sections.yml (optional)
-nav_order: 14                     # position in that group
-status: growing                   # wip | growing (shows a label; leave out for finished pages)
-applies: Series 1 RX-8 (2003-2008) # one line: what the page applies to
-reviewed: 2026-10-14              # ONLY if you re-checked the technical content against sources
-description: One-sentence summary shown under the title and used for SEO.
-related: [/ProjectPages/RX8/torquespecs/]   # optional links shown at the bottom
-toc: false                        # contents navigation is automatic for pages with 3+ H2 headings
+description: One-sentence introduction shown under the title and used for SEO.
+applies: Series 1 RX-8 (2003-2008) # short applicability note under the title
+status: wip                        # shows "Work in progress"; leave out otherwise
+reviewed: 2026-10-14               # only if you re-checked the content against its sources
+type: reference                    # label shown in search results (see _data/page_types.yml)
+section: rlbot                     # Previous/Next group (_data/sections.yml); only sequence groups use it
+nav_order: 3
+related: [/ProjectPages/RX8/torquespecs/]   # short "See also" line at the bottom
+toc: false                         # the collapsed "On this page" list appears on pages with five or more H2s
 ---
 ```
 
-Keep URLs stable. If a page must move, add a redirect rather than breaking the old address.
+Keep URLs stable. If a page must move, add a redirect rather than breaking the old address. If you shorten a heading, keep the old anchor with `## New heading {#old-anchor}`.
 
-## Writing conventions
+## Writing
 
-- British English, first person for my own work, "we" for group work. Say what was measured, what was calculated from stated inputs, what comes from a manufacturer and what is an estimate, and where a value is unknown leave it blank.
-- Cite near the claim. For Mazda figures give the manual section and the mirror link. Do not set `reviewed:` for formatting changes.
-- `{:.note}` after a paragraph makes a callout; use sparingly.
-- Inline status tags for table cells: `<span class="tag tag-spec">Catalogue</span>` (also `tag-measured`, `tag-derived`, `tag-estimate`, `tag-open`). Always keep the words, never colour alone.
-- Write-in cell for a value not measured yet: `<span class="fill"></span>`.
-- Maths: `$$ ... $$` (MathJax). Code: fenced blocks with a language.
+British English, first person for my own work, "we" for group work. Put the answer first, keep paragraphs short, and put a limitation next to the result it affects rather than in a page-wide caveat. Cite near the claim; for Mazda figures give the manual section and the mirror link. `{:.note}` after a paragraph makes a callout; use it sparingly. Maths is `$$ ... $$` (MathJax); code goes in fenced blocks with a language.
 
 ## Images and figures
 
-1. Put the **original** in `Images/` (never edit or delete originals; they are the full-quality downloads).
-2. Run `python _maintenance/portfolio-overhaul/tools/optimise_images.py` (needs Pillow). It writes WebP variants to `Images/optimised/` and the dimensions to `_data/images.yml`.
-3. Use the include so the image is captioned, uncropped, responsive and linked to the original:
+Put the original in `Images/` and never edit or delete originals. For smaller WebP versions, add them to `Images/optimised/` as `name-<width>.webp` and list the width, height and variants for the original in `_data/images.yml`; an image with no entry still works, it just loads the original. Then use the include, which keeps the image's own aspect ratio and links it to the original:
 
 ```liquid
 {% include figure.html src="/Images/name.png" alt="What it shows" caption="Short caption." %}
 ```
 
-Side-by-side images: wrap two or more includes in `<div class="fig-grid" markdown="0"> ... </div>`. Use `eager=true` for the first image on a page, `class="fig-narrow"` or `fig-medium` for small images. Say in the caption when an image is a render or a synthetic graph. Cards (home and project index) use `{% include card.html ... %}`.
+Options: `eager=true` for the first image on a page, `class="fig-narrow"` or `"fig-medium"` for small images, `full="..."` to link a different original, and `fulllink=true` to add a "Full-size image" link to the caption for plots and drawings with small print. Side-by-side images go in `<div class="fig-grid" markdown="0"> ... </div>`. Say in the caption when an image is a render or a synthetic graph. The home and Projects pages list projects with `{% include project-row.html ... %}`.
 
 ## Labs
 
-The two labs are built bundles in `tools/rx8-omp/` and `tools/rx8-acceleration/`. Their source (TypeScript, Vitest tests) lives outside this repository in `RX8 Drive Train Web Tool`. To change one, edit and test it there, rebuild, and copy the new `dist/` over the folder here. The host pages use `{% include lab-embed.html ... %}`.
+The two labs are built bundles in `tools/rx8-omp/` and `tools/rx8-acceleration/`. Their source (TypeScript, with Vitest tests) lives outside this repository in `RX8 Drive Train Web Tool`. To change one, edit and test it there, rebuild, and copy the new `dist/` over the folder here. The host pages use `{% include lab-embed.html ... %}`.
 
 ## Search
 
-`/search/` reads `/search.json`, generated from every page with `search: true` (all of `ProjectPages/`, plus About). Drafts (`published: false`), the maintenance folder and this file never appear in it.
+`/search/` reads `/search.json`, generated from every page with `search: true` (all of `ProjectPages/`, plus About). Pages with `published: false`, the maintenance folder and this file never appear in it.

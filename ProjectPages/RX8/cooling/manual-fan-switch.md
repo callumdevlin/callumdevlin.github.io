@@ -5,8 +5,7 @@ permalink: /ProjectPages/RX8/cooling/manual-fan-switch/
 type: wiring
 section: rx8
 nav_order: 6
-status: growing
-applies: Series 1 RX-8 (2003-2008). Mazda's circuit descriptions are from the 2003 manual; I have not verified relay or connector positions on a UK RHD car.
+applies: Series 1 RX-8 (2003-2008). Circuit descriptions are from Mazda's 2003 workshop manual.
 reviewed: 2026-10-14
 description: >
   Manual low- and high-speed cooling-fan override for the Series 1 RX-8 that keeps
@@ -15,7 +14,7 @@ related:
   - /ProjectPages/RX8/cooling/
 ---
 
-This is how I'd add a manual low/high request to the Series 1 fans without taking over from the PCM. It is an explanatory note, not a verified installation guide: the circuits are described from Mazda's manual, but I haven't published a wiring diagram of my own installation, and the as-installed wire colours are still to be photographed.
+This is an explanatory note, not a verified installation guide. The circuits come from Mazda's manual, and relay and connector positions haven't been confirmed on a UK right-hand-drive car.
 
 The cooling fans can start automatically, and also after the engine is switched off (see below). Disconnect the battery while making connections and keep clear of the blades whenever the system is live.
 {:.note}
@@ -28,7 +27,7 @@ The cooling fans can start automatically, and also after the engine is switched 
 | Low | On | Off | Off | `5X` |
 | High | On | On | On | `5X` + `5AD` |
 
-Relay No. 1 alone runs **both fans at low speed**. High speed needs relay No. 1 **and** relays No. 2 and No. 3. The PCM controls relay No. 1 through output `5X`, and relays No. 2 and No. 3 together through `5AD`. Mazda's diagnosis pages show relay No. 1's terminal A fed with battery voltage through the main relay and its terminal E running to the PCM at `5X`. Relays No. 2 and No. 3 each have their own terminal E, joined into the single `5AD` wire.
+Relay No. 1 alone runs both fans at low speed. High speed needs relay No. 1 and relays No. 2 and No. 3. The PCM controls relay No. 1 through output `5X`, and relays No. 2 and No. 3 together through `5AD`. Mazda's diagnosis pages show relay No. 1's terminal A fed with battery voltage through the main relay and its terminal E running to the PCM at `5X`. Relays No. 2 and No. 3 each have their own terminal E, joined into the single `5AD` wire.
 
 These are low-side drivers: the PCM energises each relay coil by pulling its control wire to ground. A manual request should therefore reproduce that ground through an added, isolated relay contact. It must not feed the fan motors or Mazda's control wires from a dashboard switch.
 
@@ -112,7 +111,7 @@ relay B: 5AD / relay No. 2 and No. 3 control wire → normally-open contact → 
 
 With the HIGH switch off, both added contacts are open and the PCM controls the fans as it always did. With it on, relay A grounds `5X`, relay B grounds `5AD`, all three factory relays energise and both fans run at high speed. A suitable dual-pole normally-open relay can do both grounding jobs, but two ordinary automotive relays are easier to identify, source and test.
 
-Mazda's relay layout figure (a left-hand-drive figure) numbers relay No. 1 as position 16, No. 2 as 19 and No. 3 as 13. I haven't confirmed the layout on a UK RHD car, so locate the relays by their function and connector before splicing.
+Mazda's relay-layout figure is a left-hand-drive one and numbers relay No. 1 as position 16, No. 2 as 19 and No. 3 as 13. Positions on a UK right-hand-drive car may differ, so locate the relays by their function and connector before splicing.
 
 ## LOW and HIGH switches together
 
@@ -153,7 +152,7 @@ So, when the manual switch grounds a circuit the PCM wants off, expect a pending
 
 ## References
 
-Mazda RX-8 2003 workshop manual (European edition), read 2026-10-14 through a third-party mirror:
+Mazda RX-8 2003 workshop manual (European edition), via the foxed.ca mirror, accessed 14 October 2026:
 
 - [Cooling fan control system inspection](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE010300103W31.html)
 - [PCM terminal inspection: 5X and 5AD](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE014018880W02.html)

@@ -11,38 +11,31 @@ description: >
   A practical guide to the Series 1 RX-8 oil metering pump: how it works, how
   to diagnose it, how to remove and refit it, and the nozzles, premix and
   clean-oil feed around it.
+related:
+  - /ProjectPages/RX8/enginedata/
+  - /ProjectPages/RX8/sohn-adapter/
+  - /ProjectPages/EnduraOMP/
 ---
 
-The Series 1 RX-8 meters small, controlled amounts of oil into the rotary engine to lubricate the seals and housings. The part that does it is the **oil metering pump**, usually shortened to **OMP**. Mazda's manual calls it the metering oil pump.
+The Series 1 RX-8 meters small, controlled amounts of oil into the rotary engine to lubricate the seals and housings. The part that does it is the oil metering pump, usually shortened to OMP; Mazda's manual calls it the metering oil pump.
 
-This guide covers the **Series 1 system only**: not the Series 2/R3 system, which owners and specialists report has three nozzles per rotor and a different pump with its own codes, and not an electric replacement.
+This guide covers the Series 1 system only. The Series 2/R3 system is reported to have three nozzles per rotor and a different pump with its own codes, and an electric replacement is a different system again. Where Mazda gives a figure I quote it and link the page, and I say so where something comes from owner reports. Confirm connector diagrams and part numbers for your exact model year before relying on them.
 
-Where Mazda gives a figure, I quote it and link the page, and I mark what comes from owner reports instead. Confirm connector diagrams and part numbers for your exact model year before you rely on anything here.
-{:.note}
+## The guide {#start-here}
 
-## Start here
-
-| I want to... | Go to |
-| :--- | :--- |
-| Understand how the pump and its control work | [How the OMP works](/ProjectPages/RX8/OMP/how-it-works/) |
-| Diagnose a fault code or a suspect pump | [Diagnostics & testing](/ProjectPages/RX8/OMP/testing/) |
-| Remove, refit or replace the pump | [Removal, installation & servicing](/ProjectPages/RX8/OMP/servicing/) |
-| Check the nozzles, or think about premix or a clean-oil feed | [Nozzles, premix & clean oil feed](/ProjectPages/RX8/OMP/nozzles-premix/) |
-| Play with engine speed, the start-up checks and faults | [RX-8 OMP Lab](/ProjectPages/RX8/OMP/lab/) |
+- [How the OMP works](/ProjectPages/RX8/OMP/how-it-works/): the pump, the stepper, the start-up sequence and the control logic.
+- [Diagnostics and testing](/ProjectPages/RX8/OMP/testing/): fault codes, symptoms and tests for a suspect pump.
+- [Removal, installation and servicing](/ProjectPages/RX8/OMP/servicing/): taking the pump off, refitting it and what to replace.
+- [Nozzles, premix and clean oil feed](/ProjectPages/RX8/OMP/nozzles-premix/): checking the nozzles, and what premix or a separate oil supply changes.
+- [OMP Lab](/ProjectPages/RX8/OMP/lab/): an interactive model of the start-up checks, faults and commanded step.
 
 ## The system at a glance
 
 | | |
 | :--- | :--- |
-| **Pump** | Engine-driven pumping, with a stepper motor that sets the stroke |
-| **Oil nozzles** | Two per rotor, tilted towards the side housing |
-| **Control** | The PCM commands the stepper in steps. It re-establishes zero at every engine start by reversing 60 steps |
-| **Feedback** | One on/off position switch. There is no continuous position sensor |
-| **If it faults** | Fail-safe: the stepper is fixed at step 7 and the engine is restricted |
-| **Fault codes** | P1686, P1687 and P1688 |
-
-## Related pages
-
-- [13B-MSP engine running data](/ProjectPages/RX8/enginedata/): my logged dataset, including a reconstructed stock OMP metering map from idle to 9,500 rpm.
-- [Custom Sohn adapter](/ProjectPages/RX8/sohn-adapter/): my separate oil-supply adapter, which keeps the factory OMP and its control.
-- [EnduraOMP](/ProjectPages/EnduraOMP/): my MEng project, a closed-loop electronic replacement for this system.
+| Pump | Engine-driven pumping, with a stepper motor that sets the stroke |
+| Oil nozzles | Two per rotor, tilted towards the side housing |
+| Control | The PCM commands the stepper in steps and re-establishes zero at every engine start by reversing 60 steps |
+| Feedback | One on/off position switch. There is no continuous position sensor |
+| If it faults | Fail-safe: the stepper is fixed at step 7 and the engine is restricted |
+| Fault codes | P1686, P1687 and P1688 |

@@ -5,8 +5,7 @@ permalink: /ProjectPages/rlbot/steering/
 type: maths
 section: rlbot
 nav_order: 4
-status: growing
-applies: RLBot v4 Python API. The steering function is from the RLBot template, as used in the bot; the speed-control code is illustrative.
+applies: RLBot v4 Python API. `steer_toward_target` is from the RLBot template; the speed-control code is illustrative.
 reviewed: 2026-10-14
 description: >
   Turning an angle into a steering input, and why a simple proportional controller
@@ -76,4 +75,4 @@ If the car is faster than that, brake or lift off. Braking is strong: the decele
 - **The target moves.** For a ball in motion the target changes every tick. The [path analysis](/ProjectPages/rlbot/movingpath/) covers aiming where the ball will be.
 - **Model limits.** My simulation holds speed constant and treats steering as scaling the curvature limit. The real car also changes speed and loses speed in a tight turn, so use these numbers to understand the shape of the problem, not as in-game predictions.
 
-*The simulation and the speed-limit function are checked by the maths tests described on the [index page](/ProjectPages/rlbot/). The code on this page other than the template's `steer_toward_target` is illustrative and isn't in the public bot.*
+*Apart from the template's `steer_toward_target`, the code on this page is illustrative.*

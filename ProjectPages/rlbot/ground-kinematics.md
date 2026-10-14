@@ -5,8 +5,7 @@ permalink: /ProjectPages/rlbot/ground-kinematics/
 type: maths
 section: rlbot
 nav_order: 5
-status: growing
-applies: Community-measured constants for the standard Rocket League car physics. The numbers describe the game, not any one bot.
+applies: Community-measured constants for the standard Rocket League car physics.
 reviewed: 2026-10-14
 description: >
   How the Rocket League car accelerates, brakes, coasts and boosts on the ground,
@@ -23,7 +22,6 @@ When the car is on the ground, the bot controls it through throttle, boost and s
 Answering them means knowing how the car actually behaves, so here is how it accelerates and how its motion can be predicted.
 
 Lengths are in Unreal Units (uu), speeds in uu/s and accelerations in uu/s², the game's native units. The values below are community measurements, mainly [Sam Mish's research](https://smish.dev/rocket_league/ground_control) and the RLUtilities source, cross-checked against the RocketSim simulator. Psyonix doesn't publish them.
-{:.note}
 
 ## The constants
 
@@ -39,7 +37,7 @@ Lengths are in Unreal Units (uu), speeds in uu/s and accelerations in uu/s², th
 
 ## Acceleration
 
-The car's acceleration from throttle depends entirely on its current speed. It is **not constant**, and it falls as the car speeds up. It is greatest at rest, falls in a straight line to 160 uu/s² at 1,400 uu/s, and then drops to zero over the last 10 uu/s, so throttle alone cannot take the car past 1,410 uu/s.
+The car's acceleration from throttle depends entirely on its current speed. It is not constant, and it falls as the car speeds up. It is greatest at rest, falls in a straight line to 160 uu/s² at 1,400 uu/s, and then drops to zero over the last 10 uu/s, so throttle alone cannot take the car past 1,410 uu/s.
 
 {% include figure.html src="/assets/rlbot/throttle-acceleration.svg" alt="Chart of forward acceleration against speed: a throttle-only line falling from 1,600 at rest to zero at 1,410 uu/s, and a throttle-plus-boost line about 992 higher, ending at the 2,300 uu/s speed cap" caption="Throttle acceleration, and throttle plus boost, against speed. Drawn from the community-measured values in the table above." %}
 
@@ -94,4 +92,4 @@ That makes the boost decision concrete. Over 1,000 uu, boosting saves about 0.35
 
 The step size isn't critical for decisions. Stepping at 1/60 s instead of a very fine step changes a 2,000 uu run by less than 0.02 s. Straight-line numbers like these are the best case; they ignore turning, which is where [the path analysis](/ProjectPages/rlbot/movingpath/) picks up.
 
-*The code on this page is illustrative and isn't in the public bot. Credit to Sam Mish, whose research the constants come from.*
+*The code on this page is illustrative. The constants come from Sam Mish's research.*

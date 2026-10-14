@@ -6,7 +6,7 @@ type: maths
 section: rlbot
 nav_order: 6
 status: wip
-applies: Community-measured turning data for the standard car. This is a design analysis; the path and time-estimate code is illustrative and is not in the public bot.
+applies: Community-measured turning data for the standard car. The path and time-estimate code is illustrative.
 reviewed: 2026-10-14
 description: >
   Why turning radius grows with speed, what that means for choosing a path, and
@@ -14,9 +14,6 @@ description: >
 ---
 
 The straight-line distance to a target is misleading. A car at speed can't pivot on the spot. It sweeps an arc, so the real question for the bot is what path the car can physically follow to the target and how long that takes.
-
-This is my working analysis of that problem. It is still in progress: the code below is illustrative, and the public bot doesn't contain it yet.
-{:.note}
 
 ## Turning radius grows with speed
 
@@ -29,22 +26,22 @@ At full steering lock, the car's minimum turning radius depends on its speed: th
 | Minimum radius (uu) | 145 | 251 | 426 | 725 | 909 | 1,136 |
 | In metres (1 uu = 1 cm) | 1.5 | 2.5 | 4.3 | 7.3 | 9.1 | 11.4 |
 
-At the speed cap the tightest turning radius is therefore about 11 m, so the circle is about 23 m across. At rest the radius is about 1.5 m, so the car doesn't turn on the spot either. An earlier version of this page described the high-speed figure as "on the order of a kilometre", which was wrong by roughly a factor of a hundred (a kilometre is 100,000 uu).
+At the speed cap the tightest turning radius is therefore about 11 m, so the circle is about 23 m across. At rest the radius is about 1.5 m, so the car doesn't turn on the spot either.
 
 The practical consequence is a trade-off:
 
-> **Faster is not always sooner.** A car that slows down can take a tighter line. A car at full speed may have to sweep a wide arc, or overshoot and double back.
+Faster is not always sooner. A car that slows down can take a tighter line, while a car at full speed may have to sweep a wide arc, or overshoot and double back.
 
 This is why the [shot alignment](/ProjectPages/rlbot/aligning-shots/) logic would slow the car when the approach angle is poor.
 
 ## Arc-then-line paths
 
-A simple and useful path model is **arc then line**: the car turns along a circle of its current minimum radius until it points at the target, then drives straight. It is a single-turn simplification of the Dubins paths used in robotics.
+A simple and useful path model is arc then line: the car turns along a circle of its current minimum radius until it points at the target, then drives straight. It is a single-turn simplification of the Dubins paths used in robotics.
 
 For a target `x` ahead and `y` to the right of the car (turn right; mirror the sign for a target on the left), with minimum radius `r`:
 
 1. The turning circle has its centre at (0, r) in the car's frame.
-2. Let `d` be the distance from that centre to the target. If `d < r` the target is **inside** the circle and unreachable by this path. The car must slow down, which shrinks `r`.
+2. Let `d` be the distance from that centre to the target. If `d < r` the target is inside the circle and unreachable by this path. The car must slow down, which shrinks `r`.
 3. Otherwise the tangent length is √(d² − r²), and the arc angle follows from the tangent point.
 
 ~~~python
@@ -62,7 +59,7 @@ def arc_then_line(x, y, r):
     return arc, math.sqrt(d * d - r * r)
 ~~~
 
-A worked example: a target 600 uu ahead and 800 uu to the right, with a 400 uu minimum radius. The arc is 67.4° (470 uu long) and the straight section is 600 uu, so the path is 1,070 uu against a straight-line 1,000 uu, 7% longer. I checked the function by driving the path it describes and confirming it lands on the target, for targets on both sides.
+A worked example: a target 600 uu ahead and 800 uu to the right, with a 400 uu minimum radius. The arc is 67.4° (470 uu long) and the straight section is 600 uu, so the path is 1,070 uu against a straight-line 1,000 uu, 7% longer.
 
 The reachability condition has a neat form. The largest usable radius for that target is (x² + y²) / (2y) = 625 uu. From the turning table, the car's minimum radius is 625 uu at about 1,390 uu/s, so above that speed the target is inside the circle and this path doesn't exist.
 
@@ -105,10 +102,10 @@ The model is deliberately crude. It brakes instantly to a constant arc speed, ig
 
 That estimator unlocks the questions the bot actually cares about:
 
-- **Can I beat the opponent to the ball?** Compare time estimates.
-- **Intercepting a moving ball.** For each candidate time `t` along the ball's predicted path, ask whether the car can reach that ball position in `t` or less. The earliest feasible `t` is the intercept. The public bot only looks a fixed one second ahead on the ball prediction.
-- **Is boost worth it here?** Run the estimate with and without the boost term and compare the arrival times against the boost cost.
+- Can I beat the opponent to the ball? Compare time estimates.
+- Intercepting a moving ball. For each candidate time `t` along the ball's predicted path, ask whether the car can reach that ball position in `t` or less. The earliest feasible `t` is the intercept.
+- Is boost worth it here? Run the estimate with and without the boost term and compare the arrival times against the boost cost.
 
 ## Status and next steps
 
-This analysis is the part of the project I'm still working on. The arc-then-line geometry and the estimator above run as written in my tests. What I haven't done is tune the curvature data against measured bot behaviour or extend the intercept search to aerial targets, where the [aerial kinematics](/ProjectPages/rlbot/aerial-kinematics/) feasibility check replaces the ground-path estimator. I'll update this page as that lands.
+This analysis is still in progress. The curvature data hasn't been tuned against measured bot behaviour, and the intercept search doesn't yet cover aerial targets, where the [aerial kinematics](/ProjectPages/rlbot/aerial-kinematics/) feasibility check replaces the ground-path estimator.

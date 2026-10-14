@@ -1,10 +1,11 @@
-# Ordered groups of pages. A page joins a group with front matter:
+# Groups of pages. A page joins a group with front matter:
 #
 #   section: rlbot
 #   nav_order: 3
 #
-# and gets Previous / Next links at the bottom. Add a page to a group by giving it the
-# same `section` and a `nav_order`; nothing else needs editing.
+# Only a group marked `sequence: true` gets Previous / Next links at the bottom of its pages
+# (use it for material that is meant to be read in order). The other groups are reference
+# material and are reached from their own index pages, so they have no chapter-style links.
 rx8:
   title: RX-8 Notebook
   url: /ProjectPages/RX8/
@@ -14,3 +15,4 @@ omp:
 rlbot:
   title: Rocket League bot notes
   url: /ProjectPages/rlbot/
+  sequence: true

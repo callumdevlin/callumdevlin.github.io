@@ -5,28 +5,24 @@ permalink: /ProjectPages/RX8/chassis/
 type: reference
 section: rx8
 nav_order: 12
-status: growing
 applies: Series 1 RX-8 (2003-2008). Mazda figures are from the 2003 European manual. Front disc size depends on the suspension fitted.
 reviewed: 2026-10-14
 description: >
   Jack and stand locations, wheel data, brake limits and alignment settings for
   the Series 1 RX-8.
-related:
-  - /ProjectPages/RX8/torquespecs/
-  - /ProjectPages/RX8/quick-reference/
 ---
 
 ## Jacking and support points
 
-Mazda's manual gives two jacking points: the **centre of the front crossmember** and the **centre of the differential**, with stands on the side sills at both sides. The detail below that is my own guidance from working on the car.
+Mazda's manual gives two jacking points: the centre of the front crossmember and the centre of the differential, with stands on the side sills at both sides. The detail below that is my own guidance from working on the car.
 
-**Front central jack:** the reinforced centre of the front suspension crossmember. Put the pad beneath the flat central member, behind the plastic undertray, and not beneath the aluminium sump or the thin undertray.
+Front central jack: the reinforced centre of the front suspension crossmember. Put the pad beneath the flat central member, behind the plastic undertray, and not beneath the aluminium sump or the thin undertray.
 
-**Rear central jack:** the solid centre of the differential casing. Keep the cup clear of the rear cover, drain plug, cooling fins, propshaft flange and PPF.
+Rear central jack: the solid centre of the differential casing. Keep the cup clear of the rear cover, drain plug, cooling fins, propshaft flange and PPF.
 
-**Axle stands:** the four reinforced sill support areas immediately inboard of the pinch welds, marked by the sill location notches. A slotted rubber pad protects the folded seam. Raise centrally, then lower onto the matching left/right pair. The notch and pinch-weld detail comes from handling the car and the owner's handbook, not from the workshop manual pages I read.
+Axle stands: the four reinforced sill support areas immediately inboard of the pinch welds, marked by the sill location notches. A slotted rubber pad protects the folded seam. Raise centrally, then lower onto the matching left/right pair. The notch and pinch-weld detail is from handling the car and the owner's handbook rather than the workshop manual.
 
-{% include figure.html src="/Images/RX8-JackPoints.jpg" alt="Top-down underside diagram of the RX-8 showing the two central jack points and four sill support points" caption="The two central jack points and the four sill support points, seen from underneath. I'll add photographs of the points on the car." %}
+{% include figure.html src="/Images/RX8-JackPoints.jpg" alt="Top-down underside diagram of the RX-8 showing the two central jack points and four sill support points" caption="The two central jack points and the four sill support points, seen from underneath." %}
 
 Never work beneath the car while it is supported only by a jack. Do not load the sump, gearbox casing, PPF, propshaft, differential rear cover, floorpan or thin sheet-metal braces.
 
@@ -41,7 +37,7 @@ Never work beneath the car while it is supported only by a jack. Do not load the
 | Wheel nuts | 88-118 N·m, tightened diagonally |
 | Nominal tyre diameter | 659.7 mm (calculated: 2 × 0.45 × 225 mm + 18 in) |
 
-The calculated diameter is not the loaded rolling radius a tyre has under load. Clean the hub and wheel seating faces, check for corrosion or cracks, and confirm the wheel sits flush before tightening. Follow the sidewall arrows on directional tyres; asymmetric tyres must keep **outside** facing out. Directional tyres can only move front to rear on the same side unless they are remounted.
+The calculated diameter is not the loaded rolling radius a tyre has under load. Clean the hub and wheel seating faces, check for corrosion or cracks, and confirm the wheel sits flush before tightening. Follow the sidewall arrows on directional tyres; asymmetric tyres must keep the outside face outwards. Directional tyres can only move front to rear on the same side unless they are remounted.
 
 ## Brakes
 
@@ -59,9 +55,9 @@ The calculated diameter is not the loaded rolling radius a tyre has under load. 
 
 Mazda ties the larger front disc to the sport suspension, not to engine power, so measure your own discs before you order. Use DOT 3 or DOT 4 brake fluid meeting SAE J1703 / FMVSS 116 (Mazda's European/UK specification). Bleed screw torque is 6.9-9.8 N·m.
 
-**Bleeding.** Mazda's instruction is to begin with the master cylinder, continue with the caliper furthest from it, and finish by bleeding the master cylinder again, keeping the reservoir at least three quarters full. Mazda doesn't give a wheel-by-wheel order. Mine is **left rear, right rear, left front, right front** on this UK RHD car, which is my inference from furthest to nearest, so check the pipe lengths on your own car. If the master cylinder has been emptied or removed, bleed its ports first and again after the calipers.
+Bleeding: Mazda's instruction is to begin with the master cylinder, continue with the caliper furthest from it, and finish by bleeding the master cylinder again, keeping the reservoir at least three quarters full. Mazda doesn't give a wheel-by-wheel order. Mine is left rear, right rear, left front, right front on this UK right-hand-drive car, which is my inference from furthest to nearest, so check the pipe lengths on your own car. If the master cylinder has been emptied or removed, bleed its ports first and again after the calipers.
 
-The rear piston incorporates the parking-brake adjuster. Wind it **clockwise** into the caliper with the correct tool; do not force it straight back with a clamp. Align the piston recess with the pad locating pin. After assembly, pump the service-brake pedal until firm before operating or adjusting the handbrake. Factory lever travel is 1-3 notches under a 98 N pull measured 50 mm from the lever end.
+The rear piston incorporates the parking-brake adjuster. Wind it clockwise into the caliper with the correct tool; do not force it straight back with a clamp. Align the piston recess with the pad locating pin. After assembly, pump the service-brake pedal until firm before operating or adjusting the handbrake. Factory lever travel is 1-3 notches under a 98 N pull measured 50 mm from the lever end.
 
 ## Alignment conditions
 
@@ -102,7 +98,7 @@ Front camber/caster eccentric nuts and rear camber eccentric nuts are 117.7-137.
 
 ## References
 
-Mazda RX-8 2003 workshop manual (European edition), read 2026-10-14 through a third-party mirror:
+Mazda RX-8 2003 workshop manual (European edition), via the foxed.ca mirror, accessed 14 October 2026:
 
 - [Lifting and jacking positions](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE000000007W02.html)
 - [Front alignment](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE021101015W01.html) and [rear alignment](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE021101016W01.html)

@@ -5,15 +5,11 @@ permalink: /ProjectPages/RX8/compression-testing/
 type: procedure
 section: rx8
 nav_order: 11
-status: wip
-applies: Series 1 RX-8 (2003-2008), two-rotor 13B-MSP. The Devlin Rotary tester described near the end is my own prototype and is still being validated.
+applies: Series 1 RX-8 (2003-2008), two-rotor 13B-MSP.
 reviewed: 2026-10-14
 description: >
   Mazda limits, test procedure, waveform timing and a compact result sheet for the
   two-rotor 13B-MSP.
-related:
-  - /ProjectPages/RX8/engine-removal-and-rebuild/
-  - /ProjectPages/RX8/fuel-ignition-and-starting/
 ---
 
 ## Quick limits
@@ -32,7 +28,7 @@ Mazda's decision rule: if compression is at the minimum or lower, or the differe
 ## Test procedure
 
 1. Confirm the battery is fully charged (Mazda's wording; a load test is good practice). Warm the engine, shut it down and wait approximately ten minutes for exhaust temperature to fall.
-2. Remove one leading **or** trailing plug from each rotor. A Mazda rotary tester may be fitted to either plug hole; keep the unused holes sealed and the removed leads labelled.
+2. Remove one leading or trailing plug from each rotor. A Mazda rotary tester may be fitted to either plug hole; keep the unused holes sealed and the removed leads labelled.
 3. Disconnect the eccentric-shaft position-sensor connector. Mazda uses this step to inhibit both injection and ignition.
 4. Fit the rotary compression transducer to the selected front-rotor plug hole. Mazda specifies a plug-hole adaptor and tester as special service tools. My own reasoning, not Mazda's, is that a conventional one-way-valve piston-engine gauge is the wrong instrument because it retains only the highest event.
 5. Hold the accelerator fully open and crank for 5–10 seconds, long enough to obtain stable repeating events.
@@ -72,7 +68,7 @@ Record units, coolant temperature, battery voltage, tester identity and date wit
 
 ## Devlin Rotary tester
 
-The Devlin Rotary tester is a functional prototype under development. It uses 0–300 psi pressure transducers, records pressure through time, finds valid peaks, calculates cranking rpm, groups the three repeating events, reports kPa/bar/psi and corrects results to 250 rpm. The public notebook deliberately omits its full schematic, BOM, PCB, filter constants and firmware while the design is being validated.
+The Devlin Rotary tester is a functional prototype under development. It uses 0–300 psi pressure transducers, records pressure through time, finds valid peaks, calculates cranking rpm, groups the three repeating events, reports kPa/bar/psi and corrects results to 250 rpm. Its schematic, BOM, PCB, filter constants and firmware aren't published while the design is being validated.
 
 ## References
 

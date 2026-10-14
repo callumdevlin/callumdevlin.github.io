@@ -4,24 +4,24 @@
   <rect width="820" height="410" fill="#ffffff"/>
 
   <!-- factory side -->
-  <rect x="20" y="120" width="140" height="170" fill="#ebebed" stroke="#2d343d" stroke-width="2"/>
-  <text x="90" y="205" text-anchor="middle" font-size="16" font-weight="700" fill="#181b26">PCM</text>
-  <text x="90" y="226" text-anchor="middle" font-size="13" fill="#2d343d">(unchanged)</text>
-  <text x="150" y="165" text-anchor="end" font-size="15" font-weight="700" fill="#181b26">5X</text>
-  <text x="150" y="245" text-anchor="end" font-size="15" font-weight="700" fill="#181b26">5AD</text>
+  <rect x="20" y="120" width="140" height="170" fill="#eeeeee" stroke="#333333" stroke-width="2"/>
+  <text x="90" y="205" text-anchor="middle" font-size="16" font-weight="700" fill="#1a1a1a">PCM</text>
+  <text x="90" y="226" text-anchor="middle" font-size="13" fill="#333333">(unchanged)</text>
+  <text x="150" y="165" text-anchor="end" font-size="15" font-weight="700" fill="#1a1a1a">5X</text>
+  <text x="150" y="245" text-anchor="end" font-size="15" font-weight="700" fill="#1a1a1a">5AD</text>
 
-  <line x1="160" y1="160" x2="400" y2="160" stroke="#2d343d" stroke-width="2.5"/>
-  <line x1="160" y1="240" x2="400" y2="240" stroke="#2d343d" stroke-width="2.5"/>
+  <line x1="160" y1="160" x2="400" y2="160" stroke="#333333" stroke-width="2.5"/>
+  <line x1="160" y1="240" x2="400" y2="240" stroke="#333333" stroke-width="2.5"/>
 
-  <rect x="400" y="130" width="260" height="60" fill="#ffffff" stroke="#2d343d" stroke-width="2"/>
-  <text x="414" y="154" font-size="15" font-weight="700" fill="#181b26">Cooling fan relay No. 1</text>
-  <text x="414" y="175" font-size="13" fill="#2d343d">E terminal to 5X: fans low</text>
-  <text x="396" y="153" text-anchor="end" font-size="13" font-weight="700" fill="#181b26">E</text>
+  <rect x="400" y="130" width="260" height="60" fill="#ffffff" stroke="#333333" stroke-width="2"/>
+  <text x="414" y="154" font-size="15" font-weight="700" fill="#1a1a1a">Cooling fan relay No. 1</text>
+  <text x="414" y="175" font-size="13" fill="#333333">E terminal to 5X: fans low</text>
+  <text x="396" y="153" text-anchor="end" font-size="13" font-weight="700" fill="#1a1a1a">E</text>
 
-  <rect x="400" y="210" width="260" height="60" fill="#ffffff" stroke="#2d343d" stroke-width="2"/>
-  <text x="414" y="234" font-size="15" font-weight="700" fill="#181b26">Relays No. 2 and No. 3</text>
-  <text x="414" y="255" font-size="13" fill="#2d343d">E terminals joined at 5AD</text>
-  <text x="396" y="233" text-anchor="end" font-size="13" font-weight="700" fill="#181b26">E</text>
+  <rect x="400" y="210" width="260" height="60" fill="#ffffff" stroke="#333333" stroke-width="2"/>
+  <text x="414" y="234" font-size="15" font-weight="700" fill="#1a1a1a">Relays No. 2 and No. 3</text>
+  <text x="414" y="255" font-size="13" fill="#333333">E terminals joined at 5AD</text>
+  <text x="396" y="233" text-anchor="end" font-size="13" font-weight="700" fill="#1a1a1a">E</text>
 
   <!-- added contact on 5X: above -->
   <circle cx="300" cy="160" r="5" fill="#5a00b3"/>
@@ -32,7 +32,7 @@
   <line x1="300" y1="52" x2="300" y2="30" stroke="#5a00b3" stroke-width="2.5" stroke-dasharray="7 5"/>
   <g stroke="#5a00b3" stroke-width="2.5"><line x1="288" y1="30" x2="312" y2="30"/><line x1="291" y1="36" x2="309" y2="36"/><line x1="295" y1="42" x2="305" y2="42"/></g>
   <text x="336" y="70" font-size="14" font-weight="700" fill="#5a00b3">Added relay A contact</text>
-  <text x="336" y="88" font-size="13" fill="#2d343d">normally open; closes to ground 5X</text>
+  <text x="336" y="88" font-size="13" fill="#333333">normally open; closes to ground 5X</text>
 
   <!-- added contact on 5AD: below -->
   <circle cx="300" cy="240" r="5" fill="#5a00b3"/>
@@ -43,16 +43,16 @@
   <line x1="300" y1="348" x2="300" y2="370" stroke="#5a00b3" stroke-width="2.5" stroke-dasharray="7 5"/>
   <g stroke="#5a00b3" stroke-width="2.5"><line x1="288" y1="370" x2="312" y2="370"/><line x1="291" y1="376" x2="309" y2="376"/><line x1="295" y1="382" x2="305" y2="382"/></g>
   <text x="336" y="322" font-size="14" font-weight="700" fill="#5a00b3">Added relay B contact</text>
-  <text x="336" y="340" font-size="13" fill="#2d343d">normally open; closes to ground 5AD</text>
+  <text x="336" y="340" font-size="13" fill="#333333">normally open; closes to ground 5AD</text>
 
   <!-- notes -->
   <rect x="570" y="10" width="240" height="104" fill="#ffffff" stroke="#5a00b3" stroke-width="1.5" stroke-dasharray="5 4"/>
-  <text x="582" y="32" font-size="13" fill="#2d343d">Not shown: dash switch, fused</text>
-  <text x="582" y="50" font-size="13" fill="#2d343d">ignition-switched feed and the</text>
-  <text x="582" y="68" font-size="13" fill="#2d343d">coils that close the added</text>
-  <text x="582" y="86" font-size="13" fill="#2d343d">contacts. Never apply 12 V to</text>
-  <text x="582" y="104" font-size="13" fill="#2d343d">5X or 5AD.</text>
+  <text x="582" y="32" font-size="13" fill="#333333">Not shown: dash switch, fused</text>
+  <text x="582" y="50" font-size="13" fill="#333333">ignition-switched feed and the</text>
+  <text x="582" y="68" font-size="13" fill="#333333">coils that close the added</text>
+  <text x="582" y="86" font-size="13" fill="#333333">contacts. Never apply 12 V to</text>
+  <text x="582" y="104" font-size="13" fill="#333333">5X or 5AD.</text>
 
-  <text x="420" y="376" font-size="13" fill="#2d343d">Explanatory only: confirm terminals against</text>
-  <text x="420" y="394" font-size="13" fill="#2d343d">Mazda's circuit diagram and your own car.</text>
+  <text x="420" y="376" font-size="13" fill="#333333">Explanatory only: confirm terminals against</text>
+  <text x="420" y="394" font-size="13" fill="#333333">Mazda's circuit diagram and your own car.</text>
 </svg>

@@ -1,0 +1,25 @@
+{%- comment -%}
+  One project in a plain list (home page, Projects). Wrap rows in
+  <ul class="proj-list"> ... </ul>, one <li> per row.
+
+  href   page URL (required)
+  title  required
+  text   one useful sentence
+  img    path of an original image under /Images (optional; the whole image is shown, never cropped).
+         It is decorative: the title link names the row, so the image has empty alt text
+  level  heading level of the title (default 3; use 2 when the list follows the page title directly)
+{%- endcomment -%}
+{%- assign row_img = site.data.images[include.img] -%}
+{%- assign row_h = include.level | default: 3 -%}
+<li class="proj{% unless include.img %} proj-noimg{% endunless %}">
+{%- if include.img -%}
+  <a class="proj-media no-hover" href="{{ include.href | relative_url }}" tabindex="-1" aria-hidden="true"><picture>
+  {%- if row_img.webp -%}<source type="image/webp" srcset="{% for v in row_img.webp %}{{ v.src | relative_url }} {{ v.w }}w{% unless forloop.last %}, {% endunless %}{% endfor %}" sizes="9rem">{%- endif -%}
+  <img src="{{ include.img | relative_url }}" alt=""{% if row_img.w %} width="{{ row_img.w }}" height="{{ row_img.h }}"{% endif %} loading="lazy" decoding="async">
+  </picture></a>
+{%- endif -%}
+  <div class="proj-body">
+    <h{{ row_h }} class="proj-title"><a href="{{ include.href | relative_url }}">{{ include.title }}</a></h{{ row_h }}>
+    <p class="proj-text">{{ include.text }}</p>
+  </div>
+</li>

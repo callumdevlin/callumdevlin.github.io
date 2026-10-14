@@ -5,7 +5,6 @@ permalink: /ProjectPages/rlbot/vectors/
 type: maths
 section: rlbot
 nav_order: 3
-status: growing
 applies: RLBot v4 Python API. The `Vec3` class is the one from the RLBot Python template, as used in the bot.
 reviewed: 2026-10-14
 description: >
@@ -15,7 +14,7 @@ description: >
 
 Everything the bot does starts with positions and velocities read from the game packet as x, y, z coordinates. To work with them cleanly there is a `Vec3` class. It wraps the three components and provides the vector operations the rest of the maths is built from: addition, subtraction, scaling, dot and cross products and length. Each component stays individually accessible, which is handy when only the height (z) matters.
 
-The class is from the [RLBot Python template](https://github.com/RLBot/RLBotPythonExample) (MIT licence), which the bot is built on, so I'm describing it rather than claiming it. The bot adds a few helpers of its own around it.
+The class is from the [RLBot Python template](https://github.com/RLBot/RLBotPythonExample) (MIT licence), which the bot is built on. The bot adds a few helpers of its own around it.
 
 ~~~python
 class Vec3:
@@ -41,7 +40,7 @@ The most-used operation is distance, to the ball, to the goal or to a boost pad:
 
 ~~~python
 def length(self):
-    return math.sqrt(self.x**2 + self.y**2 + self.z**2)
+    return math.sqrt(self.x2 + self.y2 + self.z2)
 
 def dist(self, other: 'Vec3') -> float:
     return (self - other).length()
@@ -51,7 +50,7 @@ def dist(self, other: 'Vec3') -> float:
 
 ## Projection: how fast am I closing?
 
-The dot product of the velocity with a **unit** direction is the part of the velocity along that direction. That answers "how fast am I moving towards the ball?":
+The dot product of the velocity with a unit direction is the part of the velocity along that direction. That answers "how fast am I moving towards the ball?":
 
 ~~~python
 to_ball = (ball_location - car_location).flat()
@@ -76,11 +75,11 @@ def ang_to(self, ideal: 'Vec3') -> float:
     return math.acos(cos_ang)
 ~~~
 
-It returns a value between 0 and π: zero means perfectly aligned and π means exactly opposite. It has three weaknesses, and I've checked each one with a small test.
+It returns a value between 0 and π: zero means perfectly aligned and π means exactly opposite. It has three weaknesses.
 
-- **A zero-length vector** divides by zero.
-- **Floating-point rounding** can push the cosine to 1.0000000000000002 for two vectors that are exactly parallel, and `acos` then raises a "math domain error". In a test of random exactly-parallel pairs, about one in five failed this way. That is the worst moment for it to happen, because "exactly lined up" is when the car is doing well.
-- **It is unsigned.** Targets 45° to the left and 45° to the right both give 0.785, so it can say how far to turn but not which way.
+- A zero-length vector divides by zero.
+- Floating-point rounding can push the cosine to 1.0000000000000002 for two vectors that are exactly parallel, and `acos` then raises a "math domain error". In a test of random exactly-parallel pairs, about one in five failed this way. That is the worst moment for it to happen, because "exactly lined up" is when the car is doing well.
+- It is unsigned. Targets 45° to the left and 45° to the right both give 0.785, so it can say how far to turn but not which way.
 
 A guarded version fixes the first two:
 

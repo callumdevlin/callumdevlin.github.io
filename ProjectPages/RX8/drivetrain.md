@@ -5,15 +5,11 @@ permalink: /ProjectPages/RX8/drivetrain/
 type: reference
 section: rx8
 nav_order: 8
-status: growing
 applies: Series 1 RX-8 (2003-2008) with the Y16M-D six-speed manual and the factory rear differential.
 reviewed: 2026-10-14
 description: >
   Six-speed ratios, calculated road speed, oil service, Power Plant Frame
   alignment and the Super-LSD.
-related:
-  - /ProjectPages/RX8/acceleration-lab/
-  - /ProjectPages/RX8/torquespecs/
 ---
 
 ## Gearbox ratios
@@ -42,7 +38,7 @@ Mazda describes the Y16M-D as having a triple-synchroniser mechanism on first, s
 
 Mazda lists SAE 90 only for the differential. 80W-90 and 75W-90 are commonly used equivalents, but they are not in Mazda's text, so treat them as my choice if you use them.
 
-Keep the car level. The filler plug is high in the side of each casing and the drain is at its lowest point. In my practice I **remove the filler first**, so a seized filler cannot leave an empty unit. Drain, clean the magnetic plug where fitted, fit the drain with a new washer, then fill through the side opening until oil is near the lower brim of the port (Mazda's wording). I let the excess settle to a slow drip before fitting the filler with a new washer.
+Keep the car level. The filler plug is high in the side of each casing and the drain is at its lowest point. In my practice I remove the filler first, so a seized filler cannot leave an empty unit. Drain, clean the magnetic plug where fitted, fit the drain with a new washer, then fill through the side opening until oil is near the lower brim of the port (Mazda's wording). I let the excess settle to a slow drip before fitting the filler with a new washer.
 
 ## Power Plant Frame
 
@@ -60,19 +56,18 @@ The PPF rigidly relates the gearbox and differential. Its height sets the drivel
 1. Fit the PPF and temporarily tighten its nuts in Mazda's numbered order.
 2. Tighten rear nut No. 1 only until the PPF is fully seated into the differential.
 3. Refit the heat shield, exhaust-manifold stay, exhaust, silencer and front tunnel member. The datum member must be installed before adjustment.
-4. Raise the **front/transmission end** of the PPF with the transmission jack until dimension A is **48.4-56.4 mm**.
+4. Raise the front/transmission end of the PPF with the transmission jack until dimension A is **48.4-56.4 mm**.
 5. Tighten the rear differential fasteners Nos. 1 and 2 to **126.0-154.0 N·m**, then No. 3 to **74.5-93.2 N·m**, following the manual's numbered pattern.
 6. Tighten the front/transmission-side nuts to **126.0-154.0 N·m**.
 7. Remove the jack and remeasure dimension A; readjust if it is outside 48.4-56.4 mm.
 
-Dimension A is the vertical distance from the **lower surface of the PPF** to the **lower surface of the installed front tunnel member** at Mazda's illustrated front datum. It is not measured to the floorpan, exhaust shield or an arbitrary bolt head. Mazda's installation page has the figure; I'll add my own photograph of the datum when I have one.
+Dimension A is the vertical distance from the lower surface of the PPF to the lower surface of the installed front tunnel member at Mazda's illustrated front datum. It is not measured to the floorpan, exhaust shield or an arbitrary bolt head. Mazda's installation page has the figure.
 
-Mazda also describes a way to do this without a jack, using M12 × 1.25 bolts of 55 mm thread length or more tightened from beneath the front tunnel member. I've used the jack method above.
-{:.note}
+Mazda also describes a way to do this without a jack, using M12 × 1.25 bolts of 55 mm thread length or more tightened from beneath the front tunnel member. The steps above use the jack method.
 
 ## Super-LSD
 
-Mazda describes the rear differential as a "super limited-slip differential with a low torque-bias ratio", and gives no torque-bias figure or initial-torque value in the pages I read. I've removed the numeric values and the claim about how it is built that an earlier version of this page carried, because I couldn't trace them to a source.
+Mazda describes the rear differential as a "super limited-slip differential with a low torque-bias ratio", and gives no torque-bias figure or initial-torque value.
 
 What follows is general behaviour of a torque-biasing differential, not specific data for this unit. It permits the normal left/right speed difference in a corner while biasing torque towards the tyre with more usable reaction. When one wheel has almost no reaction torque, such as on ice or with a wheel off the ground, a torque-biasing differential cannot multiply useful torque from nothing. Gentle brake or traction-control intervention can provide reaction, but tyres and safe recovery come first.
 
@@ -80,7 +75,7 @@ For noise, first check equal tyre size and pressure, differential level and leak
 
 ## References
 
-Mazda RX-8 2003 workshop manual (European edition), read 2026-10-14 through a third-party mirror:
+Mazda RX-8 2003 workshop manual (European edition), via the foxed.ca mirror, accessed 14 October 2026:
 
 - [Y16M-D specifications](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE050001030T05.html) and [driveline/axle specifications](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE030001018T03.html)
 - [Y16M-D oil replacement](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE051127001W04.html) and [differential oil replacement](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE031427000W02.html)

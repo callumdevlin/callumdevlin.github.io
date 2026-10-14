@@ -5,9 +5,8 @@ permalink: /ProjectPages/rlbot/overview/
 type: explainer
 section: rlbot
 nav_order: 1
-status: growing
 image: /Images/optimised/rlbot-hero-1200.webp
-applies: RLBot v4 (the `rlbot` 1.x Python package). RLBot v5 has a different API.
+applies: RLBot v4 (the `rlbot` 1.x Python package); RLBot v5 has a different API.
 reviewed: 2026-10-14
 description: >
   What the RLBot framework provides, how the bot is structured, what it does today
@@ -16,7 +15,7 @@ description: >
 
 {% include figure.html src="/Images/rlbot-hero.jpg" alt="In-game screenshot of a blue and black Octane-style car with its boost flame lit, driving across a Rocket League arena floor" caption="An in-game screenshot of a car boosting. Rocket League is a game by Psyonix; this site is not affiliated with it." eager=true %}
 
-The goal of this project was a bot that plays Rocket League by itself, written in Python on top of the [RLBot framework](https://rlbot.org). Daniel McMurray and I wrote it together (the repository README credits both of us), and I'm using "we" for the bot and "I" for these notes. It is hard-coded, with no machine learning, and has a simple behavioural state system for choosing what to do. That constraint is deliberate: every behaviour has to be expressed as explicit maths, which is what these notes document.
+The goal of this project was a bot that plays Rocket League by itself, written in Python on top of the [RLBot framework](https://rlbot.org). Daniel McMurray and I wrote it together, and these notes are my write-up of the maths. The bot is hard-coded, with no machine learning, and has a simple behavioural state system for choosing what to do. That constraint is deliberate: every behaviour has to be expressed as explicit maths, which is what these notes document.
 
 ## The RLBot framework
 
@@ -28,9 +27,11 @@ From the bot's point of view the whole game reduces to a loop: receive the packe
 
 ## What the bot does today
 
-The public snapshot follows the RLBot Python template. Each tick it reads the packet, computes a steering input towards a target point with a proportional controller, holds full throttle, boosts whenever it has boost, and triggers scripted flip sequences at kick-off and at set distances. A behaviour label (chase the ball, defend, get off the wall, track the ball a second ahead) picks the target. It uses the framework's built-in ball prediction for the look-ahead.
+The prototype follows the RLBot Python template. Each tick it reads the packet, computes a steering input towards a target point with a proportional controller, holds full throttle, boosts whenever it has boost, and triggers scripted flip sequences at kick-off and at set distances. A behaviour label (chase the ball, defend, get off the wall, track the ball a second ahead) picks the target, using the framework's built-in ball prediction for the look-ahead.
 
-It does not yet contain the approach-point, path-length, time-estimate or aerial maths described on the other pages. Those are design notes, shown as illustrative code, and I haven't published results from them. I also haven't tested the bot against a win rate or in any competition, and there are no such figures here.
+## Running the prototype
+
+The repository has no run instructions of its own. It is an RLBot v4 bot configured through `bot.cfg`, with `rlbot==1.*`, `rlbot_gui` and `rlbottraining` in `requirements.txt`. As committed it won't start: `bot.py` imports a `behaviours` module that is no longer in the repository, so that module has to be restored or rewritten first.
 
 ## Debug rendering
 
@@ -57,4 +58,4 @@ self.renderer.draw_line_3d(car_location, enemy_goal, self.renderer.orange())
 self.renderer.draw_line_3d(car_location, my_goal, self.renderer.blue())
 ~~~
 
-Watching the white target line swing round while the behaviour label changes is the fastest way I know to spot logic bugs, far faster than reading logs. I'm also working on exporting match data to Matplotlib so the bot's behaviour can be graphed between runs. That isn't in the public repository yet.
+Watching the white target line swing round while the behaviour label changes is the fastest way I know to spot logic bugs, far faster than reading logs.

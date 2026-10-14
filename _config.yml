@@ -95,7 +95,7 @@ hydejack:
   no_inline_css:       false
   no_page_style:       true
   no_break_layout:     true
-  no_toc:              true     # the theme's floating contents box is replaced by the notebook layout's own
+  no_toc:              true     # long pages get a collapsed "On this page" list from the notebook layout
   no_third_column:     true
   no_large_headings:   true
   no_structured_data:  false

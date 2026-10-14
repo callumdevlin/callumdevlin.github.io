@@ -5,8 +5,7 @@ permalink: /ProjectPages/rlbot/coordinates-and-units/
 type: maths
 section: rlbot
 nav_order: 2
-status: growing
-applies: RLBot v4 (`rlbot` 1.x). Field sizes and axis conventions come from the RLBot documentation and the framework's template code.
+applies: RLBot v4 (`rlbot` 1.x). Field sizes and axis conventions are from the RLBot documentation and the framework's template code.
 reviewed: 2026-10-14
 description: >
   The tick loop, time step, units, the world's axes and handedness, and how to turn a
@@ -86,7 +85,7 @@ def relative_location(center: Vec3, ori: Orientation, target: Vec3) -> Vec3:
     return Vec3(d.dot(ori.forward), d.dot(ori.right), d.dot(ori.up))   # ahead, right, above
 ~~~
 
-Check it on a case you can picture. A car at the origin with yaw 90° faces +y. A target at world (0, 1000) is dead ahead, so the local result is (1000, 0). A target at world (−1000, 0) is on its right, so the result is (0, 1000). One at (1000, 0) is on its left, so the right-hand component is −1000. I ran exactly these as tests, along with the yaw-0 case, so the sign convention above is checked rather than assumed.
+Check it on a case you can picture. A car at the origin with yaw 90° faces +y. A target at world (0, 1000) is dead ahead, so the local result is (1000, 0). A target at world (−1000, 0) is on its right, so the result is (0, 1000). One at (1000, 0) is on its left, so the right-hand component is −1000.
 
 Once the target is in the car's frame, the steering decision is the signed angle `atan2(right, forward)`, which the [steering page](/ProjectPages/rlbot/steering/) builds on.
 
@@ -99,5 +98,5 @@ Once the target is in the car's frame, the steering decision is the signed angle
 
 ## Sources
 
-- RLBot documentation: [useful game values](https://wiki.rlbot.org/v4/botmaking/useful-game-values/) and [tick rate](https://wiki.rlbot.org/v4/botmaking/tick-rate/), read 2026-10-14.
+- RLBot documentation: [useful game values](https://wiki.rlbot.org/v4/botmaking/useful-game-values/) and [tick rate](https://wiki.rlbot.org/v4/botmaking/tick-rate/), accessed 14 October 2026.
 - [RLBotPythonExample](https://github.com/RLBot/RLBotPythonExample) (MIT licence) for `Orientation` and `relative_location`. The handedness is my own check of those formulas.

@@ -6,17 +6,14 @@ type: maths
 section: rlbot
 nav_order: 7
 status: wip
-applies: A design for ground shots at a roughly stationary ball. The code is illustrative and is not in the public bot, which currently steers straight at the ball.
+applies: A design for ground shots at a roughly stationary ball. The code is illustrative.
 reviewed: 2026-10-14
 description: >
   Hitting the ball is easy; hitting it towards the goal means approaching through an
   offset point behind it, with angle checks to know when to commit.
 ---
 
-A bot that simply drives at the ball will hit it, in whatever direction the contact happens to send it. The ball goes roughly the way it is struck, so to score, the car has to arrive at the ball **travelling along the line from the ball to the goal**. That turns shooting into a positioning problem: don't aim at the ball, aim at a point *behind* it.
-
-The public bot doesn't do this yet. It steers at the ball's position. This page is the design I've worked out for what comes next, with illustrative code.
-{:.note}
+A bot that simply drives at the ball will hit it, in whatever direction the contact happens to send it. The ball goes roughly the way it is struck, so to score, the car has to arrive at the ball travelling along the line from the ball to the goal. That turns shooting into a positioning problem: don't aim at the ball, aim at a point *behind* it.
 
 ## The offset approach point
 
@@ -39,7 +36,7 @@ ball_to_goal = (enemy_goal - ball_location).flat().normalized()
 approach_point = ball_location - ball_to_goal * (BALL_RADIUS + standoff)
 ~~~
 
-A worked example: ball at (1000, 2000), goal centre at (0, 5120). The ball-to-goal direction is (−0.305, 0.952), and with a 100 uu standoff the approach point is (1059, 1816), which is 192.75 uu behind the ball on the line to the goal. I checked that the point lies on that line, at that distance, behind the ball.
+A worked example: ball at (1000, 2000), goal centre at (0, 5120). The ball-to-goal direction is (−0.305, 0.952), and with a 100 uu standoff the approach point is (1059, 1816), which is 192.75 uu behind the ball on the line to the goal.
 
 A larger `standoff` gives the car more room to straighten up before contact, which helps at speed, at the cost of a longer route. Note that the car's position in the game packet is not its nose. The nose is roughly 73 to 74 uu ahead of the origin on an Octane, so if the target point is where the car's *origin* should be, the standoff has to be at least that large or the car will already be overlapping the ball.
 
@@ -64,8 +61,8 @@ Aiming at the goal's centre is a simplification. The goal mouth is 1,785.5 uu wi
 
 The offset point gets the geometry right, but the bot still needs to *check* its alignment before committing. Otherwise it clips the ball at an angle and gives up possession. Two angle checks do the job, both unsigned in the flat plane:
 
-- **Car's heading against the direction to the ball:** is it actually driving at the ball?
-- **Car to ball against ball to goal:** if it hit the ball now, would the ball go towards the goal?
+- Car's heading against the direction to the ball: is it actually driving at the ball?
+- Car to ball against ball to goal: if it hit the ball now, would the ball go towards the goal?
 
 Use the guarded `angle_between` from the [vectors page](/ProjectPages/rlbot/vectors/), not the template's bare `acos`, which raises an error exactly when two directions are perfectly aligned. When both angles are small, the car can drive through and boost. When the second angle is large, the bot is approaching from the wrong side, so instead of shooting it keeps steering for the approach point and slows if necessary, because [turning radius grows with speed](/ProjectPages/rlbot/movingpath/).
 

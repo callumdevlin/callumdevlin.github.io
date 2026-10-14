@@ -6,15 +6,11 @@ type: reference
 section: rx8
 nav_order: 9
 status: wip
-applies: My own build on a Series 1 RX-8. The component record is deliberately left blank until I can fill it from the CAD and build records.
+applies: My own build on a Series 1 RX-8.
 reviewed: 2026-10-14
 description: >
   The custom front-cover adapter and separate reservoir oil path, with priming,
   checks and premix dose conversions.
-related:
-  - /ProjectPages/RX8/OMP/nozzles-premix/
-  - /ProjectPages/RX8/enginedata/
-  - /ProjectPages/EnduraOMP/
 ---
 
 This adapter keeps the factory Series 1 electronic OMP and its four metering pipes and nozzles. It changes only the pump inlet: instead of drawing engine oil through the front cover, the OMP draws clean two-stroke oil from a dedicated reservoir.
@@ -30,19 +26,9 @@ This adapter keeps the factory Series 1 electronic OMP and its four metering pip
 
 The machined/printed interface sits between the Series 1 front cover and the OMP, closes the original sump-oil feed and presents a separate inlet to the pump. The OMP stays in its factory location with its drive and electrical control unchanged.
 
-## Component record
+## Components {#component-record}
 
-| Field | Record |
-| --- | --- |
-| Adapter material | Not yet recorded |
-| Front-cover/OMP seal type | Not yet recorded |
-| Interface and port dimensions | Not yet recorded |
-| Reservoir capacity | Not yet recorded |
-| Pump and control | Factory Series 1 electronic OMP and PCM strategy |
-| Delivery | Four factory metering pipes and nozzles |
-| Oil | Renewable Lubricants Bio-Rotary Racing Premix |
-
-These fields stay blank until I fill them from the CAD and build records. A useful drawing of this part has to show the original front-cover feed closure, the new inlet, pump-drive clearance, sealing faces and fitting engagement, not a decorative outside view, so I'll add dimensioned CAD and a section render rather than a sketch.
+The pump and control are the factory Series 1 electronic OMP and PCM strategy, and delivery is through the four factory metering pipes and nozzles. The oil is Renewable Lubricants Bio-Rotary Racing Premix. The adapter's drawings, material and seal details, and the reservoir capacity, aren't published yet.
 
 ## Installation and hose routing
 
@@ -53,8 +39,7 @@ These fields stay blank until I fill them from the CAD and build records. A usef
 5. Route the supply continuously downhill where practical, without high loops that trap air. Use oil-compatible hose and positively retained fittings, and protect it at every edge and hot zone.
 6. Keep the hose visible enough to inspect for bubbles. Avoid cable ties that flatten the bore and fittings that impose a tight bend at the adapter.
 
-**Gravity head.** The pump draws from the reservoir, and a low tank may not keep up. One owner thread reports that a gravity feed was only just enough at low to moderate load and not enough at high rpm, and a flyer quoted second-hand in the same thread asks for the tank level to stay at least 6 inches above the pump. I haven't tested this on my own build, so check delivery at high rpm rather than assuming it.
-{:.note}
+Gravity head: the pump draws from the reservoir, and a low tank may not keep up. One owner thread reports that a gravity feed was only just enough at low to moderate load and not enough at high rpm, and a flyer quoted second-hand in the same thread asks for the tank level to stay at least 6 inches above the pump. I haven't tested this on my own build, so check delivery at high rpm rather than assuming it.
 
 ## Priming and leak checks
 
@@ -71,7 +56,7 @@ Likely failure modes are an empty or unvented reservoir, a loose fitting, an air
 
 I use Bio-Rotary Racing Premix in the separate reservoir and can also dose it into the fuel. The vendor's guidance is for adding it to fuel; putting it in the reservoir is my own practice, not something the vendor describes. Premix supplements the targeted OMP delivery. It does not repair a failed pump or a blocked nozzle.
 
-For a naturally aspirated petrol daily driver, the range I worked from is 0.25 to 0.50 US fl oz per US gallon. That is the wording on a retailer's copy of the product text (Mazdatrix). The vendor's own page blocked my request when I checked, and another retailer's copy gives a single lower figure (1 oz per 4 US gallons, the 0.25 end of the range), so check the live page before you rely on these numbers. Higher rates are given for alcohol fuels and for track use of modified or boosted engines.
+For a naturally aspirated petrol daily driver, the range I worked from is 0.25 to 0.50 US fl oz per US gallon. That is the wording on a retailer's copy of the product text (Mazdatrix). Another retailer's copy gives a single lower figure (1 oz per 4 US gallons, the 0.25 end of the range), so check the vendor's live page before relying on these numbers. Higher rates are given for alcohol fuels and for track use of modified or boosted engines.
 
 The conversions use 1 US fl oz = 29.5735 mL and 1 US gal = 3.78541 L:
 
@@ -85,10 +70,7 @@ The conversions use 1 US fl oz = 29.5735 mL and 1 US gal = 3.78541 L:
 
 Some retailers label metric doses using 1 oz = 30 mL, which gives about 1:500 rather than 1:512, so a bottle chart may differ from this table by a few per cent. Calculate from the actual litres dispensed, don't confuse US and imperial gallons, and don't assume more oil is always better.
 
-## Related references
+## References {#related-references}
 
-- [Series 1 OMP guide](/ProjectPages/RX8/OMP/)
-- [OMP nozzles and clean-oil feed](/ProjectPages/RX8/OMP/nozzles-premix/)
-- [Measured stock OMP behaviour](/ProjectPages/RX8/enginedata/)
-- [EnduraOMP](/ProjectPages/EnduraOMP/)
-- Product text as copied by [Mazdatrix](https://mazdatrix.com/product/renewable-lubricants-bio-rotary-racing-premix/) and [ARD Importing](https://www.ardimporting.co.nz/products/bio-rotary-racing-premix), read 2026-10-14; the vendor's own page is [Renewable Lubricants](https://renewablelube.com/products/bio-rotary-racing-premix).
+- Product text as copied by [Mazdatrix](https://mazdatrix.com/product/renewable-lubricants-bio-rotary-racing-premix/) and [ARD Importing](https://www.ardimporting.co.nz/products/bio-rotary-racing-premix), accessed 14 October 2026; the vendor's own page is [Renewable Lubricants](https://renewablelube.com/products/bio-rotary-racing-premix).
+- For the factory pump and its nozzles, see the [Series 1 OMP guide](/ProjectPages/RX8/OMP/) and [nozzles and clean-oil feed](/ProjectPages/RX8/OMP/nozzles-premix/).

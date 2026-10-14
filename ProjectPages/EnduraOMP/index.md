@@ -4,6 +4,7 @@ crumb: EnduraOMP
 permalink: /ProjectPages/EnduraOMP/
 type: case-study
 image: /Images/optimised/enduraomp-engine-1-1200.webp
+reviewed: 2026-10-14
 description: >
   My MEng individual project: an electronically controlled oil metering system for
   rotary engines, from logged data on a running engine to a machined, bench-tested
@@ -11,84 +12,85 @@ description: >
 related:
   - /ProjectPages/RX8/enginedata/
   - /ProjectPages/RX8/OMP/
-  - /ProjectPages/RX8/sohn-adapter/
 ---
 
-{% include figure.html src="/Images/enduraomp-engine-1.webp" alt="CAD render of the EnduraOMP pump, in green and black, mounted on the side of a Mazda 13B-MSP rotary engine with a clear oil line running to the engine" caption="The EnduraOMP pump on the 13B-MSP, replacing the stock oil metering pump on the OEM interface. The images on this page are CAD renders of the design." eager=true %}
+{% include figure.html src="/Images/enduraomp-engine-1.webp" alt="CAD render of the EnduraOMP pump, in green and black, mounted on the side of a Mazda 13B-MSP rotary engine with a clear oil line running to the engine" caption="The EnduraOMP pump on the 13B-MSP, replacing the stock oil metering pump on the OEM interface. Render." eager=true %}
 
-**EnduraOMP** is my MEng individual project at the University of Strathclyde: a reliability-focused lubrication system for rotary (Wankel) engines, built around an electronically controlled gear pump, a dedicated clean-oil supply, and onboard sensing and diagnostics. The project ran from problem research through to a machined, assembled and bench-tested prototype.
-
-I haven't added photographs of the built prototype to this page yet, so every image here is a render of the design. What was built and tested is described in [Prototype and bench testing](#prototype-and-bench-testing), along with what wasn't.
-{:.note}
+EnduraOMP is my MEng individual project at the University of Strathclyde: a lubrication system for rotary (Wankel) engines built around an electronically controlled gear pump, a dedicated clean-oil tank and a dashboard oil-level gauge. The project ran from problem research through to a machined, assembled and bench-tested prototype of the pump, tank and gauge.
 
 ## The problem
 
 Rotary engines are compact, smooth and power-dense, which is why they keep coming back, from Mazda's MX-30 R-EV range extender to UAV propulsion and generator sets. But they have never shaken their reputation for being short-lived, and the causes are closely linked:
 
-- **Seal wear and compression loss.** Apex, side and corner seals slide at high speed against the housings and wear down, costing compression and power.
-- **Oil consumption and carbon build-up.** Oil is deliberately burned in the chambers, and conventional crankcase oils leave ash deposits that foul plugs and stick seals.
-- **Thermal distortion.** Large temperature differences across the housings distort sealing surfaces and accelerate the cycle.
+- Seal wear and compression loss. Apex, side and corner seals slide at high speed against the housings and wear down, costing compression and power.
+- Oil consumption and carbon build-up. Oil is deliberately burned in the chambers, and conventional crankcase oils leave ash deposits that foul plugs and stick seals.
+- Thermal distortion. Large temperature differences across the housings distort sealing surfaces and accelerate the cycle.
 
-Through teardown work, user research with rotary specialists and benchmarking, I identified **internal lubrication as the place where an intervention would do the most good**. It drives seal wear, deposits and thermal behaviour directly, yet the stock system gives the user no visibility and limited control.
+Through teardown work, user research with rotary specialists and benchmarking, I identified internal lubrication as the place where an intervention would do the most good. It drives seal wear, deposits and thermal behaviour directly, yet the stock system gives the user no visibility and limited control.
 
-## Building the evidence first
+## Baseline data from a running engine {#building-the-evidence-first}
 
-Rather than jumping to a concept, I generated a baseline dataset from a running Mazda 13B-MSP. I didn't find a measured dataset linking the stock oil metering pump's commanded position to the oil it delivers.
+I couldn't find a measured dataset linking the stock oil metering pump's commanded position to the oil it delivers, so I generated one from a running Mazda 13B-MSP. I logged the ECU-commanded pump position against engine speed, oil pressure and oil temperature without touching the oil circuit, then bench-drove the stock pump at those same commanded positions and measured the flow. Together they gave a rough reconstruction of the stock metering schedule, from about 0.15 mL/min at idle to about 6.5 mL/min at 9,500 rpm, and a clear dependence of oil pressure on temperature as well as engine speed.
 
-The approach had two stages. First, I logged the live engine's ECU-commanded OMP position against RPM, oil pressure and oil temperature, without touching the oil circuit. Then I bench-drove the stock pump at those same commanded positions and measured the flow. Together they gave a rough reconstruction of the stock metering schedule: from about 0.15 mL/min at idle to about 6.5 mL/min at 9,500 RPM, and a clear dependence of oil pressure on temperature as well as engine speed.
+The pressures and commanded steps are measurements. The delivery figures are rough, and the derived estimate in my [OMP Lab](/ProjectPages/RX8/OMP/lab/) is about 3.6 times higher at the top of the range, so I treat them as the scale of the problem rather than a calibration. The results are in my [13B-MSP engine data notes](/ProjectPages/RX8/enginedata/).
 
-The pressures and commanded steps are measurements. The delivery figures are rough and unvalidated, and the derived estimate in my [OMP Lab](/ProjectPages/RX8/OMP/lab/) puts the top of the range about 3.6 times higher, so I treat them as the scale of the problem rather than a calibration. The full results and their limits are in my [13B-MSP engine data notes](/ProjectPages/RX8/enginedata/).
+## Design development {#the-design}
 
-## The design
+### The pump
 
-EnduraOMP replaces the stock mechanically driven metering pump with an **electronically controlled lubrication system** of four subsystems.
+The pump is an external gear pump driven by a 12 V brushless DC motor. It delivers a repeatable volume per revolution and is controlled by PWM, so delivery isn't slaved to engine speed. A first concept ran the oil through a central gear pump surrounded by coolant channels, but it proved impractical to seal and machine. After four iterations I settled on a sectioned housing, much as a rotary engine is built up in layers, so coolant channels surround the pump cavity to warm the oil on a cold start while the oil and coolant loops stay sealed from each other. A flow simulation showed continuous coolant flow around the pump with no stagnant regions and a temperature drop of about 10 K across the path.
 
-<div class="fig-grid" markdown="0">
-{% include figure.html src="/Images/enduraomp-pump.webp" alt="Render of the EnduraOMP pump unit: a dark grey body with two oil ports at one end and a green anodised mid-section" caption="The pump unit." %}
-{% include figure.html src="/Images/enduraomp-pump-internals.webp" alt="Render of the pump with its cover off, showing the ESP32 control board and its connectors fixed to the motor end" caption="The same assembly with the integrated ESP32 control board exposed." %}
-</div>
-
-**The pump** is an external gear pump driven by a 12 V brushless DC motor. It delivers a repeatable volume per revolution and is controlled by PWM rather than being slaved to engine speed. The housing is built up in sections, much as a rotary engine is built up in layers, so coolant channels surround the pump cavity to warm the oil on a cold start while the oil and coolant loops stay sealed from each other. The housing is CNC-machined, anodised 6061 aluminium.
-
-{% include figure.html src="/Images/enduraomp-pump-section.jpg" alt="Transparent render of the pump in section: the gear set at the centre inside a green coolant jacket, the motor and control electronics to the right" caption="Section render: the gear set sits at the core, wrapped by the coolant-conditioning jacket." class="fig-medium" %}
-
-**The control board** is an ESP32-based PCB built into the pump body. It is designed to read engine speed, oil temperature, oil pressure and tank level, and to meter oil to suit the operating condition: higher flow for cold starts, stable low flow at hot idle and scaled delivery under high load. USB-C on the board is for programming and data access.
+The housing and coolant plate are CNC-machined 6063 aluminium, chosen from a materials screening for corrosion resistance and machinable sealing faces. Brass slide plates act as sacrificial wear faces, the covers are 3D-printed ASA, and a single custom NBR perimeter gasket replaced the individual O-rings of the first design to cut the number of leak paths. The pump mounts on the original oil pump interface through an aluminium bracket that also blanks off the old oil galleries. I settled the 30° upward angle of the mount with clay models, because it gave the clearest access to the bolts and hoses.
 
 <div class="fig-grid" markdown="0">
-{% include figure.html src="/Images/enduraomp-tank.webp" alt="Render of a polished aluminium oil tank with a screw cap, mounting studs on one side and a hose barb at the bottom" caption="The dedicated oil reservoir." %}
-{% include figure.html src="/Images/enduraomp-tank-xray.webp" alt="Cutaway render of the tank showing the oil level and a float-type level sender inside" caption="Cutaway: a float-type level sender feeds the gauge." %}
+{% include figure.html src="/Images/enduraomp-pump.webp" alt="Render of the EnduraOMP pump unit: a dark grey body with two oil ports at one end and a green anodised mid-section" caption="The pump unit. Render." %}
+{% include figure.html src="/Images/enduraomp-pump-internals.webp" alt="Render of the pump with its cover off, showing the ESP32 control board and its connectors fixed to the motor end" caption="The same assembly with the control board exposed. Render." %}
 </div>
 
-**The tank** is a dedicated external reservoir, so the engine injects clean, purpose-chosen oil rather than drawing from the sump. That allows ashless, ester-based two-stroke oils that leave less ash than crankcase oil, and it means the condition of the sump oil no longer decides what gets burned in the chambers.
+{% include figure.html src="/Images/enduraomp-pump-section.jpg" alt="Transparent render of the pump in section: the gear set at the centre inside a green coolant jacket, the motor and control electronics to the right" caption="Section render: the gear set sits at the core, wrapped by the coolant jacket." class="fig-medium" %}
 
-{% include figure.html src="/Images/enduraomp-gauge-lit.webp" alt="Render of a round dashboard gauge with an LED bar showing the oil level" caption="The LED bar gauge: oil level at a glance, no dipstick." class="fig-narrow" %}
+### Control
 
-**The gauge** is a dashboard LED bar driven from the tank's level sender, so the injection oil level is always in front of the driver. Rotary ownership normally means careful dipstick checks. This puts that information where you can see it.
+<span id="what-i-was-aiming-for"></span>The control board is an ESP32 PCB built into the pump body. The idea is that a calibrated map, not a fixed mechanical relationship, sets the flow from engine speed and condition: higher flow for cold starts, stable low flow at hot idle and scaled delivery under high load. The architecture reads engine speed, oil temperature, oil pressure and tank level. The prototype firmware is a simpler feed-forward map from engine speed, taken from tachometer pulses, with corrections for cranking, high load and hot running. It also runs a short priming event at ignition and has a limp mode for critically low oil and a fault state for implausible sensor readings. I haven't tested those responses on an engine.
 
-## What I was aiming for
+The same hardware is meant to suit automotive, generator and UAV duty, with only the calibration maps and protective actions changing. I have only worked with the 13B-MSP.
 
-Existing reliability products each tackle one piece of the problem: premix kits, clean-oil feed adapters, upgraded seals. The core idea of EnduraOMP is that **lubrication should be a controlled, observable, serviceable subsystem**, not a hidden one:
+### Tank and gauge
 
-- **Not tied to engine speed.** A calibrated flow map replaces the fixed mechanical relationship, so delivery can follow the operating condition, including a cold-start priming strategy. The map sets the flow from engine speed and condition; nothing in the design measures the delivered flow itself, so I describe it as electronically controlled rather than closed-loop.
-- **Fault-aware by design.** The design is meant to detect low oil, pressure faults, sensor failure and pump failure, with responses that depend on the application (warn and derate for a UAV, controlled shutdown for a generator) and loggable diagnostics. I haven't tested these responses on an engine.
-- **One architecture, in intent.** The same hardware is meant to suit automotive, generator and UAV duty, with only the calibration maps and protective actions changing. I have only worked with the 13B-MSP.
-- **Visible to the user.** The tank and gauge turn oil management from guesswork into a glance.
+The tank is a dedicated 1 L external reservoir, so the engine injects clean, purpose-chosen oil rather than drawing from the sump. I chose Renewable Lubricants' Bio-Rotary, an ashless, ester-based oil made for rotary engines, because ash from crankcase oil is a major source of deposits. A float-type resistive sender low in the tank warns of low oil before the pump can ingest air, a mesh filter sits in the filler neck, and mirrored outlet ports let the same tank serve either side of an installation.
 
-## Prototype and bench testing
+<div class="fig-grid" markdown="0">
+{% include figure.html src="/Images/enduraomp-tank.webp" alt="Render of a polished aluminium oil tank with a screw cap, mounting studs on one side and a hose barb at the bottom" caption="The oil reservoir. Render." %}
+{% include figure.html src="/Images/enduraomp-tank-xray.webp" alt="Cutaway render of the tank showing the oil level and a float-type level sender inside" caption="Cutaway: a float-type level sender feeds the gauge. Render." %}
+</div>
 
-This didn't stay in CAD. The boards were manufactured by JLCPCB and hand-assembled. The housing, coolant plate and slide plates were CNC-machined and anodised, gaskets were cut from NBR sheet, and the remaining hardware was 3D printed in ASA. Testing was staged, subsystem by subsystem.
+The gauge is a separate dashboard module with a 12-segment LED bar, driven by an LM3914 from a PWM signal and zoned green, amber and red. I chose an analogue bar driver over a digitally addressed display so the indicator depends as little as possible on firmware. Rotary ownership normally means careful dipstick checks, and this puts the oil level where you can see it.
 
-- **Electronics.** The motor control board ran the brushless pump motor smoothly across the full PWM range first time. The gauge board needed a grounding fix and extra PWM smoothing before the LED bar read steadily. That is exactly what staged bench testing is for, and both fixes are in the next board revision.
-- **Engine fitment.** The pump assembly mounted directly to the 13B-MSP on the OEM OMP interface and sealed against the original engine geometry, with practical hose and tool access. This was a fitment check.
-- **Fluid testing.** The coolant loop flowed cleanly with no external leaks, and the pump circulated oil and produced measurable flow. I saw no cross-leakage between the oil and coolant loops, which supports the sectioned sealing architecture. I haven't recorded the test duration or pressures here, so that isn't a long-term seal result.
-- **On-engine oil comparison.** I ran the engine on the chosen ashless bio-ester oil through an external feed and compared it with the earlier 10W-30 baseline under the same warm-up and rev pattern. The hydrocarbon emissions trace improved clearly. That was one qualitative comparison of the oil and feed method, not a test of the EnduraOMP pump, and I haven't put numbers on it here.
+{% include figure.html src="/Images/enduraomp-gauge-lit.webp" alt="Render of a round dashboard gauge with an LED bar showing the oil level" caption="The LED bar gauge: oil level at a glance, no dipstick. Render." class="fig-narrow" %}
+
+## Prototyping {#prototype-and-bench-testing}
+
+The boards were manufactured by JLCPCB and hand-assembled. The pump housing, coolant plate and slide plates were CNC-machined externally and anodised, gaskets were cut by hand from 1 mm NBR sheet, and the remaining parts were printed in ASA. An early translucent 3D-printed gear pump had already checked that the gears meshed and the gasket sealed. The tank is an existing tank modified to take the level sender, with a machined cap, and the gauge base is laser-cut steel that bends to fit different mounting surfaces.
+
+For the one-off pump I controlled only the functionally important features tightly and left the rest at ±0.1 mm, biasing the slide plates slightly undersize and the housing slightly oversize so that it would go together. That choice cost efficiency later.
+
+## Testing
+
+I tested the prototype subsystem by subsystem.
+
+- Electronics. The motor control board ran the brushless motor smoothly across the PWM range. The gauge board had its data-connector ground missing from the regulator ground, which I fixed with a jumper, and its bar was jittery until I averaged the PWM signal over a longer window. Both fixes are planned for the next board revision.
+- Engine fitment. The pump mounted on the OEM pump interface with practical hose and tool access, and the original seal sealed against the engine. This was a fitment check.
+- Fluid. The coolant loop flowed smoothly with no external leaks, and the pump circulated oil and produced measurable flow. The flow was less consistent than intended, most likely from internal leakage across the slide-plate interfaces. There was no leakage between the oil and coolant loops.
+- Oil comparison on the engine. I ran the engine on the Bio-Rotary oil through an external feed, with the engine's own oil supply blocked off, using the same warm-up and rev pattern as the earlier 10W-30 baseline. Hydrocarbon emissions fell by about 50% and average NOx by about 14%. This was a single comparison of the oil and feed method; it didn't involve the EnduraOMP pump.
 
 {% include figure.html src="/Images/enduraomp-engine-2.webp" alt="CAD render of the EnduraOMP pump on the 13B-MSP seen from the other side, with the pulley and the coolant and oil lines visible" caption="The fitment from the other side. Render." class="fig-medium" %}
 
-## Limitations and next steps
+## Outcome
 
-The prototype's deliberately relaxed machining tolerances, chosen so a one-off assembly would go together, cost volumetric efficiency through internal leakage at the slide-plate interfaces. The next iteration is about tighter control of those faces, not a new layout. The electronics need a stronger ground pour and hardware-level signal filtering. And the big one is a full instrumented on-engine test campaign to validate flow behaviour, thermal interaction and fault handling under real load.
+The tests showed that the design can be built, assembled, mounted on the engine, controlled and fluid-tested at prototype level. The installed system is estimated at about 1.9 kg including 860 g of oil in a full tank, against about 2.9 kg for the stock pump and its drive, a saving of about 1 kg. A design-stage costing came to about £330 a unit to manufacture. I also took the concept back to rotary specialists, vehicle mechanics and an engineer. They were broadly positive about the dedicated tank and the visible oil level, and raised the same practical points as the tests: tolerance control in the pump, positive gasket location and electrical grounding.
 
-The project doesn't claim production readiness. What it shows is that treating rotary lubrication as a controlled, testable, user-visible subsystem is a credible and buildable route to a more reliable rotary engine.
+The pump hasn't yet run on an engine as a complete system, so there is no durability result. What the project shows is that treating rotary lubrication as a controlled, testable, user-visible subsystem is a buildable route to a more reliable rotary engine.
 
-*Curious about the stock system this replaces? My [RX-8 OMP guide](/ProjectPages/RX8/OMP/) covers how Mazda's metering pump works, how to diagnose it and how to service it.*
+## Further development {#limitations-and-next-steps}
+
+The main next step is an instrumented on-engine test of the pump, to assess flow, thermal behaviour, transient response and fault handling under real load. Tighter control of the slide-plate faces would improve volumetric efficiency, and the electronics need a larger ground pour and better filtering. After that come a direct ECU interface so engine signals can be used without extra sensing, fault logging, and calibration maps for automotive, generator and UAV duty.

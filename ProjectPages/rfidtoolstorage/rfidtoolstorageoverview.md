@@ -3,63 +3,78 @@ title: ToolSync, a Digital Tracking Toolbox
 crumb: ToolSync
 permalink: /ProjectPages/rfidtoolstorage/
 type: case-study
+reviewed: 2026-10-14
 description: >
-  My fourth-year BEng project: a toolbox that combines RFID check-in and check-out,
-  BLE tags that can flash and beep, and a Raspberry Pi touchscreen to stop tools
-  going missing.
+  My fourth-year BEng project: a tool chest that tracks its contents with RFID and a
+  Raspberry Pi touchscreen, with tags designed to flash and beep to find a missing tool,
+  built as a working scaled prototype.
 ---
 
 The idea for my fourth-year BEng project came from a problem I run into constantly: managing tools. At work, at a van conversion company, and in my own workshop, I've seen how much time goes on hunting for tools in cluttered or poorly organised storage.
 
-ToolSync is my answer: a toolbox that tracks what's in it. It pairs a heavy-duty tool chest with a Raspberry Pi touchscreen. A passive HF RFID reader handles check-in and check-out, and small BLE tags (*SyncTags*) on the tools can flash and beep when one goes missing, so the box doesn't just tell you something has gone, it helps you find it.
+ToolSync is my answer: a toolbox that tracks what's in it. It pairs a heavy-duty tool chest with a Raspberry Pi touchscreen. A passive HF RFID reader handles check-in and check-out, and small BLE tags (SyncTags) on the tools are designed to flash and beep when one goes missing, so the box doesn't just tell you something has gone, it helps you find it.
 
-This page describes the design and the software. It doesn't yet itemise which parts were built and bench-tested or give measured results, and I've labelled the figures that are calculations rather than measurements.
-{:.note}
+## Research and concept
 
-## Electrical architecture
+I started with a survey, interviews and shadowing, and looked at how people actually store and lose tools. Concept generation and a controlled convergence matrix narrowed a wide set of ideas to the digital tracking toolbox, which a focus group and a product champion then reviewed.
 
-The toolbox takes **230 V mains** through a standard **C13 inlet**. The mains also feeds a two-gang socket, so tools can be powered from the box without an inverter. A 230 V to 5 V converter feeds the low-voltage subsystem and charges the onboard battery, which keeps conversion losses, cost and complexity down.
+## Design development
 
-Serviceability drove the wiring strategy. Every 5 V peripheral ends in a quick-release **4-pin modular connector**, reusing one pin pattern throughout with the unused pins blanked. One connector type means less variation, fewer spares and faster maintenance when something needs swapping in the field.
+### The toolbox
 
-A Raspberry Pi runs warm under sustained display and scanning load, so a dedicated DC fan keeps it clear of its thermal limits. Raspberry Pi defines that limit as 85 °C on all models, and a Pi 4 starts to throttle progressively from 80 °C (a 3B+ has a 60 °C soft limit by default). I haven't recorded which model the box uses or logged its temperatures here.
+The full-size design is a welded box-section steel frame with laser-cut 3 mm aluminium drawers and side panels, heavy-duty drawer runners and castors, LED lighting and a work surface on top. A key lock latches every drawer at once through a cam and a connecting bar. The plastic parts are designed as injection-moulded ABS. I checked the drawer forces and the force to turn the lock by calculation, and the screen angle and handle heights against anthropometric data.
 
-### Power budget
+### Electrical architecture
 
-Peak draw across the Pi, display, LEDs, transmitter module and USB comes to roughly **33 W**, and typical idle use is around **11 W**. Taking the 12,800 mAh pack as a 12 V battery, that is 153.6 Wh, which at 11 W is about **14 hours** of runtime away from mains. That is a calculated best case. It ignores converter losses, the usable fraction of the battery and voltage sag, so a real figure will be lower, and I haven't recorded a measured runtime.
+The toolbox takes 230 V mains through a standard C13 inlet. The mains also feeds a two-gang socket, so tools can be powered from the box without an inverter. A 230 V to 5 V converter feeds the low-voltage subsystem and charges the onboard battery.
 
-### Protection
+Serviceability drove the wiring. Every 5 V peripheral ends in a quick-release 4-pin connector, reusing one pin pattern throughout with the unused pins blanked, so there is less variation, fewer spares and faster maintenance. A small DC fan keeps the Raspberry Pi clear of the 85 °C limit Raspberry Pi gives for its processors.
 
-Safety is handled in layers: a **7.5 A fuse** matched to the 16 AWG wiring sits directly after the battery, a battery isolator prevents parasitic drain in storage, the steel frame is chassis-grounded, and I²C noise is managed through secure terminations and stable harness routing. This is a box for workshops, not a desk.
+#### Power budget
 
-## Software and interface
+Peak draw across the Pi, display, LEDs, transmitter module and USB comes to roughly 33 W, and typical use is around 11 W. Taking the 12,800 mAh pack as a 12 V battery, that is 153.6 Wh, which gives about 4.6 hours at peak and about 14 hours at 11 W away from mains. These are calculated from the pack's rating, so a real runtime will be lower.
 
-A Raspberry Pi handles RFID scanning through a **PN532** module over I²C, stores data locally in **JSON**, and runs a touchscreen GUI built with **CustomTkinter**. I²C was chosen for its low wiring complexity and the GPIO headroom it leaves.
+#### Protection
+
+A 7.5 A fuse matched to the 16 AWG wiring sits directly after the battery, a battery isolator prevents drain in storage, the steel frame is chassis-grounded, and I²C noise is managed through secure terminations and stable harness routing.
+
+### Software and interface
+
+A Raspberry Pi handles RFID scanning through a PN532 module over I²C, stores data locally in JSON, and runs a touchscreen GUI built with CustomTkinter. I²C was chosen for its low wiring complexity and the GPIO headroom it leaves.
 
 The interface is built around how someone uses a toolbox. A sidebar moves between drawers, and the main panel shows tool tiles ("10 mm Spanner" and so on), each with a status dot: green for available, red for missing. Further panels handle adding and editing tools and the account and system settings.
 
-Each user has a local JSON file keyed by drawer (`D1` to `D7`), storing each tool's tag `uid` and a simple in/out `status`. A background **thread** polls the RFID reader continuously. When a tagged tool is scanned it inverts that tool's status and refreshes the UI, so the overview stays live as items come and go. The PN532 returns raw hex bytes, and real tags turned out to be inconsistent in format, so a custom hex-to-decimal UID parser normalises tags and edge cases before lookup.
+Each user has a local JSON file keyed by drawer (`D1` to `D7`), storing each tool's tag `uid` and a simple in/out `status`. A background thread polls the RFID reader continuously. When a tagged tool is scanned it inverts that tool's status and refreshes the UI, so the overview stays live as items come and go. The PN532 returns raw hex bytes, and real tags turned out to be inconsistent in format, so a custom hex-to-decimal UID parser normalises tags and edge cases before lookup. A systemd service (`tool_sync.service`) starts the UI at boot, so it behaves like an appliance rather than a computer.
 
-To make it feel like an appliance rather than a computer, a systemd service (`tool_sync.service`) starts the UI at boot.
+### SyncTag, the tool-mounted PCB
 
-## SyncTag, the tool-mounted PCB
+The SyncTag is a miniature PCB that lives on each tool. It integrates a BK3432 BLE module, an RFID receiver, an 80 dB buzzer and an LED, with the buzzer and LED switched through MOSFETs chosen for size, audibility and low power. My first plan was a 15 mAh cell, but the battery-drain calculation showed it wouldn't last, so I moved to a CR1025 coin cell (about 30 mAh) as the best size-to-life trade-off, with easy replacement. The board includes backflow-protection diodes to isolate the BLE and RFID interrupts and protect the more sensitive components from transients.
 
-The SyncTag is a miniature PCB that lives on each tool. It integrates a **BK3432 BLE module**, an RFID receiver, an 80 dB buzzer and an LED, with the buzzer and LED switched through MOSFETs chosen for size, audibility and low power. After evaluating miniature cells I standardised on a **CR1025** coin cell (about 30 mAh) as the best size-to-life trade-off, with easy replacement. The board includes backflow-protection diodes to isolate the BLE and RFID interrupts and protect the more sensitive components from transients.
+From the component currents, each scan event costs about 33 µWh, so the cell covers roughly 2,760 events, or about two and a half years at three scans per tool per day. In standby the BLE module draws 1.8 µA, which gives about two years. These are design calculations, not measurements, and taken together they suggest over a year in normal use.
 
-## Design for service and manufacture
+## Prototyping
 
-A few principles ran through the whole design:
+I planned a full-scale prototype, but at the start of Stage 2 I judged that a full-size box wasn't feasible in the time, and built a scaled-down proof of concept instead.
 
-- **Modular harnessing:** the repeated 4-pin connector pattern cuts the number of part variants and field repair time.
-- **Built for the environment:** a grounded steel chassis and protected cable runs to survive a working shop.
-- **Tool-level interface:** instant visual status and one-scan add and remove flows replace drawer-diving and manual logs.
+- The toolbox prototype uses a pre-made miniature toolbox with the real electronics: a Raspberry Pi, the RFID module and a display, managing two drawers. Tool detection, data storage and the interface run as they would in the full design. I left Bluetooth out because I couldn't get a PCB designed for the BLE chip in time, although the software is structured to accept it.
+- The SyncTag casing is a 1:1 TPU print. Trying wall thicknesses from 1.0 to 3.5 mm showed that 2.5 mm protects the electronics and still bends to stick to a flat tool surface. An RFID sticker inside the casing stands in for the tag electronics, which let tools be checked in and out as designed. The tags read without interference against tools, the toolbox and other metal.
+- The locking mechanism is a 1:1 plywood model, CNC-cut with a technician's help. It showed the cam lifting the latch hooks together and worked without changes.
+- A scaled handle prototype went to a group of tradesmen. They found the shape comfortable but the bare edge hard to grip with greasy hands, so the design gained a rubber trim.
 
-## Tech stack
+## Evaluation
 
-- **Hardware:** Raspberry Pi, PN532 RFID reader, C13 mains inlet, 230 V to 5 V converter, DC cooling fan, modular 4-pin harness, 12 V / 5 V 12,800 mAh battery.
-- **Software:** Python (CustomTkinter UI), systemd autostart service, JSON data store, threaded PN532 polling, UID normalisation.
-- **SyncTag PCB:** BK3432 BLE, RFID receiver, LED and buzzer via MOSFET switching, CR1025 coin cell, protective diodes.
+I lent the prototype, with SyncTags and a working electronics housing, to a friend, who used it on a car job and found check-in and check-out useful for keeping track of tools and for tidying up. I also showed the prototype to focus groups at a van conversion company and a bodyshop. The response was positive, and the main suggestion was a larger screen for reading at a distance.
+
+A costing for the full-size toolbox came to about £391 to manufacture, excluding the tags, which cost about £0.55 each.
+
+## Outcome
+
+The project met its aims apart from the full-scale prototype. The working prototype demonstrates check-in and check-out, the tag casing and the locking mechanism. The full-size toolbox and the BLE flash-and-beep function exist as designs.
+
+## Further development
+
+The next steps are refining the manufacturing processes, building and testing the Bluetooth tag so it can flash and beep, building a full-scale model, and trying a larger display.
 
 ## References
 
-- Raspberry Pi, [thermal limits and throttling](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html), read 2026-10-14.
+- Raspberry Pi, [thermal limits and throttling](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html), accessed 14 October 2026.

@@ -5,15 +5,14 @@ permalink: /ProjectPages/RX8/terminals-and-codes/
 type: reference
 section: rx8
 nav_order: 13
-status: growing
-applies: Series 1 RX-8 (2003-2008). Terminal and code definitions are from Mazda's 2003 manual; I have not recorded connector viewing orientation or checked RHD harness differences.
+applies: Series 1 RX-8 (2003-2008). Definitions are from Mazda's 2003 workshop manual.
 reviewed: 2026-10-14
 description: >
-  The PCM terminals, component connector pins, relay numbers and fault codes that
-  these notes refer to, collected in one lookup table.
+  The PCM terminals, connector pins, relays and fault codes used in these notes, in
+  one lookup.
 ---
 
-This collects, in one place, the terminal names and codes that appear across the notebook, so you can look one up without finding the page it came from. Every entry is from Mazda's 2003 workshop manual (the pages are linked at the bottom). It is a lookup, not a wiring diagram: I haven't recorded which way up each connector faces, so identify the connector and pin on Mazda's diagram for your car.
+Entries are from Mazda's 2003 workshop manual (linked under Sources). This is a lookup, not a wiring diagram: it doesn't show connector orientation, so identify the connector and pin on Mazda's diagram for your car.
 
 ## PCM terminals
 
@@ -53,7 +52,7 @@ This collects, in one place, the terminal names and codes that appear across the
 | Fuel pump relay | Pump power | Engine-compartment relay |
 | Fuel pump speed-control relay | Bypasses the pump resistor at high demand or cranking | Command with the `FPRR` PID |
 
-Mazda's relay layout figure (a left-hand-drive figure) numbers fan relay No. 1 as position 16, No. 2 as 19 and No. 3 as 13. I haven't confirmed that layout on a UK RHD car.
+Mazda's relay-layout figure is a left-hand-drive one and numbers fan relay No. 1 as position 16, No. 2 as 19 and No. 3 as 13. Positions on a UK right-hand-drive car may differ.
 
 ## Fault codes used in these notes
 
@@ -75,4 +74,4 @@ Mazda's relay layout figure (a left-hand-drive figure) numbers fan relay No. 1 a
 
 ## Sources
 
-Mazda RX-8 2003 workshop manual (European edition), read 2026-10-14 through a third-party mirror: [PCM terminal inspection](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE014018880W02.html), [OMP control operation](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE014000140T38.html), [DTC P0480](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE010200400W07.html), [DTC P0481](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE010200400W08.html), [DTC P1686](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE010201600W01.html), [P1687](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE010201600W02.html), [P1688](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE010201600W03.html), [fuel-pump speed-control operation](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE014000140T26.html) and [relay locations](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE092167730W01.html). The ignition-coil terminals are from Mazda's US-style RX-8 service manual PCM terminal table.
+Mazda RX-8 2003 workshop manual (European edition), via the foxed.ca mirror, accessed 14 October 2026: [PCM terminal inspection](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE014018880W02.html), [OMP control operation](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE014000140T38.html), [DTC P0480](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE010200400W07.html), [DTC P0481](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE010200400W08.html), [DTC P1686](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE010201600W01.html), [P1687](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE010201600W02.html), [P1688](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE010201600W03.html), [fuel-pump speed-control operation](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE014000140T26.html) and [relay locations](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE092167730W01.html). The ignition-coil terminals are from Mazda's US-style RX-8 service manual PCM terminal table.

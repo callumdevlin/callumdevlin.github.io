@@ -1,9 +1,9 @@
 # Hydejack layout variables (documented theme hook: _data/variables.yml).
 #
-# Why: with the stock 54 rem content column, wide screens showed a column of empty space
-# to the right of the text (the theme reserves it for its own floating contents box, which
-# this site does not use). The notebook layout puts a contents rail inside the column
-# instead, so the column is widened. Prose line length is capped separately in
-# _sass/my-style.scss; only tables, figures, code and labs use the extra width.
+# The stock 54 rem content column leaves a band of empty space to the right of the text on
+# wide screens (the theme reserves it for its own floating contents box, which this site does
+# not use). The column is widened a little instead. Prose line length is capped separately in
+# _sass/my-style.scss (about 50 rem), so only tables, figures, code and the labs use the extra
+# width.
 content_width_2: 54    # 54em-86em screens (theme default 48)
 content_width_5: 70    # 86em+ screens     (theme default 54)

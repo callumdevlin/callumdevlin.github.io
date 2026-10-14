@@ -6,31 +6,32 @@ type: case-study
 image: /Images/optimised/BA_Stowage_18-1200.webp
 reviewed: 2026-10-14
 description: >
-  A push-to-stow cradle for breathing-apparatus cylinders in fire-appliance crew
-  cabs, designed with Emergency One as a group project and checked with FEA against
-  their 10 g requirement.
+  A push-to-stow cradle for breathing-apparatus cylinders in fire-appliance crew cabs,
+  designed with Emergency One as a group project and built as a 1:1 prototype.
 ---
 
 {% include figure.html src="/Images/BA_Stowage_18.png" alt="Render of three MP1 stowage stations mounted in a crew-cab seat bank, each holding a yellow breathing-apparatus cylinder" caption="Three MP1 stations in a crew-cab seat bank. Render." eager=true %}
 
-MP1 is a stowage cradle for breathing-apparatus (BA) cylinders in the crew cab of a fire appliance. We designed it with Emergency One (E1) as a four-person industrial group project. One adjustable assembly replaces bespoke fixtures and holds either a single cylinder or a twin pack. It is meant to clamp when you push the cylinder in and to let go when you pull a handle in the seat.
+MP1 is a stowage cradle for breathing-apparatus (BA) cylinders in the crew cab of a fire appliance. We designed it with Emergency One (E1) as a four-person industrial group project at the University of Strathclyde. One adjustable assembly holds either a single cylinder or a twin pack, clamps as the cylinder is pushed in, and lets go when you pull a handle in the seat.
 
-This was a design and analysis project at university. I worked on it as one of four, so "we" below means the group. The design was checked by FEA against E1's crash requirement. It hasn't been crash-tested or certified, and I say where the evidence stops in [what the analysis shows](#what-the-analysis-does-and-doesnt-show).
+"We" below means the group. My part was the mechanical development: CAD modelling, the FEA, and engineering input on structure, materials and manufacturability.
 
 ## The brief
 
-E1 needed a BA stowage solution that could:
+Fire services are moving contaminated kit out of the crew cab and into the body of the appliance, and E1 was designing a new stowage bracket for almost every cylinder type and manufacturer. They wanted one adjustable design instead. It had to:
 
-- fit the existing cab integration space without rework to the vehicle structure
-- support single and twin-pack formats without a unique bracket for each customer
-- work with gloved hands in low visibility
-- meet a **10 g crash requirement** for a cylinder of about 20 kg, which is a load of about 1,962 N (20 kg × 9.81 m/s² × 10)
+- fit the existing cab space without changing the vehicle structure
+- take single and twin-pack formats without a unique bracket for each customer
+- work with gloved hands in low visibility, with the cylinder still reachable for valve checks
+- restrain a cylinder of about 20 kg in a 10 g crash, a load of about 1,962 N (20 kg × 9.81 m/s² × 10)
+- last 15 years in service
+- be made on E1's own laser-cutting, press-brake and welding equipment
 
-Operating in full PPE means reduced dexterity and limited visibility, and the cylinder has to stay accessible for rapid egress and valve checks while docked.
+The operations manual we wrote gives a 35 kg maximum cylinder weight, against the 20 kg used as the analysis basis.
 
 ## The space it has to fit
 
-The envelope came from E1's cab CAD, where the allowable volume behind the seat is the green zone below. It is **256 mm wide, 735 mm high and 275 mm deep**. Taking it directly from the cab model meant the design could be installed without redesigning the cab, and the same logic should carry over to rear lockers. Depth is the controlling constraint, because of cab comfort and clearance around the seat and controls.
+The envelope came from E1's cab CAD, where the allowable volume behind the seat is the green zone below. It is 256 mm wide, 735 mm high and 275 mm deep. Taking it straight from the cab model meant the design could be installed without redesigning the cab, and the same logic should carry over to rear lockers. Depth is the controlling constraint, because of cab comfort and clearance around the seat and controls. The operations manual lists the finished unit as 583 × 260 × 230 mm (width × height × depth), but those labels look transposed.
 
 <div class="fig-grid" markdown="0">
 {% include figure.html src="/Images/GreenZone2.JPG" alt="CAD of a crew-cab seat bank with a green translucent volume marking the space available for one stowage station" caption="The green volume is the space available behind the seat for one station, from E1's cab CAD." %}
@@ -47,13 +48,15 @@ The motion is a single push to stow:
 4. A rotary latch locks the mechanism.
 5. A pull handle built into the seat releases the latch for quick removal.
 
-The red parts are the ones the user touches, so they're easy to find in a dark cab. Direct access to the latch is kept as a manual override, as the client required.
+The parts the user touches are red, so they stand out against the darker cab interior and aren't lost against yellow protective gear.
 
-## How it's built
+## Design development {#how-its-built}
 
 ### Back plate and sliding panels
 
-The back plate bolts into E1's seat frame and is the primary load path. Two sliding front panels set the effective clamping width, so one backbone fits single and twin-pack formats. The panels can be pinned through pilot holes to stop them drifting.
+The back plate bolts into E1's seat frame and is the main load path. Two sliding front panels set the clamping width, so one backbone takes single and twin-pack formats, and the panels can be pinned through pilot holes to stop them drifting. The operations manual gives an adjustment range of 150 to 250 mm in width and 450 to 500 mm in height.
+
+The plate went through five versions. The first split it into a rear plate and two sliding panels. Later versions simplified the panels to plain rectangles, which cut manufacturing complexity and stress concentrations, and added mounting points. In the last version we added formed bends to the rear plate, because E1 pointed out that a flat plate would be prone to buckling, and pilot holes in the sliding parts, because slotted adjusters tend to shift under load. In the FEA the bends cut the peak stress by about 30% compared with the flat plate.
 
 <div class="fig-grid" markdown="0">
 {% include figure.html src="/Images/BA_Stowage_8.png" alt="Front view of the empty MP1 bracket: a dark back plate with two red sliding side panels, curved clamping arms and a lower spigot bracket" caption="The empty bracket from the front: back plate, red sliding panels and the spigot bracket at the bottom." %}
@@ -62,7 +65,9 @@ The back plate bolts into E1's seat frame and is the primary load path. Two slid
 
 ### Clamping mechanism
 
-The push plate is the input surface during stowage. A pair of curved arms clamps the cylinder from the sides, and torsion springs reset the mechanism to open after release so it always presents ready to stow. The aim was for clamp loads to be reacted into the back plate and seat frame rather than into plastics or trim.
+The clamp was the hardest part of the design. The first version was a two-bar linkage with trigger plates. It put most of the load through one bolt, the plates rattled because nothing constrained them from behind, and nothing stopped the cylinder lifting. A top stopper fixed the vertical restraint. A scissor mechanism then steadied the plates, but E1 warned that it would be prone to seizing under vibration in such a tight space. The final version dropped the scissor and its spindle. Each arm pivots on a single bolt and is driven by two link bars, which cut the part count and spread the load that the FEA had shown going through the old connectors. Torsion springs return the arms to open after release.
+
+The aim throughout was for clamp loads to be reacted into the back plate and seat frame rather than into plastics or trim.
 
 <div class="fig-grid" markdown="0">
 {% include figure.html src="/Images/BA_Stowage_3.png" alt="Render of the MP1 mechanism from above: red back plate and sliding panels, curved black clamp arms and the spigot bracket at the base" caption="The mechanism without a cylinder, seen from above." %}
@@ -72,7 +77,9 @@ The push plate is the input surface during stowage. A pair of curved arms clamps
 
 ### Locking and release
 
-We chose a Southco R4 rotary latch with its matching catch, as an established automotive-grade part for repeated cycles and vibration. Release is a seat pull handle and cable, designed for gross-motor operation in PPE. Manual override access is kept so the mechanism is still serviceable if the cable fails, which was a client requirement.
+After trying E1's existing systems and commercial alternatives, we preferred a release handle built into the seat, between the user's legs, over the usual handle at shoulder height. The lock is a Southco R4 rotary latch with its matching catch, a part E1 already uses and recommended for repeated cycles and vibration. The handle pulls the latch through a cable.
+
+E1 asked for a manual override in case the cable fails. The design keeps access to the latch for that, although the report notes it could be made easier to reach.
 
 <div class="fig-grid" markdown="0">
 {% include figure.html src="/Images/Instruction-4.JPG" alt="Sketch of a cylinder base beside a seat cushion, with a red arrow showing the pull handle lifting" caption="The seat-integrated pull handle lifts to release." %}
@@ -81,69 +88,64 @@ We chose a Southco R4 rotary latch with its matching catch, as an established au
 
 ### Vertical restraint
 
-Side clamping controls lateral movement, but vehicle motion also gives vertical events from bumps, kerbs and braking pitch. The design uses two vertical controls. A bottom spigot carries the static weight and locates the cylinder base, and its height can be adjusted. A top stopper, made from an L-bracket with an elastomer bumper, prevents upward bounce and keeps the cylinder crown captured.
+Side clamping controls lateral movement, but vehicle motion also gives vertical events from bumps, kerbs and braking pitch. A bottom spigot carries the static weight and locates the cylinder base, and its height can be adjusted. A top stopper, made from an L-bracket with an elastomer bumper, prevents upward bounce and keeps the cylinder crown captured.
 
 {% include figure.html src="/Images/Instruction-2.JPG" alt="Line drawing of the spigot bracket at the bottom of the back plate, with a red arrow showing it adjusts upward on slotted holes" caption="The spigot bracket adjusts in height on slotted holes." class="fig-medium" %}
 
 ### Materials and finish
 
-- **Structure:** mild steel sheet, which is E1's standard stock and suits their in-house laser and brake-press capability. The sheet thickness is 3 mm on this page's earlier version and 4 mm in the operations manual, and I haven't resolved which is right (see the open items below).
-- **Fasteners and springs:** stainless fasteners and torsion springs sized for reliable reset.
-- **Contact surfaces:** nylon and rubber at wear points to reduce noise, impact and abrasion.
-- **Finish:** powder coat, with red for user-actuated and moving parts.
+The structure is mild steel sheet, which is E1's standard stock and suits their laser and press-brake capability. The report's material selection gives 3 mm sheet, while its costing and manufacturing steps and the operations manual use 4 mm. Fasteners and springs are stainless steel, with nylon and rubber at wear points and stops. The parts are coated black, with red for user-actuated and moving parts.
 
-## What the analysis does and doesn't show
+## Structural analysis {#what-the-analysis-does-and-doesnt-show}
 
-We ran linear static FEA in SolidWorks on the main components, against the 10 g, 20 kg basis (1,962 N). The results are below, with what I can and can't tell from the saved reports.
+We ran linear static FEA in SolidWorks on the main components, using the 10 g, 20 kg basis of 1,962 N.
 
-| Component | Applied load | Peak von Mises stress | Peak displacement | Notes |
+| Component | Load in the report text | Peak von Mises stress | Peak displacement | Notes |
 | --- | --- | ---: | ---: | --- |
-| Back plate (V4.0) | See the note below | 398.8 MPa | 0.26 mm | Added formed bends cut the peak stress by about 30% against a flat plate |
-| Main body, slide-to-back-plate interface | Not in the saved reports | 153.3 MPa | 0.075 mm | Weld areas around the pivot and latch brackets stay elastic |
-| Clamping arms | 1,000 N (report) | 146 MPa | 0.93 mm at the tip | Peak at the inner curve |
-| Top stopper | Not in the saved reports | 39.4 MPa | 0.5 mm | Bump event; some controlled compliance is intended |
-| Spigot | Not in the saved reports | 1.98 MPa | 0.0087 mm | Static weight; intentionally stiff |
+| Back plate (V4.0) | 1,962 N on the eight slide-plate fixings (the saved study says 2,000 kgf, about 19.6 kN) | 398.8 MPa | 0.26 mm | Formed bends cut the peak by about 30% against a flat plate |
+| Main body, slide plates to back plate | 1,962 N across the pivot and latch mounts | 153.3 MPa | 0.075 mm | Welds around the pivot and latch brackets stay intact |
+| Clamping arms | 981 N across the inside faces (the saved study says 1,000 N) | 146 MPa | 0.93 mm at the tip | Peak at the inner curve; led to two link bars per arm |
+| Top stopper | 50 N upward, deliberately exaggerated for a bump | 39.4 MPa | 0.5 mm | Some controlled compliance is intended |
+| Spigot | 196.2 N, the cylinder's weight | 1.98 MPa | 0.0087 mm | Static weight; intentionally stiff |
 
 <div class="fig-grid" markdown="0">
-{% include figure.html src="/Images/BA-FEA-2.JPG" alt="SolidWorks results for the back plate: a von Mises stress plot with a maximum of 3.988e8 N per square metre and a displacement plot with a maximum of 0.2647 mm" caption="Back plate results: peak von Mises stress 398.8 MPa and peak displacement 0.265 mm. The plots carry SolidWorks' educational-licence watermark." class="fig-narrow" %}
-{% include figure.html src="/Images/BA-FEA-4.JPG" alt="SolidWorks results for the clamping arms: a stress plot with a maximum of 1.461e8 N per square metre and a displacement plot with a maximum of 0.9274 mm at the arm tips" caption="Clamping arm results: peak stress 146 MPa and 0.93 mm tip displacement for a 1,000 N load." class="fig-narrow" %}
+{% include figure.html src="/Images/BA-FEA-1.JPG" alt="SolidWorks set-up for the back plate: the model with its fixed fixings in green, a reaction force of 19,613 N and a force load of minus 2,000 kgf" caption="Back-plate study set-up as saved: the applied force is listed as −2,000 kgf." class="fig-narrow" fulllink=true %}
+{% include figure.html src="/Images/BA-FEA-2.JPG" alt="SolidWorks results for the back plate: a von Mises stress plot with a maximum of 3.988e8 N per square metre and a displacement plot with a maximum of 0.2647 mm" caption="Back-plate results: peak von Mises stress 398.8 MPa and peak displacement 0.265 mm." class="fig-narrow" fulllink=true %}
+{% include figure.html src="/Images/BA-FEA-3.JPG" alt="SolidWorks set-up for the clamping arms: the model with a 1,000 N normal force applied to the inner faces of the arms" caption="Clamping-arm study set-up: a 1,000 N normal force on the arms." class="fig-narrow" fulllink=true %}
+{% include figure.html src="/Images/BA-FEA-4.JPG" alt="SolidWorks results for the clamping arms: a stress plot with a maximum of 1.461e8 N per square metre and a displacement plot with a maximum of 0.9274 mm at the arm tips" caption="Clamping-arm results: peak stress 146 MPa and 0.93 mm tip displacement." class="fig-narrow" fulllink=true %}
 </div>
 
-These are indicative results, for four reasons:
+Two inputs need care. The saved back-plate study applied 2,000 kgf, a reaction of 19.6 kN, which is ten times the 1,962 N in the report text. It may have been a deliberately severe case or an entry error. The 398.8 MPa is the stress at that load. The analysis is linear, so at 1,962 N it would be about a tenth of that, but the study hasn't been re-run. The studies also used alloy-steel properties: the plots mark a yield strength of about 620 MPa and the report compares the plate stress with a tensile strength of 724 MPa. The sheet is mild steel, which has a lower yield strength, so the results need re-running with the actual material. Peak stresses at fixings and corners can also be modelling artefacts.
 
-- **The back-plate load.** The report records the load as −2,000 kgf, which is about 19.6 kN and ten times the 1,962 N used as the design basis. It may have been a deliberate conservative case or an entry error. I don't know which, so the 398.8 MPa is the stress at that applied load, not at the design load. Because the analysis is linear, the stress at 1,962 N would be about a tenth of it if the plate was loaded ten times too hard, but I haven't re-run it. The clamp-arm study used 1,000 N (the page used to say 981 N).
-- **The material.** The stress plots mark a yield strength of about 620 MPa, which is an alloy-steel value, and the page's earlier "below UTS 724 MPa" is also an alloy-steel figure. The sheet we specified is mild steel, which typically yields at a few hundred MPa less. The results would need re-running with the actual material data.
-- **Peak stresses.** A peak at a fixing or a corner is often a modelling artefact, and the saved reports don't show how the peaks were treated.
-- **No test.** Nothing was physically tested. "Meets 10 g" isn't something this analysis can claim. It checks the design against a stated requirement.
+For fatigue we built an S–N curve for alloy steel from a tensile strength of 655 MPa, taking the endurance limit as half of that (327.5 MPa) and the stress at 10³ cycles as 90% of it, and applied fully reversed loading. Daily use was taken as eight bump events and four braking events on the main body, and four clamp cycles a day on the mechanism, for 15 years (21,915 clamp cycles). Both were predicted to outlast 15 years, with arm-tip deformation under 1 mm. The stresses used were the crash-load stresses, which are higher than everyday ones, but the curve is an estimate from a rule of thumb, so this is a plausibility check rather than a validated fatigue life.
 
-**Fatigue.** The fatigue argument was a simple S–N check assuming four stow and release cycles a day for 15 years, which is 21,915 cycles (4 × 365.25 × 15). The stress values quoted are crash-load stresses rather than stresses in everyday service, and the endurance limit of about 327.5 MPa was an alloy-steel assumption, so it is a plausibility argument and not a fatigue analysis.
+## Prototyping {#making-it}
 
-## Making it
+We first built a model from laser-cut acrylic and 3D prints to check the four-bar linkage and the sliding panels against each other before committing to metal. It exposed clashes and misalignments that the CAD hadn't.
 
-The design was shaped to fit E1's existing fabrication workflow and to avoid special processes:
+We then made a 1:1 functional prototype from laser-cut, press-brake-formed mild steel, with springs for the clamping action and TPU dampers for high loads, finished in paint. It was completed after the Stage 2 report was submitted. As a proof of concept it showed the push-to-stow action and the geometry working; the clamp linkage was the least refined part and the one I would simplify first.
 
-1. **Laser cut** the sheet components, nested for material efficiency.
-2. **Brake press** the bends on the back plate, push plate and stopper bracket, with controlled radii.
-3. **MIG weld** the pivot mounts, latch brackets and link connectors, with attention to bracket alignment.
-4. **Powder coat** for corrosion resistance, durability and the red visual coding.
-5. **Assemble**: arms, latch, springs, cable and sliders, set the width and pin it through the pilot holes.
+The design was shaped around E1's fabrication workflow so that it needs no special processes:
 
-## What it gives E1, and what it doesn't
+1. Laser cut the sheet components, nested six units to a sheet.
+2. Brake press the bends on the back plate, push plate and stopper bracket.
+3. MIG weld the pivot mounts, latch brackets and link connectors.
+4. Powder coat for corrosion resistance and the red visual coding.
+5. Assemble the arms, latch, springs, cable and sliders, set the width and pin it through the pilot holes.
 
-The design is meant to standardise BA stowage across customer formats, reduce bespoke engineering and simplify quoting and build variance. It also aims to improve usability with gross-motor operation and clear touch points. It follows E1's naming as MP1 (Modular Pack 1), alongside their SP1 and SP2.
+## Outcome {#what-it-gives-e1-and-what-it-doesnt}
 
-What it doesn't have: physical crash or fatigue testing, any certification, or evidence that E1 adopted it. The advertisement pack and operations manual we wrote for the project are in the links below. They are project documents. The advertisement pack's price and the manual's 12-month warranty are part of that exercise and aren't evidence of a commercial product.
+The group delivered a design report, concept studies, a detail drawing pack, the prototype, a production-style operations manual and an advertisement pack. E1 reviewed the design at several points, and their feedback shaped it, from the sheet sizes to the latch and the clamp linkage. The costing, which adds estimated laser-cutting, bending, welding and coating costs to material, came to about £181 a unit before a 20% margin. The design follows E1's naming as MP1 (Modular Pack 1), alongside their SP1 and SP2.
 
-## Open items
+The prototype is a functional demonstrator rather than a qualified product. It hasn't been crash-tested or fatigue-tested, so the 10 g result rests on the analysis above, and it isn't certified.
 
-Where the project documents disagree, I've left it visible rather than choose.
+## Further development
 
-- **Sheet thickness:** 3 mm on this page (from the original write-up) against 4 mm in the operations manual.
-- **Size:** the cab envelope above is 256 × 735 × 275 mm. The manual lists the finished unit as 583 × 260 × 230 mm, labelled width × height × depth. Those labels look transposed (583 mm is probably the vertical size), and if 260 mm is the width it is 4 mm over the 256 mm cab width.
-- **Load rating:** the manual gives a 35 kg maximum bottle weight, while the analysis basis is about 20 kg.
-- **Cylinder compatibility:** the advertisement pack says it fits "most UK and European BA cylinder configurations". The manual gives a clamping width range of 150-250 mm and a height range of 450-500 mm. Which cylinder models that covers isn't recorded here.
+The report lists the next steps: crash testing, user trials with firefighters, testing the adjustment range with a wider range of cylinder types before calling it universal, and a more polished prototype. I would add simplifying the clamp linkage, making the manual override easier to reach, and re-running the back-plate analysis at the intended load with mild-steel properties.
 
 ## Documents
 
-- [MP1 Operations Manual](/ProjectPages/E1/MP1%20Operations%20Manual.pdf) (PDF, 8 pages; credits the group of four on the cover)
+- [MP1 Operations Manual](/ProjectPages/E1/MP1%20Operations%20Manual.pdf) (PDF, 8 pages)
 - [MP1 Advertisement Pack](/ProjectPages/E1/MP1%20Advertisement%20Pack.pdf) (PDF, 6 pages)
+
+Both were written for the project. The advertisement pack's price and the manual's 12-month warranty are part of that exercise.

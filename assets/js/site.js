@@ -2,7 +2,6 @@
  * Site behaviour that is layered on top of plain HTML (nothing here is needed to read a page).
  *
  *  - tables that overflow become keyboard-scrollable regions
- *  - the contents rail highlights the section being read
  *  - lab iframes size themselves to the lab's own height
  *  - search page (/search/)
  *  - Hydejack's page-transition animation is switched off for visitors who ask for reduced motion
@@ -47,43 +46,6 @@
       if (scrolls) t.setAttribute('data-nb-scroll', '1');
     }
   }
-
-  // ------------------------------------------------------------------ contents rail scroll-spy
-  // Marks the last heading that has scrolled past the top of the viewport. A plain scroll check
-  // (throttled to one per frame) rather than IntersectionObserver, whose callbacks do not fire
-  // when a jump leaves no heading changing state.
-  var spy = { byId: {}, heads: [], current: null, ticking: false };
-
-  function spyUpdate() {
-    if (!spy.heads.length) return;
-    var pick = null;
-    for (var i = 0; i < spy.heads.length; i++) {
-      if (spy.heads[i].getBoundingClientRect().top <= 140) pick = spy.heads[i].id; else break;
-    }
-    if (pick === spy.current) return;
-    spy.current = pick;
-    for (var k in spy.byId) {
-      if (k === pick) { spy.byId[k].classList.add('is-current'); spy.byId[k].setAttribute('aria-current', 'location'); }
-      else { spy.byId[k].classList.remove('is-current'); spy.byId[k].removeAttribute('aria-current'); }
-    }
-  }
-
-  function contentsSpy() {
-    spy.byId = {}; spy.heads = []; spy.current = null;
-    var links = document.querySelectorAll('.nb-rail .nb-toc a[href^="#"]');
-    for (var i = 0; i < links.length; i++) {
-      var id = decodeURIComponent(links[i].getAttribute('href').slice(1));
-      var el = document.getElementById(id);
-      if (el) { spy.byId[id] = links[i]; spy.heads.push(el); }
-    }
-    spyUpdate();
-  }
-
-  window.addEventListener('scroll', function () {
-    if (spy.ticking || !spy.heads.length) return;
-    spy.ticking = true;
-    window.requestAnimationFrame(function () { spy.ticking = false; spyUpdate(); });
-  }, { passive: true });
 
   // ------------------------------------------------------------------ labs (iframes)
   function labFrames() { return document.querySelectorAll('iframe[data-lab-source]'); }
@@ -264,7 +226,6 @@
   // ------------------------------------------------------------------ wiring
   function init() {
     enhanceTables();
-    contentsSpy();
     initLabs();
     initSearch();
   }

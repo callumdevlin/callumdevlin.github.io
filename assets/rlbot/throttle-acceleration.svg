@@ -3,40 +3,40 @@
   <desc id="d">Two lines. Throttle only: 1600 uu/s squared at rest falling linearly to 160 at 1400 uu/s and to zero at 1410. Throttle plus boost: the same curve raised by 991.667 uu/s squared until the 2300 uu/s speed cap.</desc>
   <rect width="680" height="380" fill="#ffffff"/>
   <line x1="70" y1="322.0" x2="656" y2="322.0" stroke="#d9dadf" stroke-width="1"/>
-  <text x="62" y="326.0" text-anchor="end" font-size="13" fill="#2d343d">0</text>
+  <text x="62" y="326.0" text-anchor="end" font-size="13" fill="#333333">0</text>
   <line x1="70" y1="268.8" x2="656" y2="268.8" stroke="#d9dadf" stroke-width="1"/>
-  <text x="62" y="272.8" text-anchor="end" font-size="13" fill="#2d343d">500</text>
+  <text x="62" y="272.8" text-anchor="end" font-size="13" fill="#333333">500</text>
   <line x1="70" y1="215.6" x2="656" y2="215.6" stroke="#d9dadf" stroke-width="1"/>
-  <text x="62" y="219.6" text-anchor="end" font-size="13" fill="#2d343d">1000</text>
+  <text x="62" y="219.6" text-anchor="end" font-size="13" fill="#333333">1000</text>
   <line x1="70" y1="162.4" x2="656" y2="162.4" stroke="#d9dadf" stroke-width="1"/>
-  <text x="62" y="166.4" text-anchor="end" font-size="13" fill="#2d343d">1500</text>
+  <text x="62" y="166.4" text-anchor="end" font-size="13" fill="#333333">1500</text>
   <line x1="70" y1="109.1" x2="656" y2="109.1" stroke="#d9dadf" stroke-width="1"/>
-  <text x="62" y="113.1" text-anchor="end" font-size="13" fill="#2d343d">2000</text>
+  <text x="62" y="113.1" text-anchor="end" font-size="13" fill="#333333">2000</text>
   <line x1="70" y1="55.9" x2="656" y2="55.9" stroke="#d9dadf" stroke-width="1"/>
-  <text x="62" y="59.9" text-anchor="end" font-size="13" fill="#2d343d">2500</text>
+  <text x="62" y="59.9" text-anchor="end" font-size="13" fill="#333333">2500</text>
   <line x1="70.0" y1="24" x2="70.0" y2="322" stroke="#d9dadf" stroke-width="1"/>
-  <text x="70.0" y="342" text-anchor="middle" font-size="13" fill="#2d343d">0</text>
+  <text x="70.0" y="342" text-anchor="middle" font-size="13" fill="#333333">0</text>
   <line x1="192.1" y1="24" x2="192.1" y2="322" stroke="#d9dadf" stroke-width="1"/>
-  <text x="192.1" y="342" text-anchor="middle" font-size="13" fill="#2d343d">500</text>
+  <text x="192.1" y="342" text-anchor="middle" font-size="13" fill="#333333">500</text>
   <line x1="314.2" y1="24" x2="314.2" y2="322" stroke="#d9dadf" stroke-width="1"/>
-  <text x="314.2" y="342" text-anchor="middle" font-size="13" fill="#2d343d">1000</text>
+  <text x="314.2" y="342" text-anchor="middle" font-size="13" fill="#333333">1000</text>
   <line x1="436.2" y1="24" x2="436.2" y2="322" stroke="#d9dadf" stroke-width="1"/>
-  <text x="436.2" y="342" text-anchor="middle" font-size="13" fill="#2d343d">1500</text>
+  <text x="436.2" y="342" text-anchor="middle" font-size="13" fill="#333333">1500</text>
   <line x1="558.3" y1="24" x2="558.3" y2="322" stroke="#d9dadf" stroke-width="1"/>
-  <text x="558.3" y="342" text-anchor="middle" font-size="13" fill="#2d343d">2000</text>
+  <text x="558.3" y="342" text-anchor="middle" font-size="13" fill="#333333">2000</text>
   <line x1="631.6" y1="24" x2="631.6" y2="322" stroke="#d9dadf" stroke-width="1"/>
-  <text x="631.6" y="342" text-anchor="middle" font-size="13" fill="#2d343d">2300</text>
-  <line x1="70" y1="322" x2="656" y2="322" stroke="#181b26" stroke-width="1.5"/>
-  <line x1="70" y1="24" x2="70" y2="322" stroke="#181b26" stroke-width="1.5"/>
-  <text x="363.0" y="368" text-anchor="middle" font-size="14" fill="#181b26">Forward speed (uu/s)</text>
-  <text transform="translate(18 173.0) rotate(-90)" text-anchor="middle" font-size="14" fill="#181b26">Acceleration (uu/s²)</text>
+  <text x="631.6" y="342" text-anchor="middle" font-size="13" fill="#333333">2300</text>
+  <line x1="70" y1="322" x2="656" y2="322" stroke="#1a1a1a" stroke-width="1.5"/>
+  <line x1="70" y1="24" x2="70" y2="322" stroke="#1a1a1a" stroke-width="1.5"/>
+  <text x="363.0" y="368" text-anchor="middle" font-size="14" fill="#1a1a1a">Forward speed (uu/s)</text>
+  <text transform="translate(18 173.0) rotate(-90)" text-anchor="middle" font-size="14" fill="#1a1a1a">Acceleration (uu/s²)</text>
   <polyline points="70.0,46.2 411.8,199.4 414.3,216.5 631.6,216.5 631.6,322.0" fill="none" stroke="#5a00b3" stroke-width="3" stroke-linejoin="round"/>
-  <polyline points="70.0,151.7 411.8,305.0 414.3,322.0 631.6,322.0" fill="none" stroke="#181b26" stroke-width="3" stroke-linejoin="round"/>
-  <line x1="631.6" y1="24" x2="631.6" y2="322" stroke="#2d343d" stroke-width="1.5" stroke-dasharray="6 5"/>
-  <line x1="414.3" y1="24" x2="414.3" y2="322" stroke="#2d343d" stroke-width="1.5" stroke-dasharray="6 5"/>
-  <text x="420.3" y="40" font-size="12" fill="#2d343d">1410: throttle-only top speed</text>
-  <text x="625.6" y="58" text-anchor="end" font-size="12" fill="#2d343d">2300: speed cap</text>
+  <polyline points="70.0,151.7 411.8,305.0 414.3,322.0 631.6,322.0" fill="none" stroke="#1a1a1a" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="631.6" y1="24" x2="631.6" y2="322" stroke="#333333" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <line x1="414.3" y1="24" x2="414.3" y2="322" stroke="#333333" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="420.3" y="40" font-size="12" fill="#333333">1410: throttle-only top speed</text>
+  <text x="625.6" y="58" text-anchor="end" font-size="12" fill="#333333">2300: speed cap</text>
   <text x="133.5" y="52.7" font-size="14" font-weight="700" fill="#5a00b3">Throttle + boost</text>
-  <text x="133.5" y="176.2" font-size="14" font-weight="700" fill="#181b26">Throttle only</text>
-  <text x="79.8" y="141.7" font-size="12" fill="#2d343d">1600</text>
+  <text x="133.5" y="176.2" font-size="14" font-weight="700" fill="#1a1a1a">Throttle only</text>
+  <text x="79.8" y="141.7" font-size="12" fill="#333333">1600</text>
 </svg>

@@ -7,19 +7,16 @@ section: rx8
 nav_order: 10
 applies: One healthy Series 1 13B-MSP (231 PS). Logged during my EnduraOMP project; the PCM calibration level of the car was not recorded.
 description: >
-  Logged oil pressure, oil temperature and OMP behaviour from a running Series 1
-  13B-MSP, including a rough reconstruction of the stock oil delivery from idle
-  to 9,500 rpm.
+  Oil pressure, oil temperature and oil metering pump behaviour logged on a running
+  Series 1 13B-MSP, with a rough reconstruction of the stock oil delivery.
 related:
   - /ProjectPages/EnduraOMP/
   - /ProjectPages/RX8/OMP/how-it-works/
-  - /ProjectPages/RX8/OMP/lab/
 ---
 
-This page publishes baseline data I logged from a running Series 1 13B-MSP during my [EnduraOMP project](/ProjectPages/EnduraOMP/). I didn't find a measured dataset linking the Renesis OMP's commanded position to oil delivery (a calculated graph exists in an RX8Club thread), so I measured what I could. It's shared as a starting point for anyone tuning, diagnosing or designing around the stock lubrication system, with its limits stated plainly.
+This page publishes baseline data I logged from a running Series 1 13B-MSP during my [EnduraOMP project](/ProjectPages/EnduraOMP/). I couldn't find a measured dataset linking the Renesis OMP's commanded position to oil delivery (a calculated graph exists in an RX8Club thread), so I measured what I could. It may help anyone tuning, diagnosing or designing around the stock lubrication system.
 
-The pressure and temperature logs and the commanded steps are measurements. The oil-delivery figures are a rough reconstruction and are **unvalidated**. They are total flow for all four outlets, and the [OMP Lab](/ProjectPages/RX8/OMP/lab/)'s derived estimate is about 3.6 times higher at the top of the range. Neither has been checked against a controlled bench run.
-{:.note}
+The pressure and temperature logs and the commanded steps are measurements. The oil-delivery figures are a rough, unvalidated reconstruction of total flow for all four outlets. The [OMP Lab](/ProjectPages/RX8/OMP/lab/)'s derived estimate is about 3.6 times higher at the top of the range.
 
 ## How the data was gathered
 
@@ -71,8 +68,7 @@ The commanded steps are the logged `MOP_POS` values. The delivery column is a ro
 
 The shape holds up: delivery per 1,000 rpm of engine speed rises from about 0.15 mL/min at step 3 to about 0.68 at step 47, so it increases progressively rather than linearly. Mid-range delivery stays modest, then ramps steeply towards the top of the rev range. That is qualitatively consistent with the 2018 RX8Club analysis of the pump's geometry, which is itself a calculation. For what a "step" physically means (the stepper changing the pump's effective plunger stroke), see [how the OMP works](/ProjectPages/RX8/OMP/how-it-works/).
 
-**Where the numbers disagree.** At step 47 and 9,500 rpm the OMP Lab's derived estimate is about 23.4 mL/min, against 6.46 mL/min here. The two agree well at low steps and diverge at high ones. A forum poster argues the geometry calculation behind the lab is about twice too high, and my own figures may be unreliable at high steps, or both. A controlled bench run at fixed steps and speeds would settle it.
-{:.note}
+At step 47 and 9,500 rpm the OMP Lab's derived estimate is about 23.4 mL/min, against 6.46 mL/min here. The two agree well at low steps and diverge at high ones. A forum poster argues that the geometry calculation behind the lab is about twice too high, and my own high-step figures may also be unreliable. A controlled bench run at fixed steps and speeds would settle it.
 
 ## Combustion signals (benchmark only)
 
@@ -83,8 +79,4 @@ Lambda, fuel trims and pre-cat oxygen sensor data were logged alongside, mainly 
 - The bench stage measured **relative** delivery at each commanded position. System back-pressure was not replicated, so treat the mL/min figures as indicating the shape and rough scale of the stock schedule, not as a calibration-grade absolute map.
 - The data is from one healthy Series 1 engine. Worn pumps, different oils and different sensor placements will shift the numbers.
 - `MOP_POS` was read through Forscan's enhanced PIDs; standard OBD-II readers won't show it.
-
-I haven't yet written down several details that affect how far the delivery figures can be trusted: what drove the pump on the bench and at what speed, how such small volumes were measured, the oil's inlet pressure and temperature, and the car's PCM calibration level (Mazda changed the start-up metering in some US calibrations). Until those are recorded, read the delivery column as a rough guide.
-{:.note}
-
-*This dataset fed into the design requirements for [EnduraOMP](/ProjectPages/EnduraOMP/), my MEng project replacing the stock metering system with a controlled electronic one.*
+- The bench pump drive speed, the method for measuring such small volumes, the oil's inlet pressure and temperature, and the car's PCM calibration level weren't recorded. Mazda changed the start-up metering in some US calibrations, so read the delivery column as a rough guide.

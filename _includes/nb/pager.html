@@ -1,9 +1,11 @@
 {%- comment -%}
-  Previous / next links for pages that share a `section` (see _data/sections.yml),
-  plus an optional `related:` list of site URLs in the page front matter.
+  Previous / next links, only for groups that read as a sequence (`sequence: true` in
+  _data/sections.yml; today that is the Rocket League notes), plus an optional short
+  `related:` list of site URLs in the page front matter, shown as "See also".
 {%- endcomment -%}
 {%- if page.section -%}
   {%- assign nb_section = site.data.sections[page.section] -%}
+  {%- if nb_section.sequence -%}
   {%- assign nb_group = site.pages | where: "section", page.section | sort: "nav_order" -%}
   {%- assign nb_idx = -1 -%}
   {%- for p in nb_group -%}{%- if p.url == page.url -%}{%- assign nb_idx = forloop.index0 -%}{%- endif -%}{%- endfor -%}
@@ -13,22 +15,19 @@
     {%- if nb_idx > 0 -%}{%- assign nb_prev = nb_group[nb_prev_i] -%}{%- else -%}{%- assign nb_prev = nil -%}{%- endif -%}
     {%- assign nb_next = nb_group[nb_next_i] -%}
 <nav class="nb-pager" aria-label="{{ nb_section.title | default: 'Section' }} pages">
-  {%- if nb_section %}<p class="nb-pager-section"><a href="{{ nb_section.url | relative_url }}">{{ nb_section.title }}</a> &middot; page {{ nb_idx | plus: 1 }} of {{ nb_group.size }}</p>{% endif %}
   <ul>
     {%- if nb_prev %}<li class="nb-prev"><a href="{{ nb_prev.url | relative_url }}" rel="prev"><span class="nb-pager-dir">Previous</span> {{ nb_prev.crumb | default: nb_prev.title }}</a></li>{% endif %}
     {%- if nb_next %}<li class="nb-next"><a href="{{ nb_next.url | relative_url }}" rel="next"><span class="nb-pager-dir">Next</span> {{ nb_next.crumb | default: nb_next.title }}</a></li>{% endif %}
   </ul>
 </nav>
   {%- endif -%}
+  {%- endif -%}
 {%- endif -%}
 {%- if page.related -%}
-<nav class="nb-related" aria-label="Related pages">
-  <h2 class="nb-related-title">Related</h2>
-  <ul>
-    {%- for u in page.related -%}
-      {%- assign nb_rel = site.pages | where: "url", u | first -%}
-      {%- if nb_rel %}<li><a href="{{ nb_rel.url | relative_url }}">{{ nb_rel.crumb | default: nb_rel.title }}</a>{% if nb_rel.description %} &ndash; <span class="nb-related-desc">{{ nb_rel.description | strip_newlines | truncate: 110 }}</span>{% endif %}</li>{% endif -%}
-    {%- endfor -%}
-  </ul>
-</nav>
+<p class="nb-related">See also:
+  {%- for u in page.related -%}
+    {%- assign nb_rel = site.pages | where: "url", u | first -%}
+    {%- if nb_rel %} <a href="{{ nb_rel.url | relative_url }}">{{ nb_rel.crumb | default: nb_rel.title }}</a>{% unless forloop.last %},{% endunless %}{% endif -%}
+  {%- endfor -%}
+</p>
 {%- endif -%}

@@ -5,22 +5,18 @@ permalink: /ProjectPages/RX8/torquespecs/
 type: reference
 section: rx8
 nav_order: 3
-status: growing
-applies: Series 1 RX-8 (2003-2008), 13B-MSP six-port, Mazda engine "Type A" (all UK cars). Figures follow Mazda's 2003 European workshop manual.
+applies: Series 1 RX-8 (2003-2008), six-port 13B-MSP, Mazda engine "Type A" (all UK cars). Figures are from Mazda's 2003 European workshop manual.
 reviewed: 2026-10-14
 description: >
-  Fastener torque ranges for the Series 1 RX-8, with the thread condition,
-  sequence and replacement parts Mazda attaches to each one.
+  Fastener torque ranges for the Series 1 RX-8, with the thread condition, tightening
+  sequence and replacement parts Mazda gives for each.
 ---
 
-These are Mazda's ranges in newton metres, with the decimals as printed. A torque is only half a specification: Mazda also says what goes on the threads, how many passes to take and what must be replaced, so I've kept that beside each value. Where the value is one of several for the same part, the row says which one.
+These are Mazda's ranges in newton metres, with the decimals as printed. Mazda also says what goes on the threads, how many passes to take and what must be replaced, so that is given beside each value.
 
-Where a row says "from the figure", Mazda prints the value only in a diagram callout and I read it from there. Check it against the manual's figure before you rely on it.
-{:.note}
+"From the figure" means Mazda prints the value only in a diagram callout. Check it against the manual's figure before relying on it.
 
-I've left out the socket sizes this page used to carry. Mazda doesn't give them, I couldn't verify my own notes, and one (wheel nuts) looked wrong.
-
-**General practice** (Mazda's, from its suspension procedures): fit bushed suspension fasteners loosely with the car raised, lower it to the ground, then tighten fully so the bushes aren't preloaded. Tighten multi-bolt patterns in the stated order and in stages. Replace single-use items.
+General practice, from Mazda's suspension procedures: fit bushed suspension fasteners loosely with the car raised, lower it to the ground, then tighten fully so the bushes aren't preloaded. Tighten multi-bolt patterns in the stated order and in stages. Replace single-use items.
 
 ## Engine, core fasteners
 
@@ -29,16 +25,16 @@ Mazda's engine manual separates engine "Type A" from "Type B". Type B is a 2009 
 | Fastener | Torque (N·m) | Conditions and replacement parts |
 |:---|:---:|:---|
 | Tension bolts (through-bolts) | 31.4-39.2 | Engine oil on the threads and a new seal washer on each, rubber projection towards the housing. Two or three passes, in the figure sequence. |
-| Flywheel / counterweight locknut | 392-490 | Lock the flywheel with the SST. Mazda's European manual calls for silicone sealant on the threads (its US-style manual says the seating face). I previously listed red Loctite; that is not in Mazda's text. |
+| Flywheel / counterweight locknut | 392-490 | Lock the flywheel with the SST. Mazda's European manual calls for silicone sealant on the threads (its US-style manual says the seating face). |
 | Eccentric-shaft pulley lockbolt | 254-294 | Engine oil on the threads, new O-ring, silicone sealant on the seating face. Lock the shaft with the SST. |
 | Oil-pump sprocket locknut | 31.4-46.1 | New lock washer and locknut, then bend the washer over. Lock the shaft with the SST. |
 | Front cover bolts | 18.6-25.5 | Check the pulley boss height first (10.34-11.14 mm). Figure sequence. |
 | Pressure regulator (Type A) | 68.6-78.4 | |
-| Rear stationary-gear stopper screw | 3.2-4.7 | From Mazda's October 2008 engine manual. A thread-locking compound is in my notes but I haven't confirmed it. |
+| Rear stationary-gear stopper screw | 3.2-4.7 | From Mazda's October 2008 engine manual. |
 | Oil pan bolts (Type A, single pan) | 8.8-11.8 | One unbroken bead of sealant, 2.5-6.5 mm, fit the pan within five minutes of applying it. Clean old sealant off reused bolts. |
 | Oil pan drain plug (Type A) | 29.4-39.2 | New sealing washer. |
 
-The "oil pan upper block bolts, 18.6-25.5" that this page used to list apply only to Type B engines. A 2005 UK car has a single pan.
+Oil pan upper block bolts (18.6-25.5 N·m) apply only to Type B engines. A 2005 UK car has a single pan.
 
 ## Engine ancillaries
 
@@ -95,7 +91,7 @@ The "oil pan upper block bolts, 18.6-25.5" that this page used to list apply onl
 
 | Fastener | Torque (N·m) | Conditions and replacement parts |
 |:---|:---:|:---|
-| Steering rack mounting bolts | 74.4-104.8 | From the figure, in the figure order. This page used to say 88. |
+| Steering rack mounting bolts | 74.4-104.8 | From the figure, in the figure order. |
 | Tie-rod end locknut (toe adjustment) | 37.0-49.0 | Lock after setting toe. Mazda's rack-removal figure shows the tie-rod end stud nut at the same 37.0-49.0 (castle nut and split pin). |
 | Tie-rod end locknut (rack overhaul figure) | 68.6-98.0 | Mazda's own pages disagree here: the alignment page gives 37.0-49.0 for the toe locknut and the rack overhaul figure gives 68.6-98.0. I use the alignment page for an on-car adjustment. |
 | Steering shaft nuts A and B | 15.7-22.5 | Tighten A, then B. |
@@ -104,11 +100,9 @@ The "oil pan upper block bolts, 18.6-25.5" that this page used to list apply onl
 
 ## Sources
 
-All from Mazda's 2003 RX-8 workshop manual (European edition), read through a third-party mirror on 2026-10-14.
+All from Mazda's 2003 RX-8 workshop manual (European edition), via the foxed.ca mirror, accessed 14 October 2026.
 
 - Engine assembly: [housing assembly I](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/engine/A03/html/BHE011002000E08.html), [II](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/engine/A03/html/BHE011002000E09.html) and [III](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/engine/A03/html/BHE011002000E10.html), plus the revised [13B-MSP engine workshop manual](https://www.foxed.ca/rx7manual/manuals/renesis%20rotary%20engine%20workshop%20manual.pdf) (October 2008) for Type A/B, the regulator and the stopper screw.
 - [Spark plug removal/installation](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE011801009W04.html), [engine removal/installation](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE011002000W04.html) (mounts), [intake-air system](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE011301005W08.html).
 - [Transmission removal/installation](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE051101025W07.html) (gearbox bolts and PPF), [propeller shaft](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE031525002W05.html), [Y16M-D oil replacement](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE051127001W04.html), [differential oil replacement](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE031427000W02.html).
 - [Wheels and suspension procedures](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE021001013W01.html), [front alignment](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE021101015W01.html), [brake air bleeding](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE041101021W01.html), [steering rack](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE061332960W01.html) and [steering shaft](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE061332010W02.html).
-
-Found a mistake? [Email me](mailto:caldev3109@gmail.com) the page, the model year and the manual section.

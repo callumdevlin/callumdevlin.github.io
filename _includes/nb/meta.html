@@ -1,19 +1,13 @@
 {%- comment -%}
-  Compact status line under the page title. Every field is optional and only appears
-  when the page's front matter supplies it:
+  Compact line under the page title. Both parts are optional and appear only when the page
+  front matter has them:
 
-    type:     key from _data/page_types.yml
-    status:   wip | growing        (anything else is not shown)
-    applies:  one-line applicability, e.g. "Series 1 RX-8 (2003-2008), UK RHD 231 PS"
-    reviewed: YYYY-MM-DD           ONLY when the technical content was actually re-checked
-                                   against sources. Do not set it for formatting changes.
+    status:   wip shows "Work in progress" (any other value shows nothing)
+    applies:  one-line applicability, e.g. "Series 1 RX-8 (2003-2008), UK six-port 13B-MSP"
 {%- endcomment -%}
-{%- assign nb_type = site.data.page_types[page.type] -%}
-{%- if nb_type or page.status or page.applies or page.reviewed -%}
+{%- if page.status == 'wip' or page.applies -%}
 <ul class="nb-meta" aria-label="About this page">
-  {%- if nb_type %}<li class="nb-meta-type">{{ nb_type.label }}</li>{% endif -%}
-  {%- if page.status == 'wip' %}<li class="nb-meta-status">Work in progress</li>{% elsif page.status == 'growing' %}<li class="nb-meta-status">Growing notebook</li>{% endif -%}
+  {%- if page.status == 'wip' %}<li class="nb-meta-status">Work in progress</li>{% endif -%}
   {%- if page.applies %}<li><span class="nb-meta-label">Applies to</span> {{ page.applies }}</li>{% endif -%}
-  {%- if page.reviewed %}<li><span class="nb-meta-label">Technical review</span> <time datetime="{{ page.reviewed | date: '%Y-%m-%d' }}">{{ page.reviewed | date: '%-d %B %Y' }}</time></li>{% endif -%}
 </ul>
 {%- endif -%}

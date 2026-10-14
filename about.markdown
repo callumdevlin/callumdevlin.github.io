@@ -4,27 +4,20 @@ title: About me
 crumb: About
 permalink: /about/
 description: >-
-  Mechatronics engineer from Glasgow with a product design engineering background.
+  Mechatronics engineer from Glasgow, working on the mechanical design of satellite
+  communications hardware.
 toc: false
 search: true
 ---
 
-I'm Callum, a mechatronics engineer from Glasgow with a product design engineering background. I like work where mechanical design, electronics and software have to fit together. EnduraOMP, for example, started with logging a running engine before any concept was drawn.
+I'm a mechatronics engineer at Celestia UK. My work there is the mechanical design and integration of phased-array antenna and RF hardware for satellite communications.
 
-## Where the work on this site comes from
+I studied Product Design Engineering at the University of Strathclyde and graduated with an MEng with distinction. I'm from Glasgow, and I enjoy projects that combine mechanical design, electronics and software. EnduraOMP, my MEng project, started with logging a running engine before any concept was drawn.
 
-- **[EnduraOMP](/ProjectPages/EnduraOMP/)** is my MEng individual project at the University of Strathclyde: a controlled oil metering system for rotary engines, built on logged data from a running Mazda 13B-MSP.
-- **[MP1](/ProjectPages/E1/)** was an industrial group project with Emergency One, designing a breathing-apparatus stowage cradle for fire-appliance cabs.
-- **[ToolSync](/ProjectPages/rfidtoolstorage/)** was my fourth-year BEng project, a toolbox that tracks its own contents.
-- The **[RX-8 notebook](/ProjectPages/RX8/)** is the working notebook for my own car. It tries to keep what Mazda publishes, what I measured and what is still unresolved clearly apart.
-- The **[Rocket League bot notes](/ProjectPages/rlbot/)** write up the maths behind a hard-coded Python bot, which I wrote with another developer.
+Outside work I enjoy hands-on mechanical, electronics and software projects, mostly automotive. I look after a Mazda RX-8, I'm particularly interested in rotary engines, and I wrote a Rocket League bot with another developer. The RX-8 notebook and the Rocket League notes on this site come from those projects.
 
-## What I work with
+My toolset includes SolidWorks with structural and thermal FEA and CFD, KiCad for PCB design, and Python, C++ and ESP32 firmware for the software side. The [projects page](/ProjectPages/) has the engineering work.
 
-- **Mechanical design and analysis:** SolidWorks, structural and thermal FEA, CFD, design for manufacture and assembly. I also do mechanical design for phased-array antennas.
-- **Electronics:** PCB design in KiCad, embedded systems on ESP32, sensor and IoT integration. The EnduraOMP control board and the ToolSync tag are examples.
-- **Software:** Python and C++, microcontroller firmware.
+## Contact
 
-## Get in touch
-
-My code is on [GitHub](https://github.com/callumdevlin) and I'm on [LinkedIn](https://www.linkedin.com/in/callumdev). Corrections to anything technical on this site are welcome; the page, the model year and the source you're looking at are the most useful things to include.
+My code is on [GitHub](https://github.com/callumdevlin) and I'm on [LinkedIn](https://www.linkedin.com/in/callumdev). If you spot a technical mistake on this site, I'd like to hear about it; the page and the figure or source you're looking at are the most useful things to include.

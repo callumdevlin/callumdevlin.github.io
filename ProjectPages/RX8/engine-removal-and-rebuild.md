@@ -5,19 +5,14 @@ permalink: /ProjectPages/RX8/engine-removal-and-rebuild/
 type: procedure
 section: rx8
 nav_order: 4
-status: growing
 applies: 13B-MSP six-port (Series 1), Mazda engine "Type A" (all UK cars). Clearances and torques follow Mazda's October 2008 13B-MSP engine manual.
 reviewed: 2026-10-14
 description: >
   Top-lift removal, Renesis teardown, inspection, clearances, assembly, first start
-  and running-in notes, with Mazda's figures kept apart from my own practice.
-related:
-  - /ProjectPages/RX8/torquespecs/
-  - /ProjectPages/RX8/compression-testing/
-  - /ProjectPages/RX8/OMP/
+  and running-in notes.
 ---
 
-These notes follow Mazda's engine manual for the figures and the build order, and my own experience for the removal. Mazda's procedure takes the engine, gearbox and crossmember out downward as one unit. The top lift below is **my practice, not Mazda's method**, so it is labelled as such where it matters.
+These notes follow Mazda's engine manual for the figures and the build order, and my own experience for the removal. Mazda's procedure takes the engine, gearbox and crossmember out downward as one unit; the top lift below is my own practice.
 
 Mazda's engine manual divides the engine into "Type A" and "Type B". Type B is a 2009 model-year US-VIN engine with a second (upper) oil pan and a sealed oil pump. Everything else, including a 2005 UK car, is Type A, and the figures here are Type A.
 
@@ -130,41 +125,41 @@ Measure flatness and wear before deciding to lap. Use a known-flat reference pla
 
 ## Factory clearances
 
-Print this table and write measured values in the final column. A maximum is a rejection limit, not a machining target. "Mazda standard" and "service limit" are from the October 2008 engine manual; the last column is for what you measure and stays blank until you have a real reading.
+The standard and service-limit figures are from Mazda's October 2008 engine manual. A maximum is a rejection limit, not a machining target, and a dash means Mazda gives no figure.
 
 <div style="overflow-x: auto;" markdown="1">
 
-| Measurement | Mazda standard / nominal | Service limit | My measurement |
-| --- | ---: | ---: | ---: |
-| Side-housing distortion | — | 0.04 mm max | <span class="fill"></span> |
-| Vertical side-housing wear | — | 0.10 mm max | <span class="fill"></span> |
-| Inner oil-seal-path wear | — | 0.01 mm max | <span class="fill"></span> |
-| Outer oil-seal-path wear | — | 0.10 mm max | <span class="fill"></span> |
-| Stepped-path wear | — | 0.02 mm max | <span class="fill"></span> |
-| Rotor-housing width difference | — | 0.06 mm max | <span class="fill"></span> |
-| Rotor-to-side-housing clearance | 0.05-0.19 mm | 0.05 mm min | <span class="fill"></span> |
-| Rotor round projection | 0.12-0.18 mm | 0.10 mm min | <span class="fill"></span> |
-| Apex-groove clearance (see note) | 0.042-0.101 mm | 0.15 mm max | <span class="fill"></span> |
-| Apex-seal height | 5.3 mm nominal | 4.3 mm min | <span class="fill"></span> |
-| Long apex-spring height | 5.4 mm nominal | 3.5 mm min | <span class="fill"></span> |
-| Combined reused side-seal end clearance | — | 0.40 mm max | <span class="fill"></span> |
-| Cut-off-seal height | 3.95 mm nominal | 3.80 mm min | <span class="fill"></span> |
-| Oil-seal contact width | — | 0.50 mm max | <span class="fill"></span> |
-| Oil-seal projection | — | 0.50 mm min | <span class="fill"></span> |
-| Rotor-bearing oil clearance | 0.06-0.08 mm | 0.10 mm max | <span class="fill"></span> |
-| Main-bearing clearance, without stopper | 0.045-0.085 mm | 0.10 mm max | <span class="fill"></span> |
-| Main-bearing clearance, with stopper | 0.055-0.075 mm | 0.10 mm max | <span class="fill"></span> |
-| Eccentric-shaft runout | 0.02 mm | 0.06 mm max | <span class="fill"></span> |
-| Eccentric-shaft end play | 0.04-0.09 mm | — (Mazda gives none) | <span class="fill"></span> |
-| Type A oil-pump body clearance | 0.20-0.25 mm | 0.30 mm max | <span class="fill"></span> |
-| Type A oil-pump tip clearance | 0.03-0.12 mm | 0.15 mm max | <span class="fill"></span> |
-| Type A oil-pump side clearance | 0.03-0.125 mm | 0.15 mm max | <span class="fill"></span> |
+| Measurement | Mazda standard / nominal | Service limit |
+| --- | ---: | ---: |
+| Side-housing distortion | — | 0.04 mm max |
+| Vertical side-housing wear | — | 0.10 mm max |
+| Inner oil-seal-path wear | — | 0.01 mm max |
+| Outer oil-seal-path wear | — | 0.10 mm max |
+| Stepped-path wear | — | 0.02 mm max |
+| Rotor-housing width difference | — | 0.06 mm max |
+| Rotor-to-side-housing clearance | 0.05-0.19 mm | 0.05 mm min |
+| Rotor round projection | 0.12-0.18 mm | 0.10 mm min |
+| Apex-groove clearance (see note) | 0.042-0.101 mm | 0.15 mm max |
+| Apex-seal height | 5.3 mm nominal | 4.3 mm min |
+| Long apex-spring height | 5.4 mm nominal | 3.5 mm min |
+| Combined reused side-seal end clearance | — | 0.40 mm max |
+| Cut-off-seal height | 3.95 mm nominal | 3.80 mm min |
+| Oil-seal contact width | — | 0.50 mm max |
+| Oil-seal projection | — | 0.50 mm min |
+| Rotor-bearing oil clearance | 0.06-0.08 mm | 0.10 mm max |
+| Main-bearing clearance, without stopper | 0.045-0.085 mm | 0.10 mm max |
+| Main-bearing clearance, with stopper | 0.055-0.075 mm | 0.10 mm max |
+| Eccentric-shaft runout | 0.02 mm | 0.06 mm max |
+| Eccentric-shaft end play | 0.04-0.09 mm | — (Mazda gives none) |
+| Type A oil-pump body clearance | 0.20-0.25 mm | 0.30 mm max |
+| Type A oil-pump tip clearance | 0.03-0.12 mm | 0.15 mm max |
+| Type A oil-pump side clearance | 0.03-0.125 mm | 0.15 mm max |
 
 </div>
 
-**Apex-groove clearance.** Mazda's October 2008 engine manual gives two different standard ranges for this: 0.042-0.101 mm in the rotor-inspection procedure and 0.042-0.077 mm in the technical-data table. Both give 0.15 mm as the maximum. I used to describe this as an old range superseded by a new one, but the two figures are in the same manual. If your reading falls between 0.077 and 0.101 mm, record both ranges and treat 0.077 mm as the conservative standard.
+Apex-groove clearance: Mazda's October 2008 engine manual gives two different standard ranges, 0.042-0.101 mm in the rotor-inspection procedure and 0.042-0.077 mm in the technical-data table. Both give 0.15 mm as the maximum. If your reading falls between 0.077 and 0.101 mm, record both ranges and treat 0.077 mm as the conservative standard.
 
-**End play.** Mazda gives a standard of 0.04-0.09 mm and no separate maximum, so change the spacer to bring the measured value into that range rather than working to a limit. The lettered spacers run A to E at 7.985, 8.005, 8.025, 8.045 and 8.065 mm. A letter alone does not prove assembled end play. New side seals are selected by groove rank rather than treated like reused seals.
+End play: Mazda gives a standard of 0.04-0.09 mm and no separate maximum, so change the spacer to bring the measured value into that range rather than working to a limit. The lettered spacers run A to E at 7.985, 8.005, 8.025, 8.045 and 8.065 mm. A letter alone does not prove assembled end play. New side seals are selected by groove rank rather than treated like reused seals.
 
 ## Rotor-seal packing
 
@@ -173,18 +168,18 @@ Use the applicable Mazda orientation drawings while the parts are in hand. A sim
 1. Fit the inner and outer oil-seal springs in their specified directions.
 2. Fit new oil-seal O-rings without twist, then install the oil seals over them. Use petroleum jelly only at the manual's retention points and confirm free axial movement.
 3. Fit the cut-off-seal springs and seals, checking direction, projection and free return.
-4. On the **front-facing side** of the rotor only, fit each side-seal spring and its matched/ranked side seal in the original A/B/C groove, then the corner springs, plugs and corner seals. Align each corner-seal notch with its apex groove and confirm the adjacent side seal moves freely.
+4. On the front-facing side of the rotor only, fit each side-seal spring and its matched/ranked side seal in the original A/B/C groove, then the corner springs, plugs and corner seals. Align each corner-seal notch with its apex groove and confirm the adjacent side seal moves freely.
 5. Place the packed rotor on the correct front or intermediate housing with its protected face downward, engaging the eccentric-shaft journal without disturbing the oil seals.
 6. Fit the long and short apex springs, apex side pieces and main apex seals. The long spring must engage the side-piece stop. Mazda has a bonding note for the apex seal and side piece; follow it. The side piece must not sit beneath the next housing.
 7. Hold the apex assemblies inward while lowering the correctly oriented rotor housing over the rotor. Stop if force is required.
-8. Fit the **rear-facing** side and corner seals once the rotor is in its housing, checking the corner-seal groove alignment with the SST. Recheck all exposed seals, spring return and apex movement before adding the next iron.
+8. Fit the rear-facing side and corner seals once the rotor is in its housing, checking the corner-seal groove alignment with the SST. Recheck all exposed seals, spring return and apex movement before adding the next iron.
 9. Fit new inner/outer water-jacket seals to clean grooves, untwisted, immediately before closing each housing joint. Mazda's text on lubricating the water-seal rubber is itself inconsistent (petroleum jelly in one place, no oil or grease in another), so check both notes.
 
 Mazda's caution is to assemble only the side and corner seals on the engine-front side while the rotor is not yet in its housing. Photograph each completed layer and account for every tray position.
 
 ## Reassembly order
 
-This is Mazda's order for a Type A engine, which is not the order this page used to give.
+This is Mazda's order for a Type A engine.
 
 1. Place the clean front housing on its fixture. Fit the labelled front stationary gear, thrust plate (chamfer towards the gear), needle bearing and plate.
 2. Lubricate and fit the front rotor, the oil-jet ball, spring and plug, and the eccentric shaft. Check that the shaft turns smoothly.
@@ -197,7 +192,7 @@ This is Mazda's order for a Type A engine, which is not the order this page used
 9. Fit the end-float spacer, needle bearing, thrust plate, balance weight, oil-pump parts (Type A or sealed Type B), OMP drive gear, chain and sprocket. Use a new sprocket lock washer and torque the nut to **31.4-46.1 N·m**, then bend the washer over.
 10. Fit the bypass and pressure-regulator valves, springs and plugs to their correct bores. Fit the front cover with its seal and torque its bolts to **18.6-25.5 N·m**.
 11. Fit the pulley components. Oil the lockbolt threads, fit a new O-ring, put silicone sealant on the seating face, and torque the bolt to **254-294 N·m** with the shaft locked.
-12. **Measure end play now**, with everything above fitted. The standard is 0.04-0.09 mm. Change the spacer only from the measured result.
+12. Measure end play now, with everything above fitted. The standard is 0.04-0.09 mm. Change the spacer only from the measured result.
 13. Apply the specified sealant bead to the clean oil pan and fit it within five minutes. Torque the pan bolts to **8.8-11.8 N·m** in sequence.
 14. Refit the OMP, labelled lines/nozzles, water pump, thermostat, sensors, hangers, fuel/intake/exhaust components and ancillaries. Prime every opened oil path rather than relying on dry cranking.
 
@@ -234,10 +229,10 @@ This is the procedure used for this engine, not a Mazda universal schedule.
 | 100-2,000 miles | Approximately every 500 miles |
 | Beyond 2,000 miles | Approximately every 3,000-5,000 miles |
 
-Compression started relatively low and gradually increased over roughly the first 1,000 miles. I have not recorded the actual pressures here, and none are inferred. Log raw and 250-rpm-corrected compression, oil and Sohn consumption, coolant level and filter findings at each useful checkpoint.
+Compression started relatively low and rose gradually over roughly the first 1,000 miles. Log raw and 250-rpm-corrected compression (see [compression testing](/ProjectPages/RX8/compression-testing/)), oil and Sohn consumption, coolant level and filter findings at each useful checkpoint.
 
 ## References
 
-- Mazda 13B-MSP engine workshop manual, October 2008 (part 1773-1U-03C): sections 00-00-12 (engine type), 01-10 (disassembly, inspection, assembly) and 01-50 (technical data). [PDF on a third-party mirror](https://www.foxed.ca/rx7manual/manuals/renesis%20rotary%20engine%20workshop%20manual.pdf), read 2026-10-14.
+- Mazda 13B-MSP engine workshop manual, October 2008 (part 1773-1U-03C): sections 00-00-12 (engine type), 01-10 (disassembly, inspection, assembly) and 01-50 (technical data). [PDF via the foxed.ca mirror](https://www.foxed.ca/rx7manual/manuals/renesis%20rotary%20engine%20workshop%20manual.pdf), accessed 14 October 2026.
 - Mazda RX-8 2003 workshop manual (European edition), [engine removal/installation](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE011002000W04.html), [compression inspection](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE011002000W03.html), [intake-air system](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE011301005W05.html).
 - Engine mass: no Mazda figure. Secondary figures (about 112 kg bare, about 138 kg with accessories) are from Wikipedia's Mazda Wankel engine article and a 2003 forum post, neither with a primary source.
