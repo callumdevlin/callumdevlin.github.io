@@ -2,9 +2,8 @@
 layout: landing
 title: Callum Devlin
 description: >-
-  I'm a mechatronics engineer from Glasgow. At work I design and integrate the
-  mechanics of phased-array antenna and RF hardware for satellite communications.
-  In my own time I like hands-on automotive, electronics and software projects.
+  I'm a mechatronics engineer from Scotland. I like building and fixing things,
+  mostly cars, electronics and a bit of code.
 search: true
 ---
 
