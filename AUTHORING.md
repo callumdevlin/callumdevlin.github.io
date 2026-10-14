@@ -45,7 +45,7 @@ Put the original in `Images/` and never edit or delete originals. For smaller We
 {% include figure.html src="/Images/name.png" alt="What it shows" caption="Short caption." %}
 ```
 
-Options: `eager=true` for the first image on a page, `class="fig-narrow"` or `"fig-medium"` for small images, `full="..."` to link a different original, and `fulllink=true` to add a "Full-size image" link to the caption for plots and drawings with small print. Side-by-side images go in `<div class="fig-grid" markdown="0"> ... </div>`. Say in the caption when an image is a render or a synthetic graph. The home and Projects pages list projects with `{% include project-row.html ... %}`.
+Options: `eager=true` for the first image on a page, `class="fig-narrow"` or `"fig-medium"` for small images, `full="..."` to link a different original, and `fulllink=true` to add a "Full-size image" link to the caption for plots and drawings with small print. Side-by-side images go in `<div class="fig-grid" markdown="0"> ... </div>`. Say in the caption when an image is a render or a synthetic graph. The Projects page lists projects with `{% include project-row.html ... %}`.
 
 ## Labs
 
