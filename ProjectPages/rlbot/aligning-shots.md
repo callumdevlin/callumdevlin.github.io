@@ -2,7 +2,6 @@
 title: RL Bot, Aligning Shots on Target
 crumb: Aligning shots
 permalink: /ProjectPages/rlbot/aligning-shots/
-type: maths
 section: rlbot
 nav_order: 7
 status: wip

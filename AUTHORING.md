@@ -23,7 +23,6 @@ description: One-sentence introduction shown under the title and used for SEO.
 applies: Series 1 RX-8 (2003-2008) # short applicability note under the title
 status: wip                        # shows "Work in progress"; leave out otherwise
 reviewed: 2026-10-14               # only if you re-checked the content against its sources
-type: reference                    # label shown in search results (see _data/page_types.yml)
 section: rlbot                     # Previous/Next group (_data/sections.yml); only sequence groups use it
 nav_order: 3
 related: [/ProjectPages/RX8/torquespecs/]   # short "See also" line at the bottom

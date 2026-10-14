@@ -2,7 +2,6 @@
 title: RL Bot, Aerial Kinematics
 crumb: Aerial kinematics
 permalink: /ProjectPages/rlbot/aerial-kinematics/
-type: maths
 section: rlbot
 nav_order: 8
 status: wip

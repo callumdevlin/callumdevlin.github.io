@@ -2,7 +2,6 @@
 title: How the RX-8 Renesis OMP Works
 crumb: How the OMP works
 permalink: /ProjectPages/RX8/OMP/how-it-works/
-type: explainer
 section: omp
 nav_order: 1
 applies: Series 1 RX-8 (2003-2008). Mazda figures are from the 2003 manual; later PCM calibrations may differ.

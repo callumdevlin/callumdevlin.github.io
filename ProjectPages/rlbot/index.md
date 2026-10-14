@@ -2,7 +2,6 @@
 title: Rocket League Bot Notes
 crumb: Rocket League
 permalink: /ProjectPages/rlbot/
-type: index
 section: rlbot
 nav_order: 0
 toc: false

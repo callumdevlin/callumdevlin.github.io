@@ -2,7 +2,6 @@
 title: RL Bot, Ground Kinematics
 crumb: Ground kinematics
 permalink: /ProjectPages/rlbot/ground-kinematics/
-type: maths
 section: rlbot
 nav_order: 5
 applies: Community-measured constants for the standard Rocket League car physics.

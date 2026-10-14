@@ -2,7 +2,6 @@
 title: RX-8 Y16M-D Gearbox, PPF and Super-LSD
 crumb: Drivetrain
 permalink: /ProjectPages/RX8/drivetrain/
-type: reference
 section: rx8
 nav_order: 8
 applies: Series 1 RX-8 (2003-2008) with the Y16M-D six-speed manual and the factory rear differential.

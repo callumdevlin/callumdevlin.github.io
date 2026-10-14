@@ -2,7 +2,6 @@
 title: RL Bot, Path Optimisation Analysis
 crumb: Path analysis
 permalink: /ProjectPages/rlbot/movingpath/
-type: maths
 section: rlbot
 nav_order: 6
 status: wip

@@ -2,7 +2,6 @@
 title: RX-8 OMP Diagnostics & Testing
 crumb: OMP diagnostics
 permalink: /ProjectPages/RX8/OMP/testing/
-type: procedure
 section: omp
 nav_order: 2
 applies: Series 1 RX-8 (2003-2008) factory OMP. Mazda's figures are from the 2003 manual.
@@ -116,7 +115,7 @@ Mazda says this inspection can't be done correctly if the stepper is faulty, so 
 
 With a scan tool that shows the PIDs (Mazda's procedure uses WDS), watch MOP_POS (the PCM's step count) and MOP_SW (the switch). Mazda's operation check moves the motor with MOP_POS and expects MOP_SW to change at 53 steps or over. If it changes, Mazda then sends you to the oil pipe (leaks or cracks between pump and nozzle), the nozzle (clogging) and the hose between the intake manifold and the nozzle (clogging, leaks, poor connection). If it doesn't change, check the motor and switch and replace the pump if faulty.
 
-Your own scan tool may only let you read MOP_POS, not drive it. That's still useful: it should sit low at idle and climb with engine speed. My logged stock map ([full data here](/ProjectPages/RX8/enginedata/)) ran from about step 3 at 1,000 rpm to step 47 at 9,500 rpm.
+Your own scan tool may only let you read MOP_POS, not drive it. That's still useful: Mazda's control logic raises the target step with engine speed, so it should climb as the engine speeds up. In two Forscan logs of my own car it read 7 throughout (see [engine running data](/ProjectPages/RX8/enginedata/)), which is Mazda's fail-safe step.
 
 ## Oil nozzle checks
 

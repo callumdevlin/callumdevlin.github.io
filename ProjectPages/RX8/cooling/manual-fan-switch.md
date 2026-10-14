@@ -2,7 +2,6 @@
 title: RX-8 Manual Cooling Fan Switch Wiring
 crumb: Manual fan switch
 permalink: /ProjectPages/RX8/cooling/manual-fan-switch/
-type: wiring
 section: rx8
 nav_order: 6
 applies: Series 1 RX-8 (2003-2008). Circuit descriptions are from Mazda's 2003 workshop manual.

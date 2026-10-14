@@ -11,7 +11,7 @@ search: true
 
 - The [projects page](/ProjectPages/) lists my engineering projects.
 - The [RX-8 workshop notebook](/ProjectPages/RX8/) covers specifications, procedures and engine data for a Series 1 Mazda RX-8.
-- The [Rocket League bot notes](/ProjectPages/rlbot/) cover the vectors, steering and path planning behind a hard-coded Python bot.
+- The [notes](/notes/) include the vectors, steering and path planning behind a hard-coded Rocket League bot.
 
 ## Search {#looking-for-something-specific}
 

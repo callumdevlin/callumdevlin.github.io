@@ -2,13 +2,11 @@
 title: "EnduraOMP: Controlled Lubrication for Rotary Engines"
 crumb: EnduraOMP
 permalink: /ProjectPages/EnduraOMP/
-type: case-study
 image: /Images/optimised/enduraomp-engine-1-1200.webp
 reviewed: 2026-10-14
 description: >
   My MEng individual project: an electronically controlled oil metering system for
-  rotary engines, from logged data on a running engine to a machined, bench-tested
-  prototype.
+  rotary engines, built as a machined prototype.
 related:
   - /ProjectPages/RX8/enginedata/
   - /ProjectPages/RX8/OMP/
@@ -16,7 +14,7 @@ related:
 
 {% include figure.html src="/Images/enduraomp-engine-1.webp" alt="CAD render of the EnduraOMP pump, in green and black, mounted on the side of a Mazda 13B-MSP rotary engine with a clear oil line running to the engine" caption="The EnduraOMP pump on the 13B-MSP, replacing the stock oil metering pump on the OEM interface. Render." eager=true %}
 
-EnduraOMP is my MEng individual project at the University of Strathclyde: a lubrication system for rotary (Wankel) engines built around an electronically controlled gear pump, a dedicated clean-oil tank and a dashboard oil-level gauge. The project ran from problem research through to a machined, assembled and bench-tested prototype of the pump, tank and gauge.
+EnduraOMP is my MEng individual project at the University of Strathclyde: a lubrication system for rotary (Wankel) engines built around an electronically controlled gear pump, a dedicated clean-oil tank and a dashboard oil-level gauge. The project ran from problem research through to a machined and assembled prototype of the pump, tank and gauge.
 
 ## The problem
 
@@ -28,19 +26,17 @@ Rotary engines are compact, smooth and power-dense, which is why they keep comin
 
 Through teardown work, user research with rotary specialists and benchmarking, I identified internal lubrication as the place where an intervention would do the most good. It drives seal wear, deposits and thermal behaviour directly, yet the stock system gives the user no visibility and limited control.
 
-## Baseline data from a running engine {#building-the-evidence-first}
+## The stock system's delivery {#building-the-evidence-first}
 
-I couldn't find a measured dataset linking the stock oil metering pump's commanded position to the oil it delivers, so I generated one from a running Mazda 13B-MSP. I logged the ECU-commanded pump position against engine speed, oil pressure and oil temperature without touching the oil circuit, then bench-drove the stock pump at those same commanded positions and measured the flow. Together they gave a rough reconstruction of the stock metering schedule, from about 0.15 mL/min at idle to about 6.5 mL/min at 9,500 rpm, and a clear dependence of oil pressure on temperature as well as engine speed.
-
-The pressures and commanded steps are measurements. The delivery figures are rough, and the derived estimate in my [OMP Lab](/ProjectPages/RX8/OMP/lab/) is about 3.6 times higher at the top of the range, so I treat them as the scale of the problem rather than a calibration. The results are in my [13B-MSP engine data notes](/ProjectPages/RX8/enginedata/).
+Mazda doesn't publish how much oil the stock pump delivers, and I haven't measured it. For sizing I worked to an assumed schedule rising from about 0.15 mL/min at idle to about 6.5 mL/min at 9,500 rpm. How I log a running engine, and what the commanded pump step read, is in my [13B-MSP engine data notes](/ProjectPages/RX8/enginedata/).
 
 ## Design development {#the-design}
 
 ### The pump
 
-The pump is an external gear pump driven by a 12 V brushless DC motor. It delivers a repeatable volume per revolution and is controlled by PWM, so delivery isn't slaved to engine speed. A first concept ran the oil through a central gear pump surrounded by coolant channels, but it proved impractical to seal and machine. After four iterations I settled on a sectioned housing, much as a rotary engine is built up in layers, so coolant channels surround the pump cavity to warm the oil on a cold start while the oil and coolant loops stay sealed from each other. A flow simulation showed continuous coolant flow around the pump with no stagnant regions and a temperature drop of about 10 K across the path.
+The pump is an external gear pump driven by a 12 V brushed DC gearmotor. It delivers a repeatable volume per revolution and is controlled by PWM, so delivery isn't slaved to engine speed. A first concept ran the oil through a central gear pump surrounded by coolant channels, but it proved impractical to seal and machine. After four iterations I settled on a sectioned housing, much as a rotary engine is built up in layers, so coolant channels surround the pump cavity to warm the oil on a cold start while the oil and coolant loops stay sealed from each other. A flow simulation showed continuous coolant flow around the pump with no stagnant regions and a temperature drop of about 10 K across the path.
 
-The housing and coolant plate are CNC-machined 6063 aluminium, chosen from a materials screening for corrosion resistance and machinable sealing faces. Brass slide plates act as sacrificial wear faces, the covers are 3D-printed ASA, and a single custom NBR perimeter gasket replaced the individual O-rings of the first design to cut the number of leak paths. The pump mounts on the original oil pump interface through an aluminium bracket that also blanks off the old oil galleries. I settled the 30° upward angle of the mount with clay models, because it gave the clearest access to the bolts and hoses.
+The housing and coolant plate are CNC-machined 6063 aluminium, chosen from a materials screening for corrosion resistance and machinable sealing faces. Brass slide plates act as sacrificial wear faces, the covers are 3D-printed ASA, and NBR perimeter gaskets replaced the individual O-rings of the first design to cut the number of leak paths. Two O-rings remain, in grooves on the coolant plate. The pump mounts on the original oil pump interface through an aluminium bracket that also blanks off the old oil galleries. I settled the 30° upward angle of the mount with clay models, because it gave the clearest access to the bolts and hoses.
 
 <div class="fig-grid" markdown="0">
 {% include figure.html src="/Images/enduraomp-pump.webp" alt="Render of the EnduraOMP pump unit: a dark grey body with two oil ports at one end and a green anodised mid-section" caption="The pump unit. Render." %}
@@ -78,10 +74,9 @@ For the one-off pump I controlled only the functionally important features tight
 
 I tested the prototype subsystem by subsystem.
 
-- Electronics. The motor control board ran the brushless motor smoothly across the PWM range. The gauge board had its data-connector ground missing from the regulator ground, which I fixed with a jumper, and its bar was jittery until I averaged the PWM signal over a longer window. Both fixes are planned for the next board revision.
+- Electronics. The motor control board ran the motor smoothly across the PWM range. The gauge board had its data-connector ground missing from the regulator ground, which I fixed with a jumper, and its bar was jittery until I averaged the PWM signal over a longer window. Both fixes are planned for the next board revision.
 - Engine fitment. The pump mounted on the OEM pump interface with practical hose and tool access, and the original seal sealed against the engine. This was a fitment check.
-- Fluid. The coolant loop flowed smoothly with no external leaks, and the pump circulated oil and produced measurable flow. The flow was less consistent than intended, most likely from internal leakage across the slide-plate interfaces. There was no leakage between the oil and coolant loops.
-- Oil comparison on the engine. I ran the engine on the Bio-Rotary oil through an external feed, with the engine's own oil supply blocked off, using the same warm-up and rev pattern as the earlier 10W-30 baseline. Hydrocarbon emissions fell by about 50% and average NOx by about 14%. This was a single comparison of the oil and feed method; it didn't involve the EnduraOMP pump.
+- Fluid. The coolant loop flowed smoothly with no external leaks, and the pump moved oil from the tank through the circuit. I didn't measure the volume, and the flow was less consistent than intended, most likely from internal leakage across the slide-plate interfaces. There was no leakage between the oil and coolant loops.
 
 {% include figure.html src="/Images/enduraomp-engine-2.webp" alt="CAD render of the EnduraOMP pump on the 13B-MSP seen from the other side, with the pulley and the coolant and oil lines visible" caption="The fitment from the other side. Render." class="fig-medium" %}
 

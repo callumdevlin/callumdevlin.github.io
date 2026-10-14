@@ -30,8 +30,8 @@ menu:
     url:               /ProjectPages/
   - title:             RX-8 Notebook
     url:               /ProjectPages/RX8/
-  - title:             Rocket League
-    url:               /ProjectPages/rlbot/
+  - title:             Notes
+    url:               /notes/
   - title:             Search
     url:               /search/
 
@@ -82,6 +82,10 @@ defaults:
     values:
       layout:          notebook
       search:          true
+  - scope:
+      path:            "ProjectPages/rlbot"
+    values:
+      crumb_root:      /notes/
 
 hydejack:
   post_addons:         [about, comments]

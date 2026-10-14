@@ -2,7 +2,6 @@
 title: RX-8 Rotary Compression Testing
 crumb: Compression testing
 permalink: /ProjectPages/RX8/compression-testing/
-type: procedure
 section: rx8
 nav_order: 11
 applies: Series 1 RX-8 (2003-2008), two-rotor 13B-MSP.

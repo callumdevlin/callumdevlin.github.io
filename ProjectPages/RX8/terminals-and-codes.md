@@ -2,7 +2,6 @@
 title: RX-8 PCM Terminals, Relays and Fault Codes
 crumb: PCM terminals and codes
 permalink: /ProjectPages/RX8/terminals-and-codes/
-type: reference
 section: rx8
 nav_order: 13
 applies: Series 1 RX-8 (2003-2008). Definitions are from Mazda's 2003 workshop manual.

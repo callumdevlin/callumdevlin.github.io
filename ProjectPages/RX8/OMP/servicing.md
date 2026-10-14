@@ -2,7 +2,6 @@
 title: RX-8 OMP Removal, Installation & Servicing
 crumb: OMP servicing
 permalink: /ProjectPages/RX8/OMP/servicing/
-type: procedure
 section: omp
 nav_order: 3
 applies: Series 1 RX-8 (2003-2008) factory OMP. Mazda's steps are from the 2003 manual; owner advice is marked as such.
@@ -94,7 +93,7 @@ Mazda's installation step is: start the engine, check for oil leaks at the areas
 2. Premix for the first tank. Owners suggest adding two-stroke oil to the first tank of fuel as a margin while the circuit fills. There is more on premix on the [nozzles & premix page](/ProjectPages/RX8/OMP/nozzles-premix/).
 3. First start. Start the engine and let it idle with no load. The PCM runs its initial set (reverse 60 steps to find zero) at every start. Mazda lists battery connection as one of the conditions for the position check, and its switch voltage check implies it runs after a battery disconnect, so expect it.
 4. Check for leaks at every union and the pump flange, cold and again after warm-up.
-5. Verify control. No codes should be set. With a scan tool, watch MOP_POS rise with engine speed ([expected values here](/ProjectPages/RX8/enginedata/)). Mazda's [PCM terminal 2N check](/ProjectPages/RX8/OMP/testing/#switch-check-at-the-pcm) is a quick electrical test of the switch circuit.
+5. Verify control. No codes should be set. With a scan tool, watch MOP_POS rise with engine speed. A constant 7 is Mazda's fail-safe step. Mazda's [PCM terminal 2N check](/ProjectPages/RX8/OMP/testing/#switch-check-at-the-pcm) is a quick electrical test of the switch circuit.
 6. Check the oil level and watch consumption over the following weeks. Consumption is the end-to-end proof that the system is delivering, because the PCM can't detect a lack of flow.
 
 ## Sources

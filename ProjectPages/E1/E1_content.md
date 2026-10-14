@@ -2,7 +2,6 @@
 title: MP1, Breathing-Apparatus Stowage
 crumb: MP1 stowage
 permalink: /ProjectPages/E1/
-type: case-study
 image: /Images/optimised/BA_Stowage_18-1200.webp
 reviewed: 2026-10-14
 description: >
@@ -109,10 +108,10 @@ We ran linear static FEA in SolidWorks on the main components, using the 10 g, 2
 | Spigot | 196.2 N, the cylinder's weight | 1.98 MPa | 0.0087 mm | Static weight; intentionally stiff |
 
 <div class="fig-grid" markdown="0">
-{% include figure.html src="/Images/BA-FEA-1.JPG" alt="SolidWorks set-up for the back plate: the model with its fixed fixings in green, a reaction force of 19,613 N and a force load of minus 2,000 kgf" caption="Back-plate study set-up as saved: the applied force is listed as −2,000 kgf." class="fig-narrow" fulllink=true %}
-{% include figure.html src="/Images/BA-FEA-2.JPG" alt="SolidWorks results for the back plate: a von Mises stress plot with a maximum of 3.988e8 N per square metre and a displacement plot with a maximum of 0.2647 mm" caption="Back-plate results: peak von Mises stress 398.8 MPa and peak displacement 0.265 mm." class="fig-narrow" fulllink=true %}
-{% include figure.html src="/Images/BA-FEA-3.JPG" alt="SolidWorks set-up for the clamping arms: the model with a 1,000 N normal force applied to the inner faces of the arms" caption="Clamping-arm study set-up: a 1,000 N normal force on the arms." class="fig-narrow" fulllink=true %}
-{% include figure.html src="/Images/BA-FEA-4.JPG" alt="SolidWorks results for the clamping arms: a stress plot with a maximum of 1.461e8 N per square metre and a displacement plot with a maximum of 0.9274 mm at the arm tips" caption="Clamping-arm results: peak stress 146 MPa and 0.93 mm tip displacement." class="fig-narrow" fulllink=true %}
+{% include figure.html src="/Images/BA-FEA-1.JPG" alt="SolidWorks set-up for the back plate: the model with its fixed fixings in green, a reaction force of 19,613 N and a force load of minus 2,000 kgf" caption="Back-plate study set-up as saved: the applied force is listed as −2,000 kgf." class="fig-narrow" %}
+{% include figure.html src="/Images/BA-FEA-2.JPG" alt="SolidWorks results for the back plate: a von Mises stress plot with a maximum of 3.988e8 N per square metre and a displacement plot with a maximum of 0.2647 mm" caption="Back-plate results: peak von Mises stress 398.8 MPa and peak displacement 0.265 mm." class="fig-narrow" %}
+{% include figure.html src="/Images/BA-FEA-3.JPG" alt="SolidWorks set-up for the clamping arms: the model with a 1,000 N normal force applied to the inner faces of the arms" caption="Clamping-arm study set-up: a 1,000 N normal force on the arms." class="fig-narrow" %}
+{% include figure.html src="/Images/BA-FEA-4.JPG" alt="SolidWorks results for the clamping arms: a stress plot with a maximum of 1.461e8 N per square metre and a displacement plot with a maximum of 0.9274 mm at the arm tips" caption="Clamping-arm results: peak stress 146 MPa and 0.93 mm tip displacement." class="fig-narrow" %}
 </div>
 
 Two inputs need care. The saved back-plate study applied 2,000 kgf, a reaction of 19.6 kN, which is ten times the 1,962 N in the report text. It may have been a deliberately severe case or an entry error. The 398.8 MPa is the stress at that load. The analysis is linear, so at 1,962 N it would be about a tenth of that, but the study hasn't been re-run. The studies also used alloy-steel properties: the plots mark a yield strength of about 620 MPa and the report compares the plate stress with a tensile strength of 724 MPa. The sheet is mild steel, which has a lower yield strength, so the results need re-running with the actual material. Peak stresses at fixings and corners can also be modelling artefacts.

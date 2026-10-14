@@ -2,7 +2,6 @@
 title: Mazda RX-8 Torque Specifications
 crumb: Torque specifications
 permalink: /ProjectPages/RX8/torquespecs/
-type: reference
 section: rx8
 nav_order: 3
 applies: Series 1 RX-8 (2003-2008), six-port 13B-MSP, Mazda engine "Type A" (all UK cars). Figures are from Mazda's 2003 European workshop manual.

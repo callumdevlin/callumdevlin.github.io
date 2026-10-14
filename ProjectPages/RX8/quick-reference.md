@@ -2,7 +2,6 @@
 title: RX-8 Workshop Quick Reference
 crumb: Quick reference
 permalink: /ProjectPages/RX8/quick-reference/
-type: reference
 section: rx8
 nav_order: 2
 applies: Series 1 RX-8 (2003-2008), six-port 13B-MSP. Mazda figures are from the 2003 European workshop manual.

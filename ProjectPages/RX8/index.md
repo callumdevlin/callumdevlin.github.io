@@ -2,7 +2,7 @@
 title: Mazda RX-8 Workshop Notebook
 crumb: RX-8 Notebook
 permalink: /ProjectPages/RX8/
-type: index
+image: /Images/optimised/rx8-engine-lift-1200.webp
 section: rx8
 nav_order: 0
 applies: Series 1 RX-8 (2003-2008), from a 2005 UK right-hand-drive 231 PS six-port manual car. Mazda figures are from the 2003 European workshop manual.
@@ -12,6 +12,12 @@ description: >
 toc: false
 ---
 
+<form class="site-search site-search-form" role="search" action="{{ '/search/' | relative_url }}" method="get">
+<label class="sr-only" for="rx8-search-q">Search the site</label>
+<input id="rx8-search-q" type="search" name="q" placeholder="e.g. torque, P1688, hose" autocomplete="off">
+<button type="submit">Search</button>
+</form>
+
 ## Specifications and reference
 
 - [Quick reference](/ProjectPages/RX8/quick-reference/): capacities, fluids and common service values.
@@ -20,7 +26,7 @@ toc: false
 
 ## Engine
 
-- [Engine running data](/ProjectPages/RX8/enginedata/): oil pressure, temperature and oil metering pump commands logged on a healthy 13B-MSP.
+- [Engine running data](/ProjectPages/RX8/enginedata/): how I log a running 13B-MSP, and what the oil metering pump's commanded step read.
 - [Engine removal and rebuild](/ProjectPages/RX8/engine-removal-and-rebuild/): removal, strip-down, inspection and reassembly.
 - [Rotary compression testing](/ProjectPages/RX8/compression-testing/): test procedure, readings and my own tester design.
 

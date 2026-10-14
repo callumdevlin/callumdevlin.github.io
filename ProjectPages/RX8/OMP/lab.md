@@ -1,7 +1,6 @@
 ---
 title: RX-8 OMP Lab
 permalink: /ProjectPages/RX8/OMP/lab/
-type: lab
 section: omp
 nav_order: 5
 toc: false
@@ -11,6 +10,6 @@ description: >
   switch faults and a jammed mechanism play out.
 ---
 
-This is the companion to the [Series 1 OMP guide](/ProjectPages/RX8/OMP/). It models the stock pump only. The commanded-step tables come from a community-decoded six-port ROM that I haven't confirmed against my own ECU, and the oil-delivery figures are a derived estimate rather than a measurement: at step 47 and 9,500 rpm the lab gives about 23 mL/min, against roughly 6.5 mL/min in my rough [logged data](/ProjectPages/RX8/enginedata/). The lab lists its sources under *Model notes and sources*.
+This is the companion to the [Series 1 OMP guide](/ProjectPages/RX8/OMP/). It models the stock pump only. The commanded-step tables come from a community-decoded six-port ROM that I haven't confirmed against my own ECU, and the oil-delivery figures are a derived estimate rather than a measurement. The lab lists its sources under *Model notes and sources*.
 
 {% include lab-embed.html path="/tools/rx8-omp/" source="rx8-omp-lab" title="RX-8 OMP Lab: interactive oil metering pump teaching tool" height=2600 small=3700 %}

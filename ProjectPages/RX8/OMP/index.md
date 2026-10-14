@@ -2,7 +2,6 @@
 title: Mazda RX-8 S1 Oil Metering Pump Guide
 crumb: Series 1 OMP guide
 permalink: /ProjectPages/RX8/OMP/
-type: index
 section: omp
 nav_order: 0
 applies: Series 1 RX-8 (2003-2008) factory electronic oil metering pump. Not the Series 2 system.

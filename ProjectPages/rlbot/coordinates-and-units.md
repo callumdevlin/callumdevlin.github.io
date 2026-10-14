@@ -2,7 +2,6 @@
 title: RL Bot, Game State, Coordinates and Units
 crumb: Coordinates and units
 permalink: /ProjectPages/rlbot/coordinates-and-units/
-type: maths
 section: rlbot
 nav_order: 2
 applies: RLBot v4 (`rlbot` 1.x). Field sizes and axis conventions are from the RLBot documentation and the framework's template code.

@@ -17,7 +17,6 @@ layout: base
                  `sequence: true` in _data/sections.yml get Previous/Next
     related      short list of site URLs shown as "See also"
     crumb        short label used in breadcrumbs and Previous/Next
-    type         key from _data/page_types.yml; used for the label in search results only
 {%- endcomment -%}
 {%- capture nb_items -%}{%- include nb/toc-items.html html=content -%}{%- endcapture -%}
 {%- assign nb_h2_count = nb_items | split: 'toc-l2' | size | minus: 1 -%}

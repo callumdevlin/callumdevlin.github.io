@@ -2,7 +2,6 @@
 title: ToolSync, a Digital Tracking Toolbox
 crumb: ToolSync
 permalink: /ProjectPages/rfidtoolstorage/
-type: case-study
 reviewed: 2026-10-14
 description: >
   My fourth-year BEng project: a tool chest that tracks its contents with RFID and a

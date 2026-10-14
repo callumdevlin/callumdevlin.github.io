@@ -2,7 +2,6 @@
 title: RX-8 Fuel, Ignition and Starting Reference
 crumb: Fuel, ignition and starting
 permalink: /ProjectPages/RX8/fuel-ignition-and-starting/
-type: reference
 section: rx8
 nav_order: 7
 applies: Series 1 RX-8 (2003-2008), six-port 13B-MSP. The coil kit, fuel pump and starter sections describe modifications on my car.

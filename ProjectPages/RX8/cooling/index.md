@@ -2,7 +2,6 @@
 title: "RX-8 Cooling System: Hose Routing, Drain/Fill and Fan Control"
 crumb: Cooling system
 permalink: /ProjectPages/RX8/cooling/
-type: reference
 section: rx8
 nav_order: 5
 applies: Series 1 RX-8 (2003-2008), 13B-MSP. Mazda figures are from the 2003 European workshop manual.

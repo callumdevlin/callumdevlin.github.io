@@ -208,6 +208,16 @@
     - { w: 480, src: "/Images/optimised/rlbot-hero-480.webp" }
     - { w: 800, src: "/Images/optimised/rlbot-hero-800.webp" }
     - { w: 1179, src: "/Images/optimised/rlbot-hero-1179.webp" }
+"/Images/rx8-engine-lift.jpg":
+  w: 1800
+  h: 2400
+  bytes: 928512
+  webp:
+    - { w: 480, src: "/Images/optimised/rx8-engine-lift-480.webp" }
+    - { w: 800, src: "/Images/optimised/rx8-engine-lift-800.webp" }
+    - { w: 1200, src: "/Images/optimised/rx8-engine-lift-1200.webp" }
+    - { w: 1600, src: "/Images/optimised/rx8-engine-lift-1600.webp" }
+    - { w: 1800, src: "/Images/optimised/rx8-engine-lift-1800.webp" }
 "/Images/RX8-JackPoints.jpg":
   w: 801
   h: 350
@@ -220,6 +230,16 @@
   w: 981
   h: 711
   bytes: 105627
+"/Images/toolsync-prototype.jpg":
+  w: 2400
+  h: 1981
+  bytes: 473933
+  webp:
+    - { w: 480, src: "/Images/optimised/toolsync-prototype-480.webp" }
+    - { w: 800, src: "/Images/optimised/toolsync-prototype-800.webp" }
+    - { w: 1200, src: "/Images/optimised/toolsync-prototype-1200.webp" }
+    - { w: 1600, src: "/Images/optimised/toolsync-prototype-1600.webp" }
+    - { w: 2000, src: "/Images/optimised/toolsync-prototype-2000.webp" }
 "/Images/v_agraph.JPG":
   w: 793
   h: 487

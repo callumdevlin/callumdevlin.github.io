@@ -2,7 +2,6 @@
 title: RL Bot, Behaviours and Testing
 crumb: Behaviours and testing
 permalink: /ProjectPages/rlbot/behaviours-and-testing/
-type: explainer
 section: rlbot
 nav_order: 9
 applies: RLBot v4 Python API. The behaviour code is illustrative.

@@ -2,7 +2,6 @@
 title: RL Bot, 3D Vector System
 crumb: Vectors
 permalink: /ProjectPages/rlbot/vectors/
-type: maths
 section: rlbot
 nav_order: 3
 applies: RLBot v4 Python API. The `Vec3` class is the one from the RLBot Python template, as used in the bot.

@@ -2,6 +2,9 @@
 # Not part of the site and not published (_config.yml also excludes it from the build).
 /_maintenance/
 
+# Local assistant access settings
+.claude/settings.local.json
+
 # Jekyll output and caches
 /_site/
 .jekyll-cache/

@@ -2,7 +2,6 @@
 title: RL Bot, Steering and Driving
 crumb: Steering
 permalink: /ProjectPages/rlbot/steering/
-type: maths
 section: rlbot
 nav_order: 4
 applies: RLBot v4 Python API. `steer_toward_target` is from the RLBot template; the speed-control code is illustrative.

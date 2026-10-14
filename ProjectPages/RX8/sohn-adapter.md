@@ -2,7 +2,6 @@
 title: Custom RX-8 Sohn Adapter and Separate OMP Oil Supply
 crumb: Sohn adapter
 permalink: /ProjectPages/RX8/sohn-adapter/
-type: reference
 section: rx8
 nav_order: 9
 status: wip

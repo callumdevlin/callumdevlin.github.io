@@ -1,7 +1,6 @@
 ---
 title: RX-8 Acceleration Lab
 permalink: /ProjectPages/RX8/acceleration-lab/
-type: lab
 toc: false
 description: >
   Gearing, road speed and full-throttle acceleration for the 231 PS six-speed and

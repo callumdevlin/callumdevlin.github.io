@@ -2,7 +2,6 @@
 title: Rocket League Bot, Project Overview
 crumb: Overview
 permalink: /ProjectPages/rlbot/overview/
-type: explainer
 section: rlbot
 nav_order: 1
 image: /Images/optimised/rlbot-hero-1200.webp

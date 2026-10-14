@@ -279,8 +279,9 @@ figure.fig {
 
 // ---------------------------------------------------------------- search
 
+.site-search-form { display: flex; gap: 0.5rem; margin: 0 0 1rem; max-width: 40rem; }
+
 .site-search {
-  .site-search-form { display: flex; gap: 0.5rem; margin: 0 0 1rem; max-width: 40rem; }
   input[type="search"] {
     flex: 1 1 auto;
     min-width: 0;

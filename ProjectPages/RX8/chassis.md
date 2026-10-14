@@ -2,7 +2,6 @@
 title: RX-8 Jacking Points, Wheels, Brakes and Alignment
 crumb: Chassis
 permalink: /ProjectPages/RX8/chassis/
-type: reference
 section: rx8
 nav_order: 12
 applies: Series 1 RX-8 (2003-2008). Mazda figures are from the 2003 European manual. Front disc size depends on the suspension fitted.

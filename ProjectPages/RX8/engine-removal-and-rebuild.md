@@ -2,7 +2,6 @@
 title: 13B-MSP Engine Removal and Rebuild Notes
 crumb: Engine removal and rebuild
 permalink: /ProjectPages/RX8/engine-removal-and-rebuild/
-type: procedure
 section: rx8
 nav_order: 4
 applies: 13B-MSP six-port (Series 1), Mazda engine "Type A" (all UK cars). Clearances and torques follow Mazda's October 2008 13B-MSP engine manual.
@@ -23,6 +22,8 @@ I normally remove the engine alone through the top, leaving the Y16M-D gearbox i
 Before the engine goes on a stand, loosen the fasteners that need the flywheel lock or very high torque: the front pulley lockbolt (254-294 N·m) and the oil-pump sprocket nut. Do not loosen either without the proper holding tool. Leave the flywheel fitted until those are done, because the lock works through the flywheel's ring gear.
 
 ## Top-lift removal
+
+{% include figure.html src="/Images/rx8-engine-lift.jpg" alt="A rotary engine hanging from a workshop crane on orange lifting straps beside a grey RX-8 with its bonnet open" caption="An engine coming out of an RX-8 through the top, hanging from a crane on lifting straps." class="fig-medium" %}
 
 ### Ordered disconnect checklist
 

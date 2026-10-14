@@ -2,7 +2,6 @@
 title: RX-8 Oil Nozzles, Premix & Clean Oil Feed
 crumb: Nozzles, premix and clean oil
 permalink: /ProjectPages/RX8/OMP/nozzles-premix/
-type: reference
 section: omp
 nav_order: 4
 applies: Series 1 RX-8 (2003-2008). Mazda's figures are from the 2003 manual; premix and clean-oil figures are owner and vendor reports.

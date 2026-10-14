@@ -8,7 +8,7 @@ sitemap: false
   Unpublished drafts, the maintenance folder and the 404 page are never in site.pages with
   that flag, so they are never indexed.
 
-  Fields: t title, u url, k type label, d description, h [[heading id, heading text], ...],
+  Fields: t title, u url, k area of the site, d description, h [[heading id, heading text], ...],
   b plain text of the page.
 {%- endcomment -%}
 {%- assign idx_pages = site.pages | where: "search", true -%}
@@ -16,7 +16,14 @@ sitemap: false
 {%- for p in idx_pages -%}
   {%- assign idx_html = p.content | markdownify -%}
   {%- capture idx_heads -%}{% include nb/toc-items.html html=idx_html format="json" %}{%- endcapture -%}
-  {%- assign idx_type = site.data.page_types[p.type].label | default: "" -%}
+  {%- assign idx_type = "Project" -%}
+  {%- if p.url contains "/RX8/" -%}{%- assign idx_type = "RX-8 notebook" -%}
+  {%- elsif p.url contains "/rlbot/" -%}{%- assign idx_type = "Notes: Rocket League" -%}
+  {%- elsif p.url == "/" -%}{%- assign idx_type = "Home" -%}
+  {%- elsif p.url == "/about/" -%}{%- assign idx_type = "About" -%}
+  {%- elsif p.url == "/notes/" -%}{%- assign idx_type = "Notes" -%}
+  {%- elsif p.url == "/ProjectPages/" -%}{%- assign idx_type = "Projects" -%}
+  {%- endif -%}
   {%- assign idx_body = idx_html | strip_html | normalize_whitespace | replace: '&amp;', '&' | replace: '&lt;', '<' | replace: '&gt;', '>' | replace: '&quot;', '"' | replace: '&#39;', "'" | replace: '&nbsp;', ' ' -%}
   {"t":{{ p.title | jsonify }},"u":{{ p.url | relative_url | jsonify }},"k":{{ idx_type | jsonify }},"d":{{ p.description | strip_newlines | strip | jsonify }},"h":[{{ idx_heads }}["",""]],"b":{{ idx_body | jsonify }}}{% unless forloop.last %},{% endunless %}
 {%- endfor -%}
