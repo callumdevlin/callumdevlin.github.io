@@ -5,13 +5,13 @@ permalink: /ProjectPages/rfidtoolstorage/
 reviewed: 2026-10-14
 description: >
   My fourth-year BEng project: a tool chest that tracks its contents with RFID and a
-  Raspberry Pi touchscreen, with tags designed to flash and beep to find a missing tool,
-  built as a working scaled prototype.
+  Raspberry Pi touchscreen, with tags designed to flash to find a missing tool, built as
+  a working scaled prototype and followed by a KiCad design for the tag.
 ---
 
 The idea for my fourth-year BEng project came from a problem I run into constantly: managing tools. At work, at a van conversion company, and in my own workshop, I've seen how much time goes on hunting for tools in cluttered or poorly organised storage.
 
-ToolSync is my answer: a toolbox that tracks what's in it. It pairs a heavy-duty tool chest with a Raspberry Pi touchscreen. A passive HF RFID reader handles check-in and check-out, and small BLE tags (SyncTags) on the tools are designed to flash and beep when one goes missing, so the box doesn't just tell you something has gone, it helps you find it.
+ToolSync is my answer: a toolbox that tracks what's in it. It pairs a heavy-duty tool chest with a Raspberry Pi touchscreen. A passive HF RFID reader handles check-in and check-out, and small BLE tags (SyncTags) on the tools are designed to flash when one goes missing, so the box doesn't just tell you something has gone, it helps you find it. (My original tag also had a buzzer; the redesign described below drops it for now.)
 
 ## Research and concept
 
@@ -47,16 +47,18 @@ Each user has a local JSON file keyed by drawer (`D1` to `D7`), storing each too
 
 ### SyncTag, the tool-mounted PCB
 
-The SyncTag is a miniature PCB that lives on each tool. It integrates a BK3432 BLE module, an RFID receiver, an 80 dB buzzer and an LED, with the buzzer and LED switched through MOSFETs chosen for size, audibility and low power. My first plan was a 15 mAh cell, but the battery-drain calculation showed it wouldn't last, so I moved to a CR1025 coin cell (about 30 mAh) as the best size-to-life trade-off, with easy replacement. The board includes backflow-protection diodes to isolate the BLE and RFID interrupts and protect the more sensitive components from transients.
+The SyncTag is a miniature PCB that lives on each tool. My first concept was a BK3432 BLE module, an RFID chip, an 80 dB buzzer and an LED on a CR1025 coin cell, with a battery estimate of about two years. It did not survive checking: the cell does not fit the 25 × 10 × 7 mm casing, a coin cell cannot run that buzzer, and the long battery figure was only the chip's sleep current, with no advertising in it.
 
-From the component currents, each scan event costs about 33 µWh, so the cell covers roughly 2,760 events, or about two and a half years at three scans per tool per day. In standby the BLE module draws 1.8 µA, which gives about two years. These are design calculations, not measurements, and taken together they suggest over a year in normal use.
+So I redesigned it in KiCad 9. A TI CC2340R52 Bluetooth chip with a chip antenna sits on a four-layer main board, and a separate NFC flex carries an NXP NT3H2111 so the tool can still be read with no battery. The alert is an LED (the buzzer is left out of this revision), and the CR1025 stays replaceable. The tag grows to about 28.0 × 11.5 × 7.3 mm outside. The modelled battery life is about 1.7 to 2.1 years for a typical workshop pattern when the tag advertises slowly while the tool is in the box. KiCad's electrical and design rule checks report no errors on either board, but nothing has been built or measured and there is no tag firmware, so the battery life, range and antenna performance are all estimates.
+
+The full write-up, with the schematic, antenna design, power model and what is still unverified, is on its own page: [SyncTag, designing the tag's circuit board](/ProjectPages/rfidtoolstorage/synctag-pcb/).
 
 ## Prototyping
 
 I planned a full-scale prototype, but at the start of Stage 2 I judged that a full-size box wasn't feasible in the time, and built a scaled-down proof of concept instead.
 
-- The toolbox prototype uses a pre-made miniature toolbox with the real electronics: a Raspberry Pi, the RFID module and a display, managing two drawers. Tool detection, data storage and the interface run as they would in the full design. I left Bluetooth out because I couldn't get a PCB designed for the BLE chip in time, although the software is structured to accept it.
-- The SyncTag casing is a 1:1 TPU print. Trying wall thicknesses from 1.0 to 3.5 mm showed that 2.5 mm protects the electronics and still bends to stick to a flat tool surface. An RFID sticker inside the casing stands in for the tag electronics, which let tools be checked in and out as designed. The tags read without interference against tools, the toolbox and other metal.
+- The toolbox prototype uses a pre-made miniature toolbox with the real electronics: a Raspberry Pi, the RFID module and a display, managing two drawers. Tool detection, data storage and the interface run as they would in the full design. I left Bluetooth out because I couldn't get a PCB designed for the BLE chip in time, although the software is structured to accept it. I have since designed that board (see SyncTag above), but it has not been built.
+- The SyncTag casing is a 1:1 TPU print. Trying wall thicknesses from 1.0 to 3.5 mm showed that 2.5 mm protects the electronics and still bends to stick to a flat tool surface. An RFID sticker inside the casing stands in for the tag electronics, which let tools be checked in and out as designed. The tags read without interference against tools, the toolbox and other metal. The redesigned tag is larger and rigid, so this bendable casing would need reworking around it.
 - The locking mechanism is a 1:1 plywood model, CNC-cut with a technician's help. It showed the cam lifting the latch hooks together and worked without changes.
 - A scaled handle prototype went to a group of tradesmen. They found the shape comfortable but the bare edge hard to grip with greasy hands, so the design gained a rubber trim.
 
@@ -64,15 +66,15 @@ I planned a full-scale prototype, but at the start of Stage 2 I judged that a fu
 
 I lent the prototype, with SyncTags and a working electronics housing, to a friend, who used it on a car job and found check-in and check-out useful for keeping track of tools and for tidying up. I also showed the prototype to focus groups at a van conversion company and a bodyshop. The response was positive, and the main suggestion was a larger screen for reading at a distance.
 
-A costing for the full-size toolbox came to about £391 to manufacture, excluding the tags, which cost about £0.55 each.
+A costing for the full-size toolbox came to about £391 to manufacture, excluding the tags, which cost about £0.55 each. That tag price was for my original concept and does not carry over to the redesigned tag.
 
 ## Outcome
 
-The project met its aims apart from the full-scale prototype. The working prototype demonstrates check-in and check-out, the tag casing and the locking mechanism. The full-size toolbox and the BLE flash-and-beep function exist as designs.
+The project met its aims apart from the full-scale prototype. The working prototype demonstrates check-in and check-out, the tag casing and the locking mechanism. The full-size toolbox exists as a design, and so does the tag's circuit board, which has passed software design checks but has not been built.
 
 ## Further development
 
-The next steps are refining the manufacturing processes, building and testing the Bluetooth tag so it can flash and beep, building a full-scale model, and trying a larger display.
+The next steps are refining the manufacturing processes, building and testing the redesigned Bluetooth tag so it can flash (and revisiting a buzzer), building a full-scale model, and trying a larger display.
 
 ## References
 

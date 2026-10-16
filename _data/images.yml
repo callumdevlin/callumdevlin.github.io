@@ -226,6 +226,66 @@
     - { w: 480, src: "/Images/optimised/RX8-JackPoints-480.webp" }
     - { w: 800, src: "/Images/optimised/RX8-JackPoints-800.webp" }
     - { w: 801, src: "/Images/optimised/RX8-JackPoints-801.webp" }
+"/Images/synctag-assembly.png":
+  w: 2125
+  h: 1564
+  bytes: 112058
+  webp:
+    - { w: 480, src: "/Images/optimised/synctag-assembly-480.webp" }
+    - { w: 800, src: "/Images/optimised/synctag-assembly-800.webp" }
+    - { w: 1200, src: "/Images/optimised/synctag-assembly-1200.webp" }
+    - { w: 1600, src: "/Images/optimised/synctag-assembly-1600.webp" }
+    - { w: 2000, src: "/Images/optimised/synctag-assembly-2000.webp" }
+"/Images/synctag-battery-life.png":
+  w: 1840
+  h: 704
+  bytes: 78159
+  webp:
+    - { w: 480, src: "/Images/optimised/synctag-battery-life-480.webp" }
+    - { w: 800, src: "/Images/optimised/synctag-battery-life-800.webp" }
+    - { w: 1200, src: "/Images/optimised/synctag-battery-life-1200.webp" }
+    - { w: 1600, src: "/Images/optimised/synctag-battery-life-1600.webp" }
+    - { w: 1840, src: "/Images/optimised/synctag-battery-life-1840.webp" }
+"/Images/synctag-block-diagram.png":
+  w: 1746
+  h: 976
+  bytes: 212790
+  webp:
+    - { w: 480, src: "/Images/optimised/synctag-block-diagram-480.webp" }
+    - { w: 800, src: "/Images/optimised/synctag-block-diagram-800.webp" }
+    - { w: 1200, src: "/Images/optimised/synctag-block-diagram-1200.webp" }
+    - { w: 1600, src: "/Images/optimised/synctag-block-diagram-1600.webp" }
+    - { w: 1746, src: "/Images/optimised/synctag-block-diagram-1746.webp" }
+"/Images/synctag-flex-render.png":
+  w: 2384
+  h: 1376
+  bytes: 274640
+  webp:
+    - { w: 480, src: "/Images/optimised/synctag-flex-render-480.webp" }
+    - { w: 800, src: "/Images/optimised/synctag-flex-render-800.webp" }
+    - { w: 1200, src: "/Images/optimised/synctag-flex-render-1200.webp" }
+    - { w: 1600, src: "/Images/optimised/synctag-flex-render-1600.webp" }
+    - { w: 2000, src: "/Images/optimised/synctag-flex-render-2000.webp" }
+"/Images/synctag-pcb-render.png":
+  w: 2384
+  h: 1376
+  bytes: 262644
+  webp:
+    - { w: 480, src: "/Images/optimised/synctag-pcb-render-480.webp" }
+    - { w: 800, src: "/Images/optimised/synctag-pcb-render-800.webp" }
+    - { w: 1200, src: "/Images/optimised/synctag-pcb-render-1200.webp" }
+    - { w: 1600, src: "/Images/optimised/synctag-pcb-render-1600.webp" }
+    - { w: 2000, src: "/Images/optimised/synctag-pcb-render-2000.webp" }
+"/Images/synctag-schematic.png":
+  w: 1900
+  h: 940
+  bytes: 146122
+  webp:
+    - { w: 480, src: "/Images/optimised/synctag-schematic-480.webp" }
+    - { w: 800, src: "/Images/optimised/synctag-schematic-800.webp" }
+    - { w: 1200, src: "/Images/optimised/synctag-schematic-1200.webp" }
+    - { w: 1600, src: "/Images/optimised/synctag-schematic-1600.webp" }
+    - { w: 1900, src: "/Images/optimised/synctag-schematic-1900.webp" }
 "/Images/timinglightschematic.jpg":
   w: 981
   h: 711
