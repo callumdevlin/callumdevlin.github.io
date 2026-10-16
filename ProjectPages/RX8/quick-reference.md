@@ -10,7 +10,7 @@ description: >
   Capacities, service limits and common values for a Series 1 six-port RX-8.
 ---
 
-In the Basis column, "Mazda" means the figure is in Mazda's workshop manual and "my car" means it is what I use or what is fitted. Fill quantities are starting amounts: set the final level on the dipstick or at the filler opening.
+"Mazda" in the Basis column means the figure is in Mazda's workshop manual; "my car" means it's what I use. Fill quantities are starting amounts: set the final level on the dipstick or at the filler opening.
 
 ## Vehicle and drivetrain
 
@@ -46,8 +46,8 @@ Source for capacities and fluids: Mazda [engine specifications](https://foxed.ca
 
 | Item | Value | Basis |
 | --- | --- | --- |
-| Leading spark plug | Mazda's European list: NGK RE8A-L, or RE7A-L (hotter, for engines that foul plugs). My car appears to have RE7C-L, which is not in Mazda's list | Mazda / my car |
-| Trailing spark plug | NGK RE9B-T | Mazda |
+| Leading spark plug | NGK RE7C-L (stock no. 6700) | RX8Club threads, retailer listings |
+| Trailing spark plug | NGK RE9B-T (stock no. 6701) | RX8Club threads, retailer listings |
 | Plug gap | 1.05-1.15 mm (European/UK figure; Australian cars differ). Replace beyond 1.5 mm leading or 1.4 mm trailing. Do not bend the iridium electrodes | Mazda |
 | Spark-plug torque | 12.8-17.7 N·m | Mazda |
 | Wheel-nut torque | 88-118 N·m, criss-cross pattern | Mazda |

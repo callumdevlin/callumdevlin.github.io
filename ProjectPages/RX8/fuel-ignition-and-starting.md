@@ -7,43 +7,49 @@ nav_order: 7
 applies: Series 1 RX-8 (2003-2008), six-port 13B-MSP. The coil kit, fuel pump and starter sections describe modifications on my car.
 reviewed: 2026-10-14
 description: >
-  Spark plugs, D585 coils, staged injectors, fuel pressure, KEMSO pump installation
-  and starting checks.
+  Spark plugs, D585 coils, staged injectors, fuel pressure and pump control, and
+  starting checks.
 ---
 
 ## Spark plugs
 
 | Position | Plug | Gap | Torque |
 | --- | --- | ---: | ---: |
-| Leading | Mazda's European list: NGK RE8A-L, or RE7A-L (hotter). My car appears to have RE7C-L, which is not in Mazda's list | 1.05-1.15 mm | 12.8-17.7 N·m |
-| Trailing | NGK RE9B-T | 1.05-1.15 mm | 12.8-17.7 N·m |
+| Leading | NGK RE7C-L (NGK stock no. 6700) | 1.05-1.15 mm | 12.8-17.7 N·m |
+| Trailing | NGK RE9B-T (NGK stock no. 6701) | 1.05-1.15 mm | 12.8-17.7 N·m |
 
-Mazda's replacement limit is a gap of 1.5 mm on a leading plug and 1.4 mm on a trailing plug. Don't bend the iridium electrodes to adjust the gap. A lower NGK heat-range number is hotter; it does not mean a stronger spark.
+Both are NGK Laser Iridium, sold as a set of four (two RE7C-L, two RE9B-T). What owners say:
 
-Viewed from the left side of the engine, the upper ports are trailing and the lower ports are leading, as I've recorded it. The front rotor is nearest the radiator and the rear rotor nearest the bulkhead. Mazda also colour-codes plugs and leads by position, so check its spark-plug removal page against what you find.
+- The RX8Club threads I read advise sticking with these rather than paying about twice as much for Denso, whose iridium plug is a colder heat range that suits racing more than road use.
+- Some owners, mostly on track or in UK threads, fit the colder NGK RE8C-L in the leading position. The RE7C-L is one heat range hotter.
+- Mazda's European manual page lists the leading plug under different codes (RE8A-L, RE7A-L), so check the code on the box against the two above.
+
+Mazda's replacement limit is a gap of 1.5 mm leading and 1.4 mm trailing. Don't bend the iridium electrodes to set the gap. A lower NGK heat-range number is hotter, not a stronger spark.
+
+Viewed from the left side of the engine, the upper ports are trailing and the lower ports leading, as I've recorded it. The front rotor is nearest the radiator. Mazda also colour-codes plugs and leads by position, so check its removal page against what you find.
 
 ```text
 front     T/F     T/R     rear
           L/F     L/R
 ```
 
-Label the four leads before removal and keep leading and trailing plugs separate. Wet fuel/oil suggests flooding or weak ignition; dry black carbon suggests fouling or rich short-running; blistering, glazed insulation or eroded electrodes suggest excess heat. Compare all four under the same recent operating conditions: one freshly flooded plug does not prove a mechanical fault.
+Label the four leads before removal and keep leading and trailing plugs apart. Wet fuel/oil suggests flooding or weak ignition; dry black carbon suggests fouling or rich short-running; blistering, glazed insulation or eroded electrodes suggest excess heat. Compare all four under the same recent conditions: one freshly flooded plug doesn't prove a mechanical fault.
 
 ## Coils and leads
 
-The factory system has four individually triggered coils with built-in igniters: L/F, T/F, L/R and T/R. The PCM trigger outputs are `2AA`, `2AD`, `2Z` and `2AC` respectively. I've recorded coil terminal A as the trigger, B as ground and C as battery supply. Mazda's pages give only the letters and the test conditions, so confirm the functions on the wiring diagram before back-probing.
+The factory system has four individually triggered coils with built-in igniters: L/F, T/F, L/R and T/R. The PCM trigger outputs are `2AA`, `2AD`, `2Z` and `2AC` respectively. I've recorded coil terminal A as trigger, B as ground and C as battery supply. Mazda's pages give only the letters and test conditions, so confirm the functions on the wiring diagram before back-probing.
 
-This car uses a Rotary Revs four-coil D585-format kit with its bracket, Magnecor leads and wiring adaptor. Mount the bracket rigidly, keep its earth and the engine/body earths clean, seat every adaptor latch, and protect the coils and leads from exhaust heat. Route each lead by position, not by whichever cable reaches.
+This car uses a Rotary Revs four-coil D585-format kit with its bracket, Magnecor leads and wiring adaptor. Mount the bracket rigidly, keep its earth and the engine/body earths clean, seat every adaptor latch, protect the coils and leads from exhaust heat, and route each lead by position.
 
 For a misfire:
 
 1. Read stored and pending DTCs before clearing anything.
 2. Check battery voltage at the coil supply while cranking and running. Voltage drop matters more than an unloaded reading.
 3. Measure earth voltage drop between the coil bracket/ground and battery negative under load.
-4. Inspect connector pin fit, heat damage and arcing tracks. Mazda's reference for a factory plug lead is 1.0-4.0 kΩ at 20 °C, and for a plug 3.0-7.5 kΩ at 25 °C.
-5. Inspect the plug, then substitute one known-good coil/lead while keeping the labelled route.
+4. Inspect connector pin fit, heat damage and arcing tracks. Mazda's reference is 1.0-4.0 kΩ at 20 °C for a factory plug lead and 3.0-7.5 kΩ at 25 °C for a plug.
+5. Inspect the plug, then swap in one known-good coil/lead, keeping the labelled route.
 
-Unburnt fuel can overheat the catalyst quickly, so do not continue a sustained misfire. D585 coils are not a licence to invent dwell: use the supplier's documented adaptor and tune strategy for the actual coil electronics.
+Unburnt fuel can overheat the catalyst quickly, so don't continue a sustained misfire. D585 coils aren't a licence to invent dwell: use the supplier's documented adaptor and tune strategy for the actual coil electronics.
 
 ## Six-injector arrangement
 
@@ -53,15 +59,20 @@ Unburnt fuel can overheat the catalyst quickly, so do not continue a sustained m
 | Secondary | FS | RS | Added as demand rises |
 | Primary 2 | FP2 | RP2 | High-power engine only. Mazda's test shows these inactive at idle and active from about 6,250 rpm |
 
-Factory resistance is approximately 13.8 Ω at 20 °C. Standard OEM-flow injectors suit the unmodified ECU calibration because the commanded pulse width and staged transitions assume the original flow characteristics. Replacing all six with OEM units does not establish that they are flow-matched.
+Factory resistance is about 13.8 Ω at 20 °C. OEM-flow injectors suit the unmodified ECU calibration because the commanded pulse width and staged transitions assume the original flow. Replacing all six with OEM units doesn't mean they're flow-matched.
 
-Relieve pressure, disconnect the battery and label every connector before removing the rails. Pull each rail squarely so an injector is not side-loaded. Replace the upper O-rings and lower grommets/seals, lubricate them with clean fuel or the manual-approved lubricant, and never push a dry O-ring into the rail. After refitting, command the pump or crank with ignition disabled, inspect every injector/rail joint, then repeat the leak check with the engine running.
+Refitting rails:
 
-Rich trims, fuel smell, difficult hot starts and a rapid residual-pressure loss can indicate leakage. Lean trims or a weak high-load rotor can indicate restriction or staging/wiring faults; compare commanded stage, injector resistance and pressure before replacing parts.
+1. Relieve pressure, disconnect the battery and label every connector.
+2. Pull each rail off squarely so no injector is side-loaded.
+3. Replace the upper O-rings and lower grommets/seals. Lubricate with clean fuel or the manual-approved lubricant; never push a dry O-ring into the rail.
+4. Refit, then command the pump or crank with ignition disabled and inspect every injector and rail joint. Repeat the leak check with the engine running.
+
+Rich trims, fuel smell, difficult hot starts and rapid residual-pressure loss can indicate leakage. Lean trims or a weak high-load rotor can indicate restriction or staging/wiring faults; compare commanded stage, injector resistance and pressure before replacing parts.
 
 ## Fuel pressure and pump control
 
-Connect a suitable tee and pressure gauge at the engine-bay quick-release fuel-feed connector. Use the correct fuel-line SST/adaptors and contain released fuel. Mazda's test is with the engine stopped, the ignition on, and the pump run by grounding the F/P terminal of the check connector. It is not a running-pressure figure.
+Connect a suitable tee and gauge at the engine-bay quick-release fuel-feed connector, using the correct fuel-line SST/adaptors and containing released fuel. Mazda's test has the engine stopped, ignition on, and the pump run by grounding the F/P terminal of the check connector. It isn't a running-pressure figure.
 
 | Test | Mazda reference |
 | --- | ---: |
@@ -70,52 +81,21 @@ Connect a suitable tee and pressure gauge at the engine-bay quick-release fuel-f
 | Fuel-pump resistor at 20 °C | 0.304-0.336 Ω |
 | Pump supply voltage at terminal B, ignition on, F/P grounded (resistor in circuit) | 3.76-5.28 V |
 
-The fuel-pump and fuel-pump-speed-control relays are in the engine compartment. At low demand the speed relay is off and pump current passes through a resistor, so the pump runs on reduced voltage. At high demand or cranking the PCM energises the speed relay, bypassing the resistor so the pump sees battery supply. Listen for the pump-frequency change while commanding `FPRR` with a capable scan tool.
+The fuel-pump and speed-control relays are in the engine compartment. At low demand the speed relay is off and pump current passes through a resistor, so the pump runs on reduced voltage. At high demand or cranking the PCM energises the speed relay, bypassing the resistor so the pump sees battery supply. Listen for the pump-frequency change while commanding `FPRR` with a capable scan tool.
 
-## KEMSO 10910 installation
-
-| Published item | KEMSO value |
-| --- | ---: |
-| SKU | 10910 |
-| Nominal flow | 340 L/h |
-| Flow condition | 43 psi at 13.5 V |
-| Published pressure range | 43-90 psi |
-| Body diameter | Approximately 38 mm |
-
-KEMSO's listing makes no Series 1 or Series 2 fitment statement. The 340 L/h figure is a bench point, not in-car delivery at all voltage and pressure states. The RX-8 deliberately runs the pump at reduced voltage at low demand, so validate pressure in both relay states.
-
-Mazda's rules for opening the module, from its fuel-pump unit removal page: drain the tank to half full or less on the gauge first, because above about three quarters the fuel level is above the pump flange. The lock ring is tightened with the Mazda SST: one full turn by hand, then a further 50-140° to a torque of 80-135 N·m. If that torque isn't reached, replace the cap or retainer. Mazda's leak check afterwards is to start from standstill, or brake five or six times at low speed, and look for leaks.
-{:.note}
-
-1. Record baseline fuel-line pressure, residual pressure and the fuel-level indication. Relieve pressure, disconnect the battery, ventilate the area and remove the rear seat and the pump service cover. Drain the tank as above.
-2. Clean the outside of the module before opening it. Mark the lock-ring/module orientation and photograph the sender arm, cup, strainer and wiring.
-3. Lift the module without bending the sender arm. Drain it into an approved container and compare the KEMSO body, outlet and polarity with the original pump.
-4. Fit the strainer at the bottom of the reservoir cup in the same low orientation, clear of the cup wall and the sender sweep.
-5. Use only hose rated for continuous submerged in-tank fuel service, and fuel-injection clamps. General external fuel hose can delaminate when its outer surface is submerged.
-6. Confirm connector polarity, terminal retention and insulation. Secure the pump without point-loading its body or outlet and make sure the hose cannot kink as the module closes.
-7. Move the sender through its full travel and check clearance to the pump, retaining clip, strainer, wires and hose. Verify the reservoir-cup fill and jet-pump passages stay unobstructed.
-8. Fit a sound module seal, return the module to its orientation marks and tighten the lock ring by Mazda's method above. Reconnect, command the pump and check for vapour and liquid leaks before refitting the cover.
-9. Recheck the fuel-level indication, running pressure, five-minute residual pressure, connector temperature and pressure in both low and high pump states.
-
-### PA11 retaining clip
-
-The custom MJF clip locates the 38 mm KEMSO body in the factory module. It is printed in PA11-HP.
-
-> A prototype clip was left immersed in fuel for three weeks. After removal, it retained its apparent structural stiffness and no visible residue was observed in the fuel. This was a useful preliminary compatibility check, but it was not a complete long-term qualification test.
-
-That observation did not measure swelling, mass change, creep or lifetime. On service, inspect contact stress, cracks, softening, wire/outlet damage and sender/cup clearance. A future check should add dimensional and pull testing, vibration/shock exposure and longer-term inspection in the identified pump fuel.
+My car runs an uprated KEMSO pump; its installation has [its own page](/ProjectPages/RX8/kemso-fuel-pump/).
 
 ## Starter and cranking
 
-The original manual-transmission starter is a 1.4 kW coaxial-reduction unit, and Mazda's no-load reference is no more than 90 A at 11 V. This car has an uprated replacement starter.
+The original manual-transmission starter is a 1.4 kW coaxial-reduction unit, with a Mazda no-load reference of no more than 90 A at 11 V. This car has an uprated replacement starter.
 
 For slow or hot cranking:
 
-1. Measure rested battery voltage, voltage at the battery during cranking and actual rotary cranking rpm.
+1. Measure rested battery voltage, battery voltage during cranking and actual cranking rpm.
 2. Measure the positive drop from battery positive to starter B+ while cranking, then the earth drop from the starter housing/engine to battery negative. A poor cable or earth can leave a new starter slow.
 3. Check terminal tightness, engine/body earth straps and heat damage near the exhaust.
-4. Compare hot and cold rpm and current. High current with low rpm points toward the starter or mechanical drag; low current with excessive voltage drop points toward the supply path.
-5. Interpret hot-start behaviour alongside compression, flooding and fuel residual pressure rather than treating starter speed as the only cause.
+4. Compare hot and cold rpm and current. High current with low rpm points to the starter or mechanical drag; low current with excessive voltage drop points to the supply path.
+5. Read hot-start behaviour alongside compression, flooding and fuel residual pressure, not starter speed alone.
 
 Cranking rpm directly affects rotary compression pressure, which is why every [compression test](/ProjectPages/RX8/compression-testing/) must record it.
 
@@ -125,7 +105,9 @@ Mazda RX-8 2003 workshop manual (European edition), via the foxed.ca mirror, acc
 
 - [Spark-plug inspection](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE011801009W05.html) and [removal/installation](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE011801009W04.html)
 - [Fuel-system location index](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE011401006W01.html) and [fuel line pressure inspection](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE011401006W05.html)
-- [Fuel-pump unit removal/installation](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE011413350W01.html), [inspection](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE011413350W02.html) and [resistor inspection](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE011413350W04.html)
+- [Fuel-pump resistor inspection](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE011413350W04.html)
 - [Fuel-pump speed-control operation](https://foxed.ca/rx7manual/2003mazdarx8/esicont/en/srvc/html/BHE014000140T26.html)
 
-Vendors: [KEMSO 10910 product page](https://www.kemsoracing.com/products/kemso-fuel-pump-for-mazda-rx8) and the [Rotary Revs D585 kit page](https://rotaryrevs.com/garage/product/rotary-revs-d585-ignition-coil-kit/).
+Owner threads on spark plugs, read 16 October 2026: [Best spark plugs](https://www.rx8club.com/rx-8-discussion-3/best-spark-plugs-229604/) and [Difference between RE8C-L and RE7C-L spark plugs](https://www.rx8club.com/series-i-tech-garage-22/difference-between-re8c-l-re7c-l-spark-plugs-269189/), both on RX8Club. The NGK stock numbers (6700 and 6701) are from the [Atkins Rotary plug set listing](https://www.atkinsrotary.com/04-11-Rx8-NGK-Spark-Plug-Set.html).
+
+Vendor: the [Rotary Revs D585 kit page](https://rotaryrevs.com/garage/product/rotary-revs-d585-ignition-coil-kit/).

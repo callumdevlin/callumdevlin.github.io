@@ -24,9 +24,9 @@ description: >
 | Reverse | 3.564 | 15.84 | n/a |
 | Final drive | 4.444 | | |
 
-The ratios and final drive are Mazda's. The last column is my calculation: engine speed × tyre circumference ÷ overall ratio, using the nominal 225/45R18 diameter of 659.7 mm (2.0725 m circumference). It assumes no wheel slip and ignores the tyre's smaller loaded radius, so real road speed is a little lower. It also says nothing about what the car can reach: aerodynamic drag, not gearing, limits the top gears. The [Acceleration Lab](/ProjectPages/RX8/acceleration-lab/) uses the same inputs.
+Ratios and final drive are Mazda's. The last column is my calculation: engine speed × tyre circumference ÷ overall ratio, using the nominal 225/45R18 diameter of 659.7 mm (2.0725 m circumference). It assumes no wheel slip and ignores the smaller loaded radius, so real speed is a little lower. It says nothing about what the car can reach: drag, not gearing, limits the top gears. The [Acceleration Lab](/ProjectPages/RX8/acceleration-lab/) uses the same inputs.
 
-Mazda describes the Y16M-D as having a triple-synchroniser mechanism on first, second and third gear.
+Mazda describes the Y16M-D as having triple synchronisers on first, second and third.
 
 ## Oil service
 
@@ -35,42 +35,45 @@ Mazda describes the Y16M-D as having a triple-synchroniser mechanism on first, s
 | Y16M-D gearbox | SAE 75W-90, API GL-4 or GL-5 | Approximately 1.75 L | 27-48 N·m, new washers |
 | Rear differential | API GL-5, SAE 90 | 1.2-1.4 L | 39.2-53.9 N·m, new washers |
 
-Mazda lists SAE 90 only for the differential. 80W-90 and 75W-90 are commonly used equivalents, but they are not in Mazda's text, so treat them as my choice if you use them.
+Mazda lists only SAE 90 for the differential. 80W-90 and 75W-90 are common equivalents but aren't in Mazda's text, so they're my choice if used.
 
-Keep the car level. The filler plug is high in the side of each casing and the drain is at its lowest point. In my practice I remove the filler first, so a seized filler cannot leave an empty unit. Drain, clean the magnetic plug where fitted, fit the drain with a new washer, then fill through the side opening until oil is near the lower brim of the port (Mazda's wording). I let the excess settle to a slow drip before fitting the filler with a new washer.
+1. Keep the car level. The filler plug is high on the side of each casing and the drain is at the lowest point.
+2. Remove the filler first, so a seized filler can't leave you with an empty unit (my practice).
+3. Drain, clean the magnetic plug where fitted, and fit the drain with a new washer.
+4. Fill through the side opening until oil is near the lower brim of the port (Mazda's wording). I let the excess settle to a slow drip, then fit the filler with a new washer.
 
 ## Power Plant Frame
 
-The PPF rigidly relates the gearbox and differential. Its height sets the driveline axis; an incorrect setting can preload mounts, alter propshaft alignment and create vibration or noise.
+The PPF rigidly links the gearbox and differential and sets the driveline axis. A wrong height can preload mounts, misalign the propshaft and cause vibration or noise.
 
 ### Removal
 
-1. Support the gearbox securely with a transmission jack.
-2. Remove the exhaust and tunnel components needed to expose the PPF, and mark the propshaft flange before removal where applicable.
+1. Support the gearbox on a transmission jack.
+2. Remove the exhaust and tunnel parts needed to expose the PPF, and mark the propshaft flange where applicable.
 3. Support the differential if its mounting is also being loosened.
-4. Loosen and remove the PPF fasteners in a controlled sequence, then lower the frame without allowing the gearbox or differential to rotate on their mounts.
+4. Loosen and remove the PPF fasteners in a controlled sequence, then lower the frame without letting the gearbox or differential rotate on their mounts.
 
 ### Installation and height setting
 
 1. Fit the PPF and temporarily tighten its nuts in Mazda's numbered order.
-2. Tighten rear nut No. 1 only until the PPF is fully seated into the differential.
-3. Refit the heat shield, exhaust-manifold stay, exhaust, silencer and front tunnel member. The datum member must be installed before adjustment.
-4. Raise the front/transmission end of the PPF with the transmission jack until dimension A is **48.4-56.4 mm**.
-5. Tighten the rear differential fasteners Nos. 1 and 2 to **126.0-154.0 N·m**, then No. 3 to **74.5-93.2 N·m**, following the manual's numbered pattern.
+2. Tighten rear nut No. 1 only until the PPF is fully seated in the differential.
+3. Refit the heat shield, exhaust-manifold stay, exhaust, silencer and front tunnel member. The datum member must be in before you adjust.
+4. Raise the front/transmission end with the jack until dimension A is **48.4-56.4 mm**.
+5. Tighten rear differential fasteners Nos. 1 and 2 to **126.0-154.0 N·m**, then No. 3 to **74.5-93.2 N·m**, in the manual's numbered pattern.
 6. Tighten the front/transmission-side nuts to **126.0-154.0 N·m**.
-7. Remove the jack and remeasure dimension A; readjust if it is outside 48.4-56.4 mm.
+7. Remove the jack and remeasure A; readjust if it is outside 48.4-56.4 mm.
 
-Dimension A is the vertical distance from the lower surface of the PPF to the lower surface of the installed front tunnel member at Mazda's illustrated front datum. It is not measured to the floorpan, exhaust shield or an arbitrary bolt head. Mazda's installation page has the figure.
+Dimension A is the vertical distance from the lower surface of the PPF to the lower surface of the installed front tunnel member at Mazda's illustrated front datum, not to the floorpan, exhaust shield or a bolt head. Mazda's installation page has the figure.
 
-Mazda also describes a way to do this without a jack, using M12 × 1.25 bolts of 55 mm thread length or more tightened from beneath the front tunnel member. The steps above use the jack method.
+Mazda also describes a jack-free method using M12 × 1.25 bolts of 55 mm thread length or more, tightened from beneath the front tunnel member. The steps above use the jack.
 
 ## Super-LSD
 
-Mazda describes the rear differential as a "super limited-slip differential with a low torque-bias ratio", and gives no torque-bias figure or initial-torque value.
+Mazda calls the rear differential a "super limited-slip differential with a low torque-bias ratio" and gives no torque-bias or initial-torque figure.
 
-What follows is general behaviour of a torque-biasing differential, not specific data for this unit. It permits the normal left/right speed difference in a corner while biasing torque towards the tyre with more usable reaction. When one wheel has almost no reaction torque, such as on ice or with a wheel off the ground, a torque-biasing differential cannot multiply useful torque from nothing. Gentle brake or traction-control intervention can provide reaction, but tyres and safe recovery come first.
+In general, a torque-biasing differential allows the normal left/right speed difference in a corner while biasing torque towards the tyre with more usable reaction. With almost no reaction at one wheel (ice, or a wheel off the ground) it can't multiply useful torque from nothing. Gentle brake or traction-control intervention can supply reaction, but tyres and safe recovery come first. This is general behaviour, not data for this unit.
 
-For noise, first check equal tyre size and pressure, differential level and leaks, mounts, driveshafts and propshaft joints. A load/coast whine suggests gear or bearing setup; a speed-related rumble can be a bearing or tyre; normal low-speed differentiation is not itself a fault. Do not dismantle the internal gear case as routine service.
+For noise, first check tyre size and pressure, differential level and leaks, mounts, driveshafts and propshaft joints. A load/coast whine suggests gear or bearing setup; a speed-related rumble can be a bearing or tyre; normal low-speed differentiation isn't a fault. Don't dismantle the gear case as routine service.
 
 ## References
 

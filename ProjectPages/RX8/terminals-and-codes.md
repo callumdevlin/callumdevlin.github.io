@@ -11,7 +11,7 @@ description: >
   one lookup.
 ---
 
-Entries are from Mazda's 2003 workshop manual (linked under Sources). This is a lookup, not a wiring diagram: it doesn't show connector orientation, so identify the connector and pin on Mazda's diagram for your car.
+A lookup from Mazda's 2003 workshop manual, not a wiring diagram. It doesn't show connector orientation, so identify the connector and pin on Mazda's diagram for your car.
 
 ## PCM terminals
 

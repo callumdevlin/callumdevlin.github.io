@@ -11,15 +11,13 @@ description: >
   sequence and replacement parts Mazda gives for each.
 ---
 
-These are Mazda's ranges in newton metres, with the decimals as printed. Mazda also says what goes on the threads, how many passes to take and what must be replaced, so that is given beside each value.
+Mazda's ranges in newton metres, as printed, with the thread condition, passes and replacement parts beside each. "From the figure" means Mazda prints the value only in a diagram callout, so check it against the manual's figure.
 
-"From the figure" means Mazda prints the value only in a diagram callout. Check it against the manual's figure before relying on it.
-
-General practice, from Mazda's suspension procedures: fit bushed suspension fasteners loosely with the car raised, lower it to the ground, then tighten fully so the bushes aren't preloaded. Tighten multi-bolt patterns in the stated order and in stages. Replace single-use items.
+General practice: fit bushed suspension fasteners loosely with the car raised, lower it, then tighten fully so the bushes aren't preloaded. Tighten multi-bolt patterns in the stated order and in stages. Replace single-use items.
 
 ## Engine, core fasteners
 
-Mazda's engine manual separates engine "Type A" from "Type B". Type B is a 2009 model-year US-VIN engine, and everything else, including a 2005 UK car, is Type A. Some Type B figures (a separate upper oil pan, for example) exist online, so check which type a number belongs to.
+Mazda separates engine "Type A" from "Type B". Type B is a 2009 model-year US-VIN engine; everything else, including a 2005 UK car, is Type A. Some online figures belong to Type B (a separate upper oil pan, for example), so check which type a number is for.
 
 | Fastener | Torque (N·m) | Conditions and replacement parts |
 |:---|:---:|:---|

@@ -8,56 +8,59 @@ status: wip
 applies: My own build on a Series 1 RX-8.
 reviewed: 2026-10-14
 description: >
-  The custom front-cover adapter and separate reservoir oil path, with priming,
-  checks and premix dose conversions.
+  A front-cover adapter that lets the factory oil metering pump draw from a separate
+  reservoir, with fitting, priming and premix doses.
 ---
 
-This adapter keeps the factory Series 1 electronic OMP and its four metering pipes and nozzles. It changes only the pump inlet: instead of drawing engine oil through the front cover, the OMP draws clean two-stroke oil from a dedicated reservoir.
+The adapter lets the factory Series 1 oil metering pump (OMP) draw clean two-stroke oil from its own reservoir instead of engine oil. The pump, its drive and control, and the four metering pipes and nozzles all stay factory.
 
-## Oil paths
+## Oil path
 
-| Arrangement | Path |
+| | Path |
 | --- | --- |
-| Factory | Engine sump → front-cover drilling → factory OMP → four pipes/nozzles → engine |
-| Modified | Separate vented reservoir → oil-resistant supply hose → custom front-cover adapter → factory OMP → four pipes/nozzles → engine |
+| Factory | Sump → front-cover drilling → OMP → four pipes/nozzles → engine |
+| Modified | Vented reservoir → oil-resistant hose → adapter → OMP → four pipes/nozzles → engine |
 
 {% include figure.html src="/assets/rx8/generated/sohn-oil-path.svg" alt="Block diagram comparing the factory oil path, from the sump through the front cover to the OMP and four nozzles, with the modified path from a vented reservoir through the adapter to the same OMP and nozzles" caption="The factory and modified oil paths. A schematic of the arrangement, not a drawing of the adapter." class="fig-medium" %}
 
-The machined/printed interface sits between the Series 1 front cover and the OMP, closes the original sump-oil feed and presents a separate inlet to the pump. The OMP stays in its factory location with its drive and electrical control unchanged.
+The adapter sits between the front cover and the OMP. It closes the original sump-oil feed and gives the pump a separate inlet.
 
 ## Components {#component-record}
 
-The pump and control are the factory Series 1 electronic OMP and PCM strategy, and delivery is through the four factory metering pipes and nozzles. The oil is Renewable Lubricants Bio-Rotary Racing Premix. The adapter's drawings, material and seal details, and the reservoir capacity, aren't published yet.
+- Pump and control: factory Series 1 electronic OMP and PCM strategy.
+- Delivery: the four factory metering pipes and nozzles.
+- Oil: Renewable Lubricants Bio-Rotary Racing Premix.
+- Adapter drawings, material and seal details, and reservoir capacity: not published yet.
 
-## Installation and hose routing
+## Fitting
 
-1. Work cleanly and cap the open front-cover and pump ports immediately. Remove the OMP without pulling it sideways against its drive.
-2. Inspect both interface faces and the pump drive. Fit the adapter seals in their intended grooves; do not use fasteners to pull a misaligned drive into place.
-3. Mount the OMP squarely on the adapter and confirm the drive turns and seats as designed before tightening.
-4. Mount the vented reservoir upright where its level can be checked, away from exhaust heat and moving belts. It must keep feeding under braking and cornering.
-5. Route the supply continuously downhill where practical, without high loops that trap air. Use oil-compatible hose and positively retained fittings, and protect it at every edge and hot zone.
-6. Keep the hose visible enough to inspect for bubbles. Avoid cable ties that flatten the bore and fittings that impose a tight bend at the adapter.
+1. Work clean and cap the open front-cover and pump ports straight away. Take the OMP off without pulling it sideways against its drive.
+2. Check both faces and the pump drive, and seat the adapter seals in their grooves. Never use the bolts to pull a misaligned drive into place.
+3. Mount the OMP square on the adapter and check the drive turns and seats before tightening.
+4. Mount the vented reservoir upright, with the level visible, away from exhaust heat and belts. It must keep feeding under braking and cornering.
+5. Run the supply hose downhill where you can, with no high loops that trap air. Use oil-compatible hose with retained fittings, protect it at edges and hot spots, keep it visible enough to spot bubbles, and avoid ties that flatten the bore or a tight bend at the adapter.
 
-Gravity head: the pump draws from the reservoir, and a low tank may not keep up. One owner thread reports that a gravity feed was only just enough at low to moderate load and not enough at high rpm, and a flyer quoted second-hand in the same thread asks for the tank level to stay at least 6 inches above the pump. I haven't tested this on my own build, so check delivery at high rpm rather than assuming it.
+The pump draws from the reservoir, so a low tank may not keep up. One owner thread reports a gravity feed that was only just enough at low to moderate load and not enough at high rpm, and a flyer quoted in it asks for the tank level to stay at least 6 inches above the pump. I haven't tested this on my build, so check delivery at high rpm.
+{:.note}
 
-## Priming and leak checks
+## Priming and checks
 
-1. Fill the reservoir and open or loosen the lowest suitable connection until bubble-free oil reaches the adapter, then secure it.
-2. Prime the OMP inlet and metering circuit. Mazda gives no priming procedure, so this is my practice. Don't rely on the pump to purge a long dry hose during a running first start.
-3. Confirm all four metering lines are connected to their labelled nozzles and that the nozzles hold vacuum, by the [factory test](/ProjectPages/RX8/OMP/nozzles-premix/#testing-a-nozzle).
-4. With fuel and ignition disabled, crank in short intervals and watch the feed for persistent bubbles or loss of column.
-5. Start only after engine oil pressure and the separate OMP supply are established. Inspect the reservoir, hose, adapter, OMP and four lines cold, hot and after the first drive.
-6. Mark the reservoir level and log distance, fuel added and oil used. A repeatable level fall is the practical whole-system delivery check; an unexpectedly unchanged or rapidly falling level needs investigation.
+1. Fill the reservoir and loosen the lowest suitable connection until bubble-free oil reaches the adapter, then secure it.
+2. Prime the OMP inlet and metering circuit. Mazda gives no priming procedure, so this is my practice. Don't count on the pump purging a long dry hose during a first start.
+3. Check all four metering lines are on their labelled nozzles and the nozzles hold vacuum, using the [factory test](/ProjectPages/RX8/OMP/nozzles-premix/#testing-a-nozzle).
+4. With fuel and ignition disabled, crank in short bursts and watch for bubbles or a falling oil column.
+5. Start only once engine oil pressure and the separate OMP supply are established. Inspect everything cold, hot and after the first drive.
+6. Mark the reservoir level and log distance, fuel added and oil used. A repeatable level fall is the practical whole-system check; a level that doesn't move, or falls fast, needs investigating.
 
-Likely failure modes are an empty or unvented reservoir, a loose fitting, an air leak, heat or chafe damage, incompatible hose, a failed interface seal, a mis-seated drive, a blocked line or nozzle, or lost prime. There is no factory low-level warning for the separate tank.
+Likely faults: empty or unvented reservoir, loose fitting, air leak, heat or chafe damage, incompatible hose, failed adapter seal, mis-seated drive, blocked line or nozzle, lost prime. The factory has no low-level warning for the separate tank.
 
-## Bio-Rotary oil and premix
+## Premix {#bio-rotary-oil-and-premix}
 
-I use Bio-Rotary Racing Premix in the separate reservoir and can also dose it into the fuel. The vendor's guidance is for adding it to fuel; putting it in the reservoir is my own practice, not something the vendor describes. Premix supplements the targeted OMP delivery. It does not repair a failed pump or a blocked nozzle.
+I run Bio-Rotary Racing Premix in the reservoir and can also dose it into the fuel. The vendor only describes adding it to fuel; reservoir use is my own practice. Premix supplements the OMP's delivery and doesn't fix a failed pump or a blocked nozzle.
 
-For a naturally aspirated petrol daily driver, the range I worked from is 0.25 to 0.50 US fl oz per US gallon. That is the wording on a retailer's copy of the product text (Mazdatrix). Another retailer's copy gives a single lower figure (1 oz per 4 US gallons, the 0.25 end of the range), so check the vendor's live page before relying on these numbers. Higher rates are given for alcohol fuels and for track use of modified or boosted engines.
+For a naturally aspirated petrol daily driver I worked to **0.25 to 0.50 US fl oz per US gallon**, the wording on Mazdatrix's copy of the product text. Another retailer's copy gives only the lower figure (1 oz per 4 US gallons), so check the vendor's live page. Higher rates are given for alcohol fuels and for track use of modified or boosted engines.
 
-The conversions use 1 US fl oz = 29.5735 mL and 1 US gal = 3.78541 L:
+Conversions use 1 US fl oz = 29.5735 mL and 1 US gal = 3.78541 L:
 
 | Petrol added | 0.25 oz/gal: 1.95 mL/L (about 1:512) | 0.50 oz/gal: 3.91 mL/L (about 1:256) |
 | ---: | ---: | ---: |
@@ -67,9 +70,9 @@ The conversions use 1 US fl oz = 29.5735 mL and 1 US gal = 3.78541 L:
 | 40 L | 78 mL | 156 mL |
 | 50 L | 98 mL | 195 mL |
 
-Some retailers label metric doses using 1 oz = 30 mL, which gives about 1:500 rather than 1:512, so a bottle chart may differ from this table by a few per cent. Calculate from the actual litres dispensed, don't confuse US and imperial gallons, and don't assume more oil is always better.
+Some retailers use 1 oz = 30 mL (about 1:500), so a bottle chart can differ from this table by a few per cent. Work from the litres you actually add, don't mix up US and imperial gallons, and more oil isn't always better.
 
 ## References {#related-references}
 
-- Product text as copied by [Mazdatrix](https://mazdatrix.com/product/renewable-lubricants-bio-rotary-racing-premix/) and [ARD Importing](https://www.ardimporting.co.nz/products/bio-rotary-racing-premix), accessed 14 October 2026; the vendor's own page is [Renewable Lubricants](https://renewablelube.com/products/bio-rotary-racing-premix).
-- For the factory pump and its nozzles, see the [Series 1 OMP guide](/ProjectPages/RX8/OMP/) and [nozzles and clean-oil feed](/ProjectPages/RX8/OMP/nozzles-premix/).
+- Product text as copied by [Mazdatrix](https://mazdatrix.com/product/renewable-lubricants-bio-rotary-racing-premix/) and [ARD Importing](https://www.ardimporting.co.nz/products/bio-rotary-racing-premix), accessed 14 October 2026; the vendor's page is [Renewable Lubricants](https://renewablelube.com/products/bio-rotary-racing-premix).
+- The factory pump and nozzles: [Series 1 OMP guide](/ProjectPages/RX8/OMP/) and [nozzles and clean-oil feed](/ProjectPages/RX8/OMP/nozzles-premix/).

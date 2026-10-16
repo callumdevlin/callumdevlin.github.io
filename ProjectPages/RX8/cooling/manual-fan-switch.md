@@ -15,7 +15,7 @@ related:
 
 This is an explanatory note, not a verified installation guide. The circuits come from Mazda's manual, and relay and connector positions haven't been confirmed on a UK right-hand-drive car.
 
-The cooling fans can start automatically, and also after the engine is switched off (see below). Disconnect the battery while making connections and keep clear of the blades whenever the system is live.
+The fans can start automatically, including after the engine is switched off. Disconnect the battery while making connections and keep clear of the blades whenever the system is live.
 {:.note}
 
 ## Factory fan operation
@@ -26,49 +26,30 @@ The cooling fans can start automatically, and also after the engine is switched 
 | Low | On | Off | Off | `5X` |
 | High | On | On | On | `5X` + `5AD` |
 
-Relay No. 1 alone runs both fans at low speed. High speed needs relay No. 1 and relays No. 2 and No. 3. The PCM controls relay No. 1 through output `5X`, and relays No. 2 and No. 3 together through `5AD`. Mazda's diagnosis pages show relay No. 1's terminal A fed with battery voltage through the main relay and its terminal E running to the PCM at `5X`. Relays No. 2 and No. 3 each have their own terminal E, joined into the single `5AD` wire.
+The PCM controls relay No. 1 through `5X`, and relays No. 2 and No. 3 together through `5AD`. Mazda's diagnosis pages show relay No. 1's terminal A fed with battery voltage through the main relay and its terminal E running to the PCM at `5X`. Relays No. 2 and No. 3 each have their own terminal E, joined into the single `5AD` wire.
 
-These are low-side drivers: the PCM energises each relay coil by pulling its control wire to ground. A manual request should therefore reproduce that ground through an added, isolated relay contact. It must not feed the fan motors or Mazda's control wires from a dashboard switch.
-
-| Condition | Factory fan state |
-| --- | --- |
-| Coolant below the low threshold, no A/C request | Off |
-| 97 °C or above | Both fans low |
-| 101 °C or above | Both fans high |
-| Cooling from high | High releases at 98 °C or below |
-| Cooling from low | Low releases at 94 °C or below |
-| Coolant sensor (ECT) failure | High-speed fail-safe |
-| Ignition off, hot engine bay | "After-cooling": high speed can run with the key out |
-
-The [cooling page](/ProjectPages/RX8/cooling/#fan-logic-and-checks) has the temperature and hysteresis graph.
+These are low-side drivers: the PCM energises a relay coil by pulling its control wire to ground. A manual request should reproduce that ground through an added, isolated relay contact. It must not feed the fan motors or Mazda's control wires from a dashboard switch. The temperature thresholds are on the [cooling page](/ProjectPages/RX8/cooling/#fan-logic-and-checks).
 
 ## The idea
 
-{% include figure.html src="/assets/rx8/diagrams/manual-fan-override-concept.svg" alt="Schematic: the PCM outputs 5X and 5AD go to the E terminals of the fan relays; an added normally-open contact on each wire can connect it to ground" caption="The idea in one picture: an added normally-open contact in parallel with the PCM's own ground path, one on `5X` and one on `5AD`. An explanatory schematic only, not a wiring diagram." %}
+{% include figure.html src="/assets/rx8/diagrams/manual-fan-override-concept.svg" alt="Schematic: the PCM outputs 5X and 5AD go to the E terminals of the fan relays; an added normally-open contact on each wire can connect it to ground" caption="An added normally-open contact in parallel with the PCM's own ground path, one on `5X` and one on `5AD`. An explanatory schematic only, not a wiring diagram." %}
 
 ## Manual LOW-speed switch
 
-The LOW switch manually energises cooling-fan relay No. 1. Its factory control path is:
+The LOW switch energises relay No. 1. Its factory control path is:
 
 ```text
 relay No. 1 coil → relay terminal E → PCM 5X → ground when requested
 ```
 
-Leave the original PCM connection intact and add a parallel ground path. With the LOW switch off, the added contact is open and the PCM runs the fans normally. With it on, the contact grounds the relay No. 1 control wire, the relay energises and both fans run at low speed.
-
-**Added control circuit:**
+Leave the PCM connection intact and add a parallel ground path. Switch off: the added contact is open and the PCM runs the fans. Switch on: the contact grounds the relay No. 1 control wire and both fans run low.
 
 ```text
-ignition-switched 12 V → small fuse → LOW dashboard switch → added relay coil → ground
+control circuit:  ignition-switched 12 V → small fuse → LOW switch → added relay coil → ground
+isolated contact: relay No. 1 terminal E / PCM 5X wire → added normally-open contact → ground
 ```
 
-**Isolated contact:**
-
-```text
-relay No. 1 terminal E / PCM 5X wire → added normally-open contact → ground
-```
-
-For a conventional numbered automotive relay, a typical arrangement is:
+For a conventional numbered automotive relay:
 
 | Added relay terminal | Connection |
 | --- | --- |
@@ -77,40 +58,33 @@ For a conventional numbered automotive relay, a typical arrangement is:
 | 30 | Ground |
 | 87 | Relay No. 1 terminal E / `5X` wire |
 
-Check the pin diagram printed on the actual relay; numbering is not a substitute for identifying its coil and normally-open contact. The fuse is only for the added coil, so a small one suits a standard relay; check your relay's coil current.
+Check the pin diagram printed on your relay; the numbering doesn't identify the coil and normally-open contact for you. The fuse only protects the added coil, so a small one suits a standard relay; check its coil current.
 
-**Do not apply 12 V to the Mazda relay control wire or PCM `5X`. Do not cut the factory PCM connection.**
+**Don't apply 12 V to the Mazda relay control wire or PCM `5X`, and don't cut the factory PCM connection.**
 
 ## Manual HIGH-speed switch
 
-Grounding `5AD` alone does **not** request the full high-speed state. On Mazda's diagnosis, a fan No. 2 that runs with fan No. 1 off points to relay No. 3 stuck closed or a short to ground on `5AD`, so `5AD` on its own runs only fan No. 2. High speed needs both circuits grounded:
+Grounding `5AD` alone does **not** request full high speed. Per Mazda's diagnosis, fan No. 2 running with fan No. 1 off points to relay No. 3 stuck closed or a short to ground on `5AD`, so `5AD` alone runs only fan No. 2. High speed needs both circuits grounded:
 
 - `5X` energises relay No. 1.
 - `5AD` energises relays No. 2 and No. 3.
-- All three factory relays must be active for both fans to run high.
+- All three relays must be active for both fans to run high.
 
-Don't join `5X` and `5AD`: they are separate PCM-controlled circuits. Use two electrically isolated normally-open contacts operated by the same HIGH switch.
+Use two electrically isolated normally-open contacts operated by the same HIGH switch. Don't join `5X` and `5AD`; they are separate PCM circuits.
 
-Relays No. 2 and No. 3 have separate terminal-E wires that join into `5AD`. The added ground has to go on the common `5AD` wire, not on one relay's terminal E, or only one fan will go to high.
+Relays No. 2 and No. 3 have separate terminal-E wires that join into `5AD`. Put the added ground on the common `5AD` wire, not on one relay's terminal E, or only one fan will go to high.
 {:.note}
 
-**HIGH switch control circuit:**
-
 ```text
-ignition-switched 12 V → small fuse → HIGH dashboard switch
-→ added relay A coil and added relay B coil → ground
+control circuit:   ignition-switched 12 V → small fuse → HIGH switch
+                   → added relay A coil and added relay B coil → ground
+isolated contacts: relay A: 5X / relay No. 1 control wire → normally-open contact → ground
+                   relay B: 5AD / relay No. 2 and No. 3 control wire → normally-open contact → ground
 ```
 
-**Separate isolated contacts:**
+Switch off: both contacts are open and the PCM controls the fans as before. Switch on: A grounds `5X`, B grounds `5AD`, all three factory relays energise and both fans run high. A dual-pole normally-open relay could do both jobs, but two ordinary relays are easier to identify, source and test.
 
-```text
-relay A: 5X / relay No. 1 control wire → normally-open contact → ground
-relay B: 5AD / relay No. 2 and No. 3 control wire → normally-open contact → ground
-```
-
-With the HIGH switch off, both added contacts are open and the PCM controls the fans as it always did. With it on, relay A grounds `5X`, relay B grounds `5AD`, all three factory relays energise and both fans run at high speed. A suitable dual-pole normally-open relay can do both grounding jobs, but two ordinary automotive relays are easier to identify, source and test.
-
-Mazda's relay-layout figure is a left-hand-drive one and numbers relay No. 1 as position 16, No. 2 as 19 and No. 3 as 13. Positions on a UK right-hand-drive car may differ, so locate the relays by their function and connector before splicing.
+Mazda's relay-layout figure is left-hand-drive and numbers relay No. 1 as position 16, No. 2 as 19 and No. 3 as 13. UK RHD positions may differ, so find the relays by function and connector before splicing.
 
 ## LOW and HIGH switches together
 
@@ -121,7 +95,7 @@ Mazda's relay-layout figure is a left-hand-drive one and numbers relay No. 1 as 
 | Off | On | Both fans high |
 | On | On | Both fans high |
 
-The LOW circuit grounds `5X` only. The HIGH circuit already includes the low-speed relay, so it grounds `5X` and `5AD` through separate contacts. Never let the HIGH switch ground only `5AD`.
+LOW grounds `5X` only. HIGH grounds `5X` and `5AD` through separate contacts, because high needs the low-speed relay too. Never let HIGH ground only `5AD`.
 
 ### Optional AUTO / LOW / HIGH selector
 
@@ -131,22 +105,21 @@ The LOW circuit grounds `5X` only. The HIGH circuit already includes the low-spe
 | LOW | Grounded | None | Both fans low |
 | HIGH | Grounded | Grounded | Both fans high |
 
-A three-position selector is a tidy alternative to two switches. It must not have a position that disables automatic control: the PCM connections stay intact in AUTO, LOW and HIGH. If the LOW and HIGH positions share a relay, add a diode so the LOW position cannot feed back into the HIGH relay's coil. That is my own electrical design note, not something from Mazda.
+A three-position selector is a tidy alternative to two switches. No position may disable automatic control: the PCM connections stay intact in AUTO, LOW and HIGH. If LOW and HIGH share a relay, add a diode so LOW can't feed back into the HIGH relay's coil. That is my own design note, not Mazda's.
 
 ## P0480 and P0481
 
-The PCM monitors the voltage on both fan-relay control wires. Mazda titles `P0480` "cooling fan No. 1 control circuit" (relay No. 1, `5X`) and `P0481` "cooling fan No. 2 control circuit" (relays No. 2 and No. 3, `5AD`). Both are continuous monitors: the PCM sets the fault when the wire is low while it is commanding the relay off. Mazda publishes no debounce time, and the warning lamp does not light for these codes.
+The PCM monitors the voltage on both fan-relay control wires. Mazda titles `P0480` "cooling fan No. 1 control circuit" (relay No. 1, `5X`) and `P0481` "cooling fan No. 2 control circuit" (relays No. 2 and No. 3, `5AD`). Both are continuous monitors: the PCM sets the fault when the wire is low while it is commanding the relay off. Mazda publishes no debounce time, and the warning lamp doesn't light for these codes.
 
-So, when the manual switch grounds a circuit the PCM wants off, expect a pending code, and possibly a stored one. Mazda's own key-on test requires these codes not to be present, so scan for pending and stored codes after testing. Don't disable the monitoring.
+So when the switch grounds a circuit the PCM wants off, expect a pending code and possibly a stored one. Mazda's own key-on test requires these codes to be absent, so scan for pending and stored codes after testing. Don't disable the monitoring.
 
 ## Cautions
 
-- Cooling fans can start automatically, and with the ignition off after a hot shutdown. Keep clear of the blades.
-- Do not run fan-motor current through a dashboard switch.
-- Do not apply 12 V to `5X` or `5AD`.
-- Do not join `5X` and `5AD`.
-- Do not cut or remove either factory PCM control connection.
-- Do not create a manual mode that prevents automatic high-speed or fail-safe operation.
+- Keep clear of the fans: they can start with the ignition off after a hot shutdown.
+- Don't run fan-motor current through a dashboard switch.
+- Don't apply 12 V to `5X` or `5AD`, and don't join them.
+- Don't cut or remove either factory PCM control connection.
+- Don't create a manual mode that prevents automatic high-speed or fail-safe operation.
 - Verify relay terminals against Mazda's diagram and your car before splicing.
 
 ## References

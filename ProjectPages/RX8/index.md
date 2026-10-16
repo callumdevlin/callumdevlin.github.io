@@ -27,7 +27,8 @@ toc: false
 ## Engine
 
 - [Engine running data](/ProjectPages/RX8/enginedata/): how I log a running 13B-MSP, and what the oil metering pump's commanded step read.
-- [Engine removal and rebuild](/ProjectPages/RX8/engine-removal-and-rebuild/): removal, strip-down, inspection and reassembly.
+- [Engine removal](/ProjectPages/RX8/engine-removal-and-rebuild/): the ordered checklist for lifting the engine out and stripping it.
+- [Engine rebuild](/ProjectPages/RX8/engine-rebuild/): inspection, clearances, packing the rotors, reassembly, first start.
 - [Rotary compression testing](/ProjectPages/RX8/compression-testing/): test procedure, readings and my own tester design.
 
 ## Cooling
@@ -43,7 +44,8 @@ toc: false
 
 ## Fuel, ignition and starting
 
-- [Fuel, ignition and starting](/ProjectPages/RX8/fuel-ignition-and-starting/): spark plugs, coils, injectors, the fuel pump and the starter.
+- [Fuel, ignition and starting](/ProjectPages/RX8/fuel-ignition-and-starting/): spark plugs, coils, injectors, fuel pressure and the starter.
+- [KEMSO fuel pump installation](/ProjectPages/RX8/kemso-fuel-pump/): fitting the uprated pump into the factory module, with Mazda's rules for opening it and a printed retaining clip.
 
 ## Drivetrain and chassis
 

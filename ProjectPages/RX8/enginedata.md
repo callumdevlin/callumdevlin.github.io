@@ -13,19 +13,18 @@ related:
   - /ProjectPages/RX8/OMP/how-it-works/
 ---
 
-This page covers how I log a running Series 1 13B-MSP and what the logs show about the oil metering pump. It started as part of my [EnduraOMP project](/ProjectPages/EnduraOMP/). Mazda doesn't publish the stock pump's oil delivery and I haven't measured it, so there is no delivery map here.
+How I log a running Series 1 13B-MSP, and what the logs show about the oil metering pump. It started as part of my [EnduraOMP project](/ProjectPages/EnduraOMP/). Mazda doesn't publish the stock pump's oil delivery and I haven't measured it, so there is no delivery map here.
 
 ## Logging set-up
 
-An ESP32 reads engine speed from a Bluetooth OBD-II adapter (PID `0x0C`) and logs two analogue inputs, an oil pressure transducer and an oil temperature sensor, to a CSV file at about 5 Hz. Standard OBD-II readers don't expose the pump's commanded position (`MOP_POS`). Forscan can read it as an enhanced PID, along with coolant temperature, lambda and fuel trims, and it logs at roughly 100 samples a second.
-
-The ESP32 stores raw ADC counts, so the pressure and temperature channels need the transducers' calibrations applied before they mean anything. I haven't published figures from them.
+- **ESP32:** reads engine speed from a Bluetooth OBD-II adapter (PID `0x0C`) and logs an oil pressure transducer and an oil temperature sensor to CSV at about 5 Hz. It stores raw ADC counts, so the transducer calibrations must be applied before the values mean anything. I haven't published figures from them.
+- **Forscan:** standard OBD-II readers don't expose the pump's commanded position (`MOP_POS`), but Forscan reads it as an enhanced PID, along with coolant temperature, lambda and fuel trims, at roughly 100 samples a second.
 
 ## What the commanded step read
 
-I have two Forscan logs from a warm engine. One runs for 111 s from idle (about 800 rpm) to 2,480 rpm with coolant at 80 to 83 °C. The other runs for 60 s up to 4,520 rpm with coolant at 86 to 88 °C. In both, `MOP_POS` read 7 throughout, at every engine speed.
+Two Forscan logs from a warm engine: 111 s from idle (about 800 rpm) to 2,480 rpm with coolant at 80-83 °C, and 60 s up to 4,520 rpm with coolant at 86-88 °C. In both, `MOP_POS` read 7 throughout, at every engine speed.
 
-Step 7 is the step Mazda gives for the pump's fail-safe, where the stepper is fixed at step 7. These logs don't show whether the ECU was in fail-safe or the PID was simply reporting a constant. They stop at 4,520 rpm, so they say nothing about the pump's schedule above that.
+Step 7 is Mazda's fail-safe step. The logs don't show whether the ECU was in fail-safe or the PID was just reporting a constant, and they stop at 4,520 rpm, so they say nothing about the schedule above that.
 
 ## What Mazda publishes
 

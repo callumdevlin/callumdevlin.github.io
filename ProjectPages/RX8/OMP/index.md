@@ -7,25 +7,25 @@ nav_order: 0
 applies: Series 1 RX-8 (2003-2008) factory electronic oil metering pump. Not the Series 2 system.
 reviewed: 2026-10-14
 description: >
-  A practical guide to the Series 1 RX-8 oil metering pump: how it works, how
-  to diagnose it, how to remove and refit it, and the nozzles, premix and
-  clean-oil feed around it.
+  A practical guide to the Series 1 RX-8 oil metering pump: how it works, how to
+  diagnose it, how to remove and refit it, and the nozzles, premix and clean-oil feed
+  around it.
 related:
   - /ProjectPages/RX8/enginedata/
   - /ProjectPages/RX8/sohn-adapter/
   - /ProjectPages/EnduraOMP/
 ---
 
-The Series 1 RX-8 meters small, controlled amounts of oil into the rotary engine to lubricate the seals and housings. The part that does it is the oil metering pump, usually shortened to OMP; Mazda's manual calls it the metering oil pump.
+The Series 1 RX-8 meters small, controlled amounts of oil into the engine to lubricate the seals and housings. Mazda's manual calls the part the metering oil pump; I use OMP.
 
-This guide covers the Series 1 system only. The Series 2/R3 system is reported to have three nozzles per rotor and a different pump with its own codes, and an electric replacement is a different system again. Where Mazda gives a figure I quote it and link the page, and I say so where something comes from owner reports. Confirm connector diagrams and part numbers for your exact model year before relying on them.
+This guide covers the Series 1 system only. The Series 2/R3 system is reported to have three nozzles per rotor and a different pump with its own codes, and an electric replacement is a different system again. Mazda's figures are quoted with a link; owner reports are marked. Confirm connector diagrams and part numbers for your model year.
 
 ## The guide {#start-here}
 
-- [How the OMP works](/ProjectPages/RX8/OMP/how-it-works/): the pump, the stepper, the start-up sequence and the control logic.
-- [Diagnostics and testing](/ProjectPages/RX8/OMP/testing/): fault codes, symptoms and tests for a suspect pump.
+- [How the OMP works](/ProjectPages/RX8/OMP/how-it-works/): the pump, stepper, start-up sequence and control logic.
+- [Diagnostics and testing](/ProjectPages/RX8/OMP/testing/): fault codes, symptoms and tests.
 - [Removal, installation and servicing](/ProjectPages/RX8/OMP/servicing/): taking the pump off, refitting it and what to replace.
-- [Nozzles, premix and clean oil feed](/ProjectPages/RX8/OMP/nozzles-premix/): checking the nozzles, and what premix or a separate oil supply changes.
+- [Nozzles, premix and clean oil feed](/ProjectPages/RX8/OMP/nozzles-premix/): nozzle checks, and what premix or a separate oil supply changes.
 - [OMP Lab](/ProjectPages/RX8/OMP/lab/): an interactive model of the start-up checks, faults and commanded step.
 
 ## The system at a glance
@@ -34,7 +34,7 @@ This guide covers the Series 1 system only. The Series 2/R3 system is reported t
 | :--- | :--- |
 | Pump | Engine-driven pumping, with a stepper motor that sets the stroke |
 | Oil nozzles | Two per rotor, tilted towards the side housing |
-| Control | The PCM commands the stepper in steps and re-establishes zero at every engine start by reversing 60 steps |
-| Feedback | One on/off position switch. There is no continuous position sensor |
-| If it faults | Fail-safe: the stepper is fixed at step 7 and the engine is restricted |
-| Fault codes | P1686, P1687 and P1688 |
+| Control | The PCM commands the stepper in steps and re-establishes zero at every start by reversing 60 steps |
+| Feedback | One on/off position switch; no continuous position sensor |
+| If it faults | Fail-safe: stepper fixed at step 7, engine restricted |
+| Fault codes | P1686, P1687, P1688 |
