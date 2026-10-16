@@ -229,7 +229,7 @@
 "/Images/synctag-assembly.png":
   w: 2125
   h: 1564
-  bytes: 112058
+  bytes: 112120
   webp:
     - { w: 480, src: "/Images/optimised/synctag-assembly-480.webp" }
     - { w: 800, src: "/Images/optimised/synctag-assembly-800.webp" }
@@ -239,7 +239,7 @@
 "/Images/synctag-battery-life.png":
   w: 1840
   h: 704
-  bytes: 78159
+  bytes: 78287
   webp:
     - { w: 480, src: "/Images/optimised/synctag-battery-life-480.webp" }
     - { w: 800, src: "/Images/optimised/synctag-battery-life-800.webp" }
@@ -249,7 +249,7 @@
 "/Images/synctag-block-diagram.png":
   w: 1746
   h: 976
-  bytes: 212790
+  bytes: 211007
   webp:
     - { w: 480, src: "/Images/optimised/synctag-block-diagram-480.webp" }
     - { w: 800, src: "/Images/optimised/synctag-block-diagram-800.webp" }
