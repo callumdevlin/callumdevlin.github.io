@@ -58,19 +58,7 @@ Likely faults: empty or unvented reservoir, loose fitting, air leak, heat or cha
 
 I run Bio-Rotary Racing Premix in the reservoir and can also dose it into the fuel. The vendor only describes adding it to fuel; reservoir use is my own practice. Premix supplements the OMP's delivery and doesn't fix a failed pump or a blocked nozzle.
 
-For a naturally aspirated petrol daily driver I worked to **0.25 to 0.50 US fl oz per US gallon**, the wording on Mazdatrix's copy of the product text. Another retailer's copy gives only the lower figure (1 oz per 4 US gallons), so check the vendor's live page. Higher rates are given for alcohol fuels and for track use of modified or boosted engines.
-
-Conversions use 1 US fl oz = 29.5735 mL and 1 US gal = 3.78541 L:
-
-| Petrol added | 0.25 oz/gal: 1.95 mL/L (about 1:512) | 0.50 oz/gal: 3.91 mL/L (about 1:256) |
-| ---: | ---: | ---: |
-| 10 L | 20 mL | 39 mL |
-| 20 L | 39 mL | 78 mL |
-| 30 L | 59 mL | 117 mL |
-| 40 L | 78 mL | 156 mL |
-| 50 L | 98 mL | 195 mL |
-
-Some retailers use 1 oz = 30 mL (about 1:500), so a bottle chart can differ from this table by a few per cent. Work from the litres you actually add, don't mix up US and imperial gallons, and more oil isn't always better.
+For a naturally aspirated petrol daily driver I worked to **0.25 to 0.50 US fl oz per US gallon**, from Mazdatrix's copy of the product text. Another retailer's copy gives only the lower figure (1 oz per 4 US gallons), so check the vendor's live page. Doses for other scenarios (track, boosted, alcohol fuel) and a comparison of the premix oils owners use are on the [nozzles and premix page](/ProjectPages/RX8/OMP/nozzles-premix/#how-much-to-premix).
 
 ## References {#related-references}
 
