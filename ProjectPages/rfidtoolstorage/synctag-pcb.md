@@ -1,46 +1,40 @@
 ---
-title: SyncTag, designing the tag's circuit board
+title: SyncTag, the tool tag's circuit board
 crumb: SyncTag PCB
 permalink: /ProjectPages/rfidtoolstorage/synctag-pcb/
 reviewed: 2026-10-16
 image: /Images/optimised/synctag-pcb-render-1200.webp
 description: >
-  The electronics of the ToolSync tag, designed in KiCad 9: a BLE and NFC board with a
-  coin cell, what I changed from my first concept and why, and what is still only a
-  model.
+  The electronics of the ToolSync tag, designed in KiCad 9: a BLE and NFC tag with a
+  replaceable coin cell, how the parts were chosen, and what is still only a model.
 ---
 
-I have designed the electronics of the SyncTag, the small tag that sits on each tool in [ToolSync](/ProjectPages/rfidtoolstorage/). It is two boards drawn in KiCad 9: a 26.4 × 10.1 mm four-layer main board with a Bluetooth Low Energy (BLE) chip, antenna and coin cell, and a separate NFC antenna flex. KiCad's own electrical and design rule checks report no errors on either. **Nothing has been built, powered or measured, and no tag firmware exists yet**, so every performance figure below is a data-sheet number or a model, and I say which.
+The SyncTag is the small tag that sits on each tool in [ToolSync](/ProjectPages/rfidtoolstorage/). This page covers its electronics, drawn in KiCad 9 as two boards: a 26.4 × 10.1 mm four-layer main board with a Bluetooth Low Energy (BLE) chip, antenna and coin cell, and a separate NFC antenna flex. KiCad's own electrical and design rule checks report no errors on either. **Nothing has been built, powered or measured, and no tag firmware exists yet**, so every performance figure below is a data-sheet number or a model, and I say which.
 
 {% include figure.html src="/Images/synctag-pcb-render.png" alt="Angled 3D render of a long thin green circuit board with a black square chip in the middle, small capacitors, five pads along the left edge, a red LED and a cream chip antenna at the right-hand end" caption="The main board, rendered from the KiCad design. The part bodies are placeholder shapes, not manufacturer models." eager=true %}
 
-## Why I redesigned the tag
+## What the tag has to do
 
-My BEng report described the tag as an NTAG213 for identity, a BK3432 Bluetooth chip, a 5 mm LED, a buzzer and a coin cell in a 25 × 10 × 7 mm casing, but it only existed as a schematic. When I checked it against data sheets and dimensions, several things did not hold:
+- **Be read with no battery.** The toolbox's RFID reader checks tools in and out, so the tool's identity has to be readable even when the tag's cell is flat.
+- **Be found.** When a tool is missing, the toolbox sends a Bluetooth command and the tag flashes.
+- **Run from a replaceable coin cell** for as long as it can, since nobody will want to open a tool tag often.
+- **Stay small enough to stick on a tool.** The cell sets the size: a CR1025 is 10.0 mm across, so the board is 10.1 mm wide and the tag comes to about 28.0 × 11.5 × 7.3 mm outside.
 
-- **The cell does not fit.** A CR1025 is 10.0 mm across, which cannot go in a 9 mm cavity or a 10 mm wide casing, however thin the walls.
-- **The alert parts do not fit either.** The 5 mm LED and the 12 × 9.5 mm buzzer need more height than a cavity 3.7 to 4.5 mm tall allows.
-- **A coin cell cannot run that buzzer.** A magnetic buzzer draws about 15 mA, and I could not find the buzzer part named in the report as written. The nearest real family is a 9 × 9 mm piezo with a last-time-buy notice.
-- **The 694-day battery figure was only the sleep current.** It is the cell capacity divided by the BLE chip's 1.8 µA sleep draw, which leaves out advertising, the fact that a coin cell never delivers its full rating, and temperature. A tag that can be found over Bluetooth has to advertise.
-- **The BK3432 is thinly documented.** There is no reference antenna design or certification, so I would be guessing at the matching network.
-- **A plain NTAG213 has no output pin,** but the schematic assumed it could signal the Bluetooth chip when scanned.
+## The design
 
-## What I designed instead
-
-| Block | First concept | Rev A design |
+| Block | Choice | Why |
 | --- | --- | --- |
-| Identity | NTAG213 | NXP NT3H2111 (NTAG I²C plus) on its own two-layer flex with a 13.56 MHz coil and a ferrite sheet |
-| Bluetooth chip | BK3432 | TI CC2340R52 (Cortex-M0+, BLE 5.4, about 0.7 µA standby, built-in DC/DC) |
-| Antenna | not defined | Johanson 2450AT18D0100001E chip antenna at the board edge, TI's reference harmonic filter and two unfitted tuning slots |
-| Alert | LED and buzzer | one red LED behind the diffuser; **no buzzer in Rev A** |
-| Cell | 15 mAh cell (no standard part found) | CR1025 (30 mAh) in a Keystone 3030 retainer on the underside, with a P-FET against a reversed cell |
-| Clocks | not defined | 48 MHz crystal; 32 kHz from the chip's internal oscillator |
-| Programming | none | five SWD and test pads |
-| Size | 25 × 10 × 7 mm | about 28.0 × 11.5 × 7.3 mm outside |
+| Identity | NXP NT3H2111 (NTAG I²C plus) on its own two-layer flex with a 13.56 MHz coil and a ferrite sheet | powered by the reader's field, so the toolbox can always read it; its output pin and I²C port let the main chip learn it was scanned |
+| Bluetooth chip | TI CC2340R52 (Cortex-M0+, BLE 5.4, about 0.7 µA standby, built-in DC/DC) | low standby current, and a documented reference design for the antenna filter and crystal |
+| Antenna | Johanson 2450AT18D0100001E chip antenna at the board edge, TI's reference harmonic filter and two unfitted tuning slots | small enough for the board, with a manufacturer-recommended layout |
+| Alert | one red LED behind the diffuser | a coin cell cannot supply the roughly 15 mA of a magnetic buzzer, and a piezo needs about 2 mm more height |
+| Cell | CR1025 (30 mAh) in a Keystone 3030 retainer on the underside, with a P-FET against a reversed cell | replaceable and as small as a coin cell gets |
+| Clocks | 48 MHz crystal; 32 kHz from the chip's internal oscillator | a 32 kHz crystal did not fit |
+| Programming | five SWD and test pads | to program and debug the first boards |
 
-The cell and the stack of parts above it are why the tag grows: the nominal stack is 6.86 mm and the worst case 7.23 mm, against a 7.0 mm target, so a prototype enclosure has to confirm it.
+The nominal height of the stack is 6.86 mm and the worst case 7.23 mm, against a 7.0 mm target, so a prototype enclosure has to confirm it.
 
-{% include figure.html src="/Images/synctag-block-diagram.png" alt="Block diagram: cell and reverse-battery protection feed the CC2340R52 chip in the centre, which connects to the RF filter and chip antenna, an indicator LED, programming pads and the NFC flex, which talks to the ToolSync toolbox" caption="Block diagram of Rev A." fulllink=true %}
+{% include figure.html src="/Images/synctag-block-diagram.png" alt="Block diagram: cell and reverse-battery protection feed the CC2340R52 chip in the centre, which connects to the RF filter and chip antenna, an indicator LED, programming pads and the NFC flex, which talks to the ToolSync toolbox" caption="Block diagram of the SyncTag." fulllink=true %}
 
 ### Why NFC identity is a separate passive part
 
@@ -103,4 +97,4 @@ I turned off no checks and added no exclusions to get those results. Still to do
 2. Resolve the part availability, then order a few boards and the flex.
 3. Write and test the firmware, starting with current measurement in each state.
 4. Measure the cell under load, the NFC wake-up, and the antenna and read range, then adjust the tuning parts.
-5. Put the revised tag into the casing and the toolbox, and decide on a buzzer for Rev B.
+5. Put the tag into a casing and the toolbox, and decide on a buzzer for a later revision.
